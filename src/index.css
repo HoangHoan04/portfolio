@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.p-dropdown-items {
+  padding: 10px;
+}

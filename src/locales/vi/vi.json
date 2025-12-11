@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "projects": "Dự án",
+    "skills": "Kỹ năng",
+    "experience": "Kinh nghiệm",
+    "education": "Học vấn",
+    "blog": "Bài viết",
+    "contact": "Liên hệ"
+  },
+  "footer": {
+    "rights": "Đã đăng ký bản quyền.",
+    "copyright": "Bản quyền © 2025 thuộc về HoangHoan"
+  },
+  "common": {
+    "language": "VN"
+  }
+}
