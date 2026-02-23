@@ -1,6 +1,6 @@
 import { Dropdown } from "primereact/dropdown";
 import { useTranslation } from "react-i18next";
-import { enFlag, viFlag } from "../assets/icons";
+import { cnFlag, enFlag, viFlag } from "../assets/icons";
 
 const LanguageSelector = () => {
   const { i18n } = useTranslation();
@@ -8,6 +8,7 @@ const LanguageSelector = () => {
   const languages = [
     { name: "Tiếng Việt", code: "vi", flag: viFlag },
     { name: "English", code: "en", flag: enFlag },
+    { name: "中文", code: "cn", flag: cnFlag },
   ];
 
   const selectedCountryTemplate = (option: any, props: any) => {

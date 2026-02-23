@@ -6,7 +6,6 @@
     "skills": "Kỹ năng",
     "experience": "Kinh nghiệm",
     "education": "Học vấn",
-    "blog": "Bài viết",
     "contact": "Liên hệ"
   },
   "footer": {
@@ -14,6 +13,347 @@
     "copyright": "Bản quyền © 2025 thuộc về HoangHoan"
   },
   "common": {
-    "language": "VN"
+    "language": "VN",
+    "viewProject": "Xem dự án",
+    "contact": "Liên hệ",
+    "viewAllProjects": "Xem tất cả dự án",
+    "viewAllSkills": "Xem tất cả kỹ năng",
+    "downloadCV": "Tải CV",
+    "readMore": "Đọc thêm",
+    "subscribe": "Đăng ký",
+    "sendMessage": "Gửi tin nhắn",
+    "sending": "Đang gửi...",
+    "verify": "Xác minh",
+    "suggestTopic": "Đề xuất chủ đề blog",
+    "online": "Đang online"
+  },
+  "home": {
+    "greeting": "Xin chào! Tôi là HoangHoan",
+    "intro": "Xin chào! Tôi là một Web Developer thực tập với niềm đam mê mạnh mẽ trong việc xây dựng giao diện người dùng hiện đại và tối ưu hóa trải nghiệm người dùng. Hiện tôi đang là sinh viên chuyên ngành Kỹ thuật phần mềm tại <strong>Đại học Sài Gòn</strong>, làm thực tập Web Developer tại <strong>APE TECH Solutions</strong>. Tôi đang tích cực học hỏi và cải thiện kỹ năng thông qua các dự án cá nhân và nhóm.",
+    "featuredProjects": "Dự án nổi bật",
+    "featuredProjectsDesc": "Một số dự án đáng chú ý tôi đã thực hiện gần đây",
+    "skills": "Kỹ năng",
+    "skillsDesc": "Các công nghệ và ngôn ngữ lập trình tôi thành thạo",
+    "projects": {
+      "portfolio": {
+        "title": "Website Portfolio",
+        "description": "Portfolio cá nhân bao gồm hồ sơ, bài viết blog và các dự án nổi bật, được xây dựng để tối ưu hiệu suất và đáp ứng."
+      },
+      "ecommerce": {
+        "title": "Nền tảng E-commerce AppleStore",
+        "description": "Giải pháp thương mại điện tử đầy đủ với UI hiện đại, xác thực người dùng, giỏ hàng."
+      },
+      "exam": {
+        "title": "Cổng thi trực tuyến Đại học Sài Gòn",
+        "description": "Cổng thi thông minh với chatbot GPT, nhắn tin thời gian thực và quản lý dữ liệu sinh viên hiệu quả."
+      }
+    }
+  },
+  "about": {
+    "title": "Về tôi",
+    "bio1": "Xin chào! Tôi là Full-Stack Developer với hơn 1 năm kinh nghiệm phát triển ứng dụng web. Tôi đam mê học hỏi công nghệ mới và luôn tìm kiếm những cách sáng tạo để giải quyết các vấn đề phức tạp.",
+    "bio2": "Chuyên môn của tôi bao gồm React, Node.js, MySQL và các công nghệ đám mây như AWS. Tôi có kinh nghiệm làm việc cả ở startup lẫn công ty lớn, từ xây dựng MVP đến mở rộng hệ thống phục vụ hàng triệu người dùng.",
+    "bio3": "Ngoài lập trình, tôi thích đọc sách công nghệ, viết blog chia sẻ kiến thức và tham gia các hoạt động cộng đồng lập trình. Tôi tin rằng chia sẻ kiến thức giúp cả cộng đồng cùng phát triển mạnh mẽ hơn.",
+    "information": "Thông tin",
+    "fullname": "Họ tên",
+    "age": "Tuổi",
+    "addressCurrent": "Địa chỉ hiện tại",
+    "addressNew": "Địa chỉ mới",
+    "email": "Email",
+    "phone": "Điện thoại",
+    "languages": "Ngôn ngữ",
+    "hobby": "Sở thích",
+    "hobbies": {
+      "coding": "Lập trình",
+      "listenMusic": "Nghe nhạc",
+      "traveling": "Du lịch",
+      "photography": "Nhiếp ảnh",
+      "football": "Bóng đá",
+      "badminton": "Cầu lông"
+    },
+    "journey": "Hành trình phát triển của tôi",
+    "timeline": {
+      "intern": {
+        "title": "Thực tập Full-Stack Developer",
+        "company": "APE TECH Solutions",
+        "desc": "Tham gia phát triển các dự án ứng dụng web và di động."
+      },
+      "university": {
+        "title": "Học tại Đại học Sài Gòn",
+        "company": "Khoa Công nghệ Thông tin",
+        "desc": "Chuyên ngành Kỹ thuật Phần mềm."
+      },
+      "highschool": {
+        "title": "Tốt nghiệp THPT",
+        "company": "THPT Quỳnh Lưu 2",
+        "desc": "Bằng tốt nghiệp THPT"
+      }
+    },
+    "coreValues": "Giá trị cốt lõi",
+    "values": {
+      "creativity": {
+        "title": "Sáng tạo",
+        "desc": "Luôn tìm kiếm những giải pháp sáng tạo và hiệu quả cho mọi vấn đề."
+      },
+      "collaboration": {
+        "title": "Hợp tác",
+        "desc": "Tin tưởng vào sức mạnh của làm việc nhóm và giao tiếp hiệu quả."
+      },
+      "quality": {
+        "title": "Chất lượng",
+        "desc": "Cam kết cung cấp sản phẩm chất lượng cao và đáng tin cậy."
+      }
+    }
+  },
+  "projects": {
+    "title": "Dự án của tôi",
+    "subtitle": "Khám phá các dự án tôi đã phát triển, từ ứng dụng web đến ứng dụng di động và blockchain.",
+    "featuredProjects": "Dự án nổi bật",
+    "filterAll": "Tất cả",
+    "stats": {
+      "total": "Tổng dự án",
+      "featured": "Dự án nổi bật",
+      "technologies": "Công nghệ",
+      "completed": "Hoàn thành"
+    },
+    "cta": {
+      "title": "Có ý tưởng dự án?",
+      "desc": "Tôi luôn sẵn sàng thảo luận về các dự án mới và thú vị. Hãy liên hệ để chúng ta biến ý tưởng của bạn thành hiện thực!",
+      "button": "Liên hệ với tôi"
+    }
+  },
+  "skills": {
+    "title": "Kỹ năng & Công nghệ",
+    "subtitle": "Đây là tổng quan về các kỹ năng và công nghệ tôi đã học và áp dụng vào các dự án thực tế.",
+    "categories": {
+      "technical": "Kỹ thuật",
+      "tools": "Công cụ",
+      "softSkills": "Kỹ năng mềm"
+    },
+    "skillCategories": {
+      "technical": {
+        "title": "Kỹ năng kỹ thuật",
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "databaseCloud": "Cơ sở dữ liệu & Đám mây",
+        "mobileFramework": "Di động & Framework"
+      },
+      "tools": {
+        "title": "Công cụ & DevOps",
+        "devTools": "Công cụ phát triển",
+        "cloudDevOps": "Đám mây & DevOps",
+        "testing": "Kiểm thử"
+      },
+      "soft": {
+        "title": "Kỹ năng mềm",
+        "leadership": "Lãnh đạo & Giao tiếp",
+        "problemSolving": "Giải quyết vấn đề",
+        "projectManagement": "Quản lý dự án"
+      }
+    },
+    "certifications": "Chứng chỉ và Thành tích",
+    "learningPath": "Lộ trình học tập",
+    "cta": {
+      "title": "Hãy cùng làm việc!",
+      "desc": "Tôi luôn sẵn sàng áp dụng những kỹ năng này vào các dự án thực tế. Hãy liên hệ để thảo luận về dự án của bạn!",
+      "button": "Liên hệ với tôi"
+    }
+  },
+  "experience": {
+    "title": "Kinh nghiệm làm việc",
+    "subtitle": "Hành trình sự nghiệp của tôi qua các vai trò và dự án khác nhau.",
+    "timeline": "Dòng thời gian kinh nghiệm",
+    "responsibilities": "Trách nhiệm chính:",
+    "technologies": "Công nghệ:",
+    "achievements": "Thành tích:",
+    "freelanceProjects": "Dự án Freelance",
+    "skillsGrowth": "Sự phát triển kỹ năng",
+    "workStyle": "Phong cách làm việc",
+    "levels": {
+      "beginner": "Người mới",
+      "intern": "Thực tập sinh" 
+    },
+    "workStyles": {
+      "agile": {
+        "title": "Agile & Hợp tác",
+        "desc": "Thích nghi tốt với phương pháp Agile/Scrum và làm việc hiệu quả trong nhóm chức năng chéo."
+      },
+      "problemSolver": {
+        "title": "Giải quyết vấn đề",
+        "desc": "Tiếp cận vấn đề có hệ thống và tìm ra các giải pháp sáng tạo, hiệu quả."
+      },
+      "learner": {
+        "title": "Học hỏi liên tục",
+        "desc": "Luôn cập nhật công nghệ mới bằng cách tham gia các khóa học và hội nghị thường xuyên."
+      },
+      "quality": {
+        "title": "Tập trung vào chất lượng",
+        "desc": "Đặt chất lượng code và trải nghiệm người dùng là ưu tiên hàng đầu trong mọi dự án."
+      },
+      "mentor": {
+        "title": "Cố vấn & Lãnh đạo",
+        "desc": "Chia sẻ kiến thức với đồng nghiệp và hướng dẫn các nhà phát triển cấp dưới."
+      },
+      "results": {
+        "title": "Hướng đến kết quả",
+        "desc": "Tập trung vào kết quả kinh doanh và đo lường tác động công việc bằng số liệu."
+      }
+    },
+    "cta": {
+      "title": "Hãy cùng làm việc!",
+      "desc": "Tôi luôn tìm kiếm những cơ hội mới để áp dụng kinh nghiệm và kỹ năng của mình vào các dự án thú vị.",
+      "contact": "Liên hệ",
+      "downloadCV": "Tải CV"
+    }
+  },
+  "education": {
+    "title": "Học vấn & Chứng chỉ",
+    "subtitle": "Hành trình học tập không ngừng để cập nhật kiến thức và kỹ năng trong lĩnh vực công nghệ.",
+    "formalEducation": "Học vấn chính quy",
+    "achievements": "Thành tích:",
+    "academicProjects": "Dự án học tập:",
+    "mainCourses": "Môn học chính:",
+    "certifications": "Chứng chỉ chuyên môn",
+    "issuedDate": "Ngày cấp:",
+    "validUntil": "Hiệu lực:",
+    "onlineCourses": "Khóa học trực tuyến",
+    "instructor": "Giảng viên:",
+    "completed": "Hoàn thành",
+    "learningTimeline": "Timeline học tập",
+    "learningPhilosophy": "Triết lý học tập",
+    "philosophyQuote": "\"Học tập là một hành trình không có điểm kết thúc. Trong lĩnh vực công nghệ, kiến thức luôn thay đổi và phát triển. Tôi tin rằng việc duy trì tinh thần học hỏi và khả năng thích nghi là chìa khóa để thành công trong sự nghiệp.\"",
+    "principles": {
+      "criticalThinking": {
+        "title": "Tư duy phản biện",
+        "desc": "Luôn đặt câu hỏi 'Tại sao?' và tìm hiểu bản chất của vấn đề"
+      },
+      "community": {
+        "title": "Học từ cộng đồng",
+        "desc": "Tham gia forums, meetups và học hỏi từ kinh nghiệm của người khác"
+      },
+      "practice": {
+        "title": "Thực hành liên tục",
+        "desc": "Áp dụng ngay kiến thức mới học vào các dự án thực tế"
+      }
+    },
+    "cta": "Thảo luận về học tập",
+    "phases": {
+      "university": "Đại học",
+      "selfLearning": "Tự học",
+      "cloudDevOps": "Cloud & DevOps",
+      "aiMaster": "AI/ML Master"
+    }
+  },
+  "blog": {
+    "title": "Blog & Hướng dẫn",
+    "subtitle": "Chia sẻ kiến thức, kinh nghiệm và insights về development, technology trends và best practices.",
+    "featuredPosts": "Bài viết nổi bật",
+    "all": "Tất cả",
+    "newsletter": {
+      "title": "Đăng ký nhận thông báo",
+      "desc": "Nhận thông báo về những bài viết mới nhất và tutorials hữu ích qua email.",
+      "placeholder": "Email của bạn",
+      "button": "Đăng ký"
+    },
+    "stats": {
+      "title": "Thống kê Blog",
+      "posts": "Bài viết",
+      "views": "Lượt xem",
+      "topics": "Chủ đề",
+      "subscribers": "Subscribers"
+    },
+    "popularTags": "Tags phổ biến",
+    "readTime": "phút đọc",
+    "suggestTopic": "Đề xuất chủ đề blog"
+  },
+  "contact": {
+    "title": "Liên hệ với tôi",
+    "subtitle": "Có ý tưởng dự án thú vị? Muốn hợp tác? Hoặc chỉ đơn giản là muốn kết nối? Tôi luôn sẵn sàng lắng nghe và thảo luận!",
+    "sendMessage": "Gửi tin nhắn",
+    "thankYou": "Cảm ơn bạn!",
+    "successMessage": "Tin nhắn đã được gửi thành công. Tôi sẽ phản hồi trong vòng 24 giờ.",
+    "form": {
+      "fullname": "Họ tên *",
+      "fullnamePlaceholder": "Nhập họ tên của bạn",
+      "email": "Email *",
+      "projectType": "Loại dự án",
+      "projectTypePlaceholder": "Chọn loại dự án",
+      "timeline": "Timeline dự kiến",
+      "timelinePlaceholder": "Chọn timeline",
+      "subject": "Chủ đề *",
+      "subjectPlaceholder": "Tóm tắt ngắn gọn về dự án/câu hỏi",
+      "budget": "Ngân sách dự kiến",
+      "budgetPlaceholder": "Chọn ngân sách",
+      "description": "Mô tả chi tiết *",
+      "descriptionPlaceholder": "Mô tả chi tiết về dự án, yêu cầu kỹ thuật, mục tiêu và bất kỳ thông tin nào khác bạn muốn chia sẻ...",
+      "submit": "Gửi tin nhắn",
+      "sending": "Đang gửi...",
+      "webApp": "Ứng dụng Web",
+      "mobileApp": "Ứng dụng di động",
+      "api": "Phát triển API",
+      "consultation": "Tư vấn",
+      "other": "Khác",
+      "timeline1_2weeks": "1-2 tuần",
+      "timeline1month": "1 tháng",
+      "timeline2_3months": "2-3 tháng",
+      "timeline6months": "6 tháng+",
+      "timelineFlexible": "Linh hoạt",
+      "budgetUnder5m": "Dưới 5 triệu",
+      "budget5_10m": "5-10 triệu",
+      "budget10_20m": "10-20 triệu",
+      "budget20_50m": "20-50 triệu",
+      "budgetOver50m": "Trên 50 triệu",
+      "budgetDiscuss": "Cần thảo luận"
+    },
+    "info": {
+      "title": "Thông tin liên hệ",
+      "email": {
+        "desc": "Gửi email cho tôi bất cứ lúc nào"
+      },
+      "phone": {
+        "title": "Điện thoại",
+        "desc": "Gọi trực tiếp (9:00 - 18:00)"
+      },
+      "address": {
+        "title": "Địa chỉ",
+        "desc": "Có thể hẹn gặp trực tiếp"
+      },
+      "linkedin": {
+        "desc": "Kết nối chuyên nghiệp"
+      }
+    },
+    "social": "Mạng xã hội",
+    "workHours": {
+      "title": "Thời gian làm việc",
+      "weekdays": "Thứ 2 - Thứ 6:",
+      "saturday": "Thứ 7:",
+      "sunday": "Chủ nhật:",
+      "holiday": "Nghỉ"
+    },
+    "faq": {
+      "title": "Câu hỏi thường gặp",
+      "q1": {
+        "question": "Bạn làm việc với dự án freelance không?",
+        "answer": "Có, tôi nhận các dự án freelance phù hợp với lịch trình và expertise của mình. Hãy liên hệ để thảo luận chi tiết."
+      },
+      "q2": {
+        "question": "Thời gian response email trung bình là bao lâu?",
+        "answer": "Tôi thường trả lời email trong vòng 24 giờ vào các ngày làm việc. Các câu hỏi khẩn cấp có thể gọi điện trực tiếp."
+      },
+      "q3": {
+        "question": "Bạn có tư vấn về technical architecture không?",
+        "answer": "Có, tôi cung cấp dịch vụ tư vấn về kiến trúc hệ thống, lựa chọn công nghệ và best practices cho dự án."
+      },
+      "q4": {
+        "question": "Chi phí cho một dự án web thường là bao nhiêu?",
+        "answer": "Chi phí phụ thuộc vào độ phức tạp, timeline và yêu cầu cụ thể. Hãy mô tả dự án để tôi có thể báo giá chính xác."
+      }
+    },
+    "location": {
+      "title": "Vị trí",
+      "desc": "Hiện tại tôi đang làm việc tại TP. Hồ Chí Minh, Việt Nam. Tôi cũng sẵn sàng làm việc remote cho các dự án phù hợp.",
+      "remote": "Remote",
+      "worldwide": "Toàn cầu"
+    }
   }
 }

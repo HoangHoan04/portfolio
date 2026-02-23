@@ -14,6 +14,353 @@
     "copyright": "Copyright © 2025 by HoangHoan"
   },
   "common": {
-    "language": "EN"
+    "language": "EN",
+    "viewProject": "View project",
+    "contact": "Contact",
+    "viewAllProjects": "View all projects",
+    "viewAllSkills": "View all skills",
+    "downloadCV": "Download CV",
+    "readMore": "Read more",
+    "subscribe": "Subscribe",
+    "sendMessage": "Send message",
+    "sending": "Sending...",
+    "verify": "Verify",
+    "suggestTopic": "Suggest blog topic",
+    "online": "Currently online"
+  },
+  "home": {
+    "greeting": "Hi! I'm HoangHoan",
+    "intro": "Hello! I'm a Web Developer intern with a strong passion for building modern user interfaces and optimizing user experience. I'm currently a Computer Science student at <strong>Sai Gon University</strong>, working as a Web Developer intern at <strong>APE TECH Solutions</strong>. I'm actively learning and improving my skills through personal and group projects.",
+    "stats": {
+      "yearsExp": "Years of Experience",
+      "projectsDone": "Projects Completed",
+      "happyClients": "Happy Clients",
+      "techMastered": "Technologies Mastered"
+    },
+    "featuredProjects": "Featured Projects",
+    "featuredProjectsDesc": "Some of the notable projects I've worked on recently",
+    "skills": "Skills",
+    "skillsDesc": "The technologies and programming languages I am proficient in",
+    "projects": {
+      "portfolio": {
+        "title": "Portfolio Website",
+        "description": "A sleek personal portfolio featuring my resume, blog posts, and highlighted projects, built for performance and responsiveness."
+      },
+      "ecommerce": {
+        "title": "E-commerce AppleStore Platform",
+        "description": "A full-stack e-commerce solution with modern UI, user authentication, shopping cart."
+      },
+      "exam": {
+        "title": "Saigon University Examination Portal",
+        "description": "A smart examination portal featuring GPT-powered chatbot assistance, real-time messaging, and efficient student data management."
+      }
+    }
+  },
+  "about": {
+    "title": "About me",
+    "bio1": "Hi! I'm a Full-Stack Developer with over 1 year of experience in developing web applications. I am passionate about learning new technologies and always looking for creative ways to solve complex problems.",
+    "bio2": "My expertise includes React, Node.js, MySQL, and cloud technologies like AWS. I have experience working with both startups and large companies, from building MVPs to scaling systems serving millions of users.",
+    "bio3": "Besides coding, I enjoy reading technology books, writing blogs to share knowledge, and participating in developer community activities. I believe that sharing knowledge helps the entire community grow stronger.",
+    "information": "Information",
+    "fullname": "Fullname",
+    "age": "Age",
+    "addressCurrent": "Address current",
+    "addressNew": "Address new",
+    "email": "Email",
+    "phone": "Phone",
+    "languages": "Languages",
+    "hobby": "Hobby",
+    "hobbies": {
+      "coding": "Coding",
+      "listenMusic": "Listen Music",
+      "traveling": "Traveling",
+      "photography": "Photography",
+      "football": "Football",
+      "badminton": "Badminton"
+    },
+    "journey": "My development journey",
+    "timeline": {
+      "intern": {
+        "title": "Intern Full-Stack Developer",
+        "company": "APE TECH Solutions",
+        "desc": "Participated in developing web and mobile application projects."
+      },
+      "university": {
+        "title": "Studied at Saigon University",
+        "company": "Faculty of Information Technology",
+        "desc": "Major in Software Engineering."
+      },
+      "highschool": {
+        "title": "High School Graduation",
+        "company": "Quynh Luu 2 High School",
+        "desc": "High School Graduation Certificate"
+      }
+    },
+    "coreValues": "Core Values",
+    "values": {
+      "creativity": {
+        "title": "Creativity",
+        "desc": "Always seeking creative and effective solutions for every problem."
+      },
+      "collaboration": {
+        "title": "Collaboration",
+        "desc": "Believing in the power of teamwork and effective communication."
+      },
+      "quality": {
+        "title": "Quality",
+        "desc": "Committed to delivering high-quality and reliable products."
+      }
+    }
+  },
+  "projects": {
+    "title": "My Projects",
+    "subtitle": "Explore projects I have developed, from web applications to mobile apps and blockchain solutions.",
+    "featuredProjects": "Featured Projects",
+    "filterAll": "All",
+    "stats": {
+      "total": "Total Projects",
+      "featured": "Featured Projects",
+      "technologies": "Technologies",
+      "completed": "Completed"
+    },
+    "cta": {
+      "title": "Got a project idea?",
+      "desc": "I'm always open to discussing new and exciting projects. Reach out so we can turn your idea into reality!",
+      "button": "Contact Me"
+    }
+  },
+  "skills": {
+    "title": "My Skills & Technologies",
+    "subtitle": "This is an overview of the skills and technologies I have learned and applied in real projects.",
+    "categories": {
+      "technical": "Technical",
+      "tools": "Tools",
+      "softSkills": "Soft Skills"
+    },
+    "skillCategories": {
+      "technical": {
+        "title": "Technical Skills",
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "databaseCloud": "Database & Cloud",
+        "mobileFramework": "Mobile & Framework"
+      },
+      "tools": {
+        "title": "Tools & DevOps",
+        "devTools": "Development Tools",
+        "cloudDevOps": "Cloud & DevOps",
+        "testing": "Testing"
+      },
+      "soft": {
+        "title": "Soft Skills",
+        "leadership": "Leadership & Communication",
+        "problemSolving": "Problem Solving",
+        "projectManagement": "Project Management"
+      }
+    },
+    "certifications": "Certifications and Achievements",
+    "learningPath": "Learning Path",
+    "cta": {
+      "title": "Let's work together!",
+      "desc": "I'm always ready to apply these skills to real-world projects. Let's get in touch to discuss your project!",
+      "button": "Contact for me"
+    }
+  },
+  "experience": {
+    "title": "Work Experience",
+    "subtitle": "My career journey through different roles and projects.",
+    "timeline": "Experience Timeline",
+    "responsibilities": "Main Responsibilities:",
+    "technologies": "Technologies:",
+    "achievements": "Achievements:",
+    "freelanceProjects": "Freelance Projects",
+    "skillsGrowth": "Skills Growth",
+    "workStyle": "Work Style",
+    "levels": {
+      "beginner": "Beginner",
+      "intern": "Intern" 
+    },
+    "workStyles": {
+      "agile": {
+        "title": "Agile & Collaborative",
+        "desc": "Adapt well to Agile/Scrum methodology and work efficiently in cross-functional teams."
+      },
+      "problemSolver": {
+        "title": "Problem Solver",
+        "desc": "Approach problems methodically and find creative, efficient solutions."
+      },
+      "learner": {
+        "title": "Continuous Learner",
+        "desc": "Keep up-to-date with new technologies by joining courses and conferences regularly."
+      },
+      "quality": {
+        "title": "Quality Focused",
+        "desc": "Put code quality and user experience as the top priority in every project."
+      },
+      "mentor": {
+        "title": "Mentor & Leader",
+        "desc": "Share knowledge with peers and mentor junior developers."
+      },
+      "results": {
+        "title": "Results Driven",
+        "desc": "Focus on business results and measure work impact using metrics."
+      }
+    },
+    "cta": {
+      "title": "Let's work together!",
+      "desc": "I'm always looking for new opportunities to apply my experience and skills to exciting projects.",
+      "contact": "Contact",
+      "downloadCV": "Download CV"
+    }
+  },
+  "education": {
+    "title": "Education & Certifications",
+    "subtitle": "A continuous learning journey to keep up with the latest knowledge and skills in technology.",
+    "formalEducation": "Formal Education",
+    "achievements": "Achievements:",
+    "academicProjects": "Academic Projects:",
+    "mainCourses": "Main Courses:",
+    "certifications": "Professional Certifications",
+    "issuedDate": "Issued date:",
+    "validUntil": "Valid until:",
+    "onlineCourses": "Online Courses",
+    "instructor": "Instructor:",
+    "completed": "Completed",
+    "learningTimeline": "Learning Timeline",
+    "learningPhilosophy": "Learning Philosophy",
+    "philosophyQuote": "\"Learning is a journey with no end. In technology, knowledge is always changing and developing. I believe that maintaining a learning mindset and adaptability is the key to success in a career.\"",
+    "principles": {
+      "criticalThinking": {
+        "title": "Critical Thinking",
+        "desc": "Always asking 'Why?' and exploring the essence of problems"
+      },
+      "community": {
+        "title": "Learn from Community",
+        "desc": "Joining forums, meetups and learning from others' experiences"
+      },
+      "practice": {
+        "title": "Continuous Practice",
+        "desc": "Immediately applying newly learned knowledge to real projects"
+      }
+    },
+    "cta": "Discuss Learning",
+    "phases": {
+      "university": "University",
+      "selfLearning": "Self-learning",
+      "cloudDevOps": "Cloud & DevOps",
+      "aiMaster": "AI/ML Master"
+    }
+  },
+  "blog": {
+    "title": "Blog & Tutorials",
+    "subtitle": "Sharing knowledge, experience and insights about development, technology trends and best practices.",
+    "featuredPosts": "Featured Posts",
+    "all": "All",
+    "newsletter": {
+      "title": "Subscribe for notifications",
+      "desc": "Get notified about the latest articles and useful tutorials via email.",
+      "placeholder": "Your email",
+      "button": "Subscribe"
+    },
+    "stats": {
+      "title": "Blog Statistics",
+      "posts": "Posts",
+      "views": "Views",
+      "topics": "Topics",
+      "subscribers": "Subscribers"
+    },
+    "popularTags": "Popular Tags",
+    "readTime": "min read",
+    "suggestTopic": "Suggest blog topic"
+  },
+  "contact": {
+    "title": "Contact me",
+    "subtitle": "Have an interesting project idea? Want to collaborate? Or just want to connect? I'm always ready to listen and discuss!",
+    "sendMessage": "Send message",
+    "thankYou": "Thank you!",
+    "successMessage": "Message sent successfully. I will respond within 24 hours.",
+    "form": {
+      "fullname": "Full name *",
+      "fullnamePlaceholder": "Enter your full name",
+      "email": "Email *",
+      "projectType": "Project type",
+      "projectTypePlaceholder": "Choose project type",
+      "timeline": "Expected timeline",
+      "timelinePlaceholder": "Choose timeline",
+      "subject": "Subject *",
+      "subjectPlaceholder": "Brief summary of your project/question",
+      "budget": "Expected budget",
+      "budgetPlaceholder": "Choose budget",
+      "description": "Detailed description *",
+      "descriptionPlaceholder": "Describe in detail your project, technical requirements, goals and any other information you want to share...",
+      "submit": "Send message",
+      "sending": "Sending...",
+      "webApp": "Web Application",
+      "mobileApp": "Mobile App",
+      "api": "API Development",
+      "consultation": "Consultation",
+      "other": "Other",
+      "timeline1_2weeks": "1-2 weeks",
+      "timeline1month": "1 month",
+      "timeline2_3months": "2-3 months",
+      "timeline6months": "6 months+",
+      "timelineFlexible": "Flexible",
+      "budgetUnder5m": "Under $200",
+      "budget5_10m": "$200-$500",
+      "budget10_20m": "$500-$1000",
+      "budget20_50m": "$1000-$2500",
+      "budgetOver50m": "Over $2500",
+      "budgetDiscuss": "Need discussion"
+    },
+    "info": {
+      "title": "Contact Information",
+      "email": {
+        "desc": "Send me an email anytime"
+      },
+      "phone": {
+        "title": "Phone",
+        "desc": "Call directly (9:00 - 18:00)"
+      },
+      "address": {
+        "title": "Address",
+        "desc": "Can meet in person"
+      },
+      "linkedin": {
+        "desc": "Professional connection"
+      }
+    },
+    "social": "Social Media",
+    "workHours": {
+      "title": "Working Hours",
+      "weekdays": "Monday - Friday:",
+      "saturday": "Saturday:",
+      "sunday": "Sunday:",
+      "holiday": "Holiday"
+    },
+    "faq": {
+      "title": "FAQ",
+      "q1": {
+        "question": "Do you work on freelance projects?",
+        "answer": "Yes, I accept freelance projects that fit my schedule and expertise. Please contact me to discuss the details."
+      },
+      "q2": {
+        "question": "What is your average email response time?",
+        "answer": "I usually reply to emails within 24 hours on business days. For urgent questions, you can call directly."
+      },
+      "q3": {
+        "question": "Do you offer technical architecture consulting?",
+        "answer": "Yes, I provide consulting services on system architecture, technology selection and best practices for projects."
+      },
+      "q4": {
+        "question": "How much does a web project usually cost?",
+        "answer": "The cost depends on complexity, timeline and specific requirements. Please describe the project so I can provide an accurate quote."
+      }
+    },
+    "location": {
+      "title": "Location",
+      "desc": "I'm currently working in Ho Chi Minh City, Vietnam. I'm also available for remote work on suitable projects.",
+      "remote": "Remote",
+      "worldwide": "Worldwide"
+    }
   }
 }

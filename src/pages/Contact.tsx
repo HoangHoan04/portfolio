@@ -99,8 +99,8 @@ const Contact = () => {
       color: "hover:text-blue-400",
     },
     {
-      name: "Twitter",
-      icon: "pi-twitter",
+      name: "Tiktok",
+      icon: "pi-tiktok",
       url: "https://twitter.com",
       color: "hover:text-blue-300",
     },
@@ -124,28 +124,7 @@ const Contact = () => {
     },
   ];
 
-  const faqs = [
-    {
-      question: "Bạn làm việc với dự án freelance không?",
-      answer:
-        "Có, tôi nhận các dự án freelance phù hợp với lịch trình và expertise của mình. Hãy liên hệ để thảo luận chi tiết.",
-    },
-    {
-      question: "Thời gian response email trung bình là bao lâu?",
-      answer:
-        "Tôi thường trả lời email trong vòng 24 giờ vào các ngày làm việc. Các câu hỏi khẩn cấp có thể gọi điện trực tiếp.",
-    },
-    {
-      question: "Bạn có tư vấn về technical architecture không?",
-      answer:
-        "Có, tôi cung cấp dịch vụ tư vấn về kiến trúc hệ thống, lựa chọn công nghệ và best practices cho dự án.",
-    },
-    {
-      question: "Chi phí cho một dự án web thường là bao nhiêu?",
-      answer:
-        "Chi phí phụ thuộc vào độ phức tạp, timeline và yêu cầu cụ thể. Hãy mô tả dự án để tôi có thể báo giá chính xác.",
-    },
-  ];
+
 
   return (
     <div className="min-h-screen py-20">
@@ -419,26 +398,6 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* FAQ Section */}
-        <div className="mb-20">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">
-            Câu hỏi thường gặp
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="bg-slate-800 rounded-xl p-6 border border-slate-700"
-              >
-                <h3 className="text-lg font-bold text-white mb-3 flex items-start space-x-2">
-                  <i className="pi pi-question-circle text-purple-400 mt-1 flex-shrink-0"></i>
-                  <span>{faq.question}</span>
-                </h3>
-                <p className="text-gray-400 leading-relaxed">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
 
         {/* Location */}
         <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700 text-center">

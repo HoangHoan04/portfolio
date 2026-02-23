@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const Projects = () => {
+  const { t } = useTranslation();
   const [activeFilter, setActiveFilter] = useState("all");
 
   const projects = [
@@ -64,27 +66,14 @@ const Projects = () => {
       demo: "https://dashboard.demo.com",
       featured: false,
     },
-    {
-      id: 6,
-      title: "Blockchain Voting System",
-      description:
-        "Decentralized voting system using blockchain to ensure transparency and security.",
-      image: "/api/placeholder/400/250",
-      technologies: ["Solidity", "Web3.js", "React", "Ethereum"],
-      category: "blockchain",
-      github: "https://github.com",
-      demo: "https://voting.demo.com",
-      featured: false,
-    },
   ];
 
   const categories = [
-    { id: "all", name: "All", icon: "pi-th-large" },
+    { id: "all", name: t("projects.filterAll"), icon: "pi-th-large" },
     { id: "fullstack", name: "Full-Stack", icon: "pi-desktop" },
     { id: "frontend", name: "Frontend", icon: "pi-palette" },
     { id: "backend", name: "Backend", icon: "pi-server" },
     { id: "mobile", name: "Mobile", icon: "pi-mobile" },
-    { id: "blockchain", name: "Blockchain", icon: "pi-link" },
   ];
 
   const filteredProjects =
@@ -99,17 +88,16 @@ const Projects = () => {
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16 text-center">
-          <h1 className="mb-6 text-5xl font-bold text-white">My Projects</h1>
+          <h1 className="mb-6 text-5xl font-bold text-white">{t("projects.title")}</h1>
           <p className="max-w-3xl mx-auto text-xl text-gray-400">
-            Explore projects I have developed, from web applications to mobile
-            apps and blockchain solutions.
+            {t("projects.subtitle")}
           </p>
         </div>
 
         {/* Featured Projects */}
         <div className="mb-20">
           <h2 className="mb-8 text-3xl font-bold text-center text-white">
-            Featured Projects
+            {t("projects.featuredProjects")}
           </h2>
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
             {featuredProjects.slice(0, 2).map((project) => (
@@ -174,11 +162,10 @@ const Projects = () => {
               <button
                 key={category.id}
                 onClick={() => setActiveFilter(category.id)}
-                className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
-                  activeFilter === category.id
-                    ? "bg-gradient-to-r from-blue-600 to-cyan-600 text-white"
-                    : "bg-slate-800 text-gray-400 hover:bg-slate-700 hover:text-white border border-slate-700"
-                }`}
+                className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${activeFilter === category.id
+                  ? "bg-gradient-to-r from-blue-600 to-cyan-600 text-white"
+                  : "bg-slate-800 text-gray-400 hover:bg-slate-700 hover:text-white border border-slate-700"
+                  }`}
               >
                 <i className={`pi ${category.icon}`}></i>
                 <span>{category.name}</span>
@@ -266,21 +253,21 @@ const Projects = () => {
               <div className="mb-2 text-3xl font-bold text-blue-400">
                 {projects.length}
               </div>
-              <div className="text-gray-400">Total Projects</div>
+              <div className="text-gray-400">{t("projects.stats.total")}</div>
             </div>
             <div>
               <div className="mb-2 text-3xl font-bold text-cyan-400">
                 {featuredProjects.length}
               </div>
-              <div className="text-gray-400">Featured Projects</div>
+              <div className="text-gray-400">{t("projects.stats.featured")}</div>
             </div>
             <div>
               <div className="mb-2 text-3xl font-bold text-blue-400">15+</div>
-              <div className="text-gray-400">Technologies</div>
+              <div className="text-gray-400">{t("projects.stats.technologies")}</div>
             </div>
             <div>
               <div className="mb-2 text-3xl font-bold text-green-400">100%</div>
-              <div className="text-gray-400">Completed</div>
+              <div className="text-gray-400">{t("projects.stats.completed")}</div>
             </div>
           </div>
         </div>
@@ -288,18 +275,17 @@ const Projects = () => {
         {/* Call to Action */}
         <div className="mt-20 text-center">
           <h2 className="mb-4 text-3xl font-bold text-white">
-            Got a project idea?
+            {t("projects.cta.title")}
           </h2>
           <p className="max-w-2xl mx-auto mb-8 text-gray-400">
-            I'm always open to discussing new and exciting projects. Reach out
-            so we can turn your idea into reality!
+            {t("projects.cta.desc")}
           </p>
           <a
             href="/contact"
             className="inline-flex items-center px-8 py-4 space-x-2 font-semibold text-white transition-all duration-300 transform rounded-lg shadow-lg bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 hover:scale-105"
           >
             <i className="pi pi-envelope"></i>
-            <span>Contact Me</span>
+            <span>{t("projects.cta.button")}</span>
           </a>
         </div>
       </div>

@@ -1,31 +1,14 @@
 import Lottie from "lottie-react";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import DeveloperAnimation from "../assets/animations/DeveloperAnimation.json";
 import imageProject from "../assets/images/project.png";
 import ScrollAnimation from "../components/ScrollAnimation";
+import { angularIcon, awsIcon, codeIcon, dockerIcon, figmaIcon, gcpIcon, githubIcon, javascriptIcon, mysqlIcon, nestjsIcon, networkingIcon, nextjsIcon, nodeJs, pythonIcon, reactIcon, settingIcon, tailwindIcon, typescriptIcon } from "../assets/icons";
 
-// Import SVGs or images for icons
-import angularIcon from "../assets/icons/angular.svg";
-import awsIcon from "../assets/icons/aws.svg";
-import codeIcon from "../assets/icons/coded.svg";
-import dockerIcon from "../assets/icons/docker.svg";
-import figmaIcon from "../assets/icons/figma.svg";
-import gcpIcon from "../assets/icons/gcp.svg";
-import githubIcon from "../assets/icons/github.svg";
-import javascriptIcon from "../assets/icons/javascript.svg";
-import mysqlIcon from "../assets/icons/mysql.svg";
-import nestjsIcon from "../assets/icons/nestjs.svg";
-import networkingIcon from "../assets/icons/networking.svg";
-import nextjsIcon from "../assets/icons/nextjs.svg";
-import nodeJs from "../assets/icons/node-js.svg";
-import pythonIcon from "../assets/icons/python.svg";
-import reactIcon from "../assets/icons/react.svg";
-import settingIcon from "../assets/icons/setting.svg";
-import tailwindIcon from "../assets/icons/tailwind.svg";
-import typescriptIcon from "../assets/icons/typescript.svg";
 
-// Mapping icon names to SVG imports
+
 const iconMap: { [key: string]: string } = {
   react: reactIcon,
   typescript: typescriptIcon,
@@ -48,6 +31,7 @@ const iconMap: { [key: string]: string } = {
 };
 
 const Home = () => {
+  const { t } = useTranslation();
   const [currentRole, setCurrentRole] = useState(0);
   const [animationKey, setAnimationKey] = useState(0);
   const roles = [
@@ -60,9 +44,8 @@ const Home = () => {
   const projectHighlights = [
     {
       id: 1,
-      title: "Portfolio Website",
-      description:
-        "A sleek personal portfolio featuring my resume, blog posts, and highlighted projects, built for performance and responsiveness.",
+      title: t("home.projects.portfolio.title"),
+      description: t("home.projects.portfolio.description"),
       image: imageProject,
       tech: ["React", "TailwindCSS", "Vite"],
       github: "https://github.com/yourusername/portfolio",
@@ -70,9 +53,8 @@ const Home = () => {
     },
     {
       id: 2,
-      title: "E-commerce AppleStore Platform",
-      description:
-        "A full-stack e-commerce solution with modern UI, user authentication, shopping cart, ",
+      title: t("home.projects.ecommerce.title"),
+      description: t("home.projects.ecommerce.description"),
       image: imageProject,
       tech: ["PHP", "Javascript", "MySQL", "Bootstrap"],
       github: "https://github.com/yourusername/ecommerce-platform",
@@ -80,9 +62,8 @@ const Home = () => {
     },
     {
       id: 3,
-      title: "Saigon University Examination Portal",
-      description:
-        "A smart examination portal featuring GPT-powered chatbot assistance, real-time messaging, and efficient student data management.",
+      title: t("home.projects.exam.title"),
+      description: t("home.projects.exam.description"),
       image: imageProject,
       tech: ["Next.ts", "Node.ts", "Socket.io"],
       github: "https://github.com/yourusername/ai-chatbot",
@@ -109,7 +90,7 @@ const Home = () => {
           {/* Left: Text Content */}
           <div className="w-full text-center lg:w-1/2 lg:text-left">
             <h1 className="mb-6 text-5xl font-bold text-white dark:text-gray-100 md:text-6xl animate-fade-in-up">
-              Hi! I'm HoangHoan
+              {t("home.greeting")}
             </h1>
 
             <div className="h-12 mb-6 text-2xl text-gray-300 dark:text-gray-400 md:text-3xl">
@@ -130,15 +111,10 @@ const Home = () => {
               </span>
             </div>
 
-            <p className="mb-10 text-lg leading-relaxed text-gray-400 dark:text-gray-500 md:text-xl animate-fade-in-up animation-delay-300">
-              Hello! I’m a Web Developer intern with a strong passion for
-              building modern user interfaces and optimizing user experience.
-              I'm currently a Computer Science student at{" "}
-              <strong>Sai Gon University</strong>, working as a Web Developer
-              intern at <strong>APE TECH Solutions</strong>. I'm actively
-              learning and improving my skills through personal and group
-              projects.
-            </p>
+            <p
+              className="mb-10 text-lg leading-relaxed text-gray-400 dark:text-gray-500 md:text-xl animate-fade-in-up animation-delay-300"
+              dangerouslySetInnerHTML={{ __html: t("home.intro") }}
+            />
 
             <div className="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start animate-fade-in-up animation-delay-500">
               <Link
@@ -146,14 +122,14 @@ const Home = () => {
                 className="flex items-center justify-center px-8 py-4 space-x-2 font-semibold text-white transition-all duration-500 transform rounded-lg shadow-lg group bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 hover:scale-105 hover:shadow-blue-500/25 hover:shadow-2xl"
               >
                 <i className="transition-transform duration-300 pi pi-briefcase group-hover:rotate-12"></i>
-                <span>View project</span>
+                <span>{t("common.viewProject")}</span>
               </Link>
               <Link
                 to="/contact"
                 className="flex items-center justify-center px-8 py-4 space-x-2 font-semibold text-blue-400 transition-all duration-500 transform border-2 border-blue-500 rounded-lg dark:text-blue-300 dark:border-blue-400 group hover:bg-blue-500 hover:text-white hover:scale-105 hover:shadow-blue-400/25 hover:shadow-2xl"
               >
                 <i className="transition-transform duration-300 pi pi-envelope group-hover:scale-125"></i>
-                <span>Contact</span>
+                <span>{t("common.contact")}</span>
               </Link>
             </div>
           </div>
@@ -180,45 +156,7 @@ const Home = () => {
           <i className="text-2xl pi pi-chevron-down"></i>
         </div>
       </section>
-      {/* Stats Section */}
-      <section className="py-20 transition-colors duration-300 bg-slate-800/50 dark:bg-gray-800/50">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            <div className="text-center group animate-fade-in-up animation-delay-100">
-              <div className="mb-2 text-4xl font-bold text-blue-400 transition-all duration-500 dark:text-blue-300 md:text-5xl group-hover:scale-110 group-hover:text-blue-300 dark:group-hover:text-blue-200">
-                1+
-              </div>
-              <div className="text-gray-400 transition-colors duration-300 dark:text-gray-500 group-hover:text-gray-300 dark:group-hover:text-gray-400">
-                Years of Experience
-              </div>
-            </div>
-            <div className="text-center group animate-fade-in-up animation-delay-200">
-              <div className="mb-2 text-4xl font-bold transition-all duration-500 md:text-5xl text-cyan-400 dark:text-cyan-300 group-hover:scale-110 group-hover:text-cyan-300 dark:group-hover:text-cyan-200">
-                50+
-              </div>
-              <div className="text-gray-400 transition-colors duration-300 dark:text-gray-500 group-hover:text-gray-300 dark:group-hover:text-gray-400">
-                Projects Completed
-              </div>
-            </div>
-            <div className="text-center group animate-fade-in-up animation-delay-300">
-              <div className="mb-2 text-4xl font-bold text-blue-500 transition-all duration-500 dark:text-blue-400 md:text-5xl group-hover:scale-110 group-hover:text-blue-400 dark:group-hover:text-blue-300">
-                20+
-              </div>
-              <div className="text-gray-400 transition-colors duration-300 dark:text-gray-500 group-hover:text-gray-300 dark:group-hover:text-gray-400">
-                Happy Clients
-              </div>
-            </div>
-            <div className="text-center group animate-fade-in-up animation-delay-400">
-              <div className="mb-2 text-4xl font-bold transition-all duration-500 md:text-5xl text-cyan-500 dark:text-cyan-400 group-hover:scale-110 group-hover:text-cyan-400 dark:group-hover:text-cyan-300">
-                15+
-              </div>
-              <div className="text-gray-400 transition-colors duration-300 dark:text-gray-500 group-hover:text-gray-300 dark:group-hover:text-gray-400">
-                Technologies Mastered
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Featured Projects */}
       <ScrollAnimation delay={200}>
@@ -226,10 +164,10 @@ const Home = () => {
           <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="mb-16 text-center">
               <h2 className="mb-4 text-4xl font-bold text-white">
-                Featured Projects
+                {t("home.featuredProjects")}
               </h2>
               <p className="max-w-2xl mx-auto text-gray-400">
-                Some of the notable projects I've worked on recently
+                {t("home.featuredProjectsDesc")}
               </p>
             </div>
 
@@ -309,7 +247,7 @@ const Home = () => {
                 to="/projects"
                 className="inline-flex items-center space-x-2 text-blue-400 transition-colors hover:text-blue-300"
               >
-                <span>View all projects</span>
+                <span>{t("common.viewAllProjects")}</span>
                 <i className="pi pi-arrow-right"></i>
               </Link>
             </div>
@@ -321,17 +259,25 @@ const Home = () => {
       <section className="py-20 bg-slate-800/50">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-4xl font-bold text-white">Skills</h2>
+            <h2 className="mb-4 text-4xl font-bold text-white">{t("home.skills")}</h2>
             <p className="max-w-2xl mx-auto text-gray-400">
-              The technologies and programming languages I am proficient in
+              {t("home.skillsDesc")}
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-6">
+          <div className="grid grid-cols-6 gap-6 ">
             {[
               {
                 name: "React",
                 key: "react",
+              },
+              {
+                name: "Angular",
+                key: "angular",
+              },
+              {
+                name: "Nest.js",
+                key: "nestjs",
               },
               {
                 name: "TypeScript",
@@ -341,15 +287,11 @@ const Home = () => {
                 name: "Node.js",
                 key: "nodejs",
               },
-              {
-                name: "Python",
-                key: "python",
-              },
+
               {
                 name: "MySQL",
                 key: "mysql",
               },
-              { name: "AWS", key: "aws" },
             ].map((skill, index) => (
               <div
                 key={skill.name}
@@ -378,7 +320,7 @@ const Home = () => {
               to="/skills"
               className="inline-flex items-center space-x-2 text-blue-400 transition-colors hover:text-blue-300"
             >
-              <span>View all skills</span>
+              <span>{t("common.viewAllSkills")}</span>
               <i className="pi pi-arrow-right"></i>
             </Link>
           </div>

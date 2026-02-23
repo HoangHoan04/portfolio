@@ -1,25 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
+import {
+  angularIcon,
+  awsIcon,
+  codeIcon,
+  dockerIcon,
+  figmaIcon,
+  gcpIcon,
+  githubIcon,
+  javascriptIcon,
+  mysqlIcon,
+  nestjsIcon,
+  networkingIcon,
+  nextjsIcon,
+  pythonIcon,
+  reactIcon,
+  settingIcon,
+  tailwindIcon,
+  typescriptIcon,
+} from "../assets/icons";
 
-// Import SVGs or images for icons
-import angularIcon from "../assets/icons/angular.svg";
-import awsIcon from "../assets/icons/aws.svg";
-import codeIcon from "../assets/icons/coded.svg";
-import dockerIcon from "../assets/icons/docker.svg";
-import figmaIcon from "../assets/icons/figma.svg";
-import gcpIcon from "../assets/icons/gcp.svg";
-import githubIcon from "../assets/icons/github.svg";
-import javascriptIcon from "../assets/icons/javascript.svg";
-import mysqlIcon from "../assets/icons/mysql.svg";
-import nestjsIcon from "../assets/icons/nestjs.svg";
-import networkingIcon from "../assets/icons/networking.svg";
-import nextjsIcon from "../assets/icons/nextjs.svg";
-import pythonIcon from "../assets/icons/python.svg";
-import reactIcon from "../assets/icons/react.svg";
-import settingIcon from "../assets/icons/setting.svg";
-import tailwindIcon from "../assets/icons/tailwind.svg";
-import typescriptIcon from "../assets/icons/typescript.svg";
-
-// Mapping icon names to SVG imports
 const iconMap: { [key: string]: string } = {
   react: reactIcon,
   typescript: typescriptIcon,
@@ -40,593 +40,957 @@ const iconMap: { [key: string]: string } = {
   code: codeIcon,
 };
 
-const Skills = () => {
-  const [activeCategory, setActiveCategory] = useState("technical");
 
-  const skillCategories = {
-    technical: {
-      title: "Kỹ năng kỹ thuật",
-      icon: "pi-code",
-      skills: [
-        {
-          category: "Frontend",
-          items: [
-            {
-              name: "React",
-              level: 95,
-              icon: "react",
-              color: "from-blue-500 to-cyan-500",
-            },
-            {
-              name: "TypeScript",
-              level: 90,
-              icon: "typescript",
-              color: "from-blue-600 to-blue-400",
-            },
-            {
-              name: "Next.js",
-              level: 85,
-              icon: "nextjs",
-              color: "from-gray-800 to-gray-600",
-            },
-            {
-              name: "JavaScript",
-              level: 95,
-              icon: "javascript",
-              color: "from-yellow-500 to-orange-500",
-            },
-            {
-              name: "Tailwind CSS",
-              level: 90,
-              icon: "tailwind",
-              color: "from-cyan-500 to-blue-500",
-            },
-            {
-              name: "Angular",
-              level: 85,
-              icon: "angular",
-              color: "from-red-500 to-red-400",
-            },
-          ],
-        },
-        {
-          category: "Backend",
-          items: [
-            {
-              name: "Node.js",
-              level: 90,
-              icon: "javascript",
-              color: "from-green-600 to-green-400",
-            },
-            {
-              name: "NestJS",
-              level: 85,
-              icon: "nestjs",
-              color: "from-red-500 to-pink-500",
-            },
-            {
-              name: "Next.js API",
-              level: 90,
-              icon: "nextjs",
-              color: "from-gray-800 to-gray-600",
-            },
-            {
-              name: "TypeScript",
-              level: 90,
-              icon: "typescript",
-              color: "from-blue-600 to-blue-400",
-            },
-          ],
-        },
-        {
-          category: "Database & Cloud",
-          items: [
-            {
-              name: "MySQL",
-              level: 90,
-              icon: "mysql",
-              color: "from-blue-600 to-orange-500",
-            },
-            {
-              name: "AWS",
-              level: 85,
-              icon: "aws",
-              color: "from-orange-500 to-yellow-500",
-            },
-            {
-              name: "Google Cloud",
-              level: 80,
-              icon: "gcp",
-              color: "from-blue-500 to-green-500",
-            },
-            {
-              name: "Docker",
-              level: 85,
-              icon: "docker",
-              color: "from-blue-500 to-blue-400",
-            },
-          ],
-        },
-        {
-          category: "Mobile & Framework",
-          items: [
-            {
-              name: "React Native",
-              level: 85,
-              icon: "react",
-              color: "from-blue-500 to-cyan-500",
-            },
-            {
-              name: "Next.js",
-              level: 90,
-              icon: "nextjs",
-              color: "from-gray-800 to-gray-600",
-            },
-            {
-              name: "TypeScript",
-              level: 88,
-              icon: "typescript",
-              color: "from-blue-600 to-blue-400",
-            },
-            {
-              name: "Angular",
-              level: 70,
-              icon: "angular",
-              color: "from-red-500 to-red-400",
-            },
-          ],
-        },
-      ],
-    },
-    tools: {
-      title: "Công cụ & DevOps",
-      icon: "pi-cog",
-      skills: [
-        {
-          category: "Development Tools",
-          items: [
-            {
-              name: "Git/GitHub",
-              level: 95,
-              icon: "github",
-              color: "from-gray-600 to-gray-400",
-            },
-            {
-              name: "Docker",
-              level: 85,
-              icon: "docker",
-              color: "from-blue-500 to-blue-400",
-            },
-            {
-              name: "Figma",
-              level: 85,
-              icon: "figma",
-              color: "from-purple-500 to-pink-500",
-            },
-            {
-              name: "TypeScript",
-              level: 90,
-              icon: "typescript",
-              color: "from-blue-600 to-blue-400",
-            },
-          ],
-        },
-        {
-          category: "Cloud & DevOps",
-          items: [
-            {
-              name: "AWS",
-              level: 85,
-              icon: "aws",
-              color: "from-orange-500 to-yellow-500",
-            },
-            {
-              name: "Google Cloud Platform",
-              level: 80,
-              icon: "gcp",
-              color: "from-blue-500 to-green-500",
-            },
-            {
-              name: "Docker",
-              level: 80,
-              icon: "docker",
-              color: "from-blue-500 to-blue-400",
-            },
-            {
-              name: "GitHub Actions",
-              level: 85,
-              icon: "github",
-              color: "from-gray-800 to-gray-600",
-            },
-          ],
-        },
-        {
-          category: "Testing",
-          items: [
-            {
-              name: "Jest",
-              level: 85,
-              icon: "pi-check",
-              color: "from-red-500 to-orange-500",
-            },
-            {
-              name: "Cypress",
-              level: 80,
-              icon: "pi-check",
-              color: "from-green-500 to-green-400",
-            },
-            {
-              name: "Testing Library",
-              level: 85,
-              icon: "pi-check",
-              color: "from-blue-500 to-blue-400",
-            },
-            {
-              name: "Selenium",
-              level: 75,
-              icon: "pi-check",
-              color: "from-green-600 to-green-400",
-            },
-          ],
-        },
-      ],
-    },
-    soft: {
-      title: "Kỹ năng mềm",
-      icon: "pi-users",
-      skills: [
-        {
-          category: "Leadership & Communication",
-          items: [
-            {
-              name: "Team Leadership",
-              level: 90,
-              icon: "pi-users",
-              color: "from-purple-500 to-pink-500",
-            },
-            {
-              name: "Communication",
-              level: 95,
-              icon: "pi-comments",
-              color: "from-blue-500 to-cyan-500",
-            },
-            {
-              name: "Presentation",
-              level: 85,
-              icon: "pi-chart-bar",
-              color: "from-green-500 to-emerald-500",
-            },
-            {
-              name: "Mentoring",
-              level: 88,
-              icon: "pi-user-plus",
-              color: "from-orange-500 to-red-500",
-            },
-          ],
-        },
-        {
-          category: "Problem Solving",
-          items: [
-            {
-              name: "Critical Thinking",
-              level: 92,
-              icon: "pi-lightbulb",
-              color: "from-yellow-500 to-orange-500",
-            },
-            {
-              name: "Debugging",
-              level: 95,
-              icon: "pi-search",
-              color: "from-red-500 to-pink-500",
-            },
-            {
-              name: "Algorithm Design",
-              level: 85,
-              icon: "pi-sitemap",
-              color: "from-blue-600 to-indigo-500",
-            },
-            {
-              name: "System Design",
-              level: 80,
-              icon: "pi-th-large",
-              color: "from-purple-600 to-blue-500",
-            },
-          ],
-        },
-        {
-          category: "Project Management",
-          items: [
-            {
-              name: "Agile/Scrum",
-              level: 90,
-              icon: "pi-refresh",
-              color: "from-green-500 to-teal-500",
-            },
-            {
-              name: "Time Management",
-              level: 88,
-              icon: "pi-clock",
-              color: "from-blue-500 to-blue-400",
-            },
-            {
-              name: "Planning",
-              level: 85,
-              icon: "pi-calendar",
-              color: "from-purple-500 to-purple-400",
-            },
-            {
-              name: "Documentation",
-              level: 90,
-              icon: "pi-file-edit",
-              color: "from-gray-600 to-gray-400",
-            },
-          ],
-        },
-      ],
-    },
-  };
+interface SkillItemProps {
+  name: string;
+  icon: string;
+  tags?: string[];
+  delay?: number;
+}
 
-  const categories = [
-    { id: "technical", name: "Technical", icon: "code" },
-    { id: "tools", name: "Tools", icon: "setting" },
-    { id: "soft", name: "Soft Skills", icon: "networking" },
-  ];
+const SkillCard = ({ name, icon, tags = [], delay = 0 }: SkillItemProps) => {
+  const [animated, setAnimated] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
 
-  const currentSkills =
-    skillCategories[activeCategory as keyof typeof skillCategories];
+  useEffect(() => {
+    const timer = setTimeout(() => setAnimated(true), delay);
+    return () => clearTimeout(timer);
+  }, [delay]);
 
   return (
-    <div className="min-h-screen py-20">
-      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="mb-16 text-center">
-          <h1 className="mb-6 text-5xl font-bold text-white">
-            My Skills & Technologies
+    <div
+      ref={cardRef}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        opacity: animated ? 1 : 0,
+        transform: animated
+          ? hovered
+            ? "translateY(-8px) scale(1.02)"
+            : "translateY(0) scale(1)"
+          : "translateY(24px) scale(0.95)",
+        transition: "opacity 0.5s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)",
+        transitionDelay: animated ? "0ms" : `${delay}ms`,
+        background: hovered
+          ? "linear-gradient(135deg, rgba(99,102,241,0.15) 0%, rgba(168,85,247,0.1) 100%)"
+          : "linear-gradient(135deg, rgba(15,15,30,0.8) 0%, rgba(20,20,40,0.6) 100%)",
+        border: `1px solid ${hovered ? "rgba(99,102,241,0.6)" : "rgba(99,102,241,0.15)"}`,
+        borderRadius: "16px",
+        padding: "20px",
+        cursor: "default",
+        boxShadow: hovered
+          ? `0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(99,102,241,0.4)`
+          : "0 4px 16px rgba(0,0,0,0.2)",
+        backdropFilter: "blur(12px)",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+      {/* Glow orb on hover */}
+      <div
+        style={{
+          position: "absolute",
+          top: "-20px",
+          right: "-20px",
+          width: "80px",
+          height: "80px",
+          borderRadius: "50%",
+          background: "rgba(99,102,241,0.4)",
+          filter: "blur(30px)",
+          opacity: hovered ? 0.25 : 0,
+          transition: "opacity 0.4s ease",
+          pointerEvents: "none",
+        }}
+      />
+
+      {/* Top row: icon + name + badge */}
+      <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px" }}>
+        <div
+          style={{
+            width: "48px",
+            height: "48px",
+            borderRadius: "12px",
+            background: `linear-gradient(135deg, rgba(99,102,241,0.15), rgba(168,85,247,0.1))`,
+            border: `1px solid rgba(99,102,241,0.4)`,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexShrink: 0,
+            transition: "transform 0.3s ease",
+            transform: hovered ? "rotate(-5deg) scale(1.1)" : "rotate(0) scale(1)",
+          }}
+        >
+          {iconMap[icon] ? (
+            <img src={iconMap[icon]} alt={name} style={{ width: "30px", height: "30px", objectFit: "contain" }} />
+          ) : (
+            <i className={`pi ${icon}`} style={{ fontSize: "18px", color: "rgba(99,102,241,0.6)" }} />
+          )}
+        </div>
+
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <span
+            style={{
+              fontSize: "15px",
+              fontWeight: 700,
+              color: "#f1f5f9",
+              display: "block",
+              letterSpacing: "0.01em",
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+            }}
+          >
+            {name}
+          </span>
+
+        </div>
+      </div>
+
+
+
+      {/* Tags */}
+      {tags.length > 0 && (
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+          {tags.map((tag, i) => (
+            <span
+              key={i}
+              style={{
+                fontSize: "10px",
+                padding: "2px 8px",
+                borderRadius: "20px",
+                background: "rgba(255,255,255,0.06)",
+                color: "#94a3b8",
+                border: "1px solid rgba(255,255,255,0.08)",
+                letterSpacing: "0.03em",
+              }}
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+const SoftSkillCard = ({
+  name,
+  icon,
+  description,
+  delay = 0,
+}: {
+  name: string;
+  icon: string;
+  description: string;
+  delay?: number;
+}) => {
+  const [animated, setAnimated] = useState(false);
+  const [hovered, setHovered] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setAnimated(true), delay);
+    return () => clearTimeout(timer);
+  }, [delay]);
+
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        opacity: animated ? 1 : 0,
+        transform: animated
+          ? hovered
+            ? "translateY(-6px)"
+            : "translateY(0)"
+          : "translateY(20px)",
+        transition: "all 0.4s ease",
+        background: hovered
+          ? "linear-gradient(135deg, rgba(168,85,247,0.12), rgba(99,102,241,0.08))"
+          : "rgba(15,15,30,0.6)",
+        border: `1px solid ${hovered ? "rgba(168,85,247,0.4)" : "rgba(99,102,241,0.15)"}`,
+        borderRadius: "16px",
+        padding: "24px 20px",
+        textAlign: "center",
+        boxShadow: hovered ? "0 16px 40px rgba(168,85,247,0.15)" : "0 4px 16px rgba(0,0,0,0.2)",
+        backdropFilter: "blur(12px)",
+      }}
+    >
+      <div
+        style={{
+          width: "56px",
+          height: "56px",
+          borderRadius: "50%",
+          background: hovered
+            ? "linear-gradient(135deg, rgba(168,85,247,0.3), rgba(99,102,241,0.2))"
+            : "rgba(99,102,241,0.1)",
+          border: `2px solid ${hovered ? "rgba(168,85,247,0.5)" : "rgba(99,102,241,0.2)"}`,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          margin: "0 auto 16px",
+          transition: "all 0.4s ease",
+          transform: hovered ? "scale(1.1)" : "scale(1)",
+        }}
+      >
+        <i
+          className={`pi ${icon}`}
+          style={{
+            fontSize: "22px",
+            background: "linear-gradient(135deg, #a855f7, #6366f1)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+        />
+      </div>
+      <h4
+        style={{
+          fontSize: "15px",
+          fontWeight: 700,
+          color: "#f1f5f9",
+          marginBottom: "8px",
+        }}
+      >
+        {name}
+      </h4>
+      <p
+        style={{
+          fontSize: "13px",
+          color: "#64748b",
+          lineHeight: 1.6,
+        }}
+      >
+        {description}
+      </p>
+    </div>
+  );
+};
+
+// Animated counter
+const Counter = ({ end, duration = 1500 }: { end: number; duration?: number }) => {
+  const [count, setCount] = useState(0);
+  const [started, setStarted] = useState(false);
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !started) {
+          setStarted(true);
+        }
+      },
+      { threshold: 0.5 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [started]);
+
+  useEffect(() => {
+    if (!started) return;
+    const steps = 60;
+    const step = end / steps;
+    let current = 0;
+    const timer = setInterval(() => {
+      current = Math.min(current + step, end);
+      setCount(Math.round(current));
+      if (current >= end) clearInterval(timer);
+    }, duration / steps);
+    return () => clearInterval(timer);
+  }, [started, end, duration]);
+
+  return <span ref={ref}>{count}</span>;
+};
+
+const Skills = () => {
+  const { t } = useTranslation();
+  const [activeCategory, setActiveCategory] = useState("technical");
+  const [activeSubTab, setActiveSubTab] = useState(0);
+
+  const technicalGroups = [
+    {
+      label: t("skills.skillCategories.technical.frontend"),
+      icon: "pi-desktop",
+      skills: [
+        { name: "React", icon: "react", tags: ["Hooks", "Redux", "Context"] },
+        { name: "TypeScript", icon: "typescript", tags: ["Generics", "Decorators"] },
+        { name: "Next.js", icon: "nextjs", tags: ["SSR", "ISR", "App Router"] },
+        { name: "JavaScript", icon: "javascript", tags: ["ES2024", "Async/Await"] },
+        { name: "Tailwind CSS", icon: "tailwind", tags: ["Responsive", "Theme"] },
+        { name: "Angular", icon: "angular", tags: ["RxJS", "DI", "NgModule"] },
+      ],
+    },
+    {
+      label: t("skills.skillCategories.technical.backend"),
+      icon: "pi-server",
+      skills: [
+        { name: "Node.js", icon: "javascript", tags: ["Express", "PM2", "Clustering"] },
+        { name: "NestJS", icon: "nestjs", tags: ["Guards", "Interceptors", "DI"] },
+        { name: "Next.js API", icon: "nextjs", tags: ["REST", "Route Handlers"] },
+        { name: "TypeScript", icon: "typescript", tags: ["OOP", "Decorators"] },
+      ],
+    },
+    {
+      label: t("skills.skillCategories.technical.databaseCloud"),
+      icon: "pi-database",
+      skills: [
+        { name: "MySQL", icon: "mysql", tags: ["Query Optimization", "Indexing"] },
+        { name: "AWS", icon: "aws", tags: ["EC2", "S3", "Lambda", "RDS"] },
+        { name: "Google Cloud", icon: "gcp", tags: ["GKE", "Cloud Run", "Firebase"] },
+        { name: "Docker", icon: "docker", tags: ["Compose", "Registry", "Networks"] },
+      ],
+    },
+    {
+      label: t("skills.skillCategories.technical.mobileFramework"),
+      icon: "pi-mobile",
+      skills: [
+        { name: "React Native", icon: "react", tags: ["Expo", "Navigation"] },
+        { name: "Next.js", icon: "nextjs", tags: ["PWA", "Responsive"] },
+        { name: "TypeScript", icon: "typescript", tags: ["Cross-platform"] },
+        { name: "Angular", icon: "angular", tags: ["Ionic", "Material"] },
+      ],
+    },
+  ];
+
+  const toolsGroups = [
+    {
+      label: t("skills.skillCategories.tools.devTools"),
+      icon: "pi-wrench",
+      skills: [
+        { name: "Git / GitHub", icon: "github", tags: ["PRs", "Actions", "GitFlow"] },
+        { name: "Docker", icon: "docker", tags: ["Compose", "Volumes", "Swarm"] },
+        { name: "Figma", icon: "figma", tags: ["Prototyping", "Components"] },
+        { name: "TypeScript", icon: "typescript", tags: ["TSConfig", "Build"] },
+      ],
+    },
+    {
+      label: t("skills.skillCategories.tools.cloudDevOps"),
+      icon: "pi-cloud",
+      skills: [
+        { name: "AWS", icon: "aws", tags: ["CI/CD", "IAM", "CloudWatch"] },
+        { name: "Google Cloud", icon: "gcp", tags: ["GCR", "Artifact Registry"] },
+        { name: "Docker", icon: "docker", tags: ["Multi-stage Build"] },
+        { name: "GitHub Actions", icon: "github", tags: ["Workflows", "Secrets"] },
+      ],
+    },
+    {
+      label: t("skills.skillCategories.tools.testing"),
+      icon: "pi-check-circle",
+      skills: [
+        { name: "Jest", icon: "code", tags: ["Unit Tests", "Mocking", "Coverage"] },
+        { name: "Cypress", icon: "code", tags: ["E2E", "Component Testing"] },
+        { name: "Testing Library", icon: "code", tags: ["RTL", "Queries"] },
+        { name: "Selenium", icon: "code", tags: ["WebDriver", "Grid"] },
+      ],
+    },
+  ];
+
+  const softSkills = [
+    { name: "Team Leadership", icon: "pi-users", description: "Lead small teams with clear task distribution and supportive communication." },
+    { name: "Communication", icon: "pi-comments", description: "Articulate technical ideas clearly to both technical and non-technical stakeholders." },
+    { name: "Critical Thinking", icon: "pi-lightbulb", description: "Break down complex problems into manageable solutions systematically." },
+    { name: "Agile / Scrum", icon: "pi-refresh", description: "Experienced in sprint planning, stand-ups, retrospectives, and velocity tracking." },
+    { name: "Mentoring", icon: "pi-user-plus", description: "Guide junior developers through code reviews, pairing sessions, and 1-on-1s." },
+    { name: "System Design", icon: "pi-sitemap", description: "Design scalable, maintainable system architectures for web applications." },
+    { name: "Time Management", icon: "pi-clock", description: "Prioritize tasks effectively, meet deadlines, and manage parallel workstreams." },
+    { name: "Documentation", icon: "pi-file-edit", description: "Write clear technical docs, API references, and knowledge-base articles." },
+    { name: "Problem Solving", icon: "pi-search", description: "Debug complex issues efficiently with structured root-cause analysis." },
+  ];
+
+  const learningPath = [
+    { skill: "Machine Learning", icon: "python", desc: "TensorFlow, scikit-learn, pandas", color: "#f59e0b" },
+    { skill: "Blockchain Dev", icon: "javascript", desc: "Solidity, Web3.js, DeFi protocols", color: "#10b981" },
+    { skill: "DevOps Advanced", icon: "docker", desc: "k8s, Terraform, Monitoring stacks", color: "#6366f1" },
+  ];
+
+  const stats = [
+    { label: "Technologies", value: 18, suffix: "+", icon: "pi-code" },
+    { label: "Projects Built", value: 12, suffix: "+", icon: "pi-box" },
+    { label: "Months Coding", value: 18, suffix: "+", icon: "pi-calendar" },
+    { label: "GitHub Commits", value: 500, suffix: "+", icon: "pi-github" },
+  ];
+
+  const currentGroups = activeCategory === "technical" ? technicalGroups : toolsGroups;
+
+  const categoryTabs = [
+    { id: "technical", label: t("skills.categories.technical"), icon: "pi-code", iconKey: "code" },
+    { id: "tools", label: t("skills.categories.tools"), icon: "pi-cog", iconKey: "setting" },
+    { id: "soft", label: t("skills.categories.softSkills"), icon: "pi-users", iconKey: "networking" },
+  ];
+
+  return (
+    <div
+      style={{
+        minHeight: "100vh",
+        paddingTop: "80px",
+        paddingBottom: "80px",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+      {/* Ambient background blobs */}
+      <div
+        style={{
+          position: "fixed",
+          top: "10%",
+          left: "-10%",
+          width: "500px",
+          height: "500px",
+          borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 70%)",
+          pointerEvents: "none",
+          zIndex: 0,
+        }}
+      />
+      <div
+        style={{
+          position: "fixed",
+          bottom: "10%",
+          right: "-10%",
+          width: "600px",
+          height: "600px",
+          borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(168,85,247,0.08) 0%, transparent 70%)",
+          pointerEvents: "none",
+          zIndex: 0,
+        }}
+      />
+
+      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 24px", position: "relative", zIndex: 1 }}>
+
+        {/* ─── Header ─── */}
+        <div style={{ textAlign: "center", marginBottom: "60px" }}>
+          <div
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              padding: "6px 18px",
+              borderRadius: "100px",
+              background: "rgba(99,102,241,0.1)",
+              border: "1px solid rgba(99,102,241,0.25)",
+              marginBottom: "24px",
+            }}
+          >
+            <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#6366f1", boxShadow: "0 0 8px #6366f1" }} />
+            <span style={{ fontSize: "13px", color: "#818cf8", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase" }}>
+              Skills & Expertise
+            </span>
+          </div>
+
+          <h1
+            style={{
+              fontSize: "clamp(36px, 5vw, 60px)",
+              fontWeight: 800,
+              marginBottom: "20px",
+              lineHeight: 1.1,
+              letterSpacing: "-0.02em",
+            }}
+          >
+            <span style={{ color: "#f1f5f9" }}>{t("skills.title").split("&")[0]}&</span>
+            <span
+              style={{
+                background: "linear-gradient(135deg, #a855f7 0%, #6366f1 50%, #06b6d4 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              {t("skills.title").split("&")[1] || " Technologies"}
+            </span>
           </h1>
-          <p className="max-w-3xl mx-auto text-xl text-gray-400">
-            This is an overview of the skills and technologies I have learned
-            and applied in real projects.
+
+          <p
+            style={{
+              fontSize: "17px",
+              color: "#64748b",
+              maxWidth: "600px",
+              margin: "0 auto",
+              lineHeight: 1.7,
+            }}
+          >
+            {t("skills.subtitle")}
           </p>
         </div>
 
-        {/* Category Tabs */}
-        <div className="flex justify-center mb-12">
-          <div className="flex p-2 border border-gray-700 rounded-lg bg-slate-800/50">
-            {categories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setActiveCategory(category.id)}
-                className={`flex items-center space-x-2 px-6 py-3 rounded-md font-medium transition-all duration-300 ${
-                  activeCategory === category.id
-                    ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white"
-                    : "text-gray-400 hover:text-white hover:bg-gray-700"
-                }`}
-              >
-                {iconMap[category.icon] && (
-                  <img
-                    src={iconMap[category.icon]}
-                    alt={category.name}
-                    className="object-contain w-6 h-6"
-                  />
-                )}
-                <span>{category.name}</span>
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Skills Content */}
-        <div className="space-y-12">
-          {currentSkills.skills.map((skillGroup, groupIndex) => (
+        {/* ─── Stats Row ─── */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+            gap: "16px",
+            marginBottom: "60px",
+          }}
+        >
+          {stats.map((stat, i) => (
             <div
-              key={groupIndex}
-              className="p-8 border border-gray-700 bg-slate-800/50 rounded-2xl"
+              key={i}
+              style={{
+                background: "linear-gradient(135deg, rgba(15,15,30,0.8), rgba(20,20,40,0.6))",
+                border: "1px solid rgba(99,102,241,0.15)",
+                borderRadius: "16px",
+                padding: "20px",
+                textAlign: "center",
+                backdropFilter: "blur(12px)",
+              }}
             >
-              <h2 className="flex items-center mb-8 space-x-4 text-2xl font-bold text-white">
-                {iconMap[
-                  categories.find((cat) => cat.id === activeCategory)?.icon ||
-                    "react"
-                ] && (
-                  <img
-                    src={
-                      iconMap[
-                        categories.find((cat) => cat.id === activeCategory)
-                          ?.icon || "react"
-                      ]
-                    }
-                    alt={skillGroup.category}
-                    className="object-contain w-10 h-10"
-                  />
-                )}
-                <span>{skillGroup.category}</span>
-              </h2>
-
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                {skillGroup.items.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="group">
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center space-x-4">
-                        {iconMap[skill.icon] ? (
-                          <img
-                            src={iconMap[skill.icon]}
-                            alt={skill.name}
-                            className="object-contain w-12 h-12"
-                          />
-                        ) : (
-                          <div className="w-12 h-12 rounded opacity-50 bg-slate-800/50"></div>
-                        )}
-                        <span className="text-lg font-medium text-white">
-                          {skill.name}
-                        </span>
-                      </div>
-                      <span className="text-sm font-medium text-gray-400">
-                        {skill.level}%
-                      </span>
-                    </div>
-
-                    <div className="w-full h-3 overflow-hidden rounded-full bg-slate-800/50">
-                      <div
-                        className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out transform origin-left`}
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
+              <i
+                className={`pi ${stat.icon}`}
+                style={{
+                  fontSize: "22px",
+                  background: "linear-gradient(135deg, #a855f7, #6366f1)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  display: "block",
+                  marginBottom: "8px",
+                }}
+              />
+              <div
+                style={{
+                  fontSize: "32px",
+                  fontWeight: 800,
+                  background: "linear-gradient(135deg, #a855f7, #6366f1)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  lineHeight: 1,
+                  marginBottom: "6px",
+                }}
+              >
+                <Counter end={stat.value} />
+                {stat.suffix}
+              </div>
+              <div style={{ fontSize: "12px", color: "#475569", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                {stat.label}
               </div>
             </div>
           ))}
         </div>
 
-        {/* Certifications */}
-        <div className="mt-20">
-          <h2 className="mb-12 text-3xl font-bold text-center text-white">
-            Certifications and Achievements
-          </h2>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                title: "AWS Certified Solutions Architect",
-                issuer: "Amazon Web Services",
-                date: "2024",
-                icon: "aws",
-                color: "from-orange-500 to-yellow-500",
-              },
-              {
-                title: "Google Cloud Professional",
-                issuer: "Google Cloud",
-                date: "2023",
-                icon: "gcp",
-                color: "from-blue-500 to-green-500",
-              },
-              {
-                title: "React Developer Certification",
-                issuer: "Meta",
-                date: "2023",
-                icon: "react",
-                color: "from-blue-500 to-cyan-500",
-              },
-              {
-                title: "Docker Certified",
-                issuer: "Docker Inc.",
-                date: "2024",
-                icon: "docker",
-                color: "from-blue-600 to-indigo-500",
-              },
-              {
-                title: "MySQL Database Administrator",
-                issuer: "Oracle",
-                date: "2023",
-                icon: "mysql",
-                color: "from-blue-600 to-orange-500",
-              },
-              {
-                title: "TypeScript Advanced",
-                issuer: "Microsoft",
-                date: "2022",
-                icon: "typescript",
-                color: "from-blue-600 to-blue-400",
-              },
-            ].map((cert, index) => (
-              <div
-                key={index}
-                className="p-6 transition-all duration-300 border bg-slate-800/50 rounded-xl border-slate-700 hover:border-purple-500 hover:transform hover:scale-105"
+        {/* ─── Category Tabs ─── */}
+        <div style={{ display: "flex", justifyContent: "center", marginBottom: "48px" }}>
+          <div
+            style={{
+              display: "inline-flex",
+              background: "rgba(10,10,20,0.8)",
+              border: "1px solid rgba(99,102,241,0.2)",
+              borderRadius: "14px",
+              padding: "6px",
+              gap: "4px",
+              backdropFilter: "blur(12px)",
+            }}
+          >
+            {categoryTabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => {
+                  setActiveCategory(tab.id);
+                  setActiveSubTab(0);
+                }}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  padding: "10px 22px",
+                  borderRadius: "10px",
+                  border: "none",
+                  cursor: "pointer",
+                  fontWeight: 600,
+                  fontSize: "14px",
+                  transition: "all 0.3s ease",
+                  background:
+                    activeCategory === tab.id
+                      ? "linear-gradient(135deg, #7c3aed, #6366f1)"
+                      : "transparent",
+                  color: activeCategory === tab.id ? "#fff" : "#64748b",
+                  boxShadow: activeCategory === tab.id ? "0 4px 16px rgba(124,58,237,0.35)" : "none",
+                }}
               >
-                {iconMap[cert.icon] ? (
+                {iconMap[tab.iconKey] ? (
                   <img
-                    src={iconMap[cert.icon]}
-                    alt={cert.title}
-                    className="object-contain w-16 h-16 mb-4"
+                    src={iconMap[tab.iconKey]}
+                    alt={tab.label}
+                    style={{
+                      width: "18px",
+                      height: "18px",
+                      objectFit: "contain",
+                      opacity: activeCategory === tab.id ? 1 : 0.5,
+                    }}
                   />
                 ) : (
-                  <div className="w-16 h-16 mb-4 bg-gray-600 rounded opacity-50"></div>
+                  <i className={`pi ${tab.icon}`} style={{ fontSize: "15px" }} />
                 )}
-                <h3 className="mb-2 text-lg font-bold text-white">
-                  {cert.title}
-                </h3>
-                <p className="mb-1 text-sm text-gray-400">{cert.issuer}</p>
-                <p className="text-sm font-medium text-purple-400">
-                  {cert.date}
-                </p>
-              </div>
+                <span>{tab.label}</span>
+              </button>
             ))}
           </div>
         </div>
 
-        {/* Learning Path */}
-        <div className="p-8 mt-20 border bg-slate-800/50 rounded-2xl border-slate-700">
-          <h2 className="mb-8 text-3xl font-bold text-center text-white">
-            Learning Path
-          </h2>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {[
-              {
-                skill: "Machine Learning",
-                progress: 60,
-                description:
-                  " Learning Path Python ML libraries như TensorFlow và scikit-learn",
-                icon: "python",
-              },
-              {
-                skill: "Blockchain Development",
-                progress: 45,
-                description: "Research Solidity và Web3 development",
-                icon: "javascript",
-              },
-              {
-                skill: "DevOps Advanced",
-                progress: 70,
-                description: "Learn more about CI/CD pipelines and monitoring",
-                icon: "docker",
-              },
-            ].map((learning, index) => (
-              <div key={index} className="text-center">
-                {iconMap[learning.icon] ? (
-                  <img
-                    src={iconMap[learning.icon]}
-                    alt={learning.skill}
-                    className="object-contain w-16 h-16 mx-auto mb-4"
-                  />
-                ) : (
-                  <div className="w-16 h-16 mx-auto mb-4 bg-gray-600 rounded opacity-50"></div>
-                )}
-                <h3 className="mb-2 text-xl font-bold text-white">
-                  {learning.skill}
-                </h3>
-                <p className="mb-4 text-sm text-gray-400">
-                  {learning.description}
-                </p>
-                <div className="w-full h-2 mb-2 rounded-full bg-slate-700">
+        {/* ─── Technical & Tools ─── */}
+        {activeCategory !== "soft" && (
+          <div>
+            {/* Sub-tabs */}
+            <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "32px" }}>
+              {currentGroups.map((group, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActiveSubTab(i)}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    padding: "7px 16px",
+                    borderRadius: "100px",
+                    border: `1px solid ${activeSubTab === i ? "rgba(99,102,241,0.5)" : "rgba(99,102,241,0.15)"}`,
+                    background: activeSubTab === i ? "rgba(99,102,241,0.15)" : "transparent",
+                    color: activeSubTab === i ? "#818cf8" : "#475569",
+                    fontSize: "13px",
+                    fontWeight: 600,
+                    cursor: "pointer",
+                    transition: "all 0.25s ease",
+                  }}
+                >
+                  <i className={`pi ${group.icon}`} style={{ fontSize: "13px" }} />
+                  {group.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Skills Grid */}
+            <div
+              key={`${activeCategory}-${activeSubTab}`}
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+                gap: "16px",
+              }}
+            >
+              {currentGroups[activeSubTab]?.skills.map((skill, i) => (
+                <SkillCard
+                  key={`${skill.name}-${i}`}
+                  name={skill.name}
+                  icon={skill.icon}
+                  tags={skill.tags}
+                  delay={i * 80}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* ─── Soft Skills ─── */}
+        {activeCategory === "soft" && (
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
+              gap: "16px",
+            }}
+          >
+            {softSkills.map((skill, i) => (
+              <SoftSkillCard
+                key={i}
+                name={skill.name}
+                icon={skill.icon}
+                description={skill.description}
+                delay={i * 60}
+              />
+            ))}
+          </div>
+        )}
+
+        {/* ─── Learning Path ─── */}
+        <div style={{ marginTop: "80px" }}>
+          <div style={{ textAlign: "center", marginBottom: "40px" }}>
+            <h2
+              style={{
+                fontSize: "32px",
+                fontWeight: 800,
+                color: "#f1f5f9",
+                marginBottom: "12px",
+              }}
+            >
+              {t("skills.learningPath")}
+            </h2>
+            <p style={{ color: "#475569", fontSize: "15px" }}>
+              Technologies I'm actively exploring to stay ahead of the curve
+            </p>
+          </div>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "20px",
+            }}
+          >
+            {learningPath.map((item, i) => (
+              <div
+                key={i}
+                style={{
+                  background: "linear-gradient(135deg, rgba(15,15,30,0.8), rgba(20,20,40,0.6))",
+                  border: "1px solid rgba(99,102,241,0.15)",
+                  borderRadius: "20px",
+                  padding: "28px 24px",
+                  backdropFilter: "blur(12px)",
+                  position: "relative",
+                  overflow: "hidden",
+                }}
+              >
+                {/* background accent */}
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: "3px",
+                    background: `linear-gradient(90deg, ${item.color}, transparent)`,
+                    borderRadius: "20px 20px 0 0",
+                  }}
+                />
+
+                <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "20px" }}>
                   <div
-                    className="h-full rounded-full bg-gradient-to-r from-purple-500 to-pink-500"
-                    style={{ width: `${learning.progress}%` }}
-                  ></div>
+                    style={{
+                      width: "52px",
+                      height: "52px",
+                      borderRadius: "14px",
+                      background: `${item.color}18`,
+                      border: `1px solid ${item.color}40`,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {iconMap[item.icon] ? (
+                      <img src={iconMap[item.icon]} alt={item.skill} style={{ width: "32px", height: "32px", objectFit: "contain" }} />
+                    ) : (
+                      <i className="pi pi-code" style={{ color: item.color, fontSize: "20px" }} />
+                    )}
+                  </div>
+                  <div>
+                    <h3 style={{ fontSize: "17px", fontWeight: 700, color: "#f1f5f9", marginBottom: "4px" }}>
+                      {item.skill}
+                    </h3>
+                    <p style={{ fontSize: "12px", color: "#475569" }}>{item.desc}</p>
+                  </div>
                 </div>
-                <span className="text-sm font-medium text-purple-400">
-                  {learning.progress}%
-                </span>
+
+
+
+
               </div>
             ))}
           </div>
         </div>
 
-        {/* Call to Action */}
-        <div className="mt-20 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-white">
-            Let's work together!
+        {/* ─── Certifications ─── */}
+        <div style={{ marginTop: "80px" }}>
+          <div style={{ textAlign: "center", marginBottom: "40px" }}>
+            <h2 style={{ fontSize: "32px", fontWeight: 800, color: "#f1f5f9", marginBottom: "12px" }}>
+              {t("skills.certifications")}
+            </h2>
+            <p style={{ color: "#475569", fontSize: "15px" }}>
+              Professional credentials that validate my technical expertise
+            </p>
+          </div>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+              gap: "16px",
+            }}
+          >
+            {[
+              { title: "AWS Certified Solutions Architect", issuer: "Amazon Web Services", date: "2024", icon: "aws", color: "#f97316" },
+              { title: "Google Cloud Professional", issuer: "Google Cloud", date: "2023", icon: "gcp", color: "#3b82f6" },
+              { title: "React Developer Certification", issuer: "Meta", date: "2023", icon: "react", color: "#06b6d4" },
+              { title: "Docker Certified Associate", issuer: "Docker Inc.", date: "2024", icon: "docker", color: "#2563eb" },
+              { title: "MySQL DBA", issuer: "Oracle", date: "2023", icon: "mysql", color: "#fb923c" },
+              { title: "TypeScript Advanced", issuer: "Microsoft", date: "2022", icon: "typescript", color: "#6366f1" },
+            ].map((cert, i) => (
+              <CertCard key={i} {...cert} delay={i * 80} />
+            ))}
+          </div>
+        </div>
+
+        {/* ─── CTA ─── */}
+        <div
+          style={{
+            marginTop: "80px",
+            textAlign: "center",
+            padding: "60px 32px",
+            background: "linear-gradient(135deg, rgba(99,102,241,0.1), rgba(168,85,247,0.08))",
+            border: "1px solid rgba(99,102,241,0.2)",
+            borderRadius: "24px",
+            position: "relative",
+            overflow: "hidden",
+          }}
+        >
+          <div
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              width: "400px",
+              height: "200px",
+              background: "radial-gradient(ellipse, rgba(124,58,237,0.12) 0%, transparent 70%)",
+              pointerEvents: "none",
+            }}
+          />
+          <h2 style={{ fontSize: "36px", fontWeight: 800, color: "#f1f5f9", marginBottom: "16px", position: "relative" }}>
+            {t("skills.cta.title")}
           </h2>
-          <p className="max-w-2xl mx-auto mb-8 text-gray-400">
-            I'm always ready to apply these skills to real-world projects. Let's
-            get in touch to discuss your project!
+          <p style={{ color: "#64748b", fontSize: "16px", maxWidth: "500px", margin: "0 auto 32px", lineHeight: 1.7, position: "relative" }}>
+            {t("skills.cta.desc")}
           </p>
           <a
             href="/contact"
-            className="inline-flex items-center px-8 py-4 space-x-2 font-semibold text-white transition-all duration-300 transform rounded-lg shadow-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 hover:scale-105"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "10px",
+              padding: "14px 32px",
+              background: "linear-gradient(135deg, #7c3aed, #6366f1)",
+              color: "#fff",
+              borderRadius: "12px",
+              fontWeight: 700,
+              fontSize: "15px",
+              textDecoration: "none",
+              boxShadow: "0 8px 24px rgba(124,58,237,0.4)",
+              transition: "transform 0.2s ease, box-shadow 0.2s ease",
+              position: "relative",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)";
+              (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 12px 32px rgba(124,58,237,0.5)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
+              (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 24px rgba(124,58,237,0.4)";
+            }}
           >
-            <i className="pi pi-envelope"></i>
-            <span>Contact for me</span>
+            <i className="pi pi-envelope" style={{ fontSize: "16px" }} />
+            {t("skills.cta.button")}
           </a>
         </div>
       </div>
+    </div>
+  );
+};
+
+// Cert card component
+const CertCard = ({
+  title,
+  issuer,
+  date,
+  icon,
+  color,
+  delay = 0,
+}: {
+  title: string;
+  issuer: string;
+  date: string;
+  icon: string;
+  color: string;
+  delay?: number;
+}) => {
+  const [hovered, setHovered] = useState(false);
+  const [animated, setAnimated] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setAnimated(true), delay);
+    return () => clearTimeout(timer);
+  }, [delay]);
+
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        opacity: animated ? 1 : 0,
+        transform: animated ? (hovered ? "translateY(-6px)" : "translateY(0)") : "translateY(16px)",
+        transition: "all 0.4s ease",
+        background: hovered
+          ? `linear-gradient(135deg, ${color}12, rgba(10,10,20,0.8))`
+          : "linear-gradient(135deg, rgba(15,15,30,0.8), rgba(20,20,40,0.6))",
+        border: `1px solid ${hovered ? color + "50" : "rgba(99,102,241,0.15)"}`,
+        borderRadius: "16px",
+        padding: "20px",
+        backdropFilter: "blur(12px)",
+        boxShadow: hovered ? `0 16px 40px rgba(0,0,0,0.3), 0 0 20px ${color}22` : "0 4px 16px rgba(0,0,0,0.2)",
+        cursor: "default",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+      <div style={{ display: "flex", alignItems: "flex-start", gap: "14px" }}>
+        <div
+          style={{
+            width: "52px",
+            height: "52px",
+            borderRadius: "12px",
+            background: `${color}18`,
+            border: `1px solid ${color}40`,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexShrink: 0,
+            transition: "transform 0.3s ease",
+            transform: hovered ? "scale(1.05)" : "scale(1)",
+          }}
+        >
+          {iconMap[icon] ? (
+            <img src={iconMap[icon]} alt={title} style={{ width: "32px", height: "32px", objectFit: "contain" }} />
+          ) : (
+            <i className="pi pi-verified" style={{ color, fontSize: "20px" }} />
+          )}
+        </div>
+
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <h3
+            style={{
+              fontSize: "14px",
+              fontWeight: 700,
+              color: "#f1f5f9",
+              marginBottom: "4px",
+              lineHeight: 1.4,
+            }}
+          >
+            {title}
+          </h3>
+          <p style={{ fontSize: "12px", color: "#64748b", marginBottom: "8px" }}>{issuer}</p>
+          <div
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "4px",
+              padding: "2px 10px",
+              borderRadius: "100px",
+              background: `${color}15`,
+              border: `1px solid ${color}30`,
+            }}
+          >
+            <i className="pi pi-calendar" style={{ fontSize: "9px", color }} />
+            <span style={{ fontSize: "11px", fontWeight: 700, color }}>{date}</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Shine on hover */}
+      <div
+        style={{
+          position: "absolute",
+          top: "-50%",
+          left: "-50%",
+          width: "50px",
+          height: "200%",
+          background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent)",
+          transform: hovered ? "translateX(400px)" : "translateX(-100px)",
+          transition: "transform 0.6s ease",
+          pointerEvents: "none",
+        }}
+      />
     </div>
   );
 };

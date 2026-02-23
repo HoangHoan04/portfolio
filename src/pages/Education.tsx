@@ -1,4 +1,7 @@
+﻿import { useTranslation } from "react-i18next";
+
 const Education = () => {
+  const { t } = useTranslation();
   const educations = [
     {
       id: 1,
@@ -22,8 +25,8 @@ const Education = () => {
       achievements: [
         "Tốt nghiệp loại Khá (GPA 2.8/4.0)",
         "Thành viên CLB Lập trình",
-        "Hoàn thành đồ án tốt nghiệp với điểm 9.5/10",
         "Có 2 năm kinh nghiệm thực tập tại các công ty công nghệ",
+        
       ],
       projects: [
         {
@@ -169,18 +172,17 @@ const Education = () => {
         {/* Header */}
         <div className="mb-16 text-center">
           <h1 className="mb-6 text-5xl font-bold text-white">
-            Học vấn & Chứng chỉ
+            {t("education.title")}
           </h1>
           <p className="max-w-3xl mx-auto text-xl text-gray-400">
-            Hành trình học tập không ngừng để cập nhật kiến thức và kỹ năng
-            trong lĩnh vực công nghệ.
+            {t("education.subtitle")}
           </p>
         </div>
 
         {/* Formal Education */}
         <div className="mb-20">
           <h2 className="mb-12 text-3xl font-bold text-center text-white">
-            Học vấn chính quy
+            {t("education.formalEducation")}
           </h2>
           <div className="space-y-12">
             {educations.map((edu) => (
@@ -220,7 +222,7 @@ const Education = () => {
                     <div className="mb-6">
                       <h4 className="flex items-center mb-3 space-x-2 font-semibold text-white">
                         <i className="text-yellow-400 pi pi-trophy"></i>
-                        <span>Thành tích:</span>
+                        <span>{t("education.achievements")}</span>
                       </h4>
                       <ul className="grid grid-cols-1 gap-2 md:grid-cols-2">
                         {edu.achievements.map((achievement, idx) => (
@@ -239,7 +241,7 @@ const Education = () => {
                     <div>
                       <h4 className="flex items-center mb-3 space-x-2 font-semibold text-white">
                         <i className="text-purple-400 pi pi-briefcase"></i>
-                        <span>Dự án học tập:</span>
+                        <span>{t("education.academicProjects")}</span>
                       </h4>
                       <div className="space-y-3">
                         {edu.projects.map((project, idx) => (
@@ -273,7 +275,7 @@ const Education = () => {
                   <div>
                     <h4 className="flex items-center mb-4 space-x-2 font-semibold text-white">
                       <i className="text-purple-400 pi pi-book"></i>
-                      <span>Môn học chính:</span>
+                      <span>{t("education.mainCourses")}</span>
                     </h4>
                     <div className="space-y-2">
                       {edu.coursework.map((course, idx) => (
@@ -297,7 +299,7 @@ const Education = () => {
         {/* Certifications */}
         <div className="mb-20">
           <h2 className="mb-12 text-3xl font-bold text-center text-white">
-            Chứng chỉ chuyên môn
+            {t("education.certifications")}
           </h2>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {certifications.map((cert, index) => (
@@ -318,11 +320,11 @@ const Education = () => {
 
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-gray-400">Ngày cấp:</span>
+                    <span className="text-gray-400">{t("education.issuedDate")}</span>
                     <span className="text-white">{cert.date}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-400">Hiệu lực:</span>
+                    <span className="text-gray-400">{t("education.validUntil")}</span>
                     <span className="text-white">{cert.validUntil}</span>
                   </div>
                   <div className="flex justify-between">
@@ -335,7 +337,7 @@ const Education = () => {
 
                 <button className="flex items-center justify-center w-full px-4 py-2 mt-4 space-x-2 text-sm text-white transition-colors rounded-lg bg-slate-700 hover:bg-slate-600">
                   <i className="pi pi-external-link"></i>
-                  <span>Xác minh</span>
+                  <span>{t("common.verify")}</span>
                 </button>
               </div>
             ))}
@@ -345,7 +347,7 @@ const Education = () => {
         {/* Online Courses */}
         <div className="mb-20">
           <h2 className="mb-12 text-3xl font-bold text-center text-white">
-            Khóa học trực tuyến
+            {t("education.onlineCourses")}
           </h2>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {onlineCourses.map((course, index) => (
@@ -362,11 +364,10 @@ const Education = () => {
                       {[...Array(5)].map((_, i) => (
                         <i
                           key={i}
-                          className={`pi pi-star ${
-                            i < course.rating
-                              ? "text-yellow-400"
-                              : "text-gray-600"
-                          }`}
+                          className={`pi pi-star ${i < course.rating
+                            ? "text-yellow-400"
+                            : "text-gray-600"
+                            }`}
                         ></i>
                       ))}
                     </div>
@@ -389,7 +390,7 @@ const Education = () => {
                 <div className="flex items-center justify-between">
                   <span className="flex items-center space-x-1 text-sm font-medium text-green-400">
                     <i className="pi pi-check-circle"></i>
-                    <span>Hoàn thành {course.completed}</span>
+                    <span>{t("education.completed")} {course.completed}</span>
                   </span>
                 </div>
               </div>
@@ -400,31 +401,31 @@ const Education = () => {
         {/* Skills Timeline */}
         <div className="p-8 mb-20 border bg-slate-800/50 rounded-2xl border-slate-700">
           <h2 className="mb-8 text-3xl font-bold text-center text-white">
-            Timeline học tập
+            {t("education.learningTimeline")}
           </h2>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 year: "2017-2021",
-                title: "Đại học",
+                title: t("education.phases.university"),
                 description: "Nền tảng CS cơ bản, Java, Database",
                 icon: "pi-graduation-cap",
               },
               {
                 year: "2021-2022",
-                title: "Self-learning",
+                title: t("education.phases.selfLearning"),
                 description: "React, Node.js, Web Development",
                 icon: "pi-desktop",
               },
               {
                 year: "2022-2023",
-                title: "Cloud & DevOps",
+                title: t("education.phases.cloudDevOps"),
                 description: "AWS, Docker, Kubernetes",
                 icon: "pi-cloud",
               },
               {
                 year: "2023-2025",
-                title: "AI/ML Master",
+                title: t("education.phases.aiMaster"),
                 description: "Deep Learning, NLP, Computer Vision",
                 icon: "pi-chart-line",
               },
@@ -446,35 +447,29 @@ const Education = () => {
         {/* Learning Philosophy */}
         <div className="text-center">
           <h2 className="mb-6 text-3xl font-bold text-white">
-            Triết lý học tập
+            {t("education.learningPhilosophy")}
           </h2>
           <div className="max-w-4xl mx-auto">
             <p className="mb-8 text-xl leading-relaxed text-gray-400">
-              "Học tập là một hành trình không có điểm kết thúc. Trong lĩnh vực
-              công nghệ, kiến thức luôn thay đổi và phát triển. Tôi tin rằng
-              việc duy trì tinh thần học hỏi và khả năng thích nghi là chìa khóa
-              để thành công trong sự nghiệp."
+              {t("education.philosophyQuote")}
             </p>
 
             <div className="grid grid-cols-1 gap-8 mb-12 md:grid-cols-3">
               {[
                 {
                   icon: "pi-lightbulb",
-                  title: "Tư duy phản biện",
-                  description:
-                    'Luôn đặt câu hỏi "Tại sao?" và tìm hiểu bản chất của vấn đề',
+                  title: t("education.principles.criticalThinking.title"),
+                  description: t("education.principles.criticalThinking.desc"),
                 },
                 {
                   icon: "pi-users",
-                  title: "Học từ cộng đồng",
-                  description:
-                    "Tham gia forums, meetups và học hỏi từ kinh nghiệm của người khác",
+                  title: t("education.principles.community.title"),
+                  description: t("education.principles.community.desc"),
                 },
                 {
                   icon: "pi-cog",
-                  title: "Thực hành liên tục",
-                  description:
-                    "Áp dụng ngay kiến thức mới học vào các dự án thực tế",
+                  title: t("education.principles.practice.title"),
+                  description: t("education.principles.practice.desc"),
                 },
               ].map((principle, index) => (
                 <div key={index} className="text-center">
@@ -496,7 +491,7 @@ const Education = () => {
               className="inline-flex items-center px-8 py-4 space-x-2 font-semibold text-white transition-all duration-300 transform rounded-lg shadow-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 hover:scale-105"
             >
               <i className="pi pi-envelope"></i>
-              <span>Thảo luận về học tập</span>
+              <span>{t("education.cta")}</span>
             </a>
           </div>
         </div>
@@ -506,3 +501,4 @@ const Education = () => {
 };
 
 export default Education;
+

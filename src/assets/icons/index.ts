@@ -25,6 +25,25 @@ import tiktok from "./tiktok.svg";
 import twitter from "./twitter.svg";
 import typescript from "./typescript.svg";
 import viFlag from "./vi.svg";
+import cnFlag from "./cn.svg";
+import angularIcon from "./angular.svg";
+import awsIcon from "./aws.svg";
+import codeIcon from "./coded.svg";
+import dockerIcon from "./docker.svg";
+import figmaIcon from "./figma.svg";
+import gcpIcon from "./gcp.svg";
+import githubIcon from "./github.svg";
+import javascriptIcon from "./javascript.svg";
+import mysqlIcon from "./mysql.svg";
+import nestjsIcon from "./nestjs.svg";
+import networkingIcon from "./networking.svg";
+import nextjsIcon from "./nextjs.svg";
+import nodeJs from "./node-js.svg";
+import pythonIcon from "./python.svg";
+import reactIcon from "./react.svg";
+import settingIcon from "./setting.svg";
+import tailwindIcon from "./tailwind.svg";
+import typescriptIcon from "./typescript.svg";
 
 export {
   angular,
@@ -54,4 +73,23 @@ export {
   twitter,
   typescript,
   viFlag,
+  cnFlag,
+  angularIcon,
+  awsIcon,
+  codeIcon,
+  dockerIcon,
+  figmaIcon,
+  gcpIcon,
+  githubIcon,
+  javascriptIcon,
+  mysqlIcon,
+  nestjsIcon,
+  networkingIcon,
+  nextjsIcon,
+  nodeJs,
+  pythonIcon,
+  reactIcon,
+  settingIcon,
+  tailwindIcon,
+  typescriptIcon,
 };
