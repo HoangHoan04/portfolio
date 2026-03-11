@@ -1,79 +1,69 @@
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
 
 const Projects = () => {
-  const { t } = useTranslation();
   const [activeFilter, setActiveFilter] = useState("all");
 
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "Booking Tour HimLamTourist",
       description:
-        "Full-stack e-commerce platform with React, Node.js, and MongoDB. Supports online payments, inventory management, and admin dashboard.",
+        "Full-stack tour booking platform with separate modules for customer, admin, and API services. Built RESTful APIs with NestJS and PostgreSQL via Supabase for tour listings, bookings, and user authentication.",
       image: "/api/placeholder/400/250",
-      technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe"],
+      technologies: ["React", "TypeScript", "NestJS", "PostgreSQL", "Supabase"],
       category: "fullstack",
-      github: "https://github.com",
-      demo: "https://demo.com",
+      github: [
+        {
+          label: "Customer",
+          url: "https://github.com/HoangHoan04/bookingtour-customer",
+        },
+        {
+          label: "Admin",
+          url: "https://github.com/HoangHoan04/bookingtour-admin",
+        },
+        { label: "API", url: "https://github.com/HoangHoan04/bookingtour-api" },
+      ],
+      demo: "https://himlamtourist.xyz/",
       featured: true,
     },
     {
       id: 2,
-      title: "Task Management App",
+      title: "Wedding Invitation",
       description:
-        "Task management app with drag-and-drop interface, real-time updates, and collaboration features.",
+        "Full-stack wedding invitation web app with countdown timer, event details, and RSVP functionality. Designed RESTful APIs with NestJS and built a responsive UI with React and Tailwind CSS optimized for both desktop and mobile.",
       image: "/api/placeholder/400/250",
-      technologies: ["React", "TypeScript", "Socket.io", "PostgreSQL"],
-      category: "frontend",
-      github: "https://github.com",
-      demo: "https://demo.com",
+      technologies: ["TypeScript", "React", "Tailwind CSS", "NestJS"],
+      category: "fullstack",
+      github: [
+        {
+          label: "Source",
+          url: "https://github.com/HoangHoan04/wedding-invitation-customer",
+        },
+      ],
+      demo: null,
       featured: true,
     },
     {
       id: 3,
-      title: "Weather API Service",
+      title: "Apple Store",
       description:
-        "RESTful API service providing weather data with Redis caching and rate limiting.",
+        "E-commerce web app simulating the Apple Store with product listings, shopping cart, and order management. Implemented user authentication and checkout flow using core PHP with MVC architecture and MySQL database.",
       image: "/api/placeholder/400/250",
-      technologies: ["Node.js", "Express", "Redis", "Docker"],
-      category: "backend",
-      github: "https://github.com",
-      demo: "https://api.demo.com",
-      featured: false,
-    },
-    {
-      id: 4,
-      title: "Mobile Food Delivery",
-      description:
-        "Mobile food delivery app with React Native, GPS tracking, and payment gateway integration.",
-      image: "/api/placeholder/400/250",
-      technologies: ["React Native", "Firebase", "Google Maps", "Stripe"],
-      category: "mobile",
-      github: "https://github.com",
-      demo: "https://play.google.com",
-      featured: true,
-    },
-    {
-      id: 5,
-      title: "Data Analytics Dashboard",
-      description:
-        "Data analytics dashboard with interactive charts and real-time data visualization.",
-      image: "/api/placeholder/400/250",
-      technologies: ["React", "D3.js", "Python", "FastAPI"],
+      technologies: ["PHP", "MySQL"],
       category: "fullstack",
-      github: "https://github.com",
-      demo: "https://dashboard.demo.com",
+      github: [
+        { label: "Source", url: "https://github.com/HoangHoan04/AppleStore" },
+      ],
+      demo: null,
       featured: false,
     },
   ];
 
   const categories = [
-    { id: "all", name: t("projects.filterAll"), icon: "pi-th-large" },
+    { id: "all", name: "All", icon: "pi-th-large" },
     { id: "fullstack", name: "Full-Stack", icon: "pi-desktop" },
     { id: "frontend", name: "Frontend", icon: "pi-palette" },
     { id: "backend", name: "Backend", icon: "pi-server" },
-    { id: "mobile", name: "Mobile", icon: "pi-mobile" },
   ];
 
   const filteredProjects =
@@ -88,16 +78,17 @@ const Projects = () => {
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16 text-center">
-          <h1 className="mb-6 text-5xl font-bold text-white">{t("projects.title")}</h1>
+          <h1 className="mb-6 text-5xl font-bold text-white">My Projects</h1>
           <p className="max-w-3xl mx-auto text-xl text-gray-400">
-            {t("projects.subtitle")}
+            Explore projects I have developed, from full-stack web applications
+            to e-commerce platforms and interactive experiences.
           </p>
         </div>
 
         {/* Featured Projects */}
         <div className="mb-20">
           <h2 className="mb-8 text-3xl font-bold text-center text-white">
-            {t("projects.featuredProjects")}
+            Featured Projects
           </h2>
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
             {featuredProjects.slice(0, 2).map((project) => (
@@ -105,7 +96,7 @@ const Projects = () => {
                 key={project.id}
                 className="relative overflow-hidden transition-all duration-300 border group bg-slate-800 rounded-2xl border-slate-700 hover:border-blue-500"
               >
-                <div className="relative flex items-center justify-center h-64 overflow-hidden bg-gradient-to-br from-blue-500 to-cyan-500">
+                <div className="relative flex items-center justify-center h-64 overflow-hidden bg-linear-to-br from-blue-500 to-cyan-500">
                   <i className="text-6xl text-white pi pi-image"></i>
                   <div className="absolute inset-0 transition-all duration-300 bg-black/20 group-hover:bg-black/10"></div>
                 </div>
@@ -129,25 +120,30 @@ const Projects = () => {
                     ))}
                   </div>
 
-                  <div className="flex gap-4">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center px-4 py-2 space-x-2 text-white transition-colors rounded-lg bg-slate-700 hover:bg-slate-600"
-                    >
-                      <i className="pi pi-github"></i>
-                      <span>Code</span>
-                    </a>
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center px-4 py-2 space-x-2 text-white transition-all rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700"
-                    >
-                      <i className="pi pi-external-link"></i>
-                      <span>Demo</span>
-                    </a>
+                  <div className="flex flex-wrap gap-3">
+                    {project.github.map((repo) => (
+                      <a
+                        key={repo.label}
+                        href={repo.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center px-4 py-2 space-x-2 text-white transition-colors rounded-lg bg-slate-700 hover:bg-slate-600"
+                      >
+                        <i className="pi pi-github"></i>
+                        <span>{repo.label}</span>
+                      </a>
+                    ))}
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center px-4 py-2 space-x-2 text-white transition-all rounded-lg bg-linear-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700"
+                      >
+                        <i className="pi pi-external-link"></i>
+                        <span>Live Demo</span>
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
@@ -162,10 +158,11 @@ const Projects = () => {
               <button
                 key={category.id}
                 onClick={() => setActiveFilter(category.id)}
-                className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${activeFilter === category.id
-                  ? "bg-gradient-to-r from-blue-600 to-cyan-600 text-white"
-                  : "bg-slate-800 text-gray-400 hover:bg-slate-700 hover:text-white border border-slate-700"
-                  }`}
+                className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                  activeFilter === category.id
+                    ? "bg-linear-to-r from-blue-600 to-cyan-600 text-white"
+                    : "bg-slate-800 text-gray-400 hover:bg-slate-700 hover:text-white border border-slate-700"
+                }`}
               >
                 <i className={`pi ${category.icon}`}></i>
                 <span>{category.name}</span>
@@ -181,7 +178,7 @@ const Projects = () => {
               key={project.id}
               className="overflow-hidden transition-all duration-300 transform border group bg-slate-800 rounded-xl border-slate-700 hover:border-blue-500 hover:scale-105"
             >
-              <div className="relative flex items-center justify-center h-48 overflow-hidden bg-gradient-to-br from-blue-500 to-cyan-600">
+              <div className="relative flex items-center justify-center h-48 overflow-hidden bg-linear-to-br from-blue-500 to-cyan-600">
                 <i className="text-4xl text-white pi pi-image"></i>
                 <div className="absolute inset-0 transition-all duration-300 bg-black/20 group-hover:bg-black/10"></div>
                 {project.featured && (
@@ -218,24 +215,29 @@ const Projects = () => {
 
                 <div className="flex items-center justify-between">
                   <div className="flex gap-2">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 text-gray-400 transition-colors hover:text-white"
-                      title="View Code"
-                    >
-                      <i className="pi pi-github"></i>
-                    </a>
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 text-gray-400 transition-colors hover:text-white"
-                      title="Live Demo"
-                    >
-                      <i className="pi pi-external-link"></i>
-                    </a>
+                    {project.github.map((repo) => (
+                      <a
+                        key={repo.label}
+                        href={repo.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 text-gray-400 transition-colors hover:text-white"
+                        title={`GitHub - ${repo.label}`}
+                      >
+                        <i className="pi pi-github"></i>
+                      </a>
+                    ))}
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 text-gray-400 transition-colors hover:text-white"
+                        title="Live Demo"
+                      >
+                        <i className="pi pi-external-link"></i>
+                      </a>
+                    )}
                   </div>
                   <span className="text-xs text-gray-500 capitalize">
                     {project.category}
@@ -246,46 +248,21 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Stats */}
-        <div className="p-8 mt-20 border bg-slate-800/50 rounded-2xl border-slate-700">
-          <div className="grid grid-cols-2 gap-8 text-center md:grid-cols-4">
-            <div>
-              <div className="mb-2 text-3xl font-bold text-blue-400">
-                {projects.length}
-              </div>
-              <div className="text-gray-400">{t("projects.stats.total")}</div>
-            </div>
-            <div>
-              <div className="mb-2 text-3xl font-bold text-cyan-400">
-                {featuredProjects.length}
-              </div>
-              <div className="text-gray-400">{t("projects.stats.featured")}</div>
-            </div>
-            <div>
-              <div className="mb-2 text-3xl font-bold text-blue-400">15+</div>
-              <div className="text-gray-400">{t("projects.stats.technologies")}</div>
-            </div>
-            <div>
-              <div className="mb-2 text-3xl font-bold text-green-400">100%</div>
-              <div className="text-gray-400">{t("projects.stats.completed")}</div>
-            </div>
-          </div>
-        </div>
-
         {/* Call to Action */}
         <div className="mt-20 text-center">
           <h2 className="mb-4 text-3xl font-bold text-white">
-            {t("projects.cta.title")}
+            Got a project idea?
           </h2>
           <p className="max-w-2xl mx-auto mb-8 text-gray-400">
-            {t("projects.cta.desc")}
+            I'm always open to discussing new and exciting projects. Reach out
+            so we can turn your idea into reality!
           </p>
           <a
             href="/contact"
-            className="inline-flex items-center px-8 py-4 space-x-2 font-semibold text-white transition-all duration-300 transform rounded-lg shadow-lg bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 hover:scale-105"
+            className="inline-flex items-center px-8 py-4 space-x-2 font-semibold text-white transition-all duration-300 transform rounded-lg shadow-lg bg-linear-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 hover:scale-105"
           >
             <i className="pi pi-envelope"></i>
-            <span>{t("projects.cta.button")}</span>
+            <span>Contact Me</span>
           </a>
         </div>
       </div>

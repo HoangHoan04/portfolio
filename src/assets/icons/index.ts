@@ -1,95 +1,65 @@
-import angular from "./angular.svg";
-import aws from "./aws.svg";
-import coded from "./coded.svg";
-import computer from "./computer.svg";
-import docker from "./docker.svg";
-import enFlag from "./en.svg";
-import facebook from "./facebook.svg";
-import figma from "./figma.svg";
-import gcp from "./gcp.svg";
-import github from "./github.svg";
-import gmail from "./gmail.svg";
-import instagram from "./instagram.svg";
-import javascript from "./javascript.svg";
-import linkedin from "./linkedin.svg";
-import mongo from "./mongo.svg";
-import mysql from "./mysql.svg";
-import nestjs from "./nestjs.svg";
-import networking from "./networking.svg";
-import nodejs from "./node-js.svg";
-import python from "./python.svg";
-import react from "./react.svg";
-import setting from "./setting.svg";
-import tailwind from "./tailwind.svg";
-import tiktok from "./tiktok.svg";
-import twitter from "./twitter.svg";
-import typescript from "./typescript.svg";
-import viFlag from "./vi.svg";
-import cnFlag from "./cn.svg";
 import angularIcon from "./angular.svg";
 import awsIcon from "./aws.svg";
 import codeIcon from "./coded.svg";
+import computerIcon from "./computer.svg";
 import dockerIcon from "./docker.svg";
+import facebookIcon from "./facebook.svg";
 import figmaIcon from "./figma.svg";
 import gcpIcon from "./gcp.svg";
 import githubIcon from "./github.svg";
+import gmailIcon from "./gmail.svg";
+import instagramIcon from "./instagram.svg";
+import intellijIcon from "./intellij.svg";
 import javascriptIcon from "./javascript.svg";
+import linkedinIcon from "./linkedin.svg";
+import mongoIcon from "./mongo.svg";
 import mysqlIcon from "./mysql.svg";
 import nestjsIcon from "./nestjs.svg";
 import networkingIcon from "./networking.svg";
 import nextjsIcon from "./nextjs.svg";
-import nodeJs from "./node-js.svg";
+import nodeJsIcon from "./nodejs.svg";
+import phpIcon from "./php.svg";
+import postgresSqlIcon from "./postgresql.svg";
 import pythonIcon from "./python.svg";
 import reactIcon from "./react.svg";
 import settingIcon from "./setting.svg";
 import tailwindIcon from "./tailwind.svg";
+import tiktokIcon from "./tiktok.svg";
+import twitterIcon from "./twitter.svg";
 import typescriptIcon from "./typescript.svg";
+import vsIcon from "./visualstudio.svg";
+import vsCodeIcon from "./vscode.svg";
 
 export {
-  angular,
-  aws,
-  coded,
-  computer,
-  docker,
-  enFlag,
-  facebook,
-  figma,
-  gcp,
-  github,
-  gmail,
-  instagram,
-  javascript,
-  linkedin,
-  mongo,
-  mysql,
-  nestjs,
-  networking,
-  nodejs,
-  python,
-  react,
-  setting,
-  tailwind,
-  tiktok,
-  twitter,
-  typescript,
-  viFlag,
-  cnFlag,
   angularIcon,
   awsIcon,
   codeIcon,
+  computerIcon,
   dockerIcon,
+  facebookIcon,
   figmaIcon,
   gcpIcon,
   githubIcon,
+  gmailIcon,
+  instagramIcon,
+  intellijIcon,
   javascriptIcon,
+  linkedinIcon,
+  mongoIcon,
   mysqlIcon,
   nestjsIcon,
   networkingIcon,
   nextjsIcon,
-  nodeJs,
+  nodeJsIcon,
+  phpIcon,
+  postgresSqlIcon,
   pythonIcon,
   reactIcon,
   settingIcon,
   tailwindIcon,
+  tiktokIcon,
+  twitterIcon,
   typescriptIcon,
+  vsCodeIcon,
+  vsIcon,
 };

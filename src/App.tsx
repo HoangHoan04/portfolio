@@ -15,7 +15,7 @@ import Skills from "./pages/Skills";
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 dark:from-gray-900 dark:via-gray-800 dark:to-black transition-colors duration-300">
+      <div className="min-h-screen bg-linear-to-br from-slate-900 via-blue-900 to-slate-900 dark:from-gray-900 dark:via-gray-800 dark:to-black transition-colors duration-300">
         <Header />
         <main className="pt-16">
           <Routes>
@@ -30,7 +30,6 @@ function App() {
         </main>
         <Footer />
         <BackToTop />
-
       </div>
     </Router>
   );

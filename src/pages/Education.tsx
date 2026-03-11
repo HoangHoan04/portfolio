@@ -1,168 +1,80 @@
-﻿import { useTranslation } from "react-i18next";
+﻿const Education = () => {
+  const education = {
+    degree: "Bachelor of Software Engineering",
+    degreeVi: "Kỹ sư Kỹ thuật Phần mềm",
+    school: "Saigon University",
+    location: "Ho Chi Minh City, Vietnam",
+    period: "2022 - 2026",
+    gpa: "2.7/4.0",
+    description:
+      "Studying Software Engineering with a focus on web development, database systems, and software engineering principles.",
+    coursework: [
+      "Object-Oriented Programming",
+      "Web & Application Development",
+      "Data Structures & Algorithms",
+      "Database Management",
+      "Discrete Math",
+      "Linear Algebra",
+      "Probability & Statistics",
+    ],
+    activities: [
+      "Competitive Programming Club Member",
+      "Member of Faculty Student Executive Board",
+    ],
+  };
 
-const Education = () => {
-  const { t } = useTranslation();
-  const educations = [
+  const projects = [
     {
-      id: 1,
-      degree: "Kỹ sư Kỹ thuật Phần mềm",
-      school: "Trường Đại học Sài Gòn",
-      location: "Thành phố Hồ Chí Minh, Việt Nam",
-      period: "2022 - 2027",
-      gpa: "2.7/4.0",
+      name: "Wedding Invitation",
       description:
-        "Chuyên ngành Software Engineering với focus vào web development và database systems.",
-      coursework: [
-        "Data Structures & Algorithms",
-        "Database Management Systems",
-        "Software Engineering",
-        "Web Development",
-        "Mobile App Development",
-        "Computer Networks",
-        "Operating Systems",
-        "Object-Oriented Programming",
-      ],
-      achievements: [
-        "Tốt nghiệp loại Khá (GPA 2.8/4.0)",
-        "Thành viên CLB Lập trình",
-        "Có 2 năm kinh nghiệm thực tập tại các công ty công nghệ",
-        
-      ],
-      projects: [
-        {
-          name: "Hệ thống quản lý thư viện",
-          description: "Web application quản lý sách, độc giả và mượn trả sách",
-          tech: ["Java", "Spring Boot", "MySQL", "HTML/CSS"],
-        },
-        {
-          name: "Hệ thống quản lý thư viện",
-          description: "Web application quản lý sách, độc giả và mượn trả sách",
-          tech: ["Java", "Spring Boot", "MySQL", "HTML/CSS"],
-        },
-        {
-          name: "Hệ thống quản lý thư viện",
-          description: "Web application quản lý sách, độc giả và mượn trả sách",
-          tech: ["Java", "Spring Boot", "MySQL", "HTML/CSS"],
-        },
-        {
-          name: "Hệ thống quản lý thư viện",
-          description: "Web application quản lý sách, độc giả và mượn trả sách",
-          tech: ["Java", "Spring Boot", "MySQL", "HTML/CSS"],
-        },
-        {
-          name: "Mobile Game 2D",
-          description: "Game mobile đơn giản sử dụng Unity và C#",
-          tech: ["Unity", "C#", "Android SDK"],
-        },
-      ],
+        "Full-stack wedding invitation web app with countdown timer, event details, and RSVP functionality.",
+      tech: ["TypeScript", "React", "Tailwind CSS", "NestJS"],
+      github: "https://github.com/HoangHoan04/wedding-invitation-customer",
+      demo: null,
+    },
+    {
+      name: "Booking Tour HimLamTourist",
+      description:
+        "Full-stack tour booking platform with customer, admin, and API modules. Includes tour search, filtering, reservation flow, and user authentication.",
+      tech: ["React", "TypeScript", "NestJS", "PostgreSQL", "Supabase"],
+      github: "https://github.com/HoangHoan04/bookingtour-customer",
+      demo: "https://himlamtourist.xyz/",
+    },
+    {
+      name: "Apple Store",
+      description:
+        "E-commerce web app simulating the Apple Store with product listings, shopping cart, order management, and user authentication.",
+      tech: ["PHP", "MySQL"],
+      github: "https://github.com/HoangHoan04/AppleStore",
+      demo: null,
     },
   ];
 
-  const certifications = [
+  const learningTimeline = [
     {
-      name: "AWS Certified Solutions Architect - Associate",
-      issuer: "Amazon Web Services",
-      date: "2024",
-      validUntil: "2027",
-      credentialId: "AWS-ASA-12345",
-      icon: "pi-cloud",
-      color: "from-orange-500 to-yellow-500",
+      year: "2022",
+      title: "University Start",
+      description: "HTML, CSS, JavaScript — programming fundamentals",
+      icon: "pi-graduation-cap",
     },
     {
-      name: "Google Cloud Professional Cloud Architect",
-      issuer: "Google Cloud",
-      date: "2023",
-      validUntil: "2025",
-      credentialId: "GCP-PCA-67890",
-      icon: "pi-cloud",
-      color: "from-blue-500 to-green-500",
+      year: "2023",
+      title: "Core CS",
+      description: "OOP, Data Structures & Algorithms, Web Development",
+      icon: "pi-desktop",
     },
     {
-      name: "Meta React Developer Professional Certificate",
-      issuer: "Meta",
-      date: "2023",
-      validUntil: "Lifetime",
-      credentialId: "META-REACT-54321",
+      year: "2024",
+      title: "Personal Projects",
+      description: "React, PHP, MySQL, Git — built first real projects",
       icon: "pi-code",
-      color: "from-blue-500 to-cyan-500",
     },
     {
-      name: "MongoDB Certified Developer Associate",
-      issuer: "MongoDB University",
-      date: "2023",
-      validUntil: "2026",
-      credentialId: "MONGO-DEV-98765",
-      icon: "pi-database",
-      color: "from-green-600 to-green-400",
-    },
-    {
-      name: "Certified Kubernetes Administrator (CKA)",
-      issuer: "Cloud Native Computing Foundation",
-      date: "2024",
-      validUntil: "2027",
-      credentialId: "CKA-13579",
-      icon: "pi-sitemap",
-      color: "from-blue-600 to-indigo-500",
-    },
-    {
-      name: "Scrum Master Certified (SMC)",
-      issuer: "Scrum Alliance",
-      date: "2022",
-      validUntil: "2025",
-      credentialId: "SMC-24680",
-      icon: "pi-users",
-      color: "from-purple-500 to-pink-500",
-    },
-  ];
-
-  const onlineCourses = [
-    {
-      title: "Complete Node.js Developer Course",
-      platform: "Udemy",
-      instructor: "Andrew Mead",
-      completed: "2021",
-      rating: 5,
-      hours: 40,
-    },
-    {
-      title: "React - The Complete Guide",
-      platform: "Udemy",
-      instructor: "Maximilian Schwarzmüller",
-      completed: "2021",
-      rating: 5,
-      hours: 48,
-    },
-    {
-      title: "AWS Solutions Architect",
-      platform: "A Cloud Guru",
-      instructor: "Ryan Kroonenburg",
-      completed: "2023",
-      rating: 5,
-      hours: 30,
-    },
-    {
-      title: "Machine Learning Specialization",
-      platform: "Coursera",
-      instructor: "Andrew Ng",
-      completed: "2023",
-      rating: 5,
-      hours: 80,
-    },
-    {
-      title: "Deep Learning Specialization",
-      platform: "Coursera",
-      instructor: "Andrew Ng",
-      completed: "2024",
-      rating: 5,
-      hours: 100,
-    },
-    {
-      title: "Docker & Kubernetes Complete Guide",
-      platform: "Udemy",
-      instructor: "Stephen Grider",
-      completed: "2022",
-      rating: 5,
-      hours: 35,
+      year: "2025 - Now",
+      title: "Professional",
+      description:
+        "Angular, NestJS, TypeScript, PostgreSQL at APETECH Solutions",
+      icon: "pi-briefcase",
     },
   ];
 
@@ -172,269 +84,161 @@ const Education = () => {
         {/* Header */}
         <div className="mb-16 text-center">
           <h1 className="mb-6 text-5xl font-bold text-white">
-            {t("education.title")}
+            Education & Projects
           </h1>
           <p className="max-w-3xl mx-auto text-xl text-gray-400">
-            {t("education.subtitle")}
+            Academic background and hands-on projects built throughout my
+            learning journey.
           </p>
         </div>
 
         {/* Formal Education */}
         <div className="mb-20">
           <h2 className="mb-12 text-3xl font-bold text-center text-white">
-            {t("education.formalEducation")}
+            Formal Education
           </h2>
-          <div className="space-y-12">
-            {educations.map((edu) => (
-              <div
-                key={edu.id}
-                className="p-8 transition-all duration-300 border bg-slate-800 rounded-2xl border-slate-700 hover:border-purple-500"
-              >
-                <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-                  {/* Main Info */}
-                  <div className="lg:col-span-2">
-                    <div className="flex flex-wrap items-center gap-4 mb-4">
-                      <h3 className="text-2xl font-bold text-white">
-                        {edu.degree}
-                      </h3>
-                      <span className="px-3 py-1 text-sm font-medium text-white rounded-full bg-gradient-to-r from-purple-600 to-pink-600">
-                        GPA: {edu.gpa}
-                      </span>
-                    </div>
+          <div className="p-8 transition-all duration-300 border bg-slate-800 rounded-2xl border-slate-700 hover:border-purple-500">
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+              {/* Main Info */}
+              <div className="lg:col-span-2">
+                <div className="flex flex-wrap items-center gap-4 mb-4">
+                  <h3 className="text-2xl font-bold text-white">
+                    {education.degree}
+                  </h3>
+                  <span className="px-3 py-1 text-sm font-medium text-white rounded-full bg-linear-to-r from-purple-600 to-pink-600">
+                    GPA: {education.gpa}
+                  </span>
+                </div>
 
-                    <div className="mb-2 text-lg font-medium text-gray-300">
-                      {edu.school}
-                    </div>
-                    <div className="flex items-center mb-4 space-x-4 text-gray-400">
-                      <span className="flex items-center space-x-1">
-                        <i className="pi pi-map-marker"></i>
-                        <span>{edu.location}</span>
-                      </span>
-                      <span className="flex items-center space-x-1">
-                        <i className="pi pi-calendar"></i>
-                        <span>{edu.period}</span>
-                      </span>
-                    </div>
+                <div className="mb-1 text-lg font-medium text-gray-300">
+                  {education.school}
+                </div>
+                <div className="flex flex-wrap items-center gap-4 mb-4 text-gray-400">
+                  <span className="flex items-center space-x-1">
+                    <i className="pi pi-map-marker"></i>
+                    <span>{education.location}</span>
+                  </span>
+                  <span className="flex items-center space-x-1">
+                    <i className="pi pi-calendar"></i>
+                    <span>{education.period}</span>
+                  </span>
+                </div>
 
-                    <p className="mb-6 text-gray-400">{edu.description}</p>
+                <p className="mb-6 text-gray-400">{education.description}</p>
 
-                    {/* Achievements */}
-                    <div className="mb-6">
-                      <h4 className="flex items-center mb-3 space-x-2 font-semibold text-white">
-                        <i className="text-yellow-400 pi pi-trophy"></i>
-                        <span>{t("education.achievements")}</span>
-                      </h4>
-                      <ul className="grid grid-cols-1 gap-2 md:grid-cols-2">
-                        {edu.achievements.map((achievement, idx) => (
-                          <li
-                            key={idx}
-                            className="flex items-start space-x-2 text-sm text-gray-400"
-                          >
-                            <i className="flex-shrink-0 mt-1 text-green-400 pi pi-check"></i>
-                            <span>{achievement}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Projects */}
-                    <div>
-                      <h4 className="flex items-center mb-3 space-x-2 font-semibold text-white">
-                        <i className="text-purple-400 pi pi-briefcase"></i>
-                        <span>{t("education.academicProjects")}</span>
-                      </h4>
-                      <div className="space-y-3">
-                        {edu.projects.map((project, idx) => (
-                          <div
-                            key={idx}
-                            className="p-4 border rounded-lg bg-slate-700 border-slate-600"
-                          >
-                            <h5 className="mb-2 font-medium text-white">
-                              {project.name}
-                            </h5>
-                            <p className="mb-3 text-sm text-gray-400">
-                              {project.description}
-                            </p>
-                            <div className="flex flex-wrap gap-2">
-                              {project.tech.map((tech) => (
-                                <span
-                                  key={tech}
-                                  className="px-2 py-1 text-xs text-gray-300 border rounded bg-slate-800 border-slate-600"
-                                >
-                                  {tech}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Coursework */}
-                  <div>
-                    <h4 className="flex items-center mb-4 space-x-2 font-semibold text-white">
-                      <i className="text-purple-400 pi pi-book"></i>
-                      <span>{t("education.mainCourses")}</span>
-                    </h4>
-                    <div className="space-y-2">
-                      {edu.coursework.map((course, idx) => (
-                        <div
-                          key={idx}
-                          className="p-3 border rounded-lg bg-slate-700 border-slate-600"
-                        >
-                          <span className="text-sm text-gray-300">
-                            {course}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                {/* Activities */}
+                <div>
+                  <h4 className="flex items-center mb-3 space-x-2 font-semibold text-white">
+                    <i className="text-yellow-400 pi pi-users"></i>
+                    <span>Activities:</span>
+                  </h4>
+                  <ul className="space-y-2">
+                    {education.activities.map((activity, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-start space-x-2 text-sm text-gray-400"
+                      >
+                        <i className="shrink-0 mt-1 text-green-400 pi pi-check"></i>
+                        <span>{activity}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-            ))}
+
+              {/* Coursework */}
+              <div>
+                <h4 className="flex items-center mb-4 space-x-2 font-semibold text-white">
+                  <i className="text-purple-400 pi pi-book"></i>
+                  <span>Main Courses:</span>
+                </h4>
+                <div className="space-y-2">
+                  {education.coursework.map((course, idx) => (
+                    <div
+                      key={idx}
+                      className="p-3 border rounded-lg bg-slate-700 border-slate-600"
+                    >
+                      <span className="text-sm text-gray-300">{course}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Certifications */}
+        {/* Academic Projects */}
         <div className="mb-20">
           <h2 className="mb-12 text-3xl font-bold text-center text-white">
-            {t("education.certifications")}
+            Projects
           </h2>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {certifications.map((cert, index) => (
+            {projects.map((project, index) => (
               <div
                 key={index}
                 className="p-6 transition-all duration-300 border bg-slate-800 rounded-xl border-slate-700 hover:border-purple-500 hover:transform hover:scale-105"
               >
-                <div
-                  className={`w-16 h-16 bg-gradient-to-r ${cert.color} rounded-lg flex items-center justify-center mb-4`}
-                >
-                  <i className={`pi ${cert.icon} text-white text-2xl`}></i>
+                <div className="flex items-center justify-center w-12 h-12 mb-4 rounded-lg bg-linear-to-r from-purple-500 to-pink-500">
+                  <i className="text-xl text-white pi pi-code"></i>
                 </div>
 
                 <h3 className="mb-2 text-lg font-bold text-white">
-                  {cert.name}
+                  {project.name}
                 </h3>
-                <p className="mb-3 font-medium text-gray-300">{cert.issuer}</p>
-
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <span className="text-gray-400">{t("education.issuedDate")}</span>
-                    <span className="text-white">{cert.date}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-400">{t("education.validUntil")}</span>
-                    <span className="text-white">{cert.validUntil}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-400">ID:</span>
-                    <span className="text-xs text-purple-400">
-                      {cert.credentialId}
-                    </span>
-                  </div>
-                </div>
-
-                <button className="flex items-center justify-center w-full px-4 py-2 mt-4 space-x-2 text-sm text-white transition-colors rounded-lg bg-slate-700 hover:bg-slate-600">
-                  <i className="pi pi-external-link"></i>
-                  <span>{t("common.verify")}</span>
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Online Courses */}
-        <div className="mb-20">
-          <h2 className="mb-12 text-3xl font-bold text-center text-white">
-            {t("education.onlineCourses")}
-          </h2>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {onlineCourses.map((course, index) => (
-              <div
-                key={index}
-                className="p-6 transition-all duration-300 border bg-slate-800 rounded-xl border-slate-700 hover:border-purple-500"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500">
-                    <i className="text-xl text-white pi pi-play"></i>
-                  </div>
-                  <div className="text-right">
-                    <div className="flex items-center mb-1 space-x-1">
-                      {[...Array(5)].map((_, i) => (
-                        <i
-                          key={i}
-                          className={`pi pi-star ${i < course.rating
-                            ? "text-yellow-400"
-                            : "text-gray-600"
-                            }`}
-                        ></i>
-                      ))}
-                    </div>
-                    <span className="text-sm text-gray-400">
-                      {course.hours} giờ
-                    </span>
-                  </div>
-                </div>
-
-                <h3 className="mb-2 text-lg font-bold text-white">
-                  {course.title}
-                </h3>
-                <p className="mb-1 font-medium text-purple-400">
-                  {course.platform}
-                </p>
-                <p className="mb-3 text-sm text-gray-400">
-                  Giảng viên: {course.instructor}
+                <p className="mb-4 text-sm text-gray-400">
+                  {project.description}
                 </p>
 
-                <div className="flex items-center justify-between">
-                  <span className="flex items-center space-x-1 text-sm font-medium text-green-400">
-                    <i className="pi pi-check-circle"></i>
-                    <span>{t("education.completed")} {course.completed}</span>
-                  </span>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tech.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-2 py-1 text-xs text-gray-300 border rounded bg-slate-700 border-slate-600"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex gap-3 pt-4 border-t border-slate-700">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-1 text-sm text-gray-400 transition-colors hover:text-white"
+                  >
+                    <i className="pi pi-github"></i>
+                    <span>Code</span>
+                  </a>
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-1 text-sm text-purple-400 transition-colors hover:text-purple-300"
+                    >
+                      <i className="pi pi-external-link"></i>
+                      <span>Live Demo</span>
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Skills Timeline */}
+        {/* Learning Timeline */}
         <div className="p-8 mb-20 border bg-slate-800/50 rounded-2xl border-slate-700">
           <h2 className="mb-8 text-3xl font-bold text-center text-white">
-            {t("education.learningTimeline")}
+            Learning Timeline
           </h2>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                year: "2017-2021",
-                title: t("education.phases.university"),
-                description: "Nền tảng CS cơ bản, Java, Database",
-                icon: "pi-graduation-cap",
-              },
-              {
-                year: "2021-2022",
-                title: t("education.phases.selfLearning"),
-                description: "React, Node.js, Web Development",
-                icon: "pi-desktop",
-              },
-              {
-                year: "2022-2023",
-                title: t("education.phases.cloudDevOps"),
-                description: "AWS, Docker, Kubernetes",
-                icon: "pi-cloud",
-              },
-              {
-                year: "2023-2025",
-                title: t("education.phases.aiMaster"),
-                description: "Deep Learning, NLP, Computer Vision",
-                icon: "pi-chart-line",
-              },
-            ].map((phase, index) => (
+            {learningTimeline.map((phase, index) => (
               <div key={index} className="text-center">
-                <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-purple-500 to-pink-500">
+                <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-linear-to-r from-purple-500 to-pink-500">
                   <i className={`pi ${phase.icon} text-white text-2xl`}></i>
                 </div>
-                <h3 className="mb-2 font-bold text-white">{phase.year}</h3>
+                <h3 className="mb-1 font-bold text-white">{phase.year}</h3>
                 <h4 className="mb-2 font-semibold text-purple-400">
                   {phase.title}
                 </h4>
@@ -447,33 +251,37 @@ const Education = () => {
         {/* Learning Philosophy */}
         <div className="text-center">
           <h2 className="mb-6 text-3xl font-bold text-white">
-            {t("education.learningPhilosophy")}
+            Learning Philosophy
           </h2>
           <div className="max-w-4xl mx-auto">
             <p className="mb-8 text-xl leading-relaxed text-gray-400">
-              {t("education.philosophyQuote")}
+              "I believe the best way to learn is by building real things. Every
+              project teaches me something new — and I never stop."
             </p>
 
             <div className="grid grid-cols-1 gap-8 mb-12 md:grid-cols-3">
               {[
                 {
                   icon: "pi-lightbulb",
-                  title: t("education.principles.criticalThinking.title"),
-                  description: t("education.principles.criticalThinking.desc"),
+                  title: "Build to Learn",
+                  description:
+                    "Apply knowledge immediately through real projects rather than just theory.",
                 },
                 {
                   icon: "pi-users",
-                  title: t("education.principles.community.title"),
-                  description: t("education.principles.community.desc"),
+                  title: "Learn from Others",
+                  description:
+                    "Collaborate with teammates and learn from code reviews and feedback.",
                 },
                 {
                   icon: "pi-cog",
-                  title: t("education.principles.practice.title"),
-                  description: t("education.principles.practice.desc"),
+                  title: "Keep Improving",
+                  description:
+                    "Continuously refine skills and stay updated with new technologies.",
                 },
               ].map((principle, index) => (
                 <div key={index} className="text-center">
-                  <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500">
+                  <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-lg bg-linear-to-r from-purple-500 to-pink-500">
                     <i
                       className={`pi ${principle.icon} text-white text-2xl`}
                     ></i>
@@ -488,10 +296,10 @@ const Education = () => {
 
             <a
               href="/contact"
-              className="inline-flex items-center px-8 py-4 space-x-2 font-semibold text-white transition-all duration-300 transform rounded-lg shadow-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 hover:scale-105"
+              className="inline-flex items-center px-8 py-4 space-x-2 font-semibold text-white transition-all duration-300 transform rounded-lg shadow-lg bg-linear-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 hover:scale-105"
             >
               <i className="pi pi-envelope"></i>
-              <span>{t("education.cta")}</span>
+              <span>Contact Me</span>
             </a>
           </div>
         </div>
@@ -501,4 +309,3 @@ const Education = () => {
 };
 
 export default Education;
-

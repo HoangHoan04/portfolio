@@ -1,4 +1,6 @@
+import emailjs from "@emailjs/browser";
 import { useState } from "react";
+import { EMAILJS_CONFIG } from "../config/emailjs.config";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -6,82 +8,101 @@ const Contact = () => {
     email: "",
     subject: "",
     message: "",
-    budget: "",
-    timeline: "",
     projectType: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError("");
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    try {
+      // Prepare email parameters
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        project_type: formData.projectType || "Not specified",
+        to_email: EMAILJS_CONFIG.TO_EMAIL,
+      };
 
-    setIsSubmitting(false);
-    setSubmitted(true);
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        templateParams,
+        EMAILJS_CONFIG.PUBLIC_KEY,
+      );
 
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-        budget: "",
-        timeline: "",
-        projectType: "",
-      });
-    }, 3000);
+      if (response.status === 200) {
+        setSubmitted(true);
+        // Reset form after 3 seconds
+        setTimeout(() => {
+          setSubmitted(false);
+          setFormData({
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+            projectType: "",
+          });
+        }, 3000);
+      }
+    } catch (err) {
+      console.error("Email sending failed:", err);
+      setError(
+        "Failed to send message. Please try again or contact me directly at hoanghoanpineapple04@gmail.com",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
     {
       icon: "pi-envelope",
       title: "Email",
-      value: "contact@example.com",
-      description: "Gửi email cho tôi bất cứ lúc nào",
-      link: "mailto:contact@example.com",
+      value: "hoanghoanpineapple04@gmail.com",
+      description: "Send me an email anytime",
+      link: "mailto:hoanghoanpineapple04@gmail.com",
       color: "from-blue-500 to-cyan-500",
     },
     {
-      icon: "pi-phone",
-      title: "Điện thoại",
-      value: "+84 123 456 789",
-      description: "Gọi trực tiếp (9:00 - 18:00)",
-      link: "tel:+84123456789",
-      color: "from-green-500 to-emerald-500",
-    },
-    {
-      icon: "pi-map-marker",
-      title: "Địa chỉ",
-      value: "Hà Nội, Việt Nam",
-      description: "Có thể hẹn gặp trực tiếp",
-      link: "#",
-      color: "from-red-500 to-pink-500",
+      icon: "pi-github",
+      title: "GitHub",
+      value: "github.com/HoangHoan04",
+      description: "Check out my source code",
+      link: "https://github.com/HoangHoan04",
+      color: "from-gray-600 to-gray-400",
     },
     {
       icon: "pi-linkedin",
       title: "LinkedIn",
-      value: "linkedin.com/in/profile",
-      description: "Kết nối chuyên nghiệp",
-      link: "https://linkedin.com",
+      value: "linkedin.com/in/hoanghoan04",
+      description: "Connect professionally",
+      link: "https://www.linkedin.com/in/hoanghoan04/",
       color: "from-blue-600 to-blue-400",
+    },
+    {
+      icon: "pi-map-marker",
+      title: "Location",
+      value: "Ho Chi Minh City, Vietnam",
+      description: "Open to remote work",
+      link: "#",
+      color: "from-red-500 to-pink-500",
     },
   ];
 
@@ -89,54 +110,26 @@ const Contact = () => {
     {
       name: "GitHub",
       icon: "pi-github",
-      url: "https://github.com",
+      url: "https://github.com/HoangHoan04",
       color: "hover:text-gray-300",
     },
     {
       name: "LinkedIn",
       icon: "pi-linkedin",
-      url: "https://linkedin.com",
+      url: "https://www.linkedin.com/in/hoanghoan04/",
       color: "hover:text-blue-400",
     },
-    {
-      name: "Tiktok",
-      icon: "pi-tiktok",
-      url: "https://twitter.com",
-      color: "hover:text-blue-300",
-    },
-    {
-      name: "Facebook",
-      icon: "pi-facebook",
-      url: "https://facebook.com",
-      color: "hover:text-blue-500",
-    },
-    {
-      name: "Instagram",
-      icon: "pi-instagram",
-      url: "https://instagram.com",
-      color: "hover:text-pink-400",
-    },
-    {
-      name: "YouTube",
-      icon: "pi-youtube",
-      url: "https://youtube.com",
-      color: "hover:text-red-400",
-    },
   ];
-
-
 
   return (
     <div className="min-h-screen py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-white mb-6">
-            Liên hệ với tôi
-          </h1>
+          <h1 className="text-5xl font-bold text-white mb-6">Contact Me</h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Có ý tưởng dự án thú vị? Muốn hợp tác? Hoặc chỉ đơn giản là muốn kết
-            nối? Tôi luôn sẵn sàng lắng nghe và thảo luận!
+            Have an interesting project idea? Want to collaborate? Or just want
+            to connect? I'm always open to listening and discussing!
           </p>
         </div>
 
@@ -146,20 +139,32 @@ const Contact = () => {
             <div className="bg-slate-800 rounded-2xl p-8 border border-slate-700">
               <h2 className="text-2xl font-bold text-white mb-6 flex items-center space-x-2">
                 <i className="pi pi-send text-purple-400"></i>
-                <span>Gửi tin nhắn</span>
+                <span>Send a Message</span>
               </h2>
+
+              {error && (
+                <div className="mb-6 p-4 bg-red-900/50 border border-red-700 rounded-lg flex items-start space-x-3">
+                  <i className="pi pi-exclamation-circle text-red-400 text-xl mt-0.5"></i>
+                  <div>
+                    <h4 className="text-red-300 font-semibold mb-1">
+                      Error sending message
+                    </h4>
+                    <p className="text-red-200 text-sm">{error}</p>
+                  </div>
+                </div>
+              )}
 
               {submitted ? (
                 <div className="text-center py-12">
-                  <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
+                  <div className="w-20 h-20 mx-auto mb-6 bg-linear-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
                     <i className="pi pi-check text-white text-3xl"></i>
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-3">
-                    Cảm ơn bạn!
+                    Thank you!
                   </h3>
                   <p className="text-gray-400">
-                    Tin nhắn đã được gửi thành công. Tôi sẽ phản hồi trong vòng
-                    24 giờ.
+                    Message sent successfully to hoanghoanpineapple04@gmail.com.
+                    I'll get back to you within 24 hours.
                   </p>
                 </div>
               ) : (
@@ -167,7 +172,7 @@ const Contact = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-white font-medium mb-2">
-                        Họ tên *
+                        Full Name *
                       </label>
                       <input
                         type="text"
@@ -176,7 +181,7 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
-                        placeholder="Nhập họ tên của bạn"
+                        placeholder="Your full name"
                       />
                     </div>
                     <div>
@@ -195,48 +200,28 @@ const Contact = () => {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-white font-medium mb-2">
-                        Loại dự án
-                      </label>
-                      <select
-                        name="projectType"
-                        value={formData.projectType}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors"
-                      >
-                        <option value="">Chọn loại dự án</option>
-                        <option value="web-app">Web Application</option>
-                        <option value="mobile-app">Mobile App</option>
-                        <option value="api">API Development</option>
-                        <option value="consultation">Tư vấn</option>
-                        <option value="other">Khác</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label className="block text-white font-medium mb-2">
-                        Timeline dự kiến
-                      </label>
-                      <select
-                        name="timeline"
-                        value={formData.timeline}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors"
-                      >
-                        <option value="">Chọn timeline</option>
-                        <option value="1-2-weeks">1-2 tuần</option>
-                        <option value="1-month">1 tháng</option>
-                        <option value="2-3-months">2-3 tháng</option>
-                        <option value="6-months">6 tháng+</option>
-                        <option value="flexible">Linh hoạt</option>
-                      </select>
-                    </div>
+                  <div>
+                    <label className="block text-white font-medium mb-2">
+                      Project Type
+                    </label>
+                    <select
+                      name="projectType"
+                      value={formData.projectType}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors"
+                    >
+                      <option value="">Select project type</option>
+                      <option value="web-app">Web Application</option>
+                      <option value="api">API Development</option>
+                      <option value="fullstack">Full-Stack Project</option>
+                      <option value="consultation">Consultation</option>
+                      <option value="other">Other</option>
+                    </select>
                   </div>
 
                   <div>
                     <label className="block text-white font-medium mb-2">
-                      Chủ đề *
+                      Subject *
                     </label>
                     <input
                       type="text"
@@ -245,33 +230,13 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
-                      placeholder="Tóm tắt ngắn gọn về dự án/câu hỏi"
+                      placeholder="Brief summary of your project or question"
                     />
                   </div>
 
                   <div>
                     <label className="block text-white font-medium mb-2">
-                      Ngân sách dự kiến
-                    </label>
-                    <select
-                      name="budget"
-                      value={formData.budget}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors"
-                    >
-                      <option value="">Chọn ngân sách</option>
-                      <option value="under-5m">Dưới 5 triệu</option>
-                      <option value="5-10m">5-10 triệu</option>
-                      <option value="10-20m">10-20 triệu</option>
-                      <option value="20-50m">20-50 triệu</option>
-                      <option value="over-50m">Trên 50 triệu</option>
-                      <option value="discuss">Cần thảo luận</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-white font-medium mb-2">
-                      Mô tả chi tiết *
+                      Message *
                     </label>
                     <textarea
                       name="message"
@@ -280,24 +245,24 @@ const Contact = () => {
                       required
                       rows={6}
                       className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors resize-none"
-                      placeholder="Mô tả chi tiết về dự án, yêu cầu kỹ thuật, mục tiêu và bất kỳ thông tin nào khác bạn muốn chia sẻ..."
+                      placeholder="Describe your project, requirements, goals, or anything you'd like to discuss..."
                     ></textarea>
                   </div>
 
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 px-6 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                    className="w-full bg-linear-to-r from-purple-600 to-pink-600 text-white py-4 px-6 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
                   >
                     {isSubmitting ? (
                       <>
                         <i className="pi pi-spin pi-spinner"></i>
-                        <span>Đang gửi...</span>
+                        <span>Sending...</span>
                       </>
                     ) : (
                       <>
                         <i className="pi pi-send"></i>
-                        <span>Gửi tin nhắn</span>
+                        <span>Send Message</span>
                       </>
                     )}
                   </button>
@@ -311,18 +276,20 @@ const Contact = () => {
             <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700">
               <h3 className="text-xl font-bold text-white mb-6 flex items-center space-x-2">
                 <i className="pi pi-info-circle text-purple-400"></i>
-                <span>Thông tin liên hệ</span>
+                <span>Contact Information</span>
               </h3>
               <div className="space-y-4">
                 {contactInfo.map((info, index) => (
                   <a
                     key={index}
                     href={info.link}
+                    target={info.link.startsWith("http") ? "_blank" : undefined}
+                    rel="noopener noreferrer"
                     className="block p-4 bg-slate-700 rounded-lg border border-slate-600 hover:border-purple-500 transition-all duration-300 group"
                   >
                     <div className="flex items-center space-x-4">
                       <div
-                        className={`w-12 h-12 bg-gradient-to-r ${info.color} rounded-lg flex items-center justify-center flex-shrink-0`}
+                        className={`w-12 h-12 bg-linear-to-r ${info.color} rounded-lg flex items-center justify-center shrink-0`}
                       >
                         <i className={`pi ${info.icon} text-white text-xl`}></i>
                       </div>
@@ -348,7 +315,7 @@ const Contact = () => {
             <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700">
               <h3 className="text-xl font-bold text-white mb-6 flex items-center space-x-2">
                 <i className="pi pi-share-alt text-purple-400"></i>
-                <span>Mạng xã hội</span>
+                <span>Social Media</span>
               </h3>
               <div className="grid grid-cols-2 gap-3">
                 {socialLinks.map((social, index) => (
@@ -370,26 +337,26 @@ const Contact = () => {
             <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700">
               <h3 className="text-xl font-bold text-white mb-4 flex items-center space-x-2">
                 <i className="pi pi-clock text-purple-400"></i>
-                <span>Thời gian làm việc</span>
+                <span>Availability</span>
               </h3>
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-gray-400">Thứ 2 - Thứ 6:</span>
-                  <span className="text-white">9:00 - 18:00</span>
+                  <span className="text-gray-400">Mon - Fri:</span>
+                  <span className="text-white">8:00 - 17:30</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-400">Thứ 7:</span>
-                  <span className="text-white">10:00 - 16:00</span>
+                  <span className="text-gray-400">Saturday:</span>
+                  <span className="text-white">Flexible</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-400">Chủ nhật:</span>
-                  <span className="text-gray-500">Nghỉ</span>
+                  <span className="text-gray-400">Sunday:</span>
+                  <span className="text-gray-500">Off</span>
                 </div>
                 <div className="pt-3 border-t border-slate-600">
                   <div className="flex items-center space-x-2">
                     <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
                     <span className="text-green-400 text-sm font-medium">
-                      Đang online
+                      Available for opportunities
                     </span>
                   </div>
                 </div>
@@ -398,24 +365,23 @@ const Contact = () => {
           </div>
         </div>
 
-
         {/* Location */}
         <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Vị trí</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Location</h2>
           <p className="text-gray-400 mb-6">
-            Hiện tại tôi đang làm việc tại Hà Nội, Việt Nam. Tôi cũng sẵn sàng
-            làm việc remote cho các dự án phù hợp.
+            Currently based in Ho Chi Minh City, Vietnam. Open to remote work
+            for suitable projects.
           </p>
           <div className="flex justify-center items-center space-x-8">
             <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+              <div className="w-16 h-16 mx-auto mb-3 bg-linear-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
                 <i className="pi pi-map-marker text-white text-2xl"></i>
               </div>
-              <div className="text-white font-semibold">Hà Nội</div>
-              <div className="text-gray-400 text-sm">Việt Nam</div>
+              <div className="text-white font-semibold">Ho Chi Minh City</div>
+              <div className="text-gray-400 text-sm">Vietnam</div>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
+              <div className="w-16 h-16 mx-auto mb-3 bg-linear-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
                 <i className="pi pi-globe text-white text-2xl"></i>
               </div>
               <div className="text-white font-semibold">Remote</div>

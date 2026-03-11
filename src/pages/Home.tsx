@@ -1,13 +1,29 @@
 import Lottie from "lottie-react";
 import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import DeveloperAnimation from "../assets/animations/DeveloperAnimation.json";
+import {
+  angularIcon,
+  awsIcon,
+  codeIcon,
+  dockerIcon,
+  figmaIcon,
+  gcpIcon,
+  githubIcon,
+  javascriptIcon,
+  mysqlIcon,
+  nestjsIcon,
+  networkingIcon,
+  nextjsIcon,
+  nodeJsIcon,
+  pythonIcon,
+  reactIcon,
+  settingIcon,
+  tailwindIcon,
+  typescriptIcon,
+} from "../assets/icons";
 import imageProject from "../assets/images/project.png";
 import ScrollAnimation from "../components/ScrollAnimation";
-import { angularIcon, awsIcon, codeIcon, dockerIcon, figmaIcon, gcpIcon, githubIcon, javascriptIcon, mysqlIcon, nestjsIcon, networkingIcon, nextjsIcon, nodeJs, pythonIcon, reactIcon, settingIcon, tailwindIcon, typescriptIcon } from "../assets/icons";
-
-
 
 const iconMap: { [key: string]: string } = {
   react: reactIcon,
@@ -27,11 +43,10 @@ const iconMap: { [key: string]: string } = {
   setting: settingIcon,
   networking: networkingIcon,
   code: codeIcon,
-  nodejs: nodeJs,
+  nodejs: nodeJsIcon,
 };
 
 const Home = () => {
-  const { t } = useTranslation();
   const [currentRole, setCurrentRole] = useState(0);
   const [animationKey, setAnimationKey] = useState(0);
   const roles = [
@@ -44,8 +59,9 @@ const Home = () => {
   const projectHighlights = [
     {
       id: 1,
-      title: t("home.projects.portfolio.title"),
-      description: t("home.projects.portfolio.description"),
+      title: "Portfolio Website",
+      description:
+        "A sleek personal portfolio featuring my resume, blog posts, and highlighted projects, built for performance and responsiveness.",
       image: imageProject,
       tech: ["React", "TailwindCSS", "Vite"],
       github: "https://github.com/yourusername/portfolio",
@@ -53,8 +69,9 @@ const Home = () => {
     },
     {
       id: 2,
-      title: t("home.projects.ecommerce.title"),
-      description: t("home.projects.ecommerce.description"),
+      title: "E-commerce AppleStore Platform",
+      description:
+        "A full-stack e-commerce solution with modern UI, user authentication, shopping cart.",
       image: imageProject,
       tech: ["PHP", "Javascript", "MySQL", "Bootstrap"],
       github: "https://github.com/yourusername/ecommerce-platform",
@@ -62,8 +79,9 @@ const Home = () => {
     },
     {
       id: 3,
-      title: t("home.projects.exam.title"),
-      description: t("home.projects.exam.description"),
+      title: "Saigon University Examination Portal",
+      description:
+        "A smart examination portal featuring GPT-powered chatbot assistance, real-time messaging, and efficient student data management.",
       image: imageProject,
       tech: ["Next.ts", "Node.ts", "Socket.io"],
       github: "https://github.com/yourusername/ai-chatbot",
@@ -90,7 +108,7 @@ const Home = () => {
           {/* Left: Text Content */}
           <div className="w-full text-center lg:w-1/2 lg:text-left">
             <h1 className="mb-6 text-5xl font-bold text-white dark:text-gray-100 md:text-6xl animate-fade-in-up">
-              {t("home.greeting")}
+              Hi! I'm HoangHoan
             </h1>
 
             <div className="h-12 mb-6 text-2xl text-gray-300 dark:text-gray-400 md:text-3xl">
@@ -101,7 +119,7 @@ const Home = () => {
                   {
                     "--typing-duration": `${Math.max(
                       1.5,
-                      roles[currentRole].length * 0.08
+                      roles[currentRole].length * 0.08,
                     )}s`,
                     "--typing-steps": roles[currentRole].length,
                   } as React.CSSProperties
@@ -113,23 +131,26 @@ const Home = () => {
 
             <p
               className="mb-10 text-lg leading-relaxed text-gray-400 dark:text-gray-500 md:text-xl animate-fade-in-up animation-delay-300"
-              dangerouslySetInnerHTML={{ __html: t("home.intro") }}
+              dangerouslySetInnerHTML={{
+                __html:
+                  "Hello! I'm a Web Developer intern with a strong passion for building modern user interfaces and optimizing user experience. I'm currently a Computer Science student at <strong>Sai Gon University</strong>, working as a Web Developer intern at <strong>APE TECH Solutions</strong>. I'm actively learning and improving my skills through personal and group projects.",
+              }}
             />
 
             <div className="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start animate-fade-in-up animation-delay-500">
               <Link
                 to="/projects"
-                className="flex items-center justify-center px-8 py-4 space-x-2 font-semibold text-white transition-all duration-500 transform rounded-lg shadow-lg group bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 hover:scale-105 hover:shadow-blue-500/25 hover:shadow-2xl"
+                className="flex items-center justify-center px-8 py-4 space-x-2 font-semibold text-white transition-all duration-500 transform rounded-lg shadow-lg group bg-linear-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 hover:scale-105 hover:shadow-blue-500/25 hover:shadow-2xl"
               >
                 <i className="transition-transform duration-300 pi pi-briefcase group-hover:rotate-12"></i>
-                <span>{t("common.viewProject")}</span>
+                <span>View project</span>
               </Link>
               <Link
                 to="/contact"
                 className="flex items-center justify-center px-8 py-4 space-x-2 font-semibold text-blue-400 transition-all duration-500 transform border-2 border-blue-500 rounded-lg dark:text-blue-300 dark:border-blue-400 group hover:bg-blue-500 hover:text-white hover:scale-105 hover:shadow-blue-400/25 hover:shadow-2xl"
               >
                 <i className="transition-transform duration-300 pi pi-envelope group-hover:scale-125"></i>
-                <span>{t("common.contact")}</span>
+                <span>Contact</span>
               </Link>
             </div>
           </div>
@@ -157,17 +178,16 @@ const Home = () => {
         </div>
       </section>
 
-
       {/* Featured Projects */}
       <ScrollAnimation delay={200}>
         <section className="py-20">
           <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="mb-16 text-center">
               <h2 className="mb-4 text-4xl font-bold text-white">
-                {t("home.featuredProjects")}
+                Featured Projects
               </h2>
               <p className="max-w-2xl mx-auto text-gray-400">
-                {t("home.featuredProjectsDesc")}
+                Some of the notable projects I've worked on recently
               </p>
             </div>
 
@@ -196,7 +216,7 @@ const Home = () => {
                   <h3 className="mb-2 text-xl font-semibold text-white transition-colors duration-300 group-hover:text-blue-300">
                     {project.title}
                   </h3>
-                  <p className="flex-grow mb-4 overflow-hidden text-gray-400 transition-colors duration-300 group-hover:text-gray-300">
+                  <p className="grow mb-4 overflow-hidden text-gray-400 transition-colors duration-300 group-hover:text-gray-300">
                     {project.description.length > 150
                       ? project.description.slice(0, 150) + "..."
                       : project.description}
@@ -247,7 +267,7 @@ const Home = () => {
                 to="/projects"
                 className="inline-flex items-center space-x-2 text-blue-400 transition-colors hover:text-blue-300"
               >
-                <span>{t("common.viewAllProjects")}</span>
+                <span>View all projects</span>
                 <i className="pi pi-arrow-right"></i>
               </Link>
             </div>
@@ -259,9 +279,9 @@ const Home = () => {
       <section className="py-20 bg-slate-800/50">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-4xl font-bold text-white">{t("home.skills")}</h2>
+            <h2 className="mb-4 text-4xl font-bold text-white">Skills</h2>
             <p className="max-w-2xl mx-auto text-gray-400">
-              {t("home.skillsDesc")}
+              The technologies and programming languages I am proficient in
             </p>
           </div>
 
@@ -320,7 +340,7 @@ const Home = () => {
               to="/skills"
               className="inline-flex items-center space-x-2 text-blue-400 transition-colors hover:text-blue-300"
             >
-              <span>{t("common.viewAllSkills")}</span>
+              <span>View all skills</span>
               <i className="pi pi-arrow-right"></i>
             </Link>
           </div>
