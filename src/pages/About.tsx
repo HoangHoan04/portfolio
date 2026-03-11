@@ -1,3 +1,4 @@
+import cvFile from "../assets/files/HoangDinhHoanCv.pdf";
 import profileImage from "../assets/images/profile.jpg";
 import { calculateAge } from "../helpers/autoAge";
 
@@ -47,8 +48,8 @@ const About = () => {
 
             <div className="flex flex-wrap gap-4 mt-8">
               <a
-                href="../../Hoang-Dinh-Hoan.pdf"
-                target="_blank"
+                href={cvFile}
+                download="Hoang-Dinh-Hoan-CV.pdf"
                 className="flex items-center px-6 py-3 space-x-2 font-semibold text-white transition-all duration-300 transform rounded-lg shadow-lg bg-linear-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 hover:scale-105"
               >
                 <i className="pi pi-download"></i>

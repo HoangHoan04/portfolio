@@ -2,6 +2,7 @@ import Lottie from "lottie-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import DeveloperAnimation from "../assets/animations/DeveloperAnimation.json";
+import cvFile from "../assets/files/HoangDinhHoanCv.pdf";
 import {
   angularIcon,
   awsIcon,
@@ -59,33 +60,33 @@ const Home = () => {
   const projectHighlights = [
     {
       id: 1,
-      title: "Portfolio Website",
+      title: "Wedding Invitation",
       description:
-        "A sleek personal portfolio featuring my resume, blog posts, and highlighted projects, built for performance and responsiveness.",
+        "A full-stack wedding invitation web app with countdown timer, event details, and RSVP functionality. Built a responsive UI with React and Tailwind CSS, optimized for both desktop and mobile devices.",
       image: imageProject,
-      tech: ["React", "TailwindCSS", "Vite"],
-      github: "https://github.com/yourusername/portfolio",
-      demo: "https://yourdomain.com",
+      tech: ["TypeScript", "React", "Tailwind", "NestJS"],
+      github: "https://github.com/HoangHoan04/wedding-invitation-customer",
+      demo: "",
     },
     {
       id: 2,
-      title: "E-commerce AppleStore Platform",
+      title: "Booking Tour HimLamTourist",
       description:
-        "A full-stack e-commerce solution with modern UI, user authentication, shopping cart.",
+        "A full-stack tour booking platform with separate modules for customer, admin, and API services. Features tour search, filtering, and reservation flow with NestJS and PostgreSQL via Supabase.",
       image: imageProject,
-      tech: ["PHP", "Javascript", "MySQL", "Bootstrap"],
-      github: "https://github.com/yourusername/ecommerce-platform",
-      demo: "https://ecommerce-demo.com",
+      tech: ["React", "TypeScript", "NestJS", "PostgreSQL", "Supabase"],
+      github: "https://github.com/HoangHoan04/bookingtour-customer",
+      demo: "https://himlamtourist.xyz/",
     },
     {
       id: 3,
-      title: "Saigon University Examination Portal",
+      title: "Apple Store",
       description:
-        "A smart examination portal featuring GPT-powered chatbot assistance, real-time messaging, and efficient student data management.",
+        "A full-stack e-commerce web app simulating the Apple Store with product listings, shopping cart, and order management. Built with core PHP and MVC architecture with a relational MySQL database.",
       image: imageProject,
-      tech: ["Next.ts", "Node.ts", "Socket.io"],
-      github: "https://github.com/yourusername/ai-chatbot",
-      demo: "https://chatbot-ai-demo.com",
+      tech: ["PHP", "MySQL"],
+      github: "https://github.com/HoangHoan04/AppleStore",
+      demo: "",
     },
   ];
 
@@ -93,7 +94,7 @@ const Home = () => {
     const interval = setInterval(() => {
       setCurrentRole((prev) => (prev + 1) % roles.length);
       setAnimationKey((prev) => prev + 1);
-    }, 3000); // Thời gian cố định cho dễ theo dõi
+    }, 3000);
     return () => clearInterval(interval);
   }, [roles.length]);
 
@@ -101,8 +102,6 @@ const Home = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative flex items-center justify-center min-h-screen px-6 overflow-hidden transition-colors duration-300 bg-linear-to-br from-blue-900/50 to-slate-900/50 dark:from-gray-900/50 dark:to-black/50">
-        {/* Background Blobs */}
-
         {/* Main Content */}
         <div className="relative z-10 flex flex-col-reverse items-center justify-between w-full gap-12 mx-auto lg:flex-row max-w-7xl">
           {/* Left: Text Content */}
@@ -130,20 +129,52 @@ const Home = () => {
             </div>
 
             <p
-              className="mb-10 text-lg leading-relaxed text-gray-400 dark:text-gray-500 md:text-xl animate-fade-in-up animation-delay-300"
+              className="mb-8 text-lg leading-relaxed text-gray-400 dark:text-gray-500 md:text-xl animate-fade-in-up animation-delay-300"
               dangerouslySetInnerHTML={{
                 __html:
-                  "Hello! I'm a Web Developer intern with a strong passion for building modern user interfaces and optimizing user experience. I'm currently a Computer Science student at <strong>Sai Gon University</strong>, working as a Web Developer intern at <strong>APE TECH Solutions</strong>. I'm actively learning and improving my skills through personal and group projects.",
+                  "Hello! I'm a Web Developer with a strong passion for building modern user interfaces and optimizing user experience. I'm currently a Software Engineering student at <strong>Saigon University</strong>, working as a Web Developer at <strong>APETECH Solutions</strong>. I'm actively learning and improving my skills through personal and group projects.",
               }}
             />
 
+            {/* Social Links */}
+            <div className="flex justify-center gap-4 mb-8 lg:justify-start animate-fade-in-up animation-delay-400">
+              <a
+                href={cvFile}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-300 transition-all duration-300 border border-slate-600 rounded-lg hover:border-cyan-400 hover:text-cyan-400 hover:bg-cyan-400/10 hover:scale-105"
+              >
+                <i className="pi pi-file-pdf"></i>
+                <span>Resume</span>
+              </a>
+              <a
+                href="https://github.com/HoangHoan04"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-300 transition-all duration-300 border border-slate-600 rounded-lg hover:border-white hover:text-white hover:bg-white/10 hover:scale-105"
+              >
+                <i className="pi pi-github"></i>
+                <span>GitHub</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/hoanghoan04/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-300 transition-all duration-300 border border-slate-600 rounded-lg hover:border-blue-400 hover:text-blue-400 hover:bg-blue-400/10 hover:scale-105"
+              >
+                <i className="pi pi-linkedin"></i>
+                <span>LinkedIn</span>
+              </a>
+            </div>
+
+            {/* CTA Buttons */}
             <div className="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start animate-fade-in-up animation-delay-500">
               <Link
                 to="/projects"
                 className="flex items-center justify-center px-8 py-4 space-x-2 font-semibold text-white transition-all duration-500 transform rounded-lg shadow-lg group bg-linear-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 hover:scale-105 hover:shadow-blue-500/25 hover:shadow-2xl"
               >
                 <i className="transition-transform duration-300 pi pi-briefcase group-hover:rotate-12"></i>
-                <span>View project</span>
+                <span>View Projects</span>
               </Link>
               <Link
                 to="/contact"
@@ -191,7 +222,6 @@ const Home = () => {
               </p>
             </div>
 
-            {/* Define project data */}
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {projectHighlights.map((project, index) => (
                 <div
@@ -285,42 +315,21 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-6 gap-6 ">
+          <div className="grid grid-cols-6 gap-6">
             {[
-              {
-                name: "React",
-                key: "react",
-              },
-              {
-                name: "Angular",
-                key: "angular",
-              },
-              {
-                name: "Nest.js",
-                key: "nestjs",
-              },
-              {
-                name: "TypeScript",
-                key: "typescript",
-              },
-              {
-                name: "Node.js",
-                key: "nodejs",
-              },
-
-              {
-                name: "MySQL",
-                key: "mysql",
-              },
+              { name: "React", key: "react" },
+              { name: "Angular", key: "angular" },
+              { name: "Nest.js", key: "nestjs" },
+              { name: "TypeScript", key: "typescript" },
+              { name: "Node.js", key: "nodejs" },
+              { name: "MySQL", key: "mysql" },
             ].map((skill, index) => (
               <div
                 key={skill.name}
-                className={`group p-6 text-center transition-all duration-500 transform border rounded-xl hover:bg-slate-700 hover:scale-110 hover:shadow-xl border-slate-700 animate-fade-in-up`}
+                className="group p-6 text-center transition-all duration-500 transform border rounded-xl hover:bg-slate-700 hover:scale-110 hover:shadow-xl border-slate-700 animate-fade-in-up"
                 style={{ animationDelay: `${800 + index * 100}ms` }}
               >
-                <div
-                  className={`w-32 h-32 mx-auto mb-4 rounded-lg flex items-center justify-center transition-all duration-500 group-hover:rotate-12 group-hover:scale-110`}
-                >
+                <div className="w-32 h-32 mx-auto mb-4 rounded-lg flex items-center justify-center transition-all duration-500 group-hover:rotate-12 group-hover:scale-110">
                   <img
                     src={iconMap[skill.key]}
                     alt={skill.name}

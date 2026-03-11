@@ -1,3 +1,5 @@
+import cvFile from "../assets/files/HoangDinhHoanCv.pdf";
+
 const Experience = () => {
   const experiences = [
     {
@@ -327,8 +329,8 @@ const Experience = () => {
               <span>Contact</span>
             </a>
             <a
-              href="/resume.pdf"
-              target="_blank"
+              href={cvFile}
+              download="Hoang-Dinh-Hoan-CV.pdf"
               className="flex items-center justify-center px-8 py-4 space-x-2 font-semibold text-purple-400 transition-all duration-300 transform border-2 border-purple-500 rounded-lg hover:bg-purple-500 hover:text-white hover:scale-105"
             >
               <i className="pi pi-download"></i>
