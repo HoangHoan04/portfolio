@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "cd server && npm start",
+    "server:dev": "cd server && npm run dev"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
