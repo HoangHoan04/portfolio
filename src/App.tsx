@@ -14,7 +14,7 @@ import Skills from "./pages/Skills";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/portfolio">
       <div className="min-h-screen bg-linear-to-br from-slate-900 via-blue-900 to-slate-900 dark:from-gray-900 dark:via-gray-800 dark:to-black transition-colors duration-300">
         <Header />
         <main className="pt-16">
