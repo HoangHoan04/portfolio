@@ -15,7 +15,7 @@ const gradients = [
   "from-sky-400 to-cyan-600",
 ]
 
-function PostCard({ project }: { project: Project }) {
+function PostCard({ project, priority = false }: { project: Project; priority?: boolean }) {
   const gradient = gradients[Number(project.id) % gradients.length]
 
   return (
@@ -24,6 +24,7 @@ function PostCard({ project }: { project: Project }) {
         src={project.thumbnail}
         alt={project.title}
         fill
+        priority={priority}
         sizes="(max-width: 768px) 33vw, 300px"
         className={`bg-linear-to-br ${gradient} object-cover transition-transform duration-300 group-hover:scale-105`}
         containerClassName="relative size-full"

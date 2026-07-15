@@ -5,9 +5,10 @@ import { Bookmark, Clapperboard, Grid3X3 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const tabs = [
-  { label: "POSTS", icon: Grid3X3 },
-  { label: "REELS", icon: Clapperboard },
-  { label: "SAVED", icon: Bookmark },
+  { label: "PRODUCTS", icon: Grid3X3 },
+  { label: "SKILLS", icon: Clapperboard },
+  { label: "CERTIFICATES", icon: Bookmark },
+  { label: "ACHIEVEMENTS", icon: Bookmark },
 ];
 
 function ContentTabs({

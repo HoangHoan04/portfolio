@@ -81,8 +81,7 @@ export interface Education {
 export interface Highlight {
   id: string;
   label: string;
-  cover: string;
-  gradient: string;
+  icon: string;
 }
 
 export interface Contact {

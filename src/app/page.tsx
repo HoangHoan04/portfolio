@@ -9,7 +9,7 @@ import { ProfileHeader } from "@/components/profile/profile-header";
 import { StartScreen } from "@/components/start-screen";
 
 export default function ProfilePage() {
-  const [activeTab, setActiveTab] = useState("POSTS");
+  const [activeTab, setActiveTab] = useState("PRODUCTS");
   const [started, setStarted] = useState(false);
 
   useEffect(() => {
@@ -22,13 +22,18 @@ export default function ProfilePage() {
         <ProfileHeader />
         <Highlights />
         <ContentTabs activeTab={activeTab} onTabChange={setActiveTab} />
-        {activeTab === "POSTS" && <PostGrid />}
-        {activeTab === "REELS" && (
+        {activeTab === "PRODUCTS" && <PostGrid />}
+        {activeTab === "SKILLS" && (
           <div className="flex items-center justify-center py-20 text-[#737373]">
             Reels coming soon
           </div>
         )}
-        {activeTab === "SAVED" && (
+        {activeTab === "CERTIFICATES" && (
+          <div className="flex items-center justify-center py-20 text-[#737373]">
+            Saved posts coming soon
+          </div>
+        )}
+        {activeTab === "ACHIEVEMENTS" && (
           <div className="flex items-center justify-center py-20 text-[#737373]">
             Saved posts coming soon
           </div>
