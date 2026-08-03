@@ -5,6 +5,7 @@ import "./globals.css";
 import { BottomNav } from "@/components/layout/bottom-nav";
 import { LayoutShell } from "@/components/layout/layout-shell";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { LocaleProvider } from "@/contexts/locale-context";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,8 +24,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
 }>) {
   return (
     <html
@@ -34,8 +37,11 @@ export default function RootLayout({
     >
       <body className="min-h-full bg-black text-white">
         <ThemeProvider>
-          <LayoutShell>{children}</LayoutShell>
-          <BottomNav />
+          <LocaleProvider>
+            <LayoutShell>{children}</LayoutShell>
+            {modal}
+            <BottomNav />
+          </LocaleProvider>
         </ThemeProvider>
       </body>
     </html>

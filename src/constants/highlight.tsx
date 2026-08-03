@@ -58,4 +58,3 @@ export const highlights: Highlight[] = [
     icon: "/icons/coded.svg",
   },
 ];
-

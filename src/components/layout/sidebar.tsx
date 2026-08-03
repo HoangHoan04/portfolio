@@ -10,7 +10,6 @@ import {
   Layers,
   PanelLeft,
   PanelLeftClose,
-  Search,
   User,
 } from "lucide-react";
 import Link from "next/link";
@@ -22,7 +21,6 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { label: "Home", icon: Home, href: "/" },
-  { label: "Search", icon: Search, href: "/search" },
   { label: "About", icon: Compass, href: "/about" },
   { label: "Projects", icon: Film, href: "/projects" },
   { label: "Skills", icon: Layers, href: "/skills" },

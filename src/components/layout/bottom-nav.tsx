@@ -1,11 +1,10 @@
 "use client";
 
+import { Z_INDEX } from "@/constants/profile";
+import { cn } from "@/lib/utils";
 import { Clapperboard, Compass, Home, PlusSquare, User } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-import { Z_INDEX } from "@/constants/profile";
-import { cn } from "@/lib/utils";
 
 const navItems = [
   { label: "Home", icon: Home, href: "/" },

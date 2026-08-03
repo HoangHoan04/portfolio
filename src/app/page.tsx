@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 
 import { PostGrid } from "@/components/posts/post-grids";
 import { ContentTabs } from "@/components/profile/content-tabs";
+import { HomeAchievementsGrid } from "@/components/profile/home-achievements-grid";
+import { HomeCertificatesGrid } from "@/components/profile/home-certificates-grid";
+import { HomeReelsGrid } from "@/components/profile/home-reels-grid";
 import { Highlights } from "@/components/profile/highlight";
 import { ProfileHeader } from "@/components/profile/profile-header";
 import { StartScreen } from "@/components/start-screen";
@@ -23,21 +26,9 @@ export default function ProfilePage() {
         <Highlights />
         <ContentTabs activeTab={activeTab} onTabChange={setActiveTab} />
         {activeTab === "PRODUCTS" && <PostGrid />}
-        {activeTab === "SKILLS" && (
-          <div className="flex items-center justify-center py-20 text-[#737373]">
-            Reels coming soon
-          </div>
-        )}
-        {activeTab === "CERTIFICATES" && (
-          <div className="flex items-center justify-center py-20 text-[#737373]">
-            Saved posts coming soon
-          </div>
-        )}
-        {activeTab === "ACHIEVEMENTS" && (
-          <div className="flex items-center justify-center py-20 text-[#737373]">
-            Saved posts coming soon
-          </div>
-        )}
+        {activeTab === "SKILLS" && <HomeReelsGrid />}
+        {activeTab === "CERTIFICATES" && <HomeCertificatesGrid />}
+        {activeTab === "ACHIEVEMENTS" && <HomeAchievementsGrid />}
       </div>
 
       {!started && (

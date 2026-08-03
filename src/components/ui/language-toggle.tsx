@@ -2,32 +2,37 @@
 
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { useState } from "react";
+
+import { useLocale } from "@/contexts/locale-context";
+
+const LOCALES = {
+  en: { label: "English", icon: "/icons/en.svg" },
+  vi: { label: "Tiếng Việt", icon: "/icons/vi.svg" },
+} as const;
 
 export function LanguageToggle({ expanded }: { expanded?: boolean }) {
-  const [locale, setLocale] = useState("en");
+  const { locale, toggleLocale } = useLocale();
 
-  function toggle() {
-    setLocale((prev) => (prev === "en" ? "vi" : "en"));
-  }
+  const current = LOCALES[locale];
+  const next = locale === "en" ? LOCALES.vi : LOCALES.en;
 
   return (
     <button
-      onClick={toggle}
+      onClick={toggleLocale}
       className={cn(
-        "flex w-full shrink-0 items-center rounded-lg py-3 text-base text-sidebar-text transition-colors duration-200 hover:text-sidebar-hover-text hover:bg-sidebar-hover-bg",
-        expanded ? "gap-4 px-3" : "justify-center px-0",
+        "flex w-full shrink-0 items-center rounded-lg py-3 text-base font-medium text-sidebar-text transition-colors duration-200 hover:bg-sidebar-hover-bg hover:text-sidebar-hover-text",
+        expanded ? "gap-3 px-3" : "justify-center px-0",
       )}
-      title={`Switch to ${locale === "en" ? "Vietnamese" : "English"}`}
+      title={`Switch to ${next.label}`}
     >
       <Image
-        src={`/icons/${locale}.svg`}
-        alt={locale}
+        src={current.icon}
+        alt={current.label}
         width={24}
         height={24}
-        className="size-6 shrink-0 rounded-sm object-cover"
+        className="size-6 shrink-0 rounded-full object-cover ring-1 ring-black/5"
       />
-      {expanded && <span className="truncate">{locale.toUpperCase()}</span>}
+      {expanded && <span className="truncate">{current.label}</span>}
     </button>
   );
 }

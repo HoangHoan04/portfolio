@@ -1,4 +1,4 @@
-import type { About, Profile } from "@/types";
+import type { Profile } from "@/types";
 
 export const profile: Profile = {
   username: "HoangHoan",
@@ -15,102 +15,6 @@ export const profile: Profile = {
   githubViewers: 0,
   experience: "1+",
 };
-
-export const about: About = {
-  fullName: "Hoang Dinh Hoan",
-  age: 28,
-  currentAddress: "Hanoi, Vietnam",
-  newAddress: "HCMC, Vietnam",
-  phone: "+84 123 456 789",
-  email: "hoanghoanpineapple04@gmail.com",
-  languages: ["Vietnamese", "English"],
-  hobbies: ["Reading", "Traveling", "Photography"],
-};
-
-export const projects = [
-  {
-    id: "1",
-    title: "Portfolio Website",
-    description:
-      "A personal portfolio website built with React and TypeScript.",
-    type: "Web Development",
-    thumbnail: "/images/projects/portfolio.jpg",
-    link_github: [""],
-    link_demo: "https://hoangdinhhoan.com",
-    stack: ["React", "TypeScript", "Tailwind CSS"],
-  },
-  {
-    id: "2",
-    title: "E-commerce Platform",
-    description:
-      "A full-featured e-commerce platform with shopping cart and payment integration.",
-    type: "Web Development",
-    thumbnail: "/images/projects/ecommerce.jpg",
-    link_github: [""],
-    link_demo: "https://ecommerce.example.com",
-    stack: ["Next.js", "Node.js", "MongoDB"],
-  },
-];
-
-export const skills = [
-  {
-    id: "1",
-    name: "JavaScript",
-    description: "Proficient in JavaScript and its modern frameworks.",
-    icon: "/images/skills/javascript.png",
-    level: 90,
-  },
-  {
-    id: "2",
-    name: "TypeScript",
-    description:
-      "Strong understanding of TypeScript for building scalable applications.",
-    icon: "/images/skills/typescript.png",
-    level: 85,
-  },
-];
-
-export const experiences = [
-  {
-    id: "1",
-    title: "Frontend Developer",
-    company: "Tech Company A",
-    description:
-      "Developed and maintained web applications using React and TypeScript.",
-    startDate: "2020-01-01",
-    endDate: "2022-12-31",
-    location: "Hanoi, Vietnam",
-    mainSkills: ["React", "TypeScript", "Redux"],
-    mainResponsibilities: [
-      "Developed user interfaces",
-      "Collaborated with backend team",
-      "Implemented responsive designs",
-    ],
-    technologies: ["React", "TypeScript", "Tailwind CSS"],
-    achievements: [
-      "Improved application performance by 30%",
-      "Mentored junior developers",
-    ],
-  },
-];
-
-export const educations = [
-  {
-    id: "1",
-    degree: "Bachelor of Science in Computer Science",
-    gpa: "3.8/4.0",
-    activities: ["Coding Club", "Hackathons"],
-    achievements: ["Dean's List", "Best Capstone Project"],
-    fieldOfStudy: "Computer Science",
-    school: "University of Technology",
-    startDate: "2015-09-01",
-    endDate: "2019-06-30",
-    location: "Hanoi, Vietnam",
-    description:
-      "Studied various computer science topics including algorithms, data structures, and software engineering.",
-    mainCourses: ["Data Structures", "Algorithms", "Web Development"],
-  },
-];
 
 export const Z_INDEX = {
   sidebar: 40,
