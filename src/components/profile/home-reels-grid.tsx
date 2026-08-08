@@ -18,7 +18,7 @@ function HomeReelsGrid() {
           <Link
             key={reel.id}
             href="/reels"
-            className="group relative aspect-[9/14] overflow-hidden bg-[#1a1a1a]"
+            className="group relative aspect-[9/14] overflow-hidden bg-elevated-hover"
           >
             <div
               className={cn(
@@ -34,7 +34,7 @@ function HomeReelsGrid() {
               <Play className="size-8 text-white" weight="fill" />
             </div>
             <div className="absolute bottom-0 left-0 right-0 p-2">
-              <span className="mb-0.5 inline-block rounded-full bg-[#0095f6]/90 px-1.5 py-0.5 text-[9px] font-bold">
+              <span className="mb-0.5 inline-block rounded-full bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 px-1.5 py-0.5 text-[9px] font-bold text-white">
                 {reel.tag}
               </span>
               <p className="line-clamp-2 text-[10px] font-semibold leading-tight">
@@ -44,10 +44,10 @@ function HomeReelsGrid() {
           </Link>
         ))}
       </div>
-      <div className="border-t border-[#262626] py-4 text-center">
+      <div className="border-t border-elevated-border py-4 text-center">
         <Link
           href="/reels"
-          className="text-sm font-semibold text-[#0095f6] hover:text-[#1877f2]"
+          className="text-sm font-semibold text-primary-accent hover:opacity-80"
         >
           {t("home.reels.viewAll")}
         </Link>

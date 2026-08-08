@@ -19,7 +19,7 @@ function PostCard({ project, priority = false }: { project: Project; priority?: 
   const gradient = gradients[Number(project.id) % gradients.length]
 
   return (
-    <div className="group relative aspect-square cursor-pointer overflow-hidden bg-[#1a1a1a]">
+    <div className="group relative aspect-square cursor-pointer overflow-hidden bg-elevated-hover">
       <Image
         src={project.thumbnail}
         alt={project.title}

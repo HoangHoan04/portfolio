@@ -66,7 +66,7 @@ function ProfileHeader() {
       <div className="hidden md:flex md:flex-row md:items-center md:gap-24 md:pb-8">
         <div className="flex shrink-0 justify-center">
           <div className="rounded-full bg-linear-to-tr from-yellow-400 via-red-500 to-purple-600 p-0.75">
-            <div className="rounded-full bg-black p-0.5">
+            <div className="rounded-full bg-avatar-border-bg p-0.5">
               <Avatar size={200} />
             </div>
           </div>
@@ -86,13 +86,13 @@ function ProfileHeader() {
                 <strong className="block text-base font-semibold">
                   {profile.experience}
                 </strong>
-                <span className="text-xs text-[#737373]">years exp</span>
+                <span className="text-xs text-secondary-text">years exp</span>
               </div>
               <div className="flex items-center gap-2 text-center">
                 <strong className="block text-base font-semibold">
                   {publicRepos}
                 </strong>
-                <span className="text-xs text-[#737373]">
+                <span className="text-xs text-secondary-text">
                   projects in GitHub
                 </span>
               </div>
@@ -100,13 +100,13 @@ function ProfileHeader() {
                 <strong className="block text-base font-semibold">
                   {visitors.toLocaleString("en-US")}
                 </strong>
-                <span className="text-xs text-[#737373]">visitors</span>
+                <span className="text-xs text-secondary-text">visitors</span>
               </div>
               <div className="flex items-center gap-2 text-center">
                 <strong className="block text-base font-semibold">
                   {githubViews.toLocaleString("en-US")}
                 </strong>
-                <span className="text-xs text-[#737373]">github viewers</span>
+                <span className="text-xs text-secondary-text">github viewers</span>
               </div>
             </div>
 
@@ -117,7 +117,7 @@ function ProfileHeader() {
                 href={profile.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 text-sm text-[#737373] hover:text-white transition-colors"
+                className="flex items-center gap-1 text-sm text-secondary-text hover:text-foreground transition-colors"
               >
                 <Code2 className="size-4" /> GitHub
               </Link>
@@ -125,13 +125,13 @@ function ProfileHeader() {
                 href={profile.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 text-sm text-[#737373] hover:text-white transition-colors"
+                className="flex items-center gap-1 text-sm text-secondary-text hover:text-foreground transition-colors"
               >
                 <Briefcase className="size-4" /> LinkedIn
               </Link>
               <Link
                 href={`mailto:${profile.email}`}
-                className="flex items-center gap-1 text-sm text-[#737373] hover:text-white transition-colors"
+                className="flex items-center gap-1 text-sm text-secondary-text hover:text-foreground transition-colors"
               >
                 <Mail className="size-4" /> Email
               </Link>
@@ -144,7 +144,7 @@ function ProfileHeader() {
       <div className="flex flex-col gap-4 pb-4 md:hidden">
         <div className="flex items-center gap-4 px-4">
           <div className="rounded-full bg-linear-to-tr from-yellow-400 via-red-500 to-purple-600 p-0.5">
-            <div className="rounded-full bg-black p-0.5">
+            <div className="rounded-full bg-avatar-border-bg p-0.5">
               <Avatar size={96} />
             </div>
           </div>
@@ -153,35 +153,35 @@ function ProfileHeader() {
               <strong className="block text-base font-semibold">
                 {publicRepos}
               </strong>
-              <span className="text-xs text-[#737373]">projects</span>
+              <span className="text-xs text-secondary-text">projects</span>
             </div>
             <div>
               <strong className="block text-base font-semibold">
                 {visitors.toLocaleString("en-US")}
               </strong>
-              <span className="text-xs text-[#737373]">visitors</span>
+              <span className="text-xs text-secondary-text">visitors</span>
             </div>
             <div>
               <strong className="block text-base font-semibold">
                 {githubViews.toLocaleString("en-US")}
               </strong>
-              <span className="text-xs text-[#737373]">github</span>
+              <span className="text-xs text-secondary-text">github</span>
             </div>
             <div>
               <strong className="block text-base font-semibold">
                 {profile.experience}
               </strong>
-              <span className="text-xs text-[#737373]">years</span>
+              <span className="text-xs text-secondary-text">years</span>
             </div>
           </div>
         </div>
 
         <div className="px-4 text-sm">
           <h1 className="font-semibold">{profile.fullName}</h1>
-          <span className="block font-semibold text-[#737373]">
+          <span className="block font-semibold text-secondary-text">
             {profile.jobTitle}
           </span>
-          <span className="block text-[#737373]">@{profile.username}</span>
+          <span className="block text-secondary-text">@{profile.username}</span>
           {profile.bio.split("\n").map((line, i) => (
             <span key={i} className="block">
               {line}
@@ -193,7 +193,7 @@ function ProfileHeader() {
               href={profile.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#737373] hover:text-white"
+              className="text-secondary-text hover:text-foreground"
             >
               <Code2 className="size-5" />
             </Link>
@@ -201,13 +201,13 @@ function ProfileHeader() {
               href={profile.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#737373] hover:text-white"
+              className="text-secondary-text hover:text-foreground"
             >
               <Home className="size-5" />
             </Link>
             <Link
               href={`mailto:${profile.email}`}
-              className="text-[#737373] hover:text-white"
+              className="text-secondary-text hover:text-foreground"
             >
               <Mail className="size-5" />
             </Link>
@@ -215,12 +215,12 @@ function ProfileHeader() {
         </div>
 
         <div className="flex gap-2 px-4">
-          <Button className="flex-1 rounded-lg bg-[#0095f6] text-sm font-semibold text-white hover:bg-[#1877f2] transition-colors duration-200">
+          <Button className="flex-1 rounded-lg bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 text-sm font-semibold text-white hover:opacity-90 transition-opacity duration-200">
             Download Resume
           </Button>
           <Button
             variant="outline"
-            className="flex-1 rounded-lg border-[#262626] text-sm font-semibold transition-colors duration-200"
+            className="flex-1 rounded-lg border-elevated-border text-sm font-semibold transition-colors duration-200"
           >
             Message
           </Button>
@@ -228,18 +228,18 @@ function ProfileHeader() {
       </div>
 
       <div className="hidden w-full md:flex md:items-center md:gap-3 pb-4">
-        <Button className="flex-1 h-9 rounded-lg bg-[#0095f6] text-sm font-semibold text-white hover:bg-[#1877f2] transition-colors duration-200">
+        <Button className="flex-1 h-9 rounded-lg text-white bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 text-sm font-semibold hover:opacity-90 transition-opacity duration-200">
           Resume
         </Button>
         <Button
           variant="outline"
-          className="flex-1 h-9 rounded-lg border-[#262626] text-sm font-semibold transition-colors duration-200"
+          className="flex-1 h-9 rounded-lg border-elevated-border text-sm font-semibold transition-colors duration-200"
         >
           Contact
         </Button>
         <Button
           variant="outline"
-          className="size-9 rounded-lg border-[#262626] p-0 transition-colors duration-200"
+          className="size-9 rounded-lg border-elevated-border p-0 transition-colors duration-200"
         >
           <ChevronDown className="size-5" />
         </Button>

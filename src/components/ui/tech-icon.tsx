@@ -16,13 +16,19 @@ function TechIcon({ name, iconKey, size = 16, className, alt }: TechIconProps) {
 
   if (!src) return null;
 
+  const isDarkIcon = src.toLowerCase().includes("next") || src.toLowerCase().includes("github");
+
   return (
     <Image
       src={src}
       alt={alt ?? name ?? iconKey ?? "tech icon"}
       width={size}
       height={size}
-      className={cn("shrink-0 object-contain", className)}
+      className={cn(
+        "shrink-0 object-contain",
+        isDarkIcon && "dark:invert",
+        className
+      )}
     />
   );
 }

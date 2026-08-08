@@ -8,7 +8,7 @@ function Highlights() {
     <div className="flex w-full items-center gap-6 overflow-x-auto px-4 py-4 md:px-0 [&::-webkit-scrollbar]:hidden">
       {highlights.map((h) => (
         <div key={h.id} className="flex shrink-0 flex-col items-center gap-1.5">
-          <div className="rounded-full border-2 border-[#262626] p-0.5">
+          <div className="rounded-full border-2 border-elevated-border p-0.5">
             <div
               className={`flex size-15 items-center justify-center overflow-hidden rounded-full md:size-18`}
             >
@@ -21,7 +21,7 @@ function Highlights() {
               />
             </div>
           </div>
-          <span className="max-w-18 truncate text-xs text-[#737373]">
+          <span className="max-w-18 truncate text-xs text-secondary-text">
             {h.label}
           </span>
         </div>

@@ -19,7 +19,7 @@ function BottomNav() {
 
   return (
     <nav
-      className="fixed bottom-0 left-0 z-50 flex h-16 w-full items-center justify-evenly border-t border-[#262626] bg-black md:hidden"
+      className="fixed bottom-0 left-0 z-50 flex h-16 w-full items-center justify-evenly border-t border-elevated-border bg-background md:hidden"
       style={{ zIndex: Z_INDEX.bottomNav }}
     >
       {navItems.map((item) => {
@@ -33,7 +33,7 @@ function BottomNav() {
             href={item.href}
             className={cn(
               "flex flex-col items-center justify-center px-4 py-2 transition-colors",
-              isActive ? "text-white" : "text-[#737373]",
+              isActive ? "text-foreground" : "text-secondary-text",
             )}
             aria-label={item.label}
           >

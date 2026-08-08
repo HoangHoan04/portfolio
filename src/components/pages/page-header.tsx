@@ -14,7 +14,7 @@ function PageHeader({ title, subtitle }: { title: string; subtitle?: string }) {
     >
       <h1 className="text-3xl font-bold tracking-tight md:text-4xl">{title}</h1>
       {subtitle && (
-        <p className="mt-3 max-w-2xl text-base leading-relaxed text-[#737373] md:text-lg">
+        <p className="mt-3 max-w-2xl text-base leading-relaxed text-secondary-text md:text-lg">
           {subtitle}
         </p>
       )}

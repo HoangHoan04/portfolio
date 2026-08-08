@@ -16,6 +16,8 @@ export type GitHubContributions = {
   year: number;
   username: string;
   source: "github-graphql" | "fallback";
+  allDays: ContributionDay[];
+  years: number[];
 };
 
 const CONTRIBUTIONS_QUERY = `
@@ -44,10 +46,12 @@ function emptyContributions(source: GitHubContributions["source"]): GitHubContri
     year: new Date().getFullYear(),
     username: GITHUB_USERNAME,
     source,
+    allDays: [],
+    years: [new Date().getFullYear()],
   };
 }
 
-function buildWeeksFromDays(
+export function buildWeeksFromDays(
   days: ContributionDay[],
 ): ContributionWeek[] {
   if (!days.length) return [];
@@ -70,7 +74,7 @@ function buildWeeksFromDays(
   return weeks.slice(-53);
 }
 
-function totalContributionsInLastYear(days: ContributionDay[]): number {
+export function totalContributionsInLastYear(days: ContributionDay[]): number {
   const cutoff = new Date();
   cutoff.setUTCHours(0, 0, 0, 0);
   cutoff.setUTCDate(cutoff.getUTCDate() - 364);
@@ -105,9 +109,15 @@ async function fetchContributionsFallback(): Promise<GitHubContributions> {
       };
     });
 
+    // Sort days chronologically (oldest to newest)
+    days.sort((a, b) => a.date.localeCompare(b.date));
+
     if (!days.length) {
       return emptyContributions("fallback");
     }
+
+    const uniqueYears = Array.from(new Set(days.map((d) => parseInt(d.date.slice(0, 4)))))
+      .sort((a, b) => b - a);
 
     return {
       totalContributions: totalContributionsInLastYear(days),
@@ -115,6 +125,8 @@ async function fetchContributionsFallback(): Promise<GitHubContributions> {
       year: new Date().getFullYear(),
       username: GITHUB_USERNAME,
       source: "fallback",
+      allDays: days,
+      years: uniqueYears,
     };
   } catch (error) {
     console.error("Failed to fetch fallback GitHub contributions:", error);
@@ -170,12 +182,24 @@ export async function fetchGitHubContributions(): Promise<GitHubContributions> {
       }),
     );
 
+    const allDays: ContributionDay[] = [];
+    weeks.forEach((week) => {
+      week.days.forEach((day) => {
+        allDays.push(day);
+      });
+    });
+
+    const uniqueYears = Array.from(new Set(allDays.map((d) => parseInt(d.date.slice(0, 4)))))
+      .sort((a, b) => b - a);
+
     return {
       totalContributions: calendar.totalContributions ?? 0,
       weeks,
       year: new Date().getFullYear(),
       username: GITHUB_USERNAME,
       source: "github-graphql",
+      allDays,
+      years: uniqueYears.length ? uniqueYears : [new Date().getFullYear()],
     };
   } catch (error) {
     console.error("Failed to fetch GitHub contributions:", error);
@@ -192,9 +216,9 @@ export function getContributionLevel(count: number): 0 | 1 | 2 | 3 | 4 {
 }
 
 export const CONTRIBUTION_LEVEL_CLASS: Record<0 | 1 | 2 | 3 | 4, string> = {
-  0: "bg-zinc-900 border-zinc-800/80",
-  1: "bg-emerald-950 border-emerald-900/50",
-  2: "bg-emerald-800/80 border-emerald-800/50",
-  3: "bg-emerald-600/90 border-emerald-600/50",
-  4: "bg-emerald-400 border-emerald-400/70",
+  0: "bg-zinc-100 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800/80",
+  1: "bg-emerald-100 dark:bg-emerald-950/80 border-emerald-200 dark:border-emerald-900/40",
+  2: "bg-emerald-300 dark:bg-emerald-800/80 border-emerald-400 dark:border-emerald-800/40",
+  3: "bg-emerald-500 dark:bg-emerald-600/90 border-emerald-600 dark:border-emerald-600/40",
+  4: "bg-emerald-600 dark:bg-emerald-400 border-emerald-700 dark:border-emerald-400/70",
 };

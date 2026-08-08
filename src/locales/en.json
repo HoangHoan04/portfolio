@@ -29,7 +29,9 @@
     "source": "Source",
     "customer": "Customer",
     "admin": "Admin",
-    "api": "API"
+    "api": "API",
+    "mobile": "Mobile App",
+    "player": "Player"
   },
   "home": {
     "hero": {
@@ -349,6 +351,30 @@
       "apple": {
         "name": "Apple Store",
         "desc": "A full-stack e-commerce web app simulating the Apple Store with product listings, shopping cart, and order management. Built with PHP and MVC architecture."
+      },
+      "adminDashboardAngular": {
+        "name": "Admin Dashboard Template - Angular",
+        "desc": "A modern and intuitive admin dashboard interface template built using Angular, RxJS, and Tailwind CSS."
+      },
+      "adminDashboardVue": {
+        "name": "Admin Dashboard Template - Vue",
+        "desc": "A high-performance template for administrator dashboards, developed with Vue 3, Pinia, and Tailwind CSS."
+      },
+      "adminDashboardNext": {
+        "name": "Admin Dashboard Template - Next.js",
+        "desc": "A versatile and SEO-friendly admin dashboard template built on Next.js, React, and Tailwind CSS."
+      },
+      "adminDashboardReact": {
+        "name": "Admin Dashboard Template - React",
+        "desc": "A minimalist yet fully functional administrator portal template crafted with React and Tailwind CSS."
+      },
+      "hrm": {
+        "name": "Human Resource Management (HRM) System",
+        "desc": "A comprehensive human resource management solution integrating a mobile app for employees (React Native), a web dashboard for admins (Angular), and a back-end RESTful API (.NET)."
+      },
+      "cms": {
+        "name": "Digital Signage Content Management System (CMS)",
+        "desc": "A comprehensive digital signage content management system comprising an admin portal, a RESTful API server (NestJS), and a multimedia content Player."
       }
     }
   },

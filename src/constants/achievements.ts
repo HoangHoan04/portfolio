@@ -12,7 +12,7 @@ export const achievements: Achievement[] = [
     titleKey: "home.achievements.apetech1.title",
     descKey: "home.achievements.apetech1.desc",
     year: "2025",
-    gradient: "from-[#0095f6] to-blue-700",
+    gradient: "from-yellow-400 via-red-500 to-purple-600",
   },
   {
     id: "2",

@@ -11,13 +11,13 @@ function PostDetailContent({ id }: { id: string }) {
   const project = projects.find((p) => p.id === id);
 
   if (!project) {
-    return <div className="py-20 text-center text-[#737373]">Project not found</div>;
+    return <div className="py-20 text-center text-secondary-text">Project not found</div>;
   }
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-[#262626] bg-[#121212]">
+    <div className="overflow-hidden rounded-2xl border border-elevated-border bg-elevated">
       <div className="flex flex-col md:flex-row">
-        <div className="relative aspect-square w-full shrink-0 bg-[#1a1a1a] md:w-[50%]">
+        <div className="relative aspect-square w-full shrink-0 bg-elevated-hover md:w-[50%]">
           <Image
             src={project.thumbnail}
             alt={project.title}
@@ -29,16 +29,16 @@ function PostDetailContent({ id }: { id: string }) {
           />
         </div>
         <div className="flex flex-1 flex-col p-5 md:p-8">
-          <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-[#0095f6]">
+          <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-primary-accent">
             {project.type}
           </p>
           <h1 className="mb-4 text-2xl font-bold">{project.title}</h1>
-          <p className="mb-6 leading-relaxed text-[#a8a8a8]">{project.description}</p>
+          <p className="mb-6 leading-relaxed text-secondary-text">{project.description}</p>
           <div className="mb-8 flex flex-wrap gap-2">
             {project.stack.map((tech) => (
               <span
                 key={tech}
-                className="rounded-full border border-[#262626] px-3 py-1 text-xs text-[#737373]"
+                className="rounded-full border border-elevated-border px-3 py-1 text-xs text-secondary-text"
               >
                 {tech}
               </span>
@@ -50,7 +50,7 @@ function PostDetailContent({ id }: { id: string }) {
                 href={project.link_github[0]}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg border border-[#262626] px-4 py-2 text-sm transition-colors hover:border-[#0095f6]/50"
+                className="inline-flex items-center gap-2 rounded-lg border border-elevated-border px-4 py-2 text-sm transition-colors hover:border-primary-accent/50"
               >
                 <GithubLogo className="size-4" />
                 GitHub
@@ -61,7 +61,7 @@ function PostDetailContent({ id }: { id: string }) {
                 href={project.link_demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg bg-[#0095f6] px-4 py-2 text-sm text-white hover:bg-[#1877f2]"
+                className="inline-flex items-center gap-2 rounded-lg bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 px-4 py-2 text-sm text-white hover:opacity-90"
               >
                 <ArrowSquareOut className="size-4" />
                 Demo
@@ -69,7 +69,7 @@ function PostDetailContent({ id }: { id: string }) {
             )}
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2 rounded-lg border border-[#262626] px-4 py-2 text-sm hover:border-[#0095f6]/50"
+              className="inline-flex items-center gap-2 rounded-lg border border-elevated-border px-4 py-2 text-sm hover:border-primary-accent/50"
             >
               All projects
             </Link>
@@ -92,7 +92,7 @@ function PostModal({ id }: { id: string }) {
         aria-label="Close modal"
         onClick={() => router.back()}
       />
-      <div className="relative z-10 w-full max-w-4xl overflow-hidden rounded-t-2xl border border-[#262626] bg-black shadow-2xl md:rounded-2xl">
+      <div className="relative z-10 w-full max-w-4xl overflow-hidden rounded-t-2xl border border-elevated-border bg-background shadow-2xl md:rounded-2xl">
         <button
           type="button"
           onClick={() => router.back()}
@@ -102,7 +102,7 @@ function PostModal({ id }: { id: string }) {
           <X className="size-5" />
         </button>
         {!project ? (
-          <div className="p-8 text-center text-[#737373]">Project not found</div>
+          <div className="p-8 text-center text-secondary-text">Project not found</div>
         ) : (
           <PostDetailContent id={id} />
         )}

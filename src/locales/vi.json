@@ -29,7 +29,9 @@
     "source": "Mã Nguồn",
     "customer": "Khách Hàng",
     "admin": "Quản Trị",
-    "api": "API"
+    "api": "API",
+    "mobile": "Ứng Dụng Di Động",
+    "player": "Trình Phát"
   },
   "home": {
     "hero": {
@@ -349,6 +351,30 @@
       "apple": {
         "name": "Cửa Hàng Apple",
         "desc": "Ứng dụng thương mại điện tử mô phỏng Apple Store với danh sách sản phẩm, giỏ hàng và quản lý đơn hàng. Xây dựng bằng PHP thuần với kiến trúc MVC."
+      },
+      "adminDashboardAngular": {
+        "name": "Mẫu Admin Dashboard - Angular",
+        "desc": "Bản mẫu giao diện quản trị Admin hiện đại và trực quan sử dụng Angular, RxJS và Tailwind CSS."
+      },
+      "adminDashboardVue": {
+        "name": "Mẫu Admin Dashboard - Vue",
+        "desc": "Giao diện quản trị Admin mẫu hiệu năng cao được phát triển với Vue 3, Pinia và Tailwind CSS."
+      },
+      "adminDashboardNext": {
+        "name": "Mẫu Admin Dashboard - Next.js",
+        "desc": "Mẫu giao diện dashboard quản trị linh hoạt và chuẩn SEO sử dụng Next.js, React và Tailwind CSS."
+      },
+      "adminDashboardReact": {
+        "name": "Mẫu Admin Dashboard - React",
+        "desc": "Bản mẫu trang quản trị Admin tối giản nhưng đầy đủ chức năng xây dựng bằng React và Tailwind CSS."
+      },
+      "hrm": {
+        "name": "Hệ Thống Quản Trị Nhân Sự (HRM)",
+        "desc": "Hệ thống quản lý nhân sự toàn diện tích hợp ứng dụng di động cho nhân viên (React Native), trang quản lý cho admin (Angular) và hệ thống RESTful API (.NET)."
+      },
+      "cms": {
+        "name": "Hệ Thống Trình Chiếu Kỹ Thuật Số (Digital Signage CMS)",
+        "desc": "Hệ thống quản lý nội dung trình chiếu kỹ thuật số toàn diện bao gồm trang quản trị admin, máy chủ RESTful API (NestJS) và trình phát nội dung đa phương tiện (Player)."
       }
     }
   },

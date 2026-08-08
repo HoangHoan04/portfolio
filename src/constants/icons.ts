@@ -1,6 +1,7 @@
 /** Icon paths served from `public/icons/` */
 export const icons = {
   angular: "/icons/angular.svg",
+  asp: "/icons/asp.svg",
   aws: "/icons/aws.svg",
   coded: "/icons/coded.svg",
   computer: "/icons/computer.svg",
@@ -40,6 +41,7 @@ export type IconKey = keyof typeof icons;
 
 const TECH_ICON_MAP: Record<string, IconKey> = {
   React: "react",
+  "React Native": "react",
   Angular: "angular",
   Vue: "vue",
   "Next.js": "nextJs",
@@ -50,6 +52,9 @@ const TECH_ICON_MAP: Record<string, IconKey> = {
   "Tailwind CSS": "tailwind",
   Tailwind: "tailwind",
   NestJS: "nestjs",
+  "ASP.NET Core": "asp",
+  "ASP.NET": "asp",
+  ".NET": "asp",
   PHP: "php",
   MySQL: "mysql",
   PostgreSQL: "postgresql",

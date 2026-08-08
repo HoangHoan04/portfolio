@@ -17,7 +17,7 @@ function HomeCertificatesGrid() {
           <Link
             key={cert.id}
             href="/education"
-            className="group relative aspect-square overflow-hidden bg-[#1a1a1a]"
+            className="group relative aspect-square overflow-hidden bg-elevated-hover"
           >
             <div
               className={cn(
@@ -43,10 +43,10 @@ function HomeCertificatesGrid() {
           </Link>
         ))}
       </div>
-      <div className="border-t border-[#262626] py-4 text-center">
+      <div className="border-t border-elevated-border py-4 text-center">
         <Link
           href="/education"
-          className="text-sm font-semibold text-[#0095f6] hover:text-[#1877f2]"
+          className="text-sm font-semibold text-primary-accent hover:opacity-80"
         >
           {t("home.certificates.viewAll")}
         </Link>

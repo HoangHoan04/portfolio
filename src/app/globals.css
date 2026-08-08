@@ -14,28 +14,38 @@
 
 :root.light {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #262626;
   --sidebar-bg: #ffffff;
   --sidebar-text: #737373;
-  --sidebar-hover-bg: #f5f5f5;
+  --sidebar-hover-bg: #fafafa;
   --sidebar-hover-text: #000000;
   --sidebar-border: #dbdbdb;
   --sidebar-active-text: #000000;
-  --elevated-bg: #e0e0e0;
-  --elevated-hover: #d0d0d0;
+  --elevated-bg: #ffffff;
+  --elevated-border: #dbdbdb;
+  --elevated-hover: #fafafa;
+  --card-bg: #ffffff;
+  --secondary-text: #737373;
+  --avatar-border-bg: #ffffff;
+  --primary-accent: #e1306c;
 }
 
 :root.dark {
   --background: #000000;
   --foreground: #f5f5f5;
   --sidebar-bg: #000000;
-  --sidebar-text: #737373;
-  --sidebar-hover-bg: #1a1a1a;
+  --sidebar-text: #a8a8a8;
+  --sidebar-hover-bg: #121212;
   --sidebar-hover-text: #ffffff;
   --sidebar-border: #262626;
   --sidebar-active-text: #ffffff;
-  --elevated-bg: #262626;
-  --elevated-hover: #363636;
+  --elevated-bg: #121212;
+  --elevated-border: #262626;
+  --elevated-hover: #1a1a1a;
+  --card-bg: #000000;
+  --secondary-text: #a8a8a8;
+  --avatar-border-bg: #000000;
+  --primary-accent: #e1306c;
 }
 
 @theme inline {
@@ -48,7 +58,12 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-active-text: var(--sidebar-active-text);
   --color-elevated: var(--elevated-bg);
+  --color-elevated-border: var(--elevated-border);
   --color-elevated-hover: var(--elevated-hover);
+  --color-card-bg: var(--card-bg);
+  --color-secondary-text: var(--secondary-text);
+  --color-avatar-border-bg: var(--avatar-border-bg);
+  --color-primary-accent: var(--primary-accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

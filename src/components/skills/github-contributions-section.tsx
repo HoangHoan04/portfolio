@@ -21,7 +21,7 @@ export function GitHubContributionsSection({
   useEffect(() => {
     let cancelled = false;
 
-    fetch("/api/github-contributions")
+    fetch(`/api/github-contributions?t=${Date.now()}`)
       .then((res) => res.json())
       .then((json: GitHubContributions) => {
         if (cancelled) return;

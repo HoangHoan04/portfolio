@@ -25,7 +25,7 @@ function SectionCard({
         ease: [0.16, 1, 0.3, 1],
       }}
       className={cn(
-        "rounded-2xl border border-[#262626] bg-[#121212] p-6 md:p-8",
+        "rounded-2xl border border-elevated-border bg-elevated p-6 md:p-8",
         className,
       )}
     >
