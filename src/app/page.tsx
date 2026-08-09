@@ -23,9 +23,7 @@ export default function ProfilePage() {
   const [started, setStarted] = useState(false);
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (sessionStorage.getItem("start_shown")) setStarted(true);
-  }, []);
+
 
   // Listen to popstate (e.g. back button) to close the modal
   useEffect(() => {
@@ -70,7 +68,6 @@ export default function ProfilePage() {
       {!started && (
         <StartScreen
           onComplete={() => {
-            sessionStorage.setItem("start_shown", "true");
             setStarted(true);
           }}
         />

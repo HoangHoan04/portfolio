@@ -48,7 +48,15 @@ function ProfileHeader() {
         if (d.views) setGithubViews(d.views);
         if (d.publicRepos) setPublicRepos(d.publicRepos);
       })
-      .catch(() => {});
+      .catch(() => {
+        // Fallback to public GitHub API directly if local API is not available (e.g. static host)
+        fetch("https://api.github.com/users/HoangHoan04")
+          .then((r) => r.json())
+          .then((d) => {
+            if (d.public_repos) setPublicRepos(d.public_repos);
+          })
+          .catch(() => {});
+      });
   }, []);
 
   useEffect(() => {

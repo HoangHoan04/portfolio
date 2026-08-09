@@ -54,8 +54,12 @@ jobs:
           static_site_generator: next
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Disable API routes for static export
+        run: rm -rf src/app/api || true
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+        env:
+          NEXT_PUBLIC_EXPORT: "true"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
