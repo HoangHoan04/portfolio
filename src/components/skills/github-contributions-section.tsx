@@ -43,16 +43,16 @@ export function GitHubContributionsSection({
   }, [onTotalChange]);
 
   return (
-    <SectionCard className="mb-14 border border-zinc-800 bg-zinc-950/40 p-0 overflow-hidden">
-      <div className="border-b border-zinc-800 px-5 py-4 md:px-6">
-        <h2 className="text-sm font-bold uppercase tracking-wider text-zinc-400">
+    <SectionCard className="mb-14 border border-elevated-border bg-elevated/40 p-0 overflow-hidden">
+      <div className="border-b border-elevated-border px-5 py-4 md:px-6">
+        <h2 className="text-sm font-bold uppercase tracking-wider text-secondary-text">
           {t("skills.contributions.title")}
         </h2>
       </div>
 
       <div className="p-4 md:p-5">
         {loading ? (
-          <div className="flex h-32 items-center justify-center text-sm text-zinc-500">
+          <div className="flex h-32 items-center justify-center text-sm text-secondary-text">
             {t("skills.contributions.loading")}
           </div>
         ) : data ? (
@@ -64,7 +64,7 @@ export function GitHubContributionsSection({
             setupHint={t("skills.contributions.setupHint")}
           />
         ) : (
-          <div className="rounded-2xl border border-dashed border-zinc-700 bg-zinc-950/40 p-6 text-center text-sm text-zinc-400">
+          <div className="rounded-2xl border border-dashed border-elevated-border bg-elevated/40 p-6 text-center text-sm text-secondary-text">
             {t("skills.contributions.setupHint")}
           </div>
         )}

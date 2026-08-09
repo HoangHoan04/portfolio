@@ -19,14 +19,16 @@ import { LanguageToggle } from "@/components/ui/language-toggle";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { cn } from "@/lib/utils";
 
+import { SidebarTab } from "@/constants/enum";
+
 const navItems = [
-  { label: "Home", icon: Home, href: "/" },
-  { label: "About", icon: Compass, href: "/about" },
-  { label: "Projects", icon: Film, href: "/projects" },
-  { label: "Skills", icon: Layers, href: "/skills" },
-  { label: "Experience", icon: Heart, href: "/experience" },
-  { label: "Education", icon: GraduationCap, href: "/education" },
-  { label: "Contact", icon: User, href: "/contact" },
+  { label: SidebarTab.HOME, icon: Home, href: "/" },
+  { label: SidebarTab.ABOUT, icon: Compass, href: "/about" },
+  { label: SidebarTab.PROJECTS, icon: Film, href: "/projects" },
+  { label: SidebarTab.SKILLS, icon: Layers, href: "/skills" },
+  { label: SidebarTab.EXPERIENCE, icon: Heart, href: "/experience" },
+  { label: SidebarTab.EDUCATION, icon: GraduationCap, href: "/education" },
+  { label: SidebarTab.CONTACT, icon: User, href: "/contact" },
 ];
 
 function Sidebar({

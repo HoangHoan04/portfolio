@@ -123,6 +123,15 @@
       }
     }
   },
+  "profile": {
+    "jobTitle": "Software Engineer",
+    "bio": "Hello! I'm a Web Developer with a strong passion for building modern user interfaces and optimizing user experience. I'm currently a Software Engineering student at Saigon University, working as a Web Developer at APETECH Solutions. I'm actively learning and improving my skills through personal and group projects.",
+    "yearsExp": "years exp",
+    "githubProjects": "projects in GitHub",
+    "visitors": "visitors",
+    "githubViewers": "github viewers",
+    "years": "years"
+  },
   "about": {
     "title": "About Me",
     "description": "Hello! I'm a Web Developer with a strong passion for building modern user interfaces and optimizing user experience. I'm currently a Software Engineering student at <strong>Saigon University</strong>, working as a Web Developer at <strong>APETECH Solutions</strong>. I'm actively learning and improving my skills through personal and group projects.",
@@ -252,7 +261,7 @@
       "coreCSDesc": "OOP, Data Structures & Algorithms, Web Development",
       "personal": "Personal Projects",
       "personalDesc": "React, PHP, MySQL, Git — built first real projects",
-      "professional": "Professional",
+      "professional": "Fresher",
       "professionalDesc": "Angular, NestJS, TypeScript, PostgreSQL at APETECH Solutions"
     },
     "philosophy": {

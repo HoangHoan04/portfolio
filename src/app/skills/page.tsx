@@ -125,7 +125,7 @@ function InteractiveSkillCard({
       transition={{ duration: 0.4, delay }}
       whileHover={reduceMotion ? undefined : { y: -3 }}
       className={cn(
-        "relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/30 p-5 transition-all duration-300 hover:border-zinc-700 hover:bg-zinc-900/60",
+        "relative overflow-hidden rounded-2xl border border-elevated-border bg-elevated/30 p-5 transition-all duration-300 hover:border-primary-accent/30 hover:bg-elevated/60",
         className,
       )}
     >
@@ -159,7 +159,7 @@ function SkillCard({
     >
       <div>
         <div className="mb-4 flex items-center gap-3">
-          <div className="flex size-11 items-center justify-center rounded-xl border border-zinc-800 bg-zinc-950/60 p-2 shadow-inner group-hover:border-blue-500/30">
+          <div className="flex size-11 items-center justify-center rounded-xl border border-elevated-border bg-elevated/60 p-2 shadow-inner group-hover:border-primary-accent/30">
             {iconSrc ? (
               <Image
                 src={iconSrc}
@@ -172,7 +172,7 @@ function SkillCard({
               <Code className="size-5 text-blue-400" />
             )}
           </div>
-          <span className="font-bold tracking-tight text-zinc-100">{name}</span>
+          <span className="font-bold tracking-tight text-foreground">{name}</span>
         </div>
       </div>
 
@@ -181,7 +181,7 @@ function SkillCard({
           {skill.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-md border border-zinc-800/80 bg-zinc-950/20 px-2 py-0.5 text-[10px] font-medium text-zinc-500 transition-colors hover:border-zinc-700 hover:text-zinc-300"
+              className="rounded-md border border-elevated-border bg-elevated/20 px-2 py-0.5 text-[10px] font-medium text-secondary-text transition-colors hover:border-primary-accent/30 hover:text-foreground"
             >
               {tag}
             </span>
@@ -234,14 +234,14 @@ export default function SkillsPage() {
             <SectionCard
               key={stat.labelKey}
               delay={index * 0.04}
-              className="relative overflow-hidden border border-zinc-800 bg-zinc-950/40 p-5 text-center backdrop-blur-sm hover:border-zinc-700"
+              className="relative overflow-hidden border border-elevated-border bg-elevated/40 p-5 text-center backdrop-blur-sm hover:border-primary-accent/30"
             >
               <div className="absolute -right-4 -top-4 -z-10 h-12 w-12 rounded-full bg-blue-500/5 blur-xl" />
               <Icon className="mx-auto mb-2 size-5 text-blue-400" />
-              <p className="bg-linear-to-r from-white to-zinc-400 bg-clip-text text-3xl font-black text-transparent leading-none mb-1">
+              <p className="bg-linear-to-r from-foreground to-secondary-text bg-clip-text text-3xl font-black text-transparent leading-none mb-1">
                 <Counter end={statValue} suffix={statSuffix} />
               </p>
-              <p className="text-[10px] font-bold uppercase tracking-wider text-zinc-500">
+              <p className="text-[10px] font-bold uppercase tracking-wider text-secondary-text">
                 {t(stat.labelKey)}
               </p>
             </SectionCard>
@@ -252,7 +252,7 @@ export default function SkillsPage() {
       <GitHubContributionsSection onTotalChange={setGithubContributions} />
 
       <div className="mb-10 flex justify-center">
-        <div className="inline-flex rounded-xl border border-zinc-800 bg-zinc-900/60 p-1 backdrop-blur-sm">
+        <div className="inline-flex rounded-xl border border-elevated-border bg-elevated/60 p-1 backdrop-blur-sm">
           {categoryTabs.map((tab) => {
             const isSelected = activeCategory === tab.id;
             return (
@@ -267,13 +267,13 @@ export default function SkillsPage() {
                   "relative rounded-lg px-5 py-2 text-xs font-semibold uppercase tracking-wider transition-colors duration-300",
                   isSelected
                     ? "text-white"
-                    : "text-zinc-500 hover:text-zinc-200",
+                    : "text-secondary-text hover:text-foreground",
                 )}
               >
                 {isSelected && (
                   <motion.span
                     layoutId="active-skill-category"
-                    className="absolute inset-0 rounded-lg bg-blue-600 shadow-lg shadow-blue-600/10"
+                    className="absolute inset-0 rounded-lg bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 shadow-md"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -299,7 +299,7 @@ export default function SkillsPage() {
                     "relative rounded-full px-4 py-1.5 text-xs font-semibold transition-all duration-200",
                     isSubSelected
                       ? "border border-blue-500/30 bg-blue-950/20 text-blue-400"
-                      : "border border-zinc-800 text-zinc-500 hover:border-zinc-700 hover:text-zinc-200",
+                      : "border border-elevated-border text-secondary-text hover:border-primary-accent/30 hover:text-foreground",
                   )}
                 >
                   {t(group.labelKey)}
@@ -347,15 +347,15 @@ export default function SkillsPage() {
               <SectionCard
                 key={skill.nameKey}
                 delay={index * 0.04}
-                className="group flex flex-col items-center text-center border border-zinc-800 bg-zinc-900/20 p-6 hover:border-zinc-700 hover:bg-zinc-900/40"
+                className="group flex flex-col items-center text-center border border-elevated-border bg-elevated/20 p-6 hover:border-primary-accent/30 hover:bg-elevated/40"
               >
-                <div className="mb-4 flex size-14 items-center justify-center rounded-2xl border border-zinc-800 bg-zinc-950/60 shadow-inner transition-colors group-hover:border-blue-500/20 group-hover:bg-blue-950/10">
+                <div className="mb-4 flex size-14 items-center justify-center rounded-2xl border border-elevated-border bg-elevated/60 shadow-inner transition-colors group-hover:border-blue-500/20 group-hover:bg-blue-950/10">
                   <Icon className="size-6 text-blue-400 transition-transform duration-300 group-hover:scale-110" />
                 </div>
-                <h3 className="mb-2 font-bold tracking-tight text-zinc-100">
+                <h3 className="mb-2 font-bold tracking-tight text-foreground">
                   {t(skill.nameKey)}
                 </h3>
-                <p className="text-xs leading-relaxed text-zinc-400 max-w-xs">
+                <p className="text-xs leading-relaxed text-secondary-text max-w-xs">
                   {t(skill.descKey)}
                 </p>
               </SectionCard>
@@ -364,19 +364,19 @@ export default function SkillsPage() {
         </div>
       )}
 
-      <SectionCard className="relative overflow-hidden border border-zinc-800 bg-linear-to-r from-zinc-900 via-zinc-950 to-zinc-900 py-10 text-center shadow-xl">
+      <SectionCard className="relative overflow-hidden border border-elevated-border bg-elevated/40 py-10 text-center shadow-xl">
         <div className="absolute -left-20 -top-20 h-48 w-48 rounded-full bg-blue-500/5 blur-3xl" />
         <div className="absolute -right-20 -bottom-20 h-48 w-48 rounded-full bg-purple-500/5 blur-3xl" />
 
-        <h2 className="relative z-10 mb-3 text-2xl font-black tracking-tight text-white md:text-3xl">
+        <h2 className="relative z-10 mb-3 text-2xl font-black tracking-tight text-foreground md:text-3xl">
           {t("skills.cta.title")}
         </h2>
-        <p className="relative z-10 mx-auto mb-8 max-w-md text-sm leading-relaxed text-zinc-400">
+        <p className="relative z-10 mx-auto mb-8 max-w-md text-sm leading-relaxed text-secondary-text">
           {t("skills.cta.desc")}
         </p>
         <Button
           asChild
-          className="relative z-10 bg-blue-600 font-bold text-white shadow-lg shadow-blue-600/20 hover:bg-blue-500 transition-all hover:scale-105"
+          className="relative z-10 bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 font-bold text-white shadow-lg transition-all hover:scale-105 hover:opacity-90 border-none cursor-pointer"
         >
           <Link href="/contact" className="gap-2">
             <Send className="size-4" />

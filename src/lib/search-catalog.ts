@@ -1,7 +1,6 @@
 import { achievements } from "@/constants/achievements";
 import { certificates } from "@/constants/certificates";
 import { portfolioProjects } from "@/constants/projects-data";
-import { projects } from "@/constants/project";
 import { reels } from "@/constants/reels-data";
 import {
   softSkills,
@@ -56,13 +55,13 @@ export function buildSearchCatalog(): SearchItem[] {
     tags: p.technologies,
   }));
 
-  const gridProjects: SearchItem[] = projects.map((p) => ({
+  const gridProjects: SearchItem[] = portfolioProjects.map((p) => ({
     id: `grid-${p.id}`,
     type: "project",
-    titleKey: p.title,
-    descKey: p.description,
+    titleKey: p.titleKey,
+    descKey: p.descKey,
     href: `/post/${p.id}`,
-    tags: p.stack,
+    tags: p.technologies,
   }));
 
   const skillItems: SearchItem[] = [

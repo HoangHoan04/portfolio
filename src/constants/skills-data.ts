@@ -17,6 +17,10 @@ export const SKILL_ICON_MAP: Record<string, string> = {
   vsCode: icons.vscode,
   vs: icons.visualstudio,
   intellij: icons.intellij,
+  cursor: icons.cursor,
+  antigravity: icons.antigravity,
+  androidStudio: icons.androidStudio,
+  html: icons.html,
 };
 
 export type SkillItem = {
@@ -56,7 +60,7 @@ export const technicalGroups: SkillGroup[] = [
       },
       {
         name: "HTML/CSS",
-        icon: "code",
+        icon: "html",
         tags: ["Flexbox", "Grid", "Animation"],
       },
     ],
@@ -114,6 +118,9 @@ export const toolsGroups: SkillGroup[] = [
         tags: ["Refactoring", "Plugins"],
       },
       { name: "Visual Studio", icon: "vs", tags: [".NET", "Debugging"] },
+      { name: "Cursor", icon: "cursor", tags: ["AI Coding", "Composer"] },
+      { name: "Antigravity", icon: "antigravity", tags: ["AI Assistant", "Agentic Coding"] },
+      { name: "Android Studio", icon: "androidStudio", tags: ["Android", "SDK", "Emulator"] },
     ],
   },
   {

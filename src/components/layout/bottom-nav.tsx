@@ -6,12 +6,14 @@ import { Clapperboard, Compass, Home, PlusSquare, User } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { BottomNavTab } from "@/constants/enum";
+
 const navItems = [
-  { label: "Home", icon: Home, href: "/" },
-  { label: "Explore", icon: Compass, href: "#" },
-  { label: "Reels", icon: Clapperboard, href: "/reels" },
-  { label: "Create", icon: PlusSquare, href: "#" },
-  { label: "Profile", icon: User, href: "/" },
+  { label: BottomNavTab.HOME, icon: Home, href: "/" },
+  { label: BottomNavTab.EXPLORE, icon: Compass, href: "#" },
+  { label: BottomNavTab.REELS, icon: Clapperboard, href: "/reels" },
+  { label: BottomNavTab.CREATE, icon: PlusSquare, href: "#" },
+  { label: BottomNavTab.PROFILE, icon: User, href: "/" },
 ];
 
 function BottomNav() {

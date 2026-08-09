@@ -10,7 +10,7 @@ function Highlights() {
         <div key={h.id} className="flex shrink-0 flex-col items-center gap-1.5">
           <div className="rounded-full border-2 border-elevated-border p-0.5">
             <div
-              className={`flex size-15 items-center justify-center overflow-hidden rounded-full md:size-18`}
+              className="flex size-15 items-center justify-center overflow-hidden rounded-full md:size-18 bg-white"
             >
               <Image
                 src={h.icon}

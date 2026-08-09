@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { AvatarImage } from "@/components/ui/image";
 import { profile } from "@/constants/profile";
+import { useTranslation } from "@/contexts/locale-context";
 
 function Avatar({ size }: { size: number }) {
   if (profile.avatar) {
@@ -35,6 +36,7 @@ function Avatar({ size }: { size: number }) {
 }
 
 function ProfileHeader() {
+  const { t } = useTranslation();
   const [githubViews, setGithubViews] = useState(profile.githubViewers);
   const [visitors, setVisitors] = useState(profile.visitors);
   const [publicRepos, setPublicRepos] = useState(profile.project);
@@ -79,38 +81,38 @@ function ProfileHeader() {
               <small className="font-normal">{profile.username}</small>
             </h1>
 
-            <Badge>{profile.jobTitle}</Badge>
+            <Badge>{t("profile.jobTitle")}</Badge>
 
             <div className="flex items-center gap-6 py-2">
               <div className="flex items-center gap-2 text-center">
                 <strong className="block text-base font-semibold">
                   {profile.experience}
                 </strong>
-                <span className="text-xs text-secondary-text">years exp</span>
+                <span className="text-xs text-secondary-text">{t("profile.yearsExp")}</span>
               </div>
               <div className="flex items-center gap-2 text-center">
                 <strong className="block text-base font-semibold">
                   {publicRepos}
                 </strong>
                 <span className="text-xs text-secondary-text">
-                  projects in GitHub
+                  {t("profile.githubProjects")}
                 </span>
               </div>
               <div className="flex items-center gap-2 text-center">
                 <strong className="block text-base font-semibold">
                   {visitors.toLocaleString("en-US")}
                 </strong>
-                <span className="text-xs text-secondary-text">visitors</span>
+                <span className="text-xs text-secondary-text">{t("profile.visitors")}</span>
               </div>
               <div className="flex items-center gap-2 text-center">
                 <strong className="block text-base font-semibold">
                   {githubViews.toLocaleString("en-US")}
                 </strong>
-                <span className="text-xs text-secondary-text">github viewers</span>
+                <span className="text-xs text-secondary-text">{t("profile.githubViewers")}</span>
               </div>
             </div>
 
-            <p className="whitespace-pre-line font-normal">{profile.bio}</p>
+            <p className="whitespace-pre-line font-normal">{t("profile.bio")}</p>
 
             <div className="flex items-center gap-4 mt-1">
               <Link
@@ -153,25 +155,25 @@ function ProfileHeader() {
               <strong className="block text-base font-semibold">
                 {publicRepos}
               </strong>
-              <span className="text-xs text-secondary-text">projects</span>
+              <span className="text-xs text-secondary-text">{t("nav.projects")}</span>
             </div>
             <div>
               <strong className="block text-base font-semibold">
                 {visitors.toLocaleString("en-US")}
               </strong>
-              <span className="text-xs text-secondary-text">visitors</span>
+              <span className="text-xs text-secondary-text">{t("profile.visitors")}</span>
             </div>
             <div>
               <strong className="block text-base font-semibold">
                 {githubViews.toLocaleString("en-US")}
               </strong>
-              <span className="text-xs text-secondary-text">github</span>
+              <span className="text-xs text-secondary-text">GitHub</span>
             </div>
             <div>
               <strong className="block text-base font-semibold">
                 {profile.experience}
               </strong>
-              <span className="text-xs text-secondary-text">years</span>
+              <span className="text-xs text-secondary-text">{t("profile.years")}</span>
             </div>
           </div>
         </div>
@@ -179,10 +181,10 @@ function ProfileHeader() {
         <div className="px-4 text-sm">
           <h1 className="font-semibold">{profile.fullName}</h1>
           <span className="block font-semibold text-secondary-text">
-            {profile.jobTitle}
+            {t("profile.jobTitle")}
           </span>
           <span className="block text-secondary-text">@{profile.username}</span>
-          {profile.bio.split("\n").map((line, i) => (
+          {t("profile.bio").split("\n").map((line, i) => (
             <span key={i} className="block">
               {line}
             </span>
@@ -215,27 +217,37 @@ function ProfileHeader() {
         </div>
 
         <div className="flex gap-2 px-4">
-          <Button className="flex-1 rounded-lg bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 text-sm font-semibold text-white hover:opacity-90 transition-opacity duration-200">
-            Download Resume
+          <Button asChild className="flex-1 rounded-lg bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 text-sm font-semibold text-white hover:opacity-90 transition-opacity duration-200">
+            <a href="/files/CV___Hoang_Hoan.pdf" download="Hoang-Hoan-CV.pdf">
+              {t("common.downloadCv")}
+            </a>
           </Button>
           <Button
+            asChild
             variant="outline"
             className="flex-1 rounded-lg border-elevated-border text-sm font-semibold transition-colors duration-200"
           >
-            Message
+            <Link href="/contact">
+              {t("common.contact")}
+            </Link>
           </Button>
         </div>
       </div>
 
       <div className="hidden w-full md:flex md:items-center md:gap-3 pb-4">
-        <Button className="flex-1 h-9 rounded-lg text-white bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 text-sm font-semibold hover:opacity-90 transition-opacity duration-200">
-          Resume
+        <Button asChild className="flex-1 h-9 rounded-lg text-white bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 text-sm font-semibold hover:opacity-90 transition-opacity duration-200">
+          <a href="/files/CV___Hoang_Hoan.pdf" download="Hoang-Hoan-CV.pdf">
+            {t("common.resume")}
+          </a>
         </Button>
         <Button
+          asChild
           variant="outline"
           className="flex-1 h-9 rounded-lg border-elevated-border text-sm font-semibold transition-colors duration-200"
         >
-          Contact
+          <Link href="/contact">
+            {t("common.contact")}
+          </Link>
         </Button>
         <Button
           variant="outline"

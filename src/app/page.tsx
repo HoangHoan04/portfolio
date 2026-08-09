@@ -11,8 +11,10 @@ import { Highlights } from "@/components/profile/highlight";
 import { ProfileHeader } from "@/components/profile/profile-header";
 import { StartScreen } from "@/components/start-screen";
 
+import { ContentTab } from "@/constants/enum";
+
 export default function ProfilePage() {
-  const [activeTab, setActiveTab] = useState("PRODUCTS");
+  const [activeTab, setActiveTab] = useState<ContentTab>(ContentTab.PRODUCTS);
   const [started, setStarted] = useState(false);
 
   useEffect(() => {
@@ -25,10 +27,10 @@ export default function ProfilePage() {
         <ProfileHeader />
         <Highlights />
         <ContentTabs activeTab={activeTab} onTabChange={setActiveTab} />
-        {activeTab === "PRODUCTS" && <PostGrid />}
-        {activeTab === "SKILLS" && <HomeReelsGrid />}
-        {activeTab === "CERTIFICATES" && <HomeCertificatesGrid />}
-        {activeTab === "ACHIEVEMENTS" && <HomeAchievementsGrid />}
+        {activeTab === ContentTab.PRODUCTS && <PostGrid />}
+        {activeTab === ContentTab.SKILLS && <HomeReelsGrid />}
+        {activeTab === ContentTab.CERTIFICATES && <HomeCertificatesGrid />}
+        {activeTab === ContentTab.ACHIEVEMENTS && <HomeAchievementsGrid />}
       </div>
 
       {!started && (

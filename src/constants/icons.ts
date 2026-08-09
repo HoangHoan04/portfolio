@@ -35,6 +35,10 @@ export const icons = {
   visualstudio: "/icons/visualstudio.svg",
   vscode: "/icons/vscode.svg",
   vue: "/icons/vue.svg",
+  cursor: "/icons/cursor.svg",
+  antigravity: "/icons/Antigravity.png",
+  androidStudio: "/icons/Android_Studio.svg",
+  html: "/icons/html-5.svg",
 } as const;
 
 export type IconKey = keyof typeof icons;
@@ -70,6 +74,13 @@ const TECH_ICON_MAP: Record<string, IconKey> = {
   Git: "github",
   "Git / GitHub": "github",
   GitHub: "github",
+  Cursor: "cursor",
+  Antigravity: "antigravity",
+  "Android Studio": "androidStudio",
+  HTML: "html",
+  "HTML/CSS": "html",
+  CSS: "html",
+  HTML5: "html",
 };
 
 export function getTechIcon(tech: string): string | undefined {

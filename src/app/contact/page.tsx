@@ -61,7 +61,7 @@ function InteractiveContactCard({
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.4, ease: "easeOut", delay }}
       className={cn(
-        "relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 backdrop-blur-md transition-all duration-300 hover:border-zinc-700 hover:bg-zinc-900/50 hover:shadow-xl",
+        "relative overflow-hidden rounded-2xl border border-elevated-border bg-elevated/30 p-6 backdrop-blur-md transition-all duration-300 hover:border-primary-accent/30 hover:bg-elevated/50 hover:shadow-xl",
         className,
       )}
     >
@@ -153,7 +153,7 @@ export default function ContactPage() {
       title: t("contactPage.info.github"),
       value: "github.com/HoangHoan04",
       link: profile.github,
-      gradient: "from-zinc-600/20 to-zinc-400/20 text-zinc-300",
+      gradient: "from-zinc-600/20 to-zinc-400/20 text-foreground",
     },
     {
       icon: LinkedinLogo,
@@ -176,13 +176,13 @@ export default function ContactPage() {
       {/* ---------- ĐỒNG BỘ HEADER MỚI ---------- */}
       <HeaderPageChild text={t("contactPage.title")} />
 
-      <p className="mb-12 -mt-4 text-sm text-zinc-500 max-w-2xl leading-relaxed">
+      <p className="mb-12 -mt-4 text-sm text-secondary-text max-w-2xl leading-relaxed">
         {t("contactPage.subtitle")}
       </p>
       <div className="h-full">
         <InteractiveContactCard className="h-full flex flex-col justify-between">
           <div>
-            <h2 className="mb-6 flex items-center gap-2.5 text-xl font-bold tracking-tight text-white">
+            <h2 className="mb-6 flex items-center gap-2.5 text-xl font-bold tracking-tight text-foreground">
               <PaperPlaneTilt
                 className="size-5 text-blue-400"
                 weight="duotone"
@@ -197,7 +197,7 @@ export default function ContactPage() {
                   <h4 className="text-sm font-bold text-red-400">
                     {t("common.error")}
                   </h4>
-                  <p className="mt-0.5 text-xs text-zinc-400">{error}</p>
+                  <p className="mt-0.5 text-xs text-secondary-text">{error}</p>
                 </div>
               </div>
             )}
@@ -211,10 +211,10 @@ export default function ContactPage() {
                 <div className="mx-auto mb-5 flex size-16 items-center justify-center rounded-2xl border border-emerald-500/20 bg-emerald-500/5 text-emerald-400 shadow-inner">
                   <CheckCircle className="size-8" weight="duotone" />
                 </div>
-                <h3 className="mb-2 text-xl font-bold text-zinc-100">
+                <h3 className="mb-2 text-xl font-bold text-foreground">
                   {t("contactPage.success.title")}
                 </h3>
-                <p className="text-xs text-zinc-400">
+                <p className="text-xs text-secondary-text">
                   {t("contactPage.success.message")}
                 </p>
               </motion.div>
@@ -222,7 +222,7 @@ export default function ContactPage() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                   <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-wider text-zinc-400">
+                    <label className="text-xs font-bold uppercase tracking-wider text-secondary-text">
                       {t("contactPage.form.name")}
                     </label>
                     <Input
@@ -234,11 +234,11 @@ export default function ContactPage() {
                       placeholder={
                         t("contactPage.form.namePlaceholder") as string
                       }
-                      className="border-zinc-800 bg-zinc-950/40 text-sm text-white placeholder:text-zinc-600 focus-visible:ring-blue-500/40"
+                      className="border-elevated-border bg-elevated/40 text-sm text-foreground placeholder:text-secondary-text focus-visible:ring-blue-500/40"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-wider text-zinc-400">
+                    <label className="text-xs font-bold uppercase tracking-wider text-secondary-text">
                       {t("contactPage.form.email")}
                     </label>
                     <Input
@@ -250,7 +250,7 @@ export default function ContactPage() {
                       placeholder={
                         t("contactPage.form.emailPlaceholder") as string
                       }
-                      className="border-zinc-800 bg-zinc-950/40 text-sm text-white placeholder:text-zinc-600 focus-visible:ring-blue-500/40"
+                      className="border-elevated-border bg-elevated/40 text-sm text-foreground placeholder:text-secondary-text focus-visible:ring-blue-500/40"
                     />
                   </div>
                 </div>
@@ -259,7 +259,7 @@ export default function ContactPage() {
                   <div className="space-y-2">
                     <label
                       htmlFor="projectType"
-                      className="text-xs font-bold uppercase tracking-wider text-zinc-400"
+                      className="text-xs font-bold uppercase tracking-wider text-secondary-text"
                     >
                       {t("contactPage.form.projectType")}
                     </label>
@@ -268,31 +268,31 @@ export default function ContactPage() {
                       name="projectType"
                       value={formData.projectType}
                       onChange={handleChange}
-                      className="flex h-10 w-full rounded-lg border border-zinc-800 bg-zinc-950/40 px-3 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-blue-500/40"
+                      className="flex h-10 w-full rounded-lg border border-elevated-border bg-elevated/40 px-3 text-sm text-foreground placeholder:text-secondary-text focus:outline-none focus:ring-2 focus:ring-blue-500/40"
                     >
-                      <option value="" className="bg-zinc-900">
+                      <option value="" className="bg-elevated text-foreground">
                         {t("contactPage.form.projectPlaceholder")}
                       </option>
-                      <option value="web-app" className="bg-zinc-900">
+                      <option value="web-app" className="bg-elevated text-foreground">
                         Web Application
                       </option>
-                      <option value="api" className="bg-zinc-900">
+                      <option value="api" className="bg-elevated text-foreground">
                         API Development
                       </option>
-                      <option value="fullstack" className="bg-zinc-900">
+                      <option value="fullstack" className="bg-elevated text-foreground">
                         Full-Stack Project
                       </option>
-                      <option value="consultation" className="bg-zinc-900">
+                      <option value="consultation" className="bg-elevated text-foreground">
                         Consultation
                       </option>
-                      <option value="other" className="bg-zinc-900">
+                      <option value="other" className="bg-elevated text-foreground">
                         Other
                       </option>
                     </select>
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-wider text-zinc-400">
+                    <label className="text-xs font-bold uppercase tracking-wider text-secondary-text">
                       {t("contactPage.form.subject")}
                     </label>
                     <Input
@@ -304,7 +304,7 @@ export default function ContactPage() {
                       placeholder={
                         t("contactPage.form.subjectPlaceholder") as string
                       }
-                      className="border-zinc-800 bg-zinc-950/40 text-sm text-white placeholder:text-zinc-600 focus-visible:ring-blue-500/40"
+                      className="border-elevated-border bg-elevated/40 text-sm text-foreground placeholder:text-secondary-text focus-visible:ring-blue-500/40"
                     />
                   </div>
                 </div>
@@ -312,7 +312,7 @@ export default function ContactPage() {
                 <div className="space-y-2">
                   <label
                     htmlFor="message"
-                    className="text-xs font-bold uppercase tracking-wider text-zinc-400"
+                    className="text-xs font-bold uppercase tracking-wider text-secondary-text"
                   >
                     {t("contactPage.form.message")}
                   </label>
@@ -326,14 +326,14 @@ export default function ContactPage() {
                     placeholder={
                       t("contactPage.form.messagePlaceholder") as string
                     }
-                    className="w-full resize-none rounded-lg border border-zinc-800 bg-zinc-950/40 px-3 py-2 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-blue-500/40"
+                    className="w-full resize-none rounded-lg border border-elevated-border bg-elevated/40 px-3 py-2 text-sm text-foreground placeholder:text-secondary-text focus:outline-none focus:ring-2 focus:ring-blue-500/40"
                   />
                 </div>
 
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-blue-600 font-bold text-white shadow-lg shadow-blue-600/10 hover:bg-blue-500 py-5 transition-all"
+                  className="w-full bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 font-bold text-white shadow-lg py-5 hover:opacity-90 transition-all cursor-pointer border-none"
                 >
                   {isSubmitting
                     ? t("contactPage.form.sending")
@@ -349,7 +349,7 @@ export default function ContactPage() {
         {/* CỘT PHÍA PHẢI: THÔNG TIN MẠNG XÃ HỘI + THỜI GIAN LÀM VIỆC (NẰM TRÊN 1 HÀNG CỦA CỘT PHẢI) */}
         {/* Mạng xã hội */}
         <InteractiveContactCard delay={0.04} className="h-full">
-          <h3 className="mb-5 flex items-center gap-2 font-bold tracking-tight text-white">
+          <h3 className="mb-5 flex items-center gap-2 font-bold tracking-tight text-foreground">
             <ShareNetwork className="size-5 text-blue-400" weight="duotone" />
             {t("contactPage.info.title")}
           </h3>
@@ -359,7 +359,7 @@ export default function ContactPage() {
                 key={info.title as string}
                 href={info.link}
                 target={info.link.startsWith("http") ? "_blank" : undefined}
-                className="group flex items-center gap-3.5 rounded-xl border border-zinc-800/60 bg-zinc-950/20 p-3.5 transition-all hover:border-zinc-700 hover:bg-zinc-955/50"
+                className="group flex items-center gap-3.5 rounded-xl border border-elevated-border bg-elevated/20 p-3.5 transition-all hover:border-primary-accent/30 hover:bg-elevated/50"
               >
                 <div
                   className={cn(
@@ -370,10 +370,10 @@ export default function ContactPage() {
                   <info.icon className="size-5" weight="duotone" />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="text-xs font-bold uppercase tracking-wide text-zinc-500 group-hover:text-blue-400 transition-colors">
+                  <p className="text-xs font-bold uppercase tracking-wide text-secondary-text group-hover:text-blue-400 transition-colors">
                     {info.title}
                   </p>
-                  <p className="truncate text-sm font-medium text-zinc-300 mt-0.5">
+                  <p className="truncate text-sm font-medium text-foreground mt-0.5">
                     {info.value}
                   </p>
                 </div>
@@ -388,35 +388,35 @@ export default function ContactPage() {
           className="h-full flex flex-col justify-between"
         >
           <div>
-            <h3 className="mb-4 flex items-center gap-2 font-bold tracking-tight text-white">
+            <h3 className="mb-4 flex items-center gap-2 font-bold tracking-tight text-foreground">
               <Clock className="size-5 text-blue-400" weight="duotone" />
               {t("contactPage.availability.title")}
             </h3>
             <dl className="space-y-2.5 text-xs font-medium">
-              <div className="flex justify-between border-b border-zinc-800/60 pb-2">
-                <dt className="text-zinc-500">
+              <div className="flex justify-between border-b border-elevated-border pb-2">
+                <dt className="text-secondary-text">
                   {t("contactPage.availability.days")}
                 </dt>
-                <dd className="text-zinc-300 tabular-nums">8:00 - 17:30</dd>
+                <dd className="text-foreground tabular-nums">8:00 - 17:30</dd>
               </div>
-              <div className="flex justify-between border-b border-zinc-800/60 pb-2">
-                <dt className="text-zinc-500">
+              <div className="flex justify-between border-b border-elevated-border pb-2">
+                <dt className="text-secondary-text">
                   {t("contactPage.availability.sat")}
                 </dt>
-                <dd className="text-zinc-300">Flexible</dd>
+                <dd className="text-foreground">Flexible</dd>
               </div>
               <div className="flex justify-between pb-1">
-                <dt className="text-zinc-500">
+                <dt className="text-secondary-text">
                   {t("contactPage.availability.sun")}
                 </dt>
-                <dd className="text-zinc-600">
+                <dd className="text-secondary-text">
                   {t("contactPage.availability.off")}
                 </dd>
               </div>
             </dl>
           </div>
 
-          <div className="mt-6 flex items-center gap-2 border-t border-zinc-800 pt-4">
+          <div className="mt-6 flex items-center gap-2 border-t border-elevated-border pt-4">
             <span className="size-2 animate-pulse rounded-full bg-emerald-500 ring-4 ring-emerald-500/20" />
             <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">
               {t("contactPage.availability.status")}
@@ -426,33 +426,33 @@ export default function ContactPage() {
       </div>
 
       {/* KHỐI CHÂN TRANG ĐỊA ĐIỂM (BENTO CTA BAR) */}
-      <SectionCard className="relative overflow-hidden border border-zinc-800 bg-gradient-to-r from-zinc-900 via-zinc-950 to-zinc-900 py-10 text-center shadow-xl">
+      <SectionCard className="relative overflow-hidden border border-elevated-border bg-elevated/40 py-10 text-center shadow-xl">
         <div className="absolute -left-20 -top-20 h-48 w-48 rounded-full bg-blue-500/5 blur-3xl" />
         <div className="absolute -right-20 -bottom-20 h-48 w-48 rounded-full bg-purple-500/5 blur-3xl" />
 
-        <h2 className="relative z-10 mb-3 text-2xl font-black tracking-tight text-white md:text-3xl">
+        <h2 className="relative z-10 mb-3 text-2xl font-black tracking-tight text-foreground md:text-3xl">
           {t("contactPage.locationSection.title")}
         </h2>
-        <p className="relative z-10 mx-auto mb-8 max-w-xl text-sm leading-relaxed text-zinc-400">
+        <p className="relative z-10 mx-auto mb-8 max-w-xl text-sm leading-relaxed text-secondary-text">
           {t("contactPage.locationSection.desc")}
         </p>
 
         <div className="relative z-10 flex flex-wrap justify-center gap-12 sm:gap-16">
           <div className="group">
-            <div className="mx-auto mb-3 flex size-12 items-center justify-center rounded-2xl border border-zinc-800 bg-zinc-950/60 text-blue-400 shadow-inner group-hover:border-blue-500/20 transition-colors">
+            <div className="mx-auto mb-3 flex size-12 items-center justify-center rounded-2xl border border-elevated-border bg-elevated/60 text-blue-400 shadow-inner group-hover:border-blue-500/20 transition-colors">
               <MapPin className="size-5" weight="duotone" />
             </div>
-            <p className="text-sm font-bold text-zinc-200">Ho Chi Minh City</p>
-            <p className="text-xs font-semibold text-zinc-500 mt-0.5">
+            <p className="text-sm font-bold text-foreground">Ho Chi Minh City</p>
+            <p className="text-xs font-semibold text-secondary-text mt-0.5">
               Vietnam
             </p>
           </div>
           <div className="group">
-            <div className="mx-auto mb-3 flex size-12 items-center justify-center rounded-2xl border border-zinc-800 bg-zinc-950/60 text-cyan-400 shadow-inner group-hover:border-cyan-500/20 transition-colors">
+            <div className="mx-auto mb-3 flex size-12 items-center justify-center rounded-2xl border border-elevated-border bg-elevated/60 text-cyan-400 shadow-inner group-hover:border-cyan-500/20 transition-colors">
               <Globe className="size-5" weight="duotone" />
             </div>
-            <p className="text-sm font-bold text-zinc-200">Remote</p>
-            <p className="text-xs font-semibold text-zinc-500 mt-0.5">
+            <p className="text-sm font-bold text-foreground">Remote</p>
+            <p className="text-xs font-semibold text-secondary-text mt-0.5">
               Worldwide
             </p>
           </div>

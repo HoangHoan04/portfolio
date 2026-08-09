@@ -123,6 +123,15 @@
       }
     }
   },
+  "profile": {
+    "jobTitle": "Kỹ Sư Phần Mềm",
+    "bio": "Xin chào! Mình là một Web Developer với niềm đam mê xây dựng các giao diện người dùng hiện đại và tối ưu hóa trải nghiệm người dùng. Hiện tại mình là sinh viên Kỹ thuật Phần mềm tại Trường Đại học Sài Gòn, đang làm việc tại APETECH Solutions. Mình luôn tích cực học tập và nâng cao kỹ năng thông qua các dự án cá nhân và nhóm.",
+    "yearsExp": "năm kinh nghiệm",
+    "githubProjects": "dự án trên GitHub",
+    "visitors": "lượt ghé thăm",
+    "githubViewers": "lượt xem github",
+    "years": "năm"
+  },
   "about": {
     "title": "Giới Thiệu",
     "description": "Chào bạn! Mình là một Web Developer với niềm đam mê xây dựng các giao diện người dùng hiện đại và tối ưu hóa trải nghiệm người dùng. Hiện tại mình là sinh viên Kỹ thuật Phần mềm tại <strong>Trường Đại học Sài Gòn</strong>, đang làm việc tại <strong>APETECH Solutions</strong>. Mình luôn tích cực học tập và nâng cao kỹ năng thông qua các dự án cá nhân và nhóm.",
@@ -252,7 +261,7 @@
       "coreCSDesc": "Lập trình hướng đối tượng (OOP), Cấu trúc dữ liệu & Giải thuật, Phát triển Web",
       "personal": "Dự Án Cá Nhân",
       "personalDesc": "React, PHP, MySQL, Git — xây dựng những dự án thực tế đầu tiên",
-      "professional": "Chuyên Nghiệp",
+      "professional": "Fresher",
       "professionalDesc": "Angular, NestJS, TypeScript, PostgreSQL tại Giải Pháp APETECH"
     },
     "philosophy": {

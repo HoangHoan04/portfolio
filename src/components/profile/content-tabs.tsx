@@ -4,19 +4,21 @@ import { Bookmark, Clapperboard, Grid3X3 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
+import { ContentTab } from "@/constants/enum";
+
 const tabs = [
-  { label: "PRODUCTS", icon: Grid3X3 },
-  { label: "SKILLS", icon: Clapperboard },
-  { label: "CERTIFICATES", icon: Bookmark },
-  { label: "ACHIEVEMENTS", icon: Bookmark },
+  { label: ContentTab.PRODUCTS, icon: Grid3X3 },
+  { label: ContentTab.SKILLS, icon: Clapperboard },
+  { label: ContentTab.CERTIFICATES, icon: Bookmark },
+  { label: ContentTab.ACHIEVEMENTS, icon: Bookmark },
 ];
 
 function ContentTabs({
   activeTab,
   onTabChange,
 }: {
-  activeTab: string;
-  onTabChange: (tab: string) => void;
+  activeTab: ContentTab;
+  onTabChange: (tab: ContentTab) => void;
 }) {
   return (
     <div className="flex border-t border-elevated-border">

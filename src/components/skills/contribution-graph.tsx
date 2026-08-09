@@ -77,8 +77,8 @@ function ContributionGraph({
 
   if (data.source === "fallback" && !data.weeks.length) {
     return (
-      <div className="rounded-2xl border border-dashed border-zinc-700 bg-zinc-950/40 p-6 text-center">
-        <p className="text-sm text-zinc-400">{setupHint}</p>
+      <div className="rounded-2xl border border-dashed border-elevated-border bg-elevated/40 p-6 text-center">
+        <p className="text-sm text-secondary-text">{setupHint}</p>
       </div>
     );
   }

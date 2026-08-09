@@ -22,32 +22,7 @@ import { Button } from "@/components/ui/button";
 import { useTranslation } from "@/contexts/locale-context";
 import { cn } from "@/lib/utils";
 
-const academicProjects = [
-  {
-    nameKey: "home.projects.list.wedding.name",
-    descKey: "home.projects.list.wedding.desc",
-    tech: ["TypeScript", "React", "Tailwind CSS", "NestJS"],
-    github: "https://github.com/HoangHoan04/wedding-invitation-customer",
-    demo: null,
-    gradient: "from-pink-500/20 to-rose-500/20",
-  },
-  {
-    nameKey: "home.projects.list.himlam.name",
-    descKey: "home.projects.list.himlam.desc",
-    tech: ["React", "TypeScript", "NestJS", "PostgreSQL", "Supabase"],
-    github: "https://github.com/HoangHoan04/bookingtour-customer",
-    demo: null,
-    gradient: "from-blue-500/20 to-cyan-500/20",
-  },
-  {
-    nameKey: "home.projects.list.apple.name",
-    descKey: "home.projects.list.apple.desc",
-    tech: ["PHP", "MySQL"],
-    github: "https://github.com/HoangHoan04/AppleStore",
-    demo: null,
-    gradient: "from-zinc-500/20 to-neutral-500/20",
-  },
-];
+import { portfolioProjects } from "@/constants/projects-data";
 
 const coursework = [
   "Object-Oriented Programming",
@@ -94,7 +69,7 @@ function InteractiveEducationCard({
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.4, ease: "easeOut", delay }}
       className={cn(
-        "relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 backdrop-blur-md transition-all duration-300 hover:border-zinc-700 hover:bg-zinc-900/50 hover:shadow-xl",
+        "relative overflow-hidden rounded-2xl border border-elevated-border bg-elevated/30 p-6 backdrop-blur-md transition-all duration-300 hover:border-primary-accent/30 hover:bg-elevated/50 hover:shadow-xl",
         className,
       )}
     >
@@ -135,8 +110,8 @@ export default function EducationPage() {
     },
     {
       year: "2025 - Now",
-      title: t("education.timeline.internship"),
-      description: t("education.timeline.internshipDesc"),
+      title: t("education.timeline.professional"),
+      description: t("education.timeline.professionalDesc"),
       icon: Users,
     },
   ];
@@ -164,35 +139,35 @@ export default function EducationPage() {
       {/* ---------- ĐỒNG BỘ HEADER MỚI ---------- */}
       <HeaderPageChild text={t("education.title")} />
 
-      <p className="mb-12 -mt-4 text-sm text-zinc-500 max-w-2xl leading-relaxed">
+      <p className="mb-12 -mt-4 text-sm text-secondary-text max-w-2xl leading-relaxed">
         {t("education.subtitle")}
       </p>
 
       {/* ---------- HỌC VẤN CHÍNH QUY ---------- */}
       <section className="mb-16">
         <div className="mb-8 flex items-center gap-3">
-          <h2 className="text-xl font-bold tracking-tight text-white md:text-2xl">
+          <h2 className="text-xl font-bold tracking-tight text-foreground md:text-2xl">
             {t("education.formal")}
           </h2>
-          <div className="h-px flex-1 bg-gradient-to-r from-zinc-800 to-transparent" />
+          <div className="h-px flex-1 bg-gradient-to-r from-elevated-border to-transparent" />
         </div>
 
         <InteractiveEducationCard>
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             <div className="lg:col-span-2">
               <div className="mb-4 flex flex-wrap items-center gap-3">
-                <h3 className="text-2xl font-black tracking-tight text-white">
+                <h3 className="text-2xl font-black tracking-tight text-foreground">
                   {t("education.degree")}
                 </h3>
                 <Badge className="border border-blue-500/30 bg-blue-500/10 px-2.5 py-0.5 text-xs font-semibold text-blue-400">
                   GPA: Good
                 </Badge>
               </div>
-              <p className="text-base font-semibold text-zinc-300">
+              <p className="text-base font-semibold text-foreground">
                 {t("education.school")}
               </p>
 
-              <div className="mt-3 flex flex-wrap gap-4 text-xs font-medium text-zinc-500">
+              <div className="mt-3 flex flex-wrap gap-4 text-xs font-medium text-secondary-text">
                 <span className="flex items-center gap-1.5">
                   <MapPin className="size-4" />
                   {t("education.location")}
@@ -203,12 +178,12 @@ export default function EducationPage() {
                 </span>
               </div>
 
-              <p className="mt-5 text-sm leading-relaxed text-zinc-400 border-l-2 border-zinc-800 pl-4">
+              <p className="mt-5 text-sm leading-relaxed text-secondary-text border-l-2 border-elevated-border pl-4">
                 {t("education.desc")}
               </p>
 
               <div className="mt-6">
-                <h4 className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-zinc-400">
+                <h4 className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-secondary-text">
                   <Users className="size-4 text-blue-400" />
                   {t("education.activities")}
                 </h4>
@@ -219,7 +194,7 @@ export default function EducationPage() {
                   ].map((activity) => (
                     <li
                       key={activity}
-                      className="flex items-start gap-2.5 text-xs text-zinc-400 leading-relaxed"
+                      className="flex items-start gap-2.5 text-xs text-secondary-text leading-relaxed"
                     >
                       <CheckCircle
                         className="mt-0.5 size-4 shrink-0 text-emerald-500/80"
@@ -233,8 +208,8 @@ export default function EducationPage() {
             </div>
 
             {/* Môn học chuyên ngành */}
-            <div className="border-t border-zinc-800 pt-6 lg:border-t-0 lg:border-l lg:border-zinc-800 lg:pt-0 lg:pl-8">
-              <h4 className="mb-4 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-zinc-400">
+            <div className="border-t border-elevated-border pt-6 lg:border-t-0 lg:border-l lg:border-elevated-border lg:pt-0 lg:pl-8">
+              <h4 className="mb-4 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-secondary-text">
                 <BookOpen className="size-4 text-blue-400" />
                 {t("education.courses")}
               </h4>
@@ -242,7 +217,7 @@ export default function EducationPage() {
                 {coursework.map((course) => (
                   <span
                     key={course}
-                    className="rounded-lg bg-zinc-950/40 border border-zinc-800/80 px-3 py-2 text-xs font-medium text-zinc-400 hover:border-zinc-700 hover:text-white transition-colors"
+                    className="rounded-lg bg-elevated/40 border border-elevated-border px-3 py-2 text-xs font-medium text-secondary-text hover:border-primary-accent/30 hover:text-foreground transition-colors"
                   >
                     {course}
                   </span>
@@ -256,61 +231,64 @@ export default function EducationPage() {
       {/* ---------- DỰ ÁN HỌC TẬP / NGHIÊN CỨU ---------- */}
       <section className="mb-16">
         <div className="mb-8 flex items-center gap-3">
-          <h2 className="text-xl font-bold tracking-tight text-white md:text-2xl">
+          <h2 className="text-xl font-bold tracking-tight text-foreground md:text-2xl">
             {t("education.projects")}
           </h2>
-          <div className="h-px flex-1 bg-gradient-to-r from-zinc-800 to-transparent" />
+          <div className="h-px flex-1 bg-gradient-to-r from-elevated-border to-transparent" />
         </div>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {academicProjects.map((project, index) => (
+          {portfolioProjects.map((project, index) => (
             <InteractiveEducationCard
-              key={project.github}
+              key={project.id}
               delay={index * 0.04}
               className="flex flex-col justify-between group"
             >
               <div>
                 <div
                   className={cn(
-                    "mb-4 flex size-11 items-center justify-center rounded-xl bg-gradient-to-br border border-zinc-800/60 text-blue-400",
+                    "mb-4 flex size-11 items-center justify-center rounded-xl bg-gradient-to-br border border-elevated-border text-blue-400",
                     project.gradient,
                   )}
                 >
                   <Code className="size-5" weight="bold" />
                 </div>
-                <h3 className="mb-2 font-bold tracking-tight text-zinc-100 group-hover:text-blue-400 transition-colors">
-                  {t(project.nameKey)}
+                <h3 className="mb-2 font-bold tracking-tight text-foreground group-hover:text-blue-400 transition-colors">
+                  {t(project.titleKey)}
                 </h3>
-                <p className="mb-5 line-clamp-3 text-xs leading-relaxed text-zinc-400">
+                <p className="mb-5 line-clamp-3 text-xs leading-relaxed text-secondary-text">
                   {t(project.descKey)}
                 </p>
               </div>
 
               <div>
                 <div className="mb-4 flex flex-wrap gap-1">
-                  {project.tech.map((tech) => (
+                  {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded bg-zinc-800 border border-zinc-700/60 px-2 py-0.5 text-[11px] text-zinc-400"
+                      className="rounded bg-elevated border border-elevated-border px-2 py-0.5 text-[11px] text-secondary-text"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex gap-4 border-t border-zinc-800/60 pt-3.5 text-xs font-semibold">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-zinc-500 transition-colors hover:text-white"
-                  >
-                    <GithubLogo className="size-4" />
-                    {t("common.code")}
-                  </a>
-                  {project?.demo && (
+                <div className="flex flex-wrap gap-4 border-t border-elevated-border pt-3.5 text-xs font-semibold">
+                  {project.github.map((repo, idx) => (
                     <a
-                      href={project?.demo}
+                      key={idx}
+                      href={repo.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-secondary-text transition-colors hover:text-foreground"
+                    >
+                      <GithubLogo className="size-4" />
+                      {t(repo.labelKey)}
+                    </a>
+                  ))}
+                  {project.demo && (
+                    <a
+                      href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 text-blue-400 transition-colors hover:text-blue-300"
@@ -328,12 +306,12 @@ export default function EducationPage() {
 
       {/* ---------- TRỤC THỜI GIAN LỘ TRÌNH HỌC TẬP (VERTICAL TIMELINE) ---------- */}
       <section className="mb-16">
-        <SectionCard className="border border-zinc-800 bg-zinc-950/20 backdrop-blur-sm p-6">
-          <h2 className="mb-10 text-center text-xl font-bold tracking-tight text-white md:text-2xl">
+        <SectionCard className="border border-elevated-border bg-elevated/20 backdrop-blur-sm p-6">
+          <h2 className="mb-10 text-center text-xl font-bold tracking-tight text-foreground md:text-2xl">
             {t("education.timeline.title")}
           </h2>
 
-          <div className="relative mx-auto max-w-4xl border-l border-zinc-800 pl-6 space-y-8">
+          <div className="relative mx-auto max-w-4xl border-l border-elevated-border pl-6 space-y-8">
             {learningTimeline.map((phase, idx) => {
               const isCurrent = phase.year.includes("Now");
               const Icon = phase.icon;
@@ -350,10 +328,10 @@ export default function EducationPage() {
                   {/* Timeline Node Point */}
                   <div
                     className={cn(
-                      "absolute -left-[31px] top-1.5 size-4 rounded-full border bg-zinc-950 transition-all shadow-md flex items-center justify-center",
+                      "absolute -left-[31px] top-1.5 size-4 rounded-full border bg-background transition-all shadow-md flex items-center justify-center",
                       isCurrent
                         ? "border-blue-500 bg-blue-600 ring-4 ring-blue-500/20 animate-pulse"
-                        : "border-zinc-700 group-hover:border-blue-500 group-hover:bg-blue-600",
+                        : "border-elevated-border bg-elevated group-hover:border-blue-500 group-hover:bg-blue-600",
                     )}
                   />
 
@@ -363,7 +341,7 @@ export default function EducationPage() {
                         "inline-block shrink-0 rounded-full border px-3 py-0.5 text-xs font-black text-center w-fit tabular-nums",
                         isCurrent
                           ? "bg-blue-500/20 border-blue-500/40 text-blue-400"
-                          : "bg-blue-950/40 border-blue-900/30 text-blue-400/80",
+                          : "bg-elevated border-elevated-border text-secondary-text",
                       )}
                     >
                       {phase.year}
@@ -374,13 +352,13 @@ export default function EducationPage() {
                           "text-sm font-bold transition-colors inline-flex items-center gap-2",
                           isCurrent
                             ? "text-blue-400"
-                            : "text-zinc-200 group-hover:text-blue-400",
+                            : "text-foreground group-hover:text-blue-400",
                         )}
                       >
                         <Icon className="size-4 shrink-0" weight="duotone" />
                         {phase.title}
                       </h3>
-                      <p className="mt-1 text-xs leading-relaxed text-zinc-400 max-w-2xl">
+                      <p className="mt-1 text-xs leading-relaxed text-secondary-text max-w-2xl">
                         {phase.description}
                       </p>
                     </div>
@@ -394,10 +372,10 @@ export default function EducationPage() {
 
       {/* ---------- TRIẾT LÝ HỌC TẬP ---------- */}
       <section className="text-center">
-        <h2 className="mb-3 text-2xl font-black tracking-tight text-white md:text-3xl">
+        <h2 className="mb-3 text-2xl font-black tracking-tight text-foreground md:text-3xl">
           {t("education.philosophy.title")}
         </h2>
-        <p className="mx-auto mb-10 max-w-2xl text-sm leading-relaxed text-zinc-400 italic">
+        <p className="mx-auto mb-10 max-w-2xl text-sm leading-relaxed text-secondary-text italic">
           "{t("education.philosophy.quote")}"
         </p>
 
@@ -408,11 +386,11 @@ export default function EducationPage() {
               delay={index * 0.03}
               className="text-center flex flex-col items-center"
             >
-              <div className="mb-4 flex size-12 items-center justify-center rounded-xl border border-zinc-800 bg-zinc-950/60 text-blue-400">
+              <div className="mb-4 flex size-12 items-center justify-center rounded-xl border border-elevated-border bg-elevated/60 text-blue-400">
                 <item.icon className="size-6" weight="duotone" />
               </div>
-              <h3 className="mb-2 font-bold text-zinc-200">{item.title}</h3>
-              <p className="text-xs leading-relaxed text-zinc-400 max-w-xs">
+              <h3 className="mb-2 font-bold text-foreground">{item.title}</h3>
+              <p className="text-xs leading-relaxed text-secondary-text max-w-xs">
                 {item.description}
               </p>
             </InteractiveEducationCard>
@@ -421,7 +399,7 @@ export default function EducationPage() {
 
         <Button
           asChild
-          className="bg-blue-600 font-bold text-white shadow-lg shadow-blue-600/20 hover:bg-blue-500 transition-all hover:scale-105"
+          className="bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 font-bold text-white shadow-lg transition-all hover:scale-105 hover:opacity-90 border-none cursor-pointer"
         >
           <Link href="/contact">{t("common.contact")}</Link>
         </Button>

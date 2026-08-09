@@ -265,7 +265,7 @@ export default function AboutPage() {
               className="border-0 bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 text-white hover:opacity-90 transition-opacity"
             >
               <a
-                href="/files/HoangDinhHoanCv.pdf"
+                href="/files/CV___Hoang_Hoan.pdf"
                 download="Hoang-Dinh-Hoan-CV.pdf"
               >
                 <Download className="size-4" />
