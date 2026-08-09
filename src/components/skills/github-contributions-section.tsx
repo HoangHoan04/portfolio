@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { ContributionGraph } from "@/components/skills/contribution-graph";
 import { SectionCard } from "@/components/pages/section-card";
 import { useTranslation } from "@/contexts/locale-context";
-import type { GitHubContributions } from "@/lib/github-contributions";
+import { fetchGitHubContributions, type GitHubContributions } from "@/lib/github-contributions";
 
 type GitHubContributionsSectionProps = {
   onTotalChange?: (total: number) => void;
@@ -21,8 +21,7 @@ export function GitHubContributionsSection({
   useEffect(() => {
     let cancelled = false;
 
-    fetch(`/api/github-contributions?t=${Date.now()}`)
-      .then((res) => res.json())
+    fetchGitHubContributions()
       .then((json: GitHubContributions) => {
         if (cancelled) return;
         setData(json);

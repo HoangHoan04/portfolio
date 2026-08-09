@@ -1,4 +1,11 @@
 import { PostDetailContent } from "@/components/modal/post-modal";
+import { portfolioProjects } from "@/constants/projects-data";
+
+export async function generateStaticParams() {
+  return portfolioProjects.map((project) => ({
+    id: project.id,
+  }));
+}
 
 export default async function PostPage({
   params,

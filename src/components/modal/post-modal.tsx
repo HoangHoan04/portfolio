@@ -107,9 +107,10 @@ function PostDetailContent({ id }: { id: string }) {
   );
 }
 
-function PostModal({ id }: { id: string }) {
+function PostModal({ id, onClose }: { id: string; onClose?: () => void }) {
   const router = useRouter();
   const project = portfolioProjects.find((p) => p.id === id);
+  const handleClose = onClose || (() => router.back());
 
   return (
     <div className="fixed inset-0 z-[60] flex items-end justify-center bg-black/75 backdrop-blur-sm md:items-center md:p-4">
@@ -117,12 +118,12 @@ function PostModal({ id }: { id: string }) {
         type="button"
         className="absolute inset-0"
         aria-label="Close modal"
-        onClick={() => router.back()}
+        onClick={handleClose}
       />
       <div className="relative z-10 w-full max-w-4xl overflow-hidden rounded-t-2xl border border-elevated-border bg-background shadow-2xl md:rounded-2xl">
         <button
           type="button"
-          onClick={() => router.back()}
+          onClick={handleClose}
           className="absolute right-3 top-3 z-20 rounded-full bg-black/60 p-1.5 text-white hover:bg-black"
           aria-label="Close"
         >

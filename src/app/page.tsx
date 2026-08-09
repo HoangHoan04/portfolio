@@ -13,13 +13,41 @@ import { StartScreen } from "@/components/start-screen";
 
 import { ContentTab } from "@/constants/enum";
 
+import { PostModal } from "@/components/modal/post-modal";
+
+const isProd = process.env.NODE_ENV === "production";
+const basePath = isProd ? "/portfolio" : "";
+
 export default function ProfilePage() {
   const [activeTab, setActiveTab] = useState<ContentTab>(ContentTab.PRODUCTS);
   const [started, setStarted] = useState(false);
+  const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
 
   useEffect(() => {
     if (sessionStorage.getItem("start_shown")) setStarted(true);
   }, []);
+
+  // Listen to popstate (e.g. back button) to close the modal
+  useEffect(() => {
+    const handlePopState = () => {
+      const path = window.location.pathname;
+      if (path === `${basePath}/` || path === "/") {
+        setSelectedProjectId(null);
+      }
+    };
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  const handleSelectProject = (id: string) => {
+    setSelectedProjectId(id);
+    window.history.pushState(null, "", `${basePath}/post/${id}`);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedProjectId(null);
+    window.history.pushState(null, "", `${basePath}/`);
+  };
 
   return (
     <div>
@@ -27,11 +55,17 @@ export default function ProfilePage() {
         <ProfileHeader />
         <Highlights />
         <ContentTabs activeTab={activeTab} onTabChange={setActiveTab} />
-        {activeTab === ContentTab.PRODUCTS && <PostGrid />}
+        {activeTab === ContentTab.PRODUCTS && (
+          <PostGrid onSelectProject={handleSelectProject} />
+        )}
         {activeTab === ContentTab.SKILLS && <HomeReelsGrid />}
         {activeTab === ContentTab.CERTIFICATES && <HomeCertificatesGrid />}
         {activeTab === ContentTab.ACHIEVEMENTS && <HomeAchievementsGrid />}
       </div>
+
+      {selectedProjectId && (
+        <PostModal id={selectedProjectId} onClose={handleCloseModal} />
+      )}
 
       {!started && (
         <StartScreen
