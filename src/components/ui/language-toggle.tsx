@@ -4,10 +4,11 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 import { useLocale } from "@/contexts/locale-context";
+import { icons } from "@/constants/icons";
 
 const LOCALES = {
-  en: { label: "English", icon: "/icons/en.svg" },
-  vi: { label: "Tiếng Việt", icon: "/icons/vi.svg" },
+  en: { label: "English", icon: icons.en },
+  vi: { label: "Tiếng Việt", icon: icons.vi },
 } as const;
 
 export function LanguageToggle({ expanded }: { expanded?: boolean }) {

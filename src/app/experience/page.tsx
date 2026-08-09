@@ -9,7 +9,7 @@ import { SectionCard } from "@/components/pages/section-card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "@/contexts/locale-context";
-import { cn } from "@/lib/utils";
+import { cn, getAssetPath } from "@/lib/utils";
 import {
   Briefcase,
   ChartBar,
@@ -418,7 +418,7 @@ export default function ExperiencePage() {
             className="border-elevated-border bg-elevated/40 font-medium text-foreground transition-all hover:bg-elevated-hover hover:scale-105"
           >
             <a
-              href="/files/CV___Hoang_Hoan.pdf"
+              href={getAssetPath("/files/CV___Hoang_Hoan.pdf")}
               download="Hoang-Hoan-CV.pdf"
               className="gap-2"
             >
