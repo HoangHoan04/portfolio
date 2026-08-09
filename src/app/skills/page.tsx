@@ -172,7 +172,9 @@ function SkillCard({
               <Code className="size-5 text-blue-400" />
             )}
           </div>
-          <span className="font-bold tracking-tight text-foreground">{name}</span>
+          <span className="font-bold tracking-tight text-foreground">
+            {name}
+          </span>
         </div>
       </div>
 
@@ -286,7 +288,6 @@ export default function SkillsPage() {
 
       {activeCategory !== "soft" && (
         <>
-          {/* Sub-tabs bộ lọc con */}
           <div className="mb-8 flex flex-wrap justify-center gap-1.5">
             {currentGroups.map((group, index) => {
               const isSubSelected = activeSubTab === index;

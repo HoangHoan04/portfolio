@@ -39,7 +39,9 @@ const CONTRIBUTIONS_QUERY = `
   }
 `;
 
-function emptyContributions(source: GitHubContributions["source"]): GitHubContributions {
+function emptyContributions(
+  source: GitHubContributions["source"],
+): GitHubContributions {
   return {
     totalContributions: 0,
     weeks: [],
@@ -109,15 +111,15 @@ async function fetchContributionsFallback(): Promise<GitHubContributions> {
       };
     });
 
-    // Sort days chronologically (oldest to newest)
     days.sort((a, b) => a.date.localeCompare(b.date));
 
     if (!days.length) {
       return emptyContributions("fallback");
     }
 
-    const uniqueYears = Array.from(new Set(days.map((d) => parseInt(d.date.slice(0, 4)))))
-      .sort((a, b) => b - a);
+    const uniqueYears = Array.from(
+      new Set(days.map((d) => parseInt(d.date.slice(0, 4)))),
+    ).sort((a, b) => b - a);
 
     return {
       totalContributions: totalContributionsInLastYear(days),
@@ -166,14 +168,21 @@ export async function fetchGitHubContributions(): Promise<GitHubContributions> {
       return fetchContributionsFallback();
     }
 
-    const calendar = json.data?.user?.contributionsCollection?.contributionCalendar;
+    const calendar =
+      json.data?.user?.contributionsCollection?.contributionCalendar;
 
     if (!calendar) {
       return fetchContributionsFallback();
     }
 
     const weeks: ContributionWeek[] = (calendar.weeks ?? []).map(
-      (week: { contributionDays: Array<{ contributionCount: number; date: string; weekday: number }> }) => ({
+      (week: {
+        contributionDays: Array<{
+          contributionCount: number;
+          date: string;
+          weekday: number;
+        }>;
+      }) => ({
         days: week.contributionDays.map((day) => ({
           date: day.date,
           count: day.contributionCount,
@@ -189,8 +198,9 @@ export async function fetchGitHubContributions(): Promise<GitHubContributions> {
       });
     });
 
-    const uniqueYears = Array.from(new Set(allDays.map((d) => parseInt(d.date.slice(0, 4)))))
-      .sort((a, b) => b - a);
+    const uniqueYears = Array.from(
+      new Set(allDays.map((d) => parseInt(d.date.slice(0, 4)))),
+    ).sort((a, b) => b - a);
 
     return {
       totalContributions: calendar.totalContributions ?? 0,

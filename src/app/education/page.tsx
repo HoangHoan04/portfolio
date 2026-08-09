@@ -34,7 +34,6 @@ const coursework = [
   "Probability & Statistics",
 ];
 
-// ---------- THẺ SPOTLIGHT TƯƠNG TÁC ĐỒNG BỘ ----------
 function InteractiveEducationCard({
   children,
   className,
@@ -136,20 +135,18 @@ export default function EducationPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 md:px-6">
-      {/* ---------- ĐỒNG BỘ HEADER MỚI ---------- */}
       <HeaderPageChild text={t("education.title")} />
 
       <p className="mb-12 -mt-4 text-sm text-secondary-text max-w-2xl leading-relaxed">
         {t("education.subtitle")}
       </p>
 
-      {/* ---------- HỌC VẤN CHÍNH QUY ---------- */}
       <section className="mb-16">
         <div className="mb-8 flex items-center gap-3">
           <h2 className="text-xl font-bold tracking-tight text-foreground md:text-2xl">
             {t("education.formal")}
           </h2>
-          <div className="h-px flex-1 bg-gradient-to-r from-elevated-border to-transparent" />
+          <div className="h-px flex-1 bg-linear-to-r from-elevated-border to-transparent" />
         </div>
 
         <InteractiveEducationCard>
@@ -207,7 +204,6 @@ export default function EducationPage() {
               </div>
             </div>
 
-            {/* Môn học chuyên ngành */}
             <div className="border-t border-elevated-border pt-6 lg:border-t-0 lg:border-l lg:border-elevated-border lg:pt-0 lg:pl-8">
               <h4 className="mb-4 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-secondary-text">
                 <BookOpen className="size-4 text-blue-400" />
@@ -228,13 +224,12 @@ export default function EducationPage() {
         </InteractiveEducationCard>
       </section>
 
-      {/* ---------- DỰ ÁN HỌC TẬP / NGHIÊN CỨU ---------- */}
       <section className="mb-16">
         <div className="mb-8 flex items-center gap-3">
           <h2 className="text-xl font-bold tracking-tight text-foreground md:text-2xl">
             {t("education.projects")}
           </h2>
-          <div className="h-px flex-1 bg-gradient-to-r from-elevated-border to-transparent" />
+          <div className="h-px flex-1 bg-linear-to-r from-elevated-border to-transparent" />
         </div>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -247,7 +242,7 @@ export default function EducationPage() {
               <div>
                 <div
                   className={cn(
-                    "mb-4 flex size-11 items-center justify-center rounded-xl bg-gradient-to-br border border-elevated-border text-blue-400",
+                    "mb-4 flex size-11 items-center justify-center rounded-xl bg-linear-to-br border border-elevated-border text-blue-400",
                     project.gradient,
                   )}
                 >
@@ -304,7 +299,6 @@ export default function EducationPage() {
         </div>
       </section>
 
-      {/* ---------- TRỤC THỜI GIAN LỘ TRÌNH HỌC TẬP (VERTICAL TIMELINE) ---------- */}
       <section className="mb-16">
         <SectionCard className="border border-elevated-border bg-elevated/20 backdrop-blur-sm p-6">
           <h2 className="mb-10 text-center text-xl font-bold tracking-tight text-foreground md:text-2xl">
@@ -325,10 +319,9 @@ export default function EducationPage() {
                   transition={{ duration: 0.4, delay: idx * 0.05 }}
                   className="relative group"
                 >
-                  {/* Timeline Node Point */}
                   <div
                     className={cn(
-                      "absolute -left-[31px] top-1.5 size-4 rounded-full border bg-background transition-all shadow-md flex items-center justify-center",
+                      "absolute -left-7.75 top-1.5 size-4 rounded-full border bg-background transition-all shadow-md flex items-center justify-center",
                       isCurrent
                         ? "border-blue-500 bg-blue-600 ring-4 ring-blue-500/20 animate-pulse"
                         : "border-elevated-border bg-elevated group-hover:border-blue-500 group-hover:bg-blue-600",
@@ -370,7 +363,6 @@ export default function EducationPage() {
         </SectionCard>
       </section>
 
-      {/* ---------- TRIẾT LÝ HỌC TẬP ---------- */}
       <section className="text-center">
         <h2 className="mb-3 text-2xl font-black tracking-tight text-foreground md:text-3xl">
           {t("education.philosophy.title")}

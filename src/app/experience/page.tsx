@@ -162,25 +162,20 @@ export default function ExperiencePage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 md:px-6">
-      {/* ---------- ĐỒNG BỘ HEADER MỚI ---------- */}
       <HeaderPageChild text={t("experience.title")} />
-
-      {/* Phụ đề nhỏ dưới tiêu đề trang để tạo độ thoáng */}
       <p className="mb-12 -mt-4 text-sm text-secondary-text max-w-2xl leading-relaxed">
         {t("experience.subtitle")}
       </p>
 
-      {/* ---------- KINH NGHIỆM LÀM VIỆC CHÍNH ---------- */}
       <section className="mb-16">
         <div className="mb-8 flex items-center gap-3">
           <h2 className="text-xl font-bold tracking-tight text-foreground md:text-2xl">
             {t("experience.title")}
           </h2>
-          <div className="h-px flex-1 bg-gradient-to-r from-elevated-border to-transparent" />
+          <div className="h-px flex-1 bg-linear-to-r from-elevated-border to-transparent" />
         </div>
 
         <InteractiveExperienceCard className="relative overflow-hidden">
-          {/* Họa tiết trang trí nền */}
           <div className="absolute -right-20 -top-20 -z-10 h-64 w-64 rounded-full bg-blue-500/5 blur-3xl" />
 
           <div className="mb-6 flex flex-wrap items-start justify-between gap-4">
@@ -217,7 +212,6 @@ export default function ExperiencePage() {
           </p>
 
           <div className="mb-8 grid grid-cols-1 gap-6 md:grid-cols-2">
-            {/* Nhiệm vụ chính */}
             <div>
               <h4 className="mb-3 text-xs font-bold uppercase tracking-wider text-secondary-text">
                 {t("experience.responsibilities")}
@@ -235,7 +229,6 @@ export default function ExperiencePage() {
               </ul>
             </div>
 
-            {/* Thành tựu đạt được */}
             <div>
               <h4 className="mb-3 text-xs font-bold uppercase tracking-wider text-secondary-text">
                 {t("experience.achievements")}
@@ -254,7 +247,6 @@ export default function ExperiencePage() {
             </div>
           </div>
 
-          {/* Công nghệ sử dụng */}
           <div className="border-t border-elevated-border pt-5">
             <h4 className="mb-3 text-xs font-bold uppercase tracking-wider text-secondary-text">
               {t("experience.technologies")}
@@ -273,13 +265,12 @@ export default function ExperiencePage() {
         </InteractiveExperienceCard>
       </section>
 
-      {/* ---------- HOẠT ĐỘNG NGOẠI KHÓA ---------- */}
       <section className="mb-16">
         <div className="mb-8 flex items-center gap-3">
           <h2 className="text-xl font-bold tracking-tight text-foreground md:text-2xl">
             {t("experience.activities.title")}
           </h2>
-          <div className="h-px flex-1 bg-gradient-to-r from-elevated-border to-transparent" />
+          <div className="h-px flex-1 bg-linear-to-r from-elevated-border to-transparent" />
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -308,7 +299,6 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      {/* ---------- TRỤC THỜI GIAN LỘ TRÌNH PHÁT TRIỂN (TIMELINE) ---------- */}
       <section className="mb-16">
         <SectionCard className="border border-elevated-border bg-elevated/20 backdrop-blur-sm p-6">
           <h2 className="mb-10 text-center text-xl font-bold tracking-tight text-foreground md:text-2xl">
@@ -317,7 +307,7 @@ export default function ExperiencePage() {
 
           <div className="relative mx-auto max-w-4xl border-l border-elevated-border pl-6 space-y-8">
             {skillGrowth.map((growth, idx) => {
-              const isCurrent = growth.year.includes("Now"); // Kiểm tra mốc hiện tại
+              const isCurrent = growth.year.includes("Now");
 
               return (
                 <motion.div
@@ -328,10 +318,9 @@ export default function ExperiencePage() {
                   transition={{ duration: 0.4, delay: idx * 0.05 }}
                   className="relative group"
                 >
-                  {/* Timeline Node Point */}
                   <div
                     className={cn(
-                      "absolute -left-[31px] top-1.5 size-4 rounded-full border bg-background transition-all shadow-md",
+                      "absolute -left-7.75 top-1.5 size-4 rounded-full border bg-background transition-all shadow-md",
                       isCurrent
                         ? "border-blue-500 bg-blue-600 ring-4 ring-blue-500/20 animate-pulse"
                         : "border-elevated-border bg-elevated group-hover:border-blue-500 group-hover:bg-blue-600",
@@ -372,24 +361,28 @@ export default function ExperiencePage() {
         </SectionCard>
       </section>
 
-      {/* ---------- PHONG CÁCH LÀM VIỆC (WORK STYLE) ---------- */}
       <section className="mb-16">
         <div className="mb-8 flex items-center gap-3">
           <h2 className="text-xl font-bold tracking-tight text-foreground md:text-2xl">
             {t("experience.workStyle.title")}
           </h2>
-          <div className="h-px flex-1 bg-gradient-to-r from-elevated-border to-transparent" />
+          <div className="h-px flex-1 bg-linear-to-r from-elevated-border to-transparent" />
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {workStyles.map((style, index) => {
             const Icon = style.icon;
             return (
-              <InteractiveExperienceCard key={style.title as string} delay={index * 0.03}>
+              <InteractiveExperienceCard
+                key={style.title as string}
+                delay={index * 0.03}
+              >
                 <div className="mb-4 flex size-12 items-center justify-center rounded-xl border border-elevated-border bg-elevated/60 text-blue-400">
                   <Icon className="size-6" />
                 </div>
-                <h3 className="mb-2 font-bold text-foreground">{style.title}</h3>
+                <h3 className="mb-2 font-bold text-foreground">
+                  {style.title}
+                </h3>
                 <p className="text-xs leading-relaxed text-secondary-text">
                   {style.description}
                 </p>
@@ -399,7 +392,6 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      {/* ---------- KÊU GỌI LIÊN HỆ (CTA) ---------- */}
       <SectionCard className="relative overflow-hidden border border-elevated-border bg-elevated/40 py-10 text-center shadow-xl">
         <div className="absolute -left-20 -top-20 h-48 w-48 rounded-full bg-blue-500/5 blur-3xl" />
         <div className="absolute -right-20 -bottom-20 h-48 w-48 rounded-full bg-purple-500/5 blur-3xl" />

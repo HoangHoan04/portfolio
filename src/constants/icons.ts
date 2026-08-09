@@ -1,4 +1,3 @@
-/** Icon paths served from `public/icons/` */
 export const icons = {
   angular: "/icons/angular.svg",
   asp: "/icons/asp.svg",

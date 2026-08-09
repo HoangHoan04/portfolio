@@ -19,20 +19,19 @@ function HomeAchievementsGrid() {
             href="/experience"
             className="group relative aspect-square overflow-hidden rounded-xl border border-elevated-border bg-elevated/40 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary-accent/30 hover:shadow-md"
           >
-            {/* Gradient background with grid pattern */}
-            <div className={cn("relative flex size-full items-center justify-center overflow-hidden bg-gradient-to-br", item.gradient)}>
+            <div
+              className={cn(
+                "relative flex size-full items-center justify-center overflow-hidden bg-linear-to-br",
+                item.gradient,
+              )}
+            >
               <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-size-[15px_15px]" />
-              
-              {/* Central Trophy Icon */}
+
               <div className="relative z-10 flex size-14 items-center justify-center rounded-2xl border border-white/10 bg-black/20 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:opacity-0">
-                <Trophy
-                  className="size-7 text-white/90"
-                  weight="duotone"
-                />
+                <Trophy className="size-7 text-white/90" weight="duotone" />
               </div>
             </div>
 
-            {/* Hover overlay with details */}
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5 bg-black/0 p-3 text-center opacity-0 transition-all duration-300 group-hover:bg-black/80 group-hover:opacity-100">
               <p className="line-clamp-2 text-[11px] font-bold leading-tight text-white transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                 {t(item.titleKey)}

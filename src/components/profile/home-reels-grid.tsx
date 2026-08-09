@@ -20,14 +20,13 @@ const gradients = [
 function HomeReelsGrid() {
   const { t } = useTranslation();
 
-  // Deduplicate skills by name
   const uniqueSkills = Array.from(
     new Map(
       technicalGroups
         .flatMap((g) => g.skills)
         .filter((s) => s.name)
-        .map((s) => [s.name, s])
-    ).values()
+        .map((s) => [s.name, s]),
+    ).values(),
   );
 
   return (
@@ -44,11 +43,14 @@ function HomeReelsGrid() {
               href="/skills"
               className="group relative aspect-square overflow-hidden rounded-xl border border-elevated-border bg-elevated/40 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary-accent/30 hover:shadow-md"
             >
-              {/* Gradient background with grid pattern */}
-              <div className={cn("relative flex size-full items-center justify-center overflow-hidden bg-gradient-to-br", gradient)}>
+              <div
+                className={cn(
+                  "relative flex size-full items-center justify-center overflow-hidden bg-linear-to-br",
+                  gradient,
+                )}
+              >
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-size-[15px_15px]" />
-                
-                {/* Central Icon */}
+
                 <div className="relative z-10 flex size-14 items-center justify-center rounded-2xl border border-white/10 bg-black/20 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:opacity-0">
                   {iconSrc ? (
                     <NextImage
@@ -64,7 +66,6 @@ function HomeReelsGrid() {
                 </div>
               </div>
 
-              {/* Hover overlay with detail info */}
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5 bg-black/0 p-4 text-center opacity-0 transition-all duration-300 group-hover:bg-black/80 group-hover:opacity-100">
                 <span className="text-sm font-bold text-white transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                   {name}

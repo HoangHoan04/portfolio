@@ -1,17 +1,13 @@
 export interface Profile {
-  /** Thông tin cá nhân */
   username: string;
   fullName: string;
   avatar: string;
-  // Thông tin công việc
   jobTitle: string;
   bio: string;
-  // Liên kết mạng xã hội
   github: string;
   email: string;
   linkedin: string;
   instagram: string;
-  // Sản phẩm và dự án
   project: number;
   visitors: number;
   githubViewers: number;
@@ -19,7 +15,6 @@ export interface Profile {
 }
 
 export interface About {
-  /** Thông tin cá nhân */
   fullName: string;
   age: number;
   currentAddress: string;

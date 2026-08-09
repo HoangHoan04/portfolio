@@ -6,7 +6,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: "class", // Hỗ trợ đổi giao diện sáng/tối
+  darkMode: "class",
   theme: {
     extend: {
       colors: {

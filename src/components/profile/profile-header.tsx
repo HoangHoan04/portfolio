@@ -49,7 +49,6 @@ function ProfileHeader() {
         if (d.publicRepos) setPublicRepos(d.publicRepos);
       })
       .catch(() => {
-        // Fallback to public GitHub API directly if local API is not available (e.g. static host)
         fetch("https://api.github.com/users/HoangHoan04")
           .then((r) => r.json())
           .then((d) => {
@@ -72,7 +71,6 @@ function ProfileHeader() {
 
   return (
     <>
-      {/* Desktop Layout */}
       <div className="hidden md:flex md:flex-row md:items-center md:gap-24 md:pb-8">
         <div className="flex shrink-0 justify-center">
           <div className="rounded-full bg-linear-to-tr from-yellow-400 via-red-500 to-purple-600 p-0.75">
@@ -96,7 +94,9 @@ function ProfileHeader() {
                 <strong className="block text-base font-semibold">
                   {profile.experience}
                 </strong>
-                <span className="text-xs text-secondary-text">{t("profile.yearsExp")}</span>
+                <span className="text-xs text-secondary-text">
+                  {t("profile.yearsExp")}
+                </span>
               </div>
               <div className="flex items-center gap-2 text-center">
                 <strong className="block text-base font-semibold">
@@ -110,17 +110,23 @@ function ProfileHeader() {
                 <strong className="block text-base font-semibold">
                   {visitors.toLocaleString("en-US")}
                 </strong>
-                <span className="text-xs text-secondary-text">{t("profile.visitors")}</span>
+                <span className="text-xs text-secondary-text">
+                  {t("profile.visitors")}
+                </span>
               </div>
               <div className="flex items-center gap-2 text-center">
                 <strong className="block text-base font-semibold">
                   {githubViews.toLocaleString("en-US")}
                 </strong>
-                <span className="text-xs text-secondary-text">{t("profile.githubViewers")}</span>
+                <span className="text-xs text-secondary-text">
+                  {t("profile.githubViewers")}
+                </span>
               </div>
             </div>
 
-            <p className="whitespace-pre-line font-normal">{t("profile.bio")}</p>
+            <p className="whitespace-pre-line font-normal">
+              {t("profile.bio")}
+            </p>
 
             <div className="flex items-center gap-4 mt-1">
               <Link
@@ -150,7 +156,6 @@ function ProfileHeader() {
         </div>
       </div>
 
-      {/* Mobile Layout */}
       <div className="flex flex-col gap-4 pb-4 md:hidden">
         <div className="flex items-center gap-4 px-4">
           <div className="rounded-full bg-linear-to-tr from-yellow-400 via-red-500 to-purple-600 p-0.5">
@@ -163,13 +168,17 @@ function ProfileHeader() {
               <strong className="block text-base font-semibold">
                 {publicRepos}
               </strong>
-              <span className="text-xs text-secondary-text">{t("nav.projects")}</span>
+              <span className="text-xs text-secondary-text">
+                {t("nav.projects")}
+              </span>
             </div>
             <div>
               <strong className="block text-base font-semibold">
                 {visitors.toLocaleString("en-US")}
               </strong>
-              <span className="text-xs text-secondary-text">{t("profile.visitors")}</span>
+              <span className="text-xs text-secondary-text">
+                {t("profile.visitors")}
+              </span>
             </div>
             <div>
               <strong className="block text-base font-semibold">
@@ -181,7 +190,9 @@ function ProfileHeader() {
               <strong className="block text-base font-semibold">
                 {profile.experience}
               </strong>
-              <span className="text-xs text-secondary-text">{t("profile.years")}</span>
+              <span className="text-xs text-secondary-text">
+                {t("profile.years")}
+              </span>
             </div>
           </div>
         </div>
@@ -192,11 +203,13 @@ function ProfileHeader() {
             {t("profile.jobTitle")}
           </span>
           <span className="block text-secondary-text">@{profile.username}</span>
-          {t("profile.bio").split("\n").map((line, i) => (
-            <span key={i} className="block">
-              {line}
-            </span>
-          ))}
+          {t("profile.bio")
+            .split("\n")
+            .map((line, i) => (
+              <span key={i} className="block">
+                {line}
+              </span>
+            ))}
 
           <div className="flex items-center gap-3 mt-2">
             <Link
@@ -225,7 +238,10 @@ function ProfileHeader() {
         </div>
 
         <div className="flex gap-2 px-4">
-          <Button asChild className="flex-1 rounded-lg bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 text-sm font-semibold text-white hover:opacity-90 transition-opacity duration-200">
+          <Button
+            asChild
+            className="flex-1 rounded-lg bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 text-sm font-semibold text-white hover:opacity-90 transition-opacity duration-200"
+          >
             <a href="/files/CV___Hoang_Hoan.pdf" download="Hoang-Hoan-CV.pdf">
               {t("common.downloadCv")}
             </a>
@@ -235,15 +251,16 @@ function ProfileHeader() {
             variant="outline"
             className="flex-1 rounded-lg border-elevated-border text-sm font-semibold transition-colors duration-200"
           >
-            <Link href="/contact">
-              {t("common.contact")}
-            </Link>
+            <Link href="/contact">{t("common.contact")}</Link>
           </Button>
         </div>
       </div>
 
       <div className="hidden w-full md:flex md:items-center md:gap-3 pb-4">
-        <Button asChild className="flex-1 h-9 rounded-lg text-white bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 text-sm font-semibold hover:opacity-90 transition-opacity duration-200">
+        <Button
+          asChild
+          className="flex-1 h-9 rounded-lg text-white bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 text-sm font-semibold hover:opacity-90 transition-opacity duration-200"
+        >
           <a href="/files/CV___Hoang_Hoan.pdf" download="Hoang-Hoan-CV.pdf">
             {t("common.resume")}
           </a>
@@ -253,9 +270,7 @@ function ProfileHeader() {
           variant="outline"
           className="flex-1 h-9 rounded-lg border-elevated-border text-sm font-semibold transition-colors duration-200"
         >
-          <Link href="/contact">
-            {t("common.contact")}
-          </Link>
+          <Link href="/contact">{t("common.contact")}</Link>
         </Button>
         <Button
           variant="outline"

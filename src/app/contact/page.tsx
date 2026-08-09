@@ -26,7 +26,6 @@ import { profile } from "@/constants/profile";
 import { useTranslation } from "@/contexts/locale-context";
 import { cn } from "@/lib/utils";
 
-// ---------- THẺ SPOTLIGHT TƯƠNG TÁC ĐỒNG BỘ ----------
 function InteractiveContactCard({
   children,
   className,
@@ -173,7 +172,6 @@ export default function ContactPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 md:px-6">
-      {/* ---------- ĐỒNG BỘ HEADER MỚI ---------- */}
       <HeaderPageChild text={t("contactPage.title")} />
 
       <p className="mb-12 -mt-4 text-sm text-secondary-text max-w-2xl leading-relaxed">
@@ -273,19 +271,34 @@ export default function ContactPage() {
                       <option value="" className="bg-elevated text-foreground">
                         {t("contactPage.form.projectPlaceholder")}
                       </option>
-                      <option value="web-app" className="bg-elevated text-foreground">
+                      <option
+                        value="web-app"
+                        className="bg-elevated text-foreground"
+                      >
                         Web Application
                       </option>
-                      <option value="api" className="bg-elevated text-foreground">
+                      <option
+                        value="api"
+                        className="bg-elevated text-foreground"
+                      >
                         API Development
                       </option>
-                      <option value="fullstack" className="bg-elevated text-foreground">
+                      <option
+                        value="fullstack"
+                        className="bg-elevated text-foreground"
+                      >
                         Full-Stack Project
                       </option>
-                      <option value="consultation" className="bg-elevated text-foreground">
+                      <option
+                        value="consultation"
+                        className="bg-elevated text-foreground"
+                      >
                         Consultation
                       </option>
-                      <option value="other" className="bg-elevated text-foreground">
+                      <option
+                        value="other"
+                        className="bg-elevated text-foreground"
+                      >
                         Other
                       </option>
                     </select>
@@ -344,10 +357,7 @@ export default function ContactPage() {
           </div>
         </InteractiveContactCard>
       </div>
-      {/* ---------- PHẦN HÀNG CHÍNH (FORM SONG SONG THÔNG TIN) ---------- */}
       <div className="my-14 grid grid-cols-1 gap-8 lg:grid-cols-2">
-        {/* CỘT PHÍA PHẢI: THÔNG TIN MẠNG XÃ HỘI + THỜI GIAN LÀM VIỆC (NẰM TRÊN 1 HÀNG CỦA CỘT PHẢI) */}
-        {/* Mạng xã hội */}
         <InteractiveContactCard delay={0.04} className="h-full">
           <h3 className="mb-5 flex items-center gap-2 font-bold tracking-tight text-foreground">
             <ShareNetwork className="size-5 text-blue-400" weight="duotone" />
@@ -363,7 +373,7 @@ export default function ContactPage() {
               >
                 <div
                   className={cn(
-                    "flex size-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br border border-white/5 shadow-inner",
+                    "flex size-10 shrink-0 items-center justify-center rounded-xl bg-linear-to-br border border-white/5 shadow-inner",
                     info.gradient,
                   )}
                 >
@@ -382,7 +392,6 @@ export default function ContactPage() {
           </div>
         </InteractiveContactCard>
 
-        {/* Trạng thái hoạt động / Thời gian làm việc */}
         <InteractiveContactCard
           delay={0.08}
           className="h-full flex flex-col justify-between"
@@ -425,7 +434,6 @@ export default function ContactPage() {
         </InteractiveContactCard>
       </div>
 
-      {/* KHỐI CHÂN TRANG ĐỊA ĐIỂM (BENTO CTA BAR) */}
       <SectionCard className="relative overflow-hidden border border-elevated-border bg-elevated/40 py-10 text-center shadow-xl">
         <div className="absolute -left-20 -top-20 h-48 w-48 rounded-full bg-blue-500/5 blur-3xl" />
         <div className="absolute -right-20 -bottom-20 h-48 w-48 rounded-full bg-purple-500/5 blur-3xl" />
@@ -442,7 +450,9 @@ export default function ContactPage() {
             <div className="mx-auto mb-3 flex size-12 items-center justify-center rounded-2xl border border-elevated-border bg-elevated/60 text-blue-400 shadow-inner group-hover:border-blue-500/20 transition-colors">
               <MapPin className="size-5" weight="duotone" />
             </div>
-            <p className="text-sm font-bold text-foreground">Ho Chi Minh City</p>
+            <p className="text-sm font-bold text-foreground">
+              Ho Chi Minh City
+            </p>
             <p className="text-xs font-semibold text-secondary-text mt-0.5">
               Vietnam
             </p>

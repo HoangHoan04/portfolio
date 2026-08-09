@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 
 import { PostGrid } from "@/components/posts/post-grids";
 import { ContentTabs } from "@/components/profile/content-tabs";
+import { Highlights } from "@/components/profile/highlight";
 import { HomeAchievementsGrid } from "@/components/profile/home-achievements-grid";
 import { HomeCertificatesGrid } from "@/components/profile/home-certificates-grid";
 import { HomeReelsGrid } from "@/components/profile/home-reels-grid";
-import { Highlights } from "@/components/profile/highlight";
 import { ProfileHeader } from "@/components/profile/profile-header";
 import { StartScreen } from "@/components/start-screen";
 
@@ -21,11 +21,10 @@ const basePath = isProd ? "/portfolio" : "";
 export default function ProfilePage() {
   const [activeTab, setActiveTab] = useState<ContentTab>(ContentTab.PRODUCTS);
   const [started, setStarted] = useState(false);
-  const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
+  const [selectedProjectId, setSelectedProjectId] = useState<string | null>(
+    null,
+  );
 
-
-
-  // Listen to popstate (e.g. back button) to close the modal
   useEffect(() => {
     const handlePopState = () => {
       const path = window.location.pathname;

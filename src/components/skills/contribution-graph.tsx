@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 
-import { useState, useMemo } from "react";
+import { useMemo, useState } from "react";
 
 import {
+  buildWeeksFromDays,
   CONTRIBUTION_LEVEL_CLASS,
   getContributionLevel,
-  buildWeeksFromDays,
   type GitHubContributions,
 } from "@/lib/github-contributions";
 import { cn } from "@/lib/utils";
@@ -27,11 +27,16 @@ function ContributionGraph({
   moreLabel: string;
   setupHint?: string;
 }) {
-  const [selectedYear, setSelectedYear] = useState<number | "lastYear">("lastYear");
+  const [selectedYear, setSelectedYear] = useState<number | "lastYear">(
+    "lastYear",
+  );
 
   const { filteredWeeks, totalContributions } = useMemo(() => {
     if (!data.allDays || data.allDays.length === 0) {
-      return { filteredWeeks: data.weeks, totalContributions: data.totalContributions };
+      return {
+        filteredWeeks: data.weeks,
+        totalContributions: data.totalContributions,
+      };
     }
 
     if (selectedYear === "lastYear") {
@@ -92,7 +97,9 @@ function ContributionGraph({
               <span className="font-bold text-foreground">
                 {totalContributions.toLocaleString()}
               </span>{" "}
-              {selectedYear === "lastYear" ? summaryLabel : `contributions in ${selectedYear}`}
+              {selectedYear === "lastYear"
+                ? summaryLabel
+                : `contributions in ${selectedYear}`}
             </p>
             <Link
               href={`https://github.com/${data.username}`}
@@ -106,10 +113,12 @@ function ContributionGraph({
 
           <div className="overflow-x-auto pb-1">
             <div className="inline-flex flex-col">
-              {/* Months row */}
               <div className="flex h-5 items-end text-[10px] text-secondary-text select-none mb-1">
                 <div className="w-8 shrink-0 mr-1" />
-                <div className="relative h-full" style={{ width: `${filteredWeeks.length * 14}px` }}>
+                <div
+                  className="relative h-full"
+                  style={{ width: `${filteredWeeks.length * 14}px` }}
+                >
                   {monthLabels.map(({ index, label }) => (
                     <span
                       key={`${label}-${index}`}
@@ -122,15 +131,16 @@ function ContributionGraph({
                 </div>
               </div>
 
-              {/* Grid content */}
-              <div className="inline-flex gap-[3px]">
-                <div className="w-8 shrink-0 mr-1 flex flex-col justify-between py-[2px] text-[10px] text-secondary-text">
+              <div className="inline-flex gap-0.75">
+                <div className="w-8 shrink-0 mr-1 flex flex-col justify-between py-0.5 text-[10px] text-secondary-text">
                   {WEEKDAY_LABELS.map((label, index) => (
                     <span
                       key={label}
                       className={cn(
-                        "h-[11px] leading-none",
-                        index % 2 === 0 ? "opacity-100" : "opacity-0 sm:opacity-100"
+                        "h-2.75 leading-none",
+                        index % 2 === 0
+                          ? "opacity-100"
+                          : "opacity-0 sm:opacity-100",
                       )}
                     >
                       {label}
@@ -138,16 +148,18 @@ function ContributionGraph({
                   ))}
                 </div>
 
-                <div className="flex gap-[3px]">
+                <div className="flex gap-0.75">
                   {filteredWeeks.map((week, weekIndex) => (
-                    <div key={weekIndex} className="flex flex-col gap-[3px]">
+                    <div key={weekIndex} className="flex flex-col gap-0.75">
                       {Array.from({ length: 7 }).map((_, weekday) => {
-                        const day = week.days.find((d) => d.weekday === weekday);
+                        const day = week.days.find(
+                          (d) => d.weekday === weekday,
+                        );
                         if (!day) {
                           return (
                             <span
                               key={`${weekIndex}-${weekday}`}
-                              className="size-[11px] rounded-[2px] border border-transparent bg-transparent"
+                              className="size-2.75 rounded-xs border border-transparent bg-transparent"
                             />
                           );
                         }
@@ -159,8 +171,8 @@ function ContributionGraph({
                             key={day.date}
                             title={`${day.count} contributions on ${day.date}`}
                             className={cn(
-                              "size-[11px] rounded-[2px] border transition-transform hover:scale-125 hover:z-10",
-                              CONTRIBUTION_LEVEL_CLASS[level]
+                              "size-2.75 rounded-xs border transition-transform hover:scale-125 hover:z-10",
+                              CONTRIBUTION_LEVEL_CLASS[level],
                             )}
                           />
                         );
@@ -179,8 +191,8 @@ function ContributionGraph({
                 <span
                   key={level}
                   className={cn(
-                    "size-[11px] rounded-[2px] border",
-                    CONTRIBUTION_LEVEL_CLASS[level]
+                    "size-2.75 rounded-xs border",
+                    CONTRIBUTION_LEVEL_CLASS[level],
                   )}
                 />
               ))}
@@ -197,7 +209,7 @@ function ContributionGraph({
                 "rounded-lg px-3 py-1.5 text-xs font-bold transition-all text-left lg:w-full",
                 selectedYear === "lastYear"
                   ? "bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 text-white"
-                  : "bg-elevated text-secondary-text hover:bg-elevated-hover hover:text-foreground border border-elevated-border"
+                  : "bg-elevated text-secondary-text hover:bg-elevated-hover hover:text-foreground border border-elevated-border",
               )}
             >
               Last Year
@@ -210,7 +222,7 @@ function ContributionGraph({
                   "rounded-lg px-3 py-1.5 text-xs font-bold transition-all text-left lg:w-full",
                   selectedYear === y
                     ? "bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 text-white"
-                    : "bg-elevated text-secondary-text hover:bg-elevated-hover hover:text-foreground border border-elevated-border"
+                    : "bg-elevated text-secondary-text hover:bg-elevated-hover hover:text-foreground border border-elevated-border",
                 )}
               >
                 {y}
