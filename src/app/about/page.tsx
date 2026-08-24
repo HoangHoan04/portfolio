@@ -123,13 +123,13 @@ export default function AboutPage() {
 
   const journey = [
     {
-      year: "2025",
-      title: t("about.journey.intern.title"),
-      company: t("about.journey.intern.company"),
-      description: t("about.journey.intern.desc"),
+      year: "2025 - Nay",
+      title: t("about.journey.official.title"),
+      company: t("about.journey.official.company"),
+      description: t("about.journey.official.desc"),
     },
     {
-      year: "2022",
+      year: "2022 - 2026",
       title: t("about.journey.university.title"),
       company: t("about.journey.university.company"),
       description: t("about.journey.university.desc"),

@@ -36,7 +36,7 @@
   "home": {
     "hero": {
       "title": "Xin chào! Mình là Hoàng Hoàn",
-      "description": "Chào bạn! Mình là một Web Developer với niềm đam mê xây dựng các giao diện người dùng hiện đại và tối ưu hóa trải nghiệm người dùng. Hiện tại mình là sinh viên Kỹ thuật Phần mềm tại <strong>Trường Đại học Sài Gòn</strong>, đang làm việc tại <strong>APETECH Solutions</strong>. Mình luôn tích cực học tập và nâng cao kỹ năng thông qua các dự án cá nhân và nhóm.",
+      "description": "Chào bạn! Mình là một Full-Stack Developer với niềm đam mê xây dựng các hệ thống phần mềm hiện đại, tối ưu hóa trải nghiệm người dùng và hiệu năng cao. Hiện tại mình là Kỹ sư phần mềm đang làm việc chính thức tại <strong>APETECH Solutions</strong> (1+ năm kinh nghiệm). Mình chuyên sâu về phát triển hệ thống web, mobile app và backend API enterprise (HRM, Digital Signage CMS).",
       "resume": "Tải CV",
       "github": "GitHub",
       "linkedin": "LinkedIn",
@@ -44,16 +44,24 @@
       "contact": "Liên Hệ Ngay"
     },
     "roles": [
-      "Nhà Phát Triển Full-Stack",
+      "Kỹ Sư Phần Mềm (Full-Stack)",
       "Nhà Phát Triển Frontend",
-      "Nhà Phát Triển Backend",
-      "Thiết Kế UI/UX"
+      "Nhà Phát Triển Backend & API",
+      "Nhà Phát Triển Mobile App"
     ],
     "projects": {
       "title": "Dự Án Nổi Bật",
-      "subtitle": "Một số dự án tiêu biểu tôi đã thực hiện gần đây",
+      "subtitle": "Một số dự án doanh nghiệp và cá nhân tiêu biểu tôi đã thực hiện",
       "viewAll": "Xem tất cả dự án",
       "list": {
+        "hrm": {
+          "title": "Hệ Thống Quản Trị Nhân Sự (HRM)",
+          "desc": "Dự án doanh nghiệp: Hệ thống quản lý nhân sự toàn diện tích hợp ứng dụng di động cho nhân viên chấm công, nghỉ phép (React Native), trang quản lý cho admin (Angular) và hệ thống RESTful API (.NET Core & PostgreSQL)."
+        },
+        "cms": {
+          "title": "Hệ Thống Trình Chiếu Kỹ Thuật Số (Digital Signage CMS)",
+          "desc": "Dự án doanh nghiệp: Nền tảng quản lý và phân phối nội dung đa phương tiện lên hệ thống màn hình quảng cáo theo thời gian thực gồm Web Admin điều khiển (React, Tailwind), Backend API (NestJS, PostgreSQL) và trình phát Player."
+        },
         "wedding": {
           "title": "Thiệp Cưới Điện Tử",
           "desc": "Ứng dụng web mời cưới full-stack với bộ đếm ngược, thông tin sự kiện và tính năng RSVP. Xây dựng giao diện responsive với React và Tailwind CSS, tối ưu hóa cho cả thiết bị di động và máy tính."
@@ -83,7 +91,7 @@
         "issuer": "Đại Học Sài Gòn"
       },
       "webDev": {
-        "title": "Phát Triển Web Full-Stack",
+        "title": "Phát Triển Full-Stack & Enterprise",
         "issuer": "Dự án thực tế & APETECH"
       },
       "database": {
@@ -98,16 +106,16 @@
     "achievements": {
       "viewAll": "Xem kinh nghiệm",
       "apetech1": {
-        "title": "Dự án production đầu tiên",
-        "desc": "Đóng góp vào nhiều dự án thực tế ngay tháng đầu tiên."
+        "title": "Dự án Doanh nghiệp HRM & CMS",
+        "desc": "Phát triển hệ thống Quản trị nhân sự và CMS Digital Signage cho doanh nghiệp."
       },
       "apetech2": {
-        "title": "Cải thiện độ ổn định",
-        "desc": "Chủ động tìm và sửa lỗi trên hệ thống production."
+        "title": "1+ Năm Kinh Nghiệm Chính Thức",
+        "desc": "Phụ trách phát triển Web Admin, Mobile App và hệ thống RESTful API."
       },
       "apetech3": {
-        "title": "Agile thực chiến",
-        "desc": "Kinh nghiệm Scrum trong team chuyên nghiệp."
+        "title": "Agile / Scrum Thực Chiến",
+        "desc": "Kinh nghiệm làm việc chuyên nghiệp, tối ưu hóa hệ thống production."
       },
       "club": {
         "title": "CLB Lập Trình Thi Đấu",
@@ -118,14 +126,14 @@
         "desc": "Điều phối sự kiện học thuật cấp khoa."
       },
       "projects": {
-        "title": "3+ dự án cá nhân",
-        "desc": "HimLamTourist, Wedding Invitation, Apple Store."
+        "title": "9+ Dự án Đã Xây Dựng",
+        "desc": "Bao gồm HRM, Digital Signage CMS, HimLamTourist, Wedding..."
       }
     }
   },
   "profile": {
-    "jobTitle": "Kỹ Sư Phần Mềm",
-    "bio": "Xin chào! Mình là một Web Developer với niềm đam mê xây dựng các giao diện người dùng hiện đại và tối ưu hóa trải nghiệm người dùng. Hiện tại mình là sinh viên Kỹ thuật Phần mềm tại Trường Đại học Sài Gòn, đang làm việc tại APETECH Solutions. Mình luôn tích cực học tập và nâng cao kỹ năng thông qua các dự án cá nhân và nhóm.",
+    "jobTitle": "Kỹ Sư Phần Mềm (Full-Stack)",
+    "bio": "Xin chào! Mình là một Full-Stack Developer với 1+ năm kinh nghiệm làm việc chính thức tại APETECH Solutions. Mình đam mê phát triển các ứng dụng web và mobile chất lượng cao, từ hệ thống quản trị doanh nghiệp (HRM, Digital Signage CMS) đến các nền tảng thương mại điện tử hiện đại.",
     "yearsExp": "năm kinh nghiệm",
     "githubProjects": "dự án trên GitHub",
     "visitors": "lượt ghé thăm",
@@ -134,11 +142,11 @@
   },
   "about": {
     "title": "Giới Thiệu",
-    "description": "Chào bạn! Mình là một Web Developer với niềm đam mê xây dựng các giao diện người dùng hiện đại và tối ưu hóa trải nghiệm người dùng. Hiện tại mình là sinh viên Kỹ thuật Phần mềm tại <strong>Trường Đại học Sài Gòn</strong>, đang làm việc tại <strong>APETECH Solutions</strong>. Mình luôn tích cực học tập và nâng cao kỹ năng thông qua các dự án cá nhân và nhóm.",
+    "description": "Chào bạn! Mình là một Full-Stack Developer với niềm đam mê xây dựng các giao diện người dùng hiện đại và hệ thống backend tối ưu. Hiện tại mình là Kỹ sư phần mềm đang làm việc chính thức tại <strong>APETECH Solutions</strong> (1+ năm kinh nghiệm). Mình luôn tích cực học tập, nghiên cứu và nâng cao năng lực qua các dự án doanh nghiệp thực tế.",
     "intro": [
-      "Chào bạn! Tôi là một Full-Stack Developer với hơn 1 năm kinh nghiệm trong việc phát triển các ứng dụng web. Tôi luôn đam mê học hỏi các công nghệ mới và tìm kiếm những giải pháp sáng tạo cho những vấn đề phức tạp.",
-      "Kỹ năng của tôi bao gồm React, Node.js, MySQL và các công nghệ đám mây như AWS. Tôi đã có kinh nghiệm làm việc với cả các dự án khởi nghiệp và các công ty lớn, từ việc xây dựng các bản thử nghiệm (MVP) cho đến việc mở rộng các hệ thống phục vụ hàng triệu người dùng.",
-      "Ngoài việc lập trình, tôi thích đọc sách về công nghệ, viết blog chia sẻ kiến thức và tham gia các hoạt động cộng đồng lập trình viên. Tôi tin rằng việc chia sẻ kiến thức sẽ giúp cộng đồng ngày càng phát triển mạnh mẽ hơn."
+      "Chào bạn! Tôi là một Full-Stack Developer với hơn 1 năm kinh nghiệm làm việc chính thức tại APETECH Solutions trong việc phát triển các ứng dụng web & mobile quy mô doanh nghiệp. Tôi luôn đam mê học hỏi các công nghệ mới và tìm kiếm những giải pháp tối ưu cho hệ thống phức tạp.",
+      "Kỹ năng của tôi bao gồm React, Angular, React Native, NestJS, ASP.NET Core, TypeScript, PostgreSQL và MySQL. Tôi đã có kinh nghiệm thực chiến phát triển các hệ thống thực tế như Hệ thống Quản trị Nhân sự (HRM), Hệ thống Quản lý Trình chiếu Kỹ thuật số (Digital Signage CMS) và các nền tảng thương mại điện tử.",
+      "Tôi luôn chú trọng vào chất lượng mã nguồn, kiến trúc phần mềm sạch (Clean Architecture) và trải nghiệm người dùng mượt mà, đồng thời luôn tích cực phối hợp hiệu quả trong môi trường Agile/Scrum."
     ],
     "personalInfo": {
       "title": "Thông Tin Cá Nhân",
@@ -163,10 +171,10 @@
     },
     "journey": {
       "title": "Hành Trình Phát Triển",
-      "intern": {
-        "title": "Thực Tập Sinh Full-Stack Developer",
-        "company": "Giải Pháp APE TECH",
-        "desc": "Tham gia phát triển các dự án ứng dụng web và di động."
+      "official": {
+        "title": "Kỹ Sư Phần Mềm (Full-Stack Developer)",
+        "company": "Giải Pháp APETECH Solutions",
+        "desc": "Làm việc chính thức: Phát triển các hệ thống doanh nghiệp (HRM, Digital Signage CMS), xây dựng Web Admin, Mobile App và RESTful APIs."
       },
       "university": {
         "title": "Học Tập tại Đại học Sài Gòn",
@@ -177,26 +185,27 @@
   },
   "experience": {
     "title": "Kinh Nghiệm Làm Việc",
-    "subtitle": "Hành trình sự nghiệp qua các vai trò, dự án và hoạt động của tôi.",
+    "subtitle": "Hành trình sự nghiệp qua các vai trò, dự án doanh nghiệp và hoạt động chuyên môn của tôi.",
     "responsibilities": "Trách Nhiệm Chính",
     "technologies": "Công Nghệ",
     "achievements": "Thành Tựu",
     "roles": {
-      "webDev": "Lập Trình Viên Web",
-      "fulltime": "Toàn Thời Gian"
+      "webDev": "Kỹ Sư Phần Mềm (Full-Stack)",
+      "fulltime": "Toàn Thời Gian (Chính Thức 1+ Năm)"
     },
     "apetech": {
-      "desc": "Phát triển và bảo trì các ứng dụng web trong môi trường nhóm chuyên nghiệp theo quy trình Agile, đóng góp vào cả frontend và backend.",
+      "desc": "Thiết kế, phát triển và bảo trì các hệ thống phần mềm doanh nghiệp (Web Admin, Mobile App, Backend API) trong môi trường Agile chuyên nghiệp, phụ trách xuyên suốt từ Frontend, Mobile đến Backend & Cơ sở dữ liệu.",
       "resp": [
-        "Phát triển và bảo trì ứng dụng web sử dụng React, Angular và NestJS",
-        "Thiết kế và quản lý các cơ sở dữ liệu quan hệ với PostgreSQL và MySQL",
-        "Hợp tác với các thành viên trong nhóm theo quy trình Agile để hoàn thành tính năng đúng tiến độ",
-        "Chẩn đoán và khắc phục các lỗi (bug) để đảm hệ thống ổn định và cải thiện hiệu suất ứng dụng"
+        "Phát triển hệ thống Quản trị Nhân sự HRM: Xây dựng ứng dụng di động cho nhân viên chấm công & nghỉ phép (React Native), Web Admin cho quản lý (Angular) và hệ thống RESTful API (.NET Core & PostgreSQL)",
+        "Phát triển hệ thống Digital Signage CMS: Xây dựng Web Admin điều khiển tập trung (React, TypeScript, Tailwind CSS), Backend API quản lý lịch phát & thiết bị (NestJS) và ứng dụng trình phát Player",
+        "Thiết kế cơ sở dữ liệu quan hệ tối ưu, xây dựng RESTful APIs bảo mật cao và tích hợp kiểm soát truy cập phân quyền",
+        "Chẩn đoán, khắc phục lỗi và tối ưu hóa hiệu năng ứng dụng, đảm bảo tính ổn định cao của hệ thống production",
+        "Hợp tác chặt chẽ với các thành viên trong nhóm theo quy trình Agile/Scrum để hoàn thành tính năng đúng tiến độ"
       ],
       "achieve": [
-        "Đóng góp vào nhiều dự án thực tế ngay trong những tháng đầu tiên",
-        "Cải thiện độ ổn định hệ thống qua việc chủ động tìm và sửa lỗi",
-        "Tích lũy kinh nghiệm làm việc thực tế với quy trình Agile/Scrum trong môi trường chuyên nghiệp"
+        "Trở thành nhân viên chính thức với 1+ năm kinh nghiệm phụ trách các phân hệ nòng cốt của dự án doanh nghiệp",
+        "Phát triển và triển khai thành công hệ thống HRM và Digital Signage CMS phục vụ vận hành thực tế",
+        "Cải thiện độ ổn định, hiệu suất xử lý dữ liệu và nâng cao trải nghiệm người dùng trên cả nền tảng Web và Mobile"
       ]
     },
     "activities": {
@@ -254,15 +263,15 @@
     "activities": "Hoạt Động",
     "projects": "Dự Án",
     "timeline": {
-      "title": "Hành Trình Học Tập",
+      "title": "Hành Trình Phát Triển",
       "uniStart": "Bắt Đầu Đại Học",
       "uniStartDesc": "HTML, CSS, JavaScript — nắm vững nền tảng lập trình cơ bản",
       "coreCS": "Nền Tảng CS",
       "coreCSDesc": "Lập trình hướng đối tượng (OOP), Cấu trúc dữ liệu & Giải thuật, Phát triển Web",
       "personal": "Dự Án Cá Nhân",
       "personalDesc": "React, PHP, MySQL, Git — xây dựng những dự án thực tế đầu tiên",
-      "professional": "Fresher",
-      "professionalDesc": "Angular, NestJS, TypeScript, PostgreSQL tại Giải Pháp APETECH"
+      "professional": "Chính Thức (1+ Năm)",
+      "professionalDesc": "Full-Stack Developer tại Giải Pháp APETECH: Phát triển hệ thống HRM (.NET, Angular, React Native) và Digital Signage CMS (NestJS, React)"
     },
     "philosophy": {
       "title": "Triết Lý Học Tập",
@@ -333,8 +342,8 @@
     }
   },
   "projectsPage": {
-    "title": "Dự Án Cá Nhân",
-    "subtitle": "Khám phá các dự án tôi đã phát triển, từ ứng dụng web full-stack đến các nền tảng thương mại điện tử và trải nghiệm tương tác.",
+    "title": "Dự Án Đã Thực Hiện",
+    "subtitle": "Khám phá các dự án thực tế tại doanh nghiệp và dự án cá nhân tôi đã phát triển, từ hệ thống enterprise HRM, Digital Signage CMS đến các nền tảng thương mại điện tử và web app hiện đại.",
     "featured": "Dự Án Nổi Bật",
     "allProjects": "Khám phá kho dự án",
     "statsProjects": "Dự án",
@@ -349,6 +358,14 @@
     "cta": "Bạn có ý tưởng dự án?",
     "ctaDesc": "Tôi luôn sẵn sàng thảo luận về những dự án mới và thú vị. Hãy liên hệ để chúng ta cùng biến ý tưởng của bạn thành hiện thực!",
     "list": {
+      "hrm": {
+        "name": "Hệ Thống Quản Trị Nhân Sự (HRM)",
+        "desc": "Dự án doanh nghiệp: Hệ thống quản lý nhân sự toàn diện tích hợp ứng dụng di động cho nhân viên chấm công, nghỉ phép (React Native), trang quản lý cho admin (Angular) và hệ thống RESTful API (.NET Core & PostgreSQL)."
+      },
+      "cms": {
+        "name": "Hệ Thống Trình Chiếu Kỹ Thuật Số (Digital Signage CMS)",
+        "desc": "Dự án doanh nghiệp: Nền tảng quản lý và phân phối nội dung đa phương tiện lên hệ thống màn hình quảng cáo theo thời gian thực gồm Web Admin điều khiển (React, Tailwind), Backend API (NestJS, PostgreSQL) và trình phát Player."
+      },
       "himlam": {
         "name": "Đặt Tour HimLamTourist",
         "desc": "Nền tảng đặt tour full-stack với các phân hệ riêng biệt cho khách hàng, quản trị và dịch vụ API. Tính năng tìm kiếm tour, lọc và quy trình đặt chỗ với NestJS và PostgreSQL qua Supabase."
@@ -376,14 +393,6 @@
       "adminDashboardReact": {
         "name": "Mẫu Admin Dashboard - React",
         "desc": "Bản mẫu trang quản trị Admin tối giản nhưng đầy đủ chức năng xây dựng bằng React và Tailwind CSS."
-      },
-      "hrm": {
-        "name": "Hệ Thống Quản Trị Nhân Sự (HRM)",
-        "desc": "Hệ thống quản lý nhân sự toàn diện tích hợp ứng dụng di động cho nhân viên (React Native), trang quản lý cho admin (Angular) và hệ thống RESTful API (.NET)."
-      },
-      "cms": {
-        "name": "Hệ Thống Trình Chiếu Kỹ Thuật Số (Digital Signage CMS)",
-        "desc": "Hệ thống quản lý nội dung trình chiếu kỹ thuật số toàn diện bao gồm trang quản trị admin, máy chủ RESTful API (NestJS) và trình phát nội dung đa phương tiện (Player)."
       }
     }
   },

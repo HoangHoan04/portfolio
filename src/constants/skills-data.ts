@@ -43,6 +43,7 @@ export const technicalGroups: SkillGroup[] = [
     skills: [
       { name: "React", icon: "react", tags: ["Hooks", "Redux", "Context"] },
       { name: "Angular", icon: "angular", tags: ["RxJS", "NgModule"] },
+      { name: "React Native", icon: "react", tags: ["Cross-Platform", "Mobile App"] },
       {
         name: "TypeScript",
         icon: "typescript",
@@ -69,6 +70,11 @@ export const technicalGroups: SkillGroup[] = [
     labelKey: "skills.groups.backend",
     icon: "server",
     skills: [
+      {
+        name: "ASP.NET Core",
+        icon: "vs",
+        tags: ["C#", "REST API", "EF Core"],
+      },
       {
         name: "NestJS",
         icon: "nestjs",
@@ -186,8 +192,8 @@ export const softSkills: SoftSkill[] = [
 ];
 
 export const skillStats = [
-  { labelKey: "skills.stats.tech", value: 10, suffix: "+", icon: "code" },
-  { labelKey: "skills.stats.projects", value: 3, suffix: "+", icon: "box" },
+  { labelKey: "skills.stats.tech", value: 12, suffix: "+", icon: "code" },
+  { labelKey: "skills.stats.projects", value: 9, suffix: "+", icon: "box" },
   { labelKey: "skills.stats.experience", value: 12, suffix: "+", icon: "calendar" },
   { labelKey: "skills.stats.commits", value: 100, suffix: "+", icon: "github" },
 ];

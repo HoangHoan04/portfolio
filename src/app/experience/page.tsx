@@ -89,10 +89,13 @@ export default function ExperiencePage() {
     technologies: [
       "React",
       "Angular",
+      "React Native",
       "NestJS",
+      "ASP.NET Core",
       "TypeScript",
       "PostgreSQL",
       "MySQL",
+      "Tailwind CSS",
     ],
     achievements: tList("experience.apetech.achieve"),
   };
@@ -122,8 +125,8 @@ export default function ExperiencePage() {
     { year: "2024", skills: "React, PHP, MySQL, Git", level: "Intermediate" },
     {
       year: "2025 - Now",
-      skills: "Angular, NestJS, TypeScript, PostgreSQL, Tailwind CSS",
-      level: "Fresher Developer (Work & Learn)",
+      skills: "Angular, React Native, NestJS, ASP.NET Core, TypeScript, PostgreSQL",
+      level: "Full-Stack Developer (1+ Năm Chính Thức)",
     },
   ];
 

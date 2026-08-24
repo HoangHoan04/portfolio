@@ -12,6 +12,66 @@ export type PortfolioProject = {
 
 export const portfolioProjects: PortfolioProject[] = [
   {
+    id: "8",
+    titleKey: "projectsPage.list.hrm.name",
+    descKey: "projectsPage.list.hrm.desc",
+    technologies: [
+      "Angular",
+      "React Native",
+      "TypeScript",
+      "ASP.NET Core",
+      "PostgreSQL",
+    ],
+    category: "fullstack",
+    github: [
+      {
+        labelKey: "common.mobile",
+        url: "https://github.com/HoangHoan04/HrmMobile.git",
+      },
+      {
+        labelKey: "common.admin",
+        url: "https://github.com/HoangHoan04/HrmAdmin.git",
+      },
+      {
+        labelKey: "common.api",
+        url: "https://github.com/HoangHoan04/HrmApi.git",
+      },
+    ],
+    demo: null,
+    featured: true,
+    gradient: "from-sky-400 to-indigo-600",
+  },
+  {
+    id: "9",
+    titleKey: "projectsPage.list.cms.name",
+    descKey: "projectsPage.list.cms.desc",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "NestJS",
+      "PostgreSQL",
+    ],
+    category: "fullstack",
+    github: [
+      {
+        labelKey: "common.admin",
+        url: "https://github.com/HoangHoan04/cms-admin.git",
+      },
+      {
+        labelKey: "common.player",
+        url: "https://github.com/HoangHoan04/cms-player.git",
+      },
+      {
+        labelKey: "common.api",
+        url: "https://github.com/HoangHoan04/cms-api.git",
+      },
+    ],
+    demo: null,
+    featured: true,
+    gradient: "from-amber-500 via-orange-600 to-red-600",
+  },
+  {
     id: "1",
     titleKey: "projectsPage.list.himlam.name",
     descKey: "projectsPage.list.himlam.desc",
@@ -138,66 +198,6 @@ export const portfolioProjects: PortfolioProject[] = [
     demo: null,
     featured: false,
     gradient: "from-indigo-500 to-purple-500",
-  },
-  {
-    id: "8",
-    titleKey: "projectsPage.list.hrm.name",
-    descKey: "projectsPage.list.hrm.desc",
-    technologies: [
-      "Angular",
-      "React Native",
-      "TypeScript",
-      "ASP.NET Core",
-      "PostgreSQL",
-    ],
-    category: "fullstack",
-    github: [
-      {
-        labelKey: "common.mobile",
-        url: "https://github.com/HoangHoan04/HrmMobile.git",
-      },
-      {
-        labelKey: "common.admin",
-        url: "https://github.com/HoangHoan04/HrmAdmin.git",
-      },
-      {
-        labelKey: "common.api",
-        url: "https://github.com/HoangHoan04/HrmApi.git",
-      },
-    ],
-    demo: null,
-    featured: true,
-    gradient: "from-sky-400 to-indigo-600",
-  },
-  {
-    id: "9",
-    titleKey: "projectsPage.list.cms.name",
-    descKey: "projectsPage.list.cms.desc",
-    technologies: [
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "NestJS",
-      "PostgreSQL",
-    ],
-    category: "fullstack",
-    github: [
-      {
-        labelKey: "common.admin",
-        url: "https://github.com/HoangHoan04/cms-admin.git",
-      },
-      {
-        labelKey: "common.player",
-        url: "https://github.com/HoangHoan04/cms-player.git",
-      },
-      {
-        labelKey: "common.api",
-        url: "https://github.com/HoangHoan04/cms-api.git",
-      },
-    ],
-    demo: null,
-    featured: true,
-    gradient: "from-amber-500 via-orange-600 to-red-600",
   },
 ];
 

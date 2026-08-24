@@ -36,7 +36,7 @@
   "home": {
     "hero": {
       "title": "Hi! I'm HoangHoan",
-      "description": "Hello! I'm a Web Developer with a strong passion for building modern user interfaces and optimizing user experience. I'm currently a Software Engineering student at <strong>Saigon University</strong>, working as a Web Developer at <strong>APETECH Solutions</strong>. I'm actively learning and improving my skills through personal and group projects.",
+      "description": "Hello! I'm a Full-Stack Developer passionate about building high-performance, modern software systems with optimal user experience. I am currently working as a full-time Software Engineer at <strong>APETECH Solutions</strong> (1+ years of experience). I specialize in developing web systems, mobile apps, and enterprise backend APIs (HRM, Digital Signage CMS).",
       "resume": "Resume",
       "github": "GitHub",
       "linkedin": "LinkedIn",
@@ -44,16 +44,24 @@
       "contact": "Contact Me"
     },
     "roles": [
-      "Full-Stack Developer",
+      "Software Engineer (Full-Stack)",
       "Frontend Developer",
-      "Backend Developer",
-      "UI/UX Designer"
+      "Backend & API Developer",
+      "Mobile App Developer"
     ],
     "projects": {
       "title": "Featured Projects",
-      "subtitle": "Some of the notable projects I've worked on recently",
+      "subtitle": "Notable enterprise and personal projects I've built",
       "viewAll": "View all projects",
       "list": {
+        "hrm": {
+          "title": "Human Resource Management (HRM)",
+          "desc": "Enterprise project: A comprehensive human resource management solution integrating a mobile app for attendance/leave requests (React Native), an admin web portal (Angular), and a high-performance RESTful API (.NET Core & PostgreSQL)."
+        },
+        "cms": {
+          "title": "Digital Signage Content Management System (CMS)",
+          "desc": "Enterprise project: A real-time digital signage content distribution and management platform featuring a central control dashboard (React, Tailwind), backend API for schedules & devices (NestJS, PostgreSQL), and a media Player."
+        },
         "wedding": {
           "title": "Wedding Invitation",
           "desc": "A full-stack wedding invitation web app with countdown timer, event details, and RSVP functionality. Built a responsive UI with React and Tailwind CSS, optimized for both desktop and mobile devices."
@@ -83,7 +91,7 @@
         "issuer": "Saigon University"
       },
       "webDev": {
-        "title": "Full-Stack Web Development",
+        "title": "Full-Stack & Enterprise Development",
         "issuer": "Real projects & APETECH"
       },
       "database": {
@@ -98,16 +106,16 @@
     "achievements": {
       "viewAll": "View experience",
       "apetech1": {
-        "title": "First production projects",
-        "desc": "Contributed to real-world projects within the first months."
+        "title": "Enterprise HRM & CMS Projects",
+        "desc": "Developed HRM and Digital Signage CMS platforms for enterprise operations."
       },
       "apetech2": {
-        "title": "Stability improvements",
-        "desc": "Proactively identified and fixed production bugs."
+        "title": "1+ Year Official Experience",
+        "desc": "In charge of Web Admin, Mobile App, and RESTful API systems."
       },
       "apetech3": {
-        "title": "Hands-on Agile",
-        "desc": "Scrum experience in a professional team."
+        "title": "Hands-on Agile / Scrum",
+        "desc": "Professional teamwork experience, optimizing production systems."
       },
       "club": {
         "title": "Competitive Programming Club",
@@ -118,14 +126,14 @@
         "desc": "Coordinated academic events at faculty level."
       },
       "projects": {
-        "title": "3+ personal projects",
-        "desc": "HimLamTourist, Wedding Invitation, Apple Store."
+        "title": "9+ Projects Built",
+        "desc": "Including HRM, Digital Signage CMS, HimLamTourist, Wedding..."
       }
     }
   },
   "profile": {
-    "jobTitle": "Software Engineer",
-    "bio": "Hello! I'm a Web Developer with a strong passion for building modern user interfaces and optimizing user experience. I'm currently a Software Engineering student at Saigon University, working as a Web Developer at APETECH Solutions. I'm actively learning and improving my skills through personal and group projects.",
+    "jobTitle": "Software Engineer (Full-Stack)",
+    "bio": "Hello! I'm a Full-Stack Developer with 1+ years of full-time experience at APETECH Solutions. I specialize in building scalable web and mobile applications, from enterprise management systems (HRM, Digital Signage CMS) to modern e-commerce platforms.",
     "yearsExp": "years exp",
     "githubProjects": "projects in GitHub",
     "visitors": "visitors",
@@ -134,11 +142,11 @@
   },
   "about": {
     "title": "About Me",
-    "description": "Hello! I'm a Web Developer with a strong passion for building modern user interfaces and optimizing user experience. I'm currently a Software Engineering student at <strong>Saigon University</strong>, working as a Web Developer at <strong>APETECH Solutions</strong>. I'm actively learning and improving my skills through personal and group projects.",
+    "description": "Hello! I'm a Full-Stack Developer passionate about crafting modern user interfaces and robust backend architectures. Currently working as a full-time Software Engineer at <strong>APETECH Solutions</strong> (1+ years of experience). I continuously research and advance my skills through enterprise projects.",
     "intro": [
-      "Hi! I'm a Full-Stack Developer with over 1 year of experience in developing web applications. I am passionate about learning new technologies and always looking for creative ways to solve complex problems.",
-      "My expertise includes React, Node.js, MySQL, and cloud technologies like AWS. I have experience working with both startups and large companies, from building MVPs to scaling systems serving millions of users.",
-      "Besides coding, I enjoy reading technology books, writing blogs to share knowledge, and participating in developer community activities. I believe that sharing knowledge helps the entire community grow stronger."
+      "Hi! I'm a Full-Stack Developer with over 1 year of full-time experience at APETECH Solutions in developing enterprise-grade web & mobile applications. I am passionate about learning new technologies and engineering robust solutions for complex business workflows.",
+      "My core technical stack includes React, Angular, React Native, NestJS, ASP.NET Core, TypeScript, PostgreSQL, and MySQL. I have hands-on experience building real-world enterprise products such as Human Resource Management (HRM) systems, Digital Signage CMS, and e-commerce platforms.",
+      "I prioritize clean code architecture, system performance, and intuitive user experiences while actively collaborating in an Agile/Scrum environment."
     ],
     "personalInfo": {
       "title": "Personal Information",
@@ -163,10 +171,10 @@
     },
     "journey": {
       "title": "My Development Journey",
-      "intern": {
-        "title": "Intern Full-Stack Developer",
-        "company": "APE TECH Solutions",
-        "desc": "Participated in developing web and mobile application projects."
+      "official": {
+        "title": "Software Engineer (Full-Stack Developer)",
+        "company": "APETECH Solutions",
+        "desc": "Full-time: Developing enterprise systems (HRM, Digital Signage CMS), building Web Admin portals, Mobile Apps, and RESTful APIs."
       },
       "university": {
         "title": "Studied at Saigon University",
@@ -177,26 +185,27 @@
   },
   "experience": {
     "title": "Work Experience",
-    "subtitle": "My career journey through roles, projects, and activities.",
+    "subtitle": "My career journey through enterprise roles, production projects, and professional activities.",
     "responsibilities": "Main Responsibilities",
     "technologies": "Technologies",
     "achievements": "Achievements",
     "roles": {
-      "webDev": "Web Developer",
-      "fulltime": "Full-time"
+      "webDev": "Software Engineer (Full-Stack)",
+      "fulltime": "Full-time (1+ Year Official)"
     },
     "apetech": {
-      "desc": "Developing and maintaining web applications in a professional Agile team environment, contributing to both frontend and backend.",
+      "desc": "Designing, developing, and maintaining enterprise software systems (Web Admin, Mobile App, Backend API) in a professional Agile team environment across frontend, mobile, backend, and databases.",
       "resp": [
-        "Develop and maintain web applications using React, Angular, and NestJS",
-        "Design and manage relational databases with PostgreSQL and MySQL",
-        "Collaborate with team members following Agile workflow to deliver features on schedule",
-        "Diagnose and resolve bugs to ensure system stability and improve application performance"
+        "Develop HRM System: Built mobile application for attendance and leave requests (React Native), web admin dashboard (Angular), and backend RESTful API (.NET Core & PostgreSQL)",
+        "Develop Digital Signage CMS: Built central management dashboard (React, TypeScript, Tailwind CSS), backend API for schedules & devices (NestJS), and media Player application",
+        "Design relational database schemas, implement secure RESTful APIs with RBAC authentication",
+        "Diagnose, debug, and optimize application performance ensuring high stability for production environments",
+        "Collaborate closely with team members following Agile/Scrum workflow to deliver sprint commitments on schedule"
       ],
       "achieve": [
-        "Contributed to multiple real-world projects within the first months",
-        "Improved system stability by actively identifying and resolving bugs",
-        "Gained hands-on experience with Agile/Scrum workflow in a professional team"
+        "Promoted to official Software Engineer with 1+ years of dedicated contributions to core enterprise products",
+        "Successfully developed and deployed HRM and Digital Signage CMS platforms for production use",
+        "Improved system stability, data processing throughput, and user experience across both Web and Mobile platforms"
       ]
     },
     "activities": {
@@ -254,15 +263,15 @@
     "activities": "Activities",
     "projects": "Projects",
     "timeline": {
-      "title": "Learning Timeline",
+      "title": "Development Journey",
       "uniStart": "University Start",
       "uniStartDesc": "HTML, CSS, JavaScript — programming fundamentals",
       "coreCS": "Core CS",
       "coreCSDesc": "OOP, Data Structures & Algorithms, Web Development",
       "personal": "Personal Projects",
       "personalDesc": "React, PHP, MySQL, Git — built first real projects",
-      "professional": "Fresher",
-      "professionalDesc": "Angular, NestJS, TypeScript, PostgreSQL at APETECH Solutions"
+      "professional": "Official (1+ Year)",
+      "professionalDesc": "Full-Stack Developer at APETECH Solutions: Developing HRM (.NET, Angular, React Native) and Digital Signage CMS (NestJS, React)"
     },
     "philosophy": {
       "title": "Learning Philosophy",
@@ -316,7 +325,7 @@
       "teamwork": "Teamwork",
       "teamworkDesc": "Collaborate effectively in Agile teams, contributing to sprint goals and supporting teammates.",
       "comm": "Communication",
-      "commDesc": "Communicate technical ideas clearly to both technical and non-technical stakeholders.",
+      "commDesc": "Communicate technical ideas clearly to both technical and non-stakeholders.",
       "problemSolving": "Problem Solving",
       "problemSolvingDesc": "Break down complex problems into manageable solutions with structured debugging.",
       "agile": "Agile / Scrum",
@@ -333,8 +342,8 @@
     }
   },
   "projectsPage": {
-    "title": "My Projects",
-    "subtitle": "Explore projects I have developed, from full-stack web applications to e-commerce platforms and interactive experiences.",
+    "title": "Projects",
+    "subtitle": "Explore enterprise and personal projects I have developed, from enterprise HRM and Digital Signage CMS systems to e-commerce platforms and modern web applications.",
     "featured": "Featured Projects",
     "allProjects": "Explore all projects",
     "statsProjects": "Projects",
@@ -349,6 +358,14 @@
     "cta": "Got a project idea?",
     "ctaDesc": "I'm always open to discussing new and exciting projects. Reach out so we can turn your idea into reality!",
     "list": {
+      "hrm": {
+        "name": "Human Resource Management (HRM) System",
+        "desc": "Enterprise project: A comprehensive human resource management solution integrating a mobile app for employees (React Native), a web dashboard for admins (Angular), and a back-end RESTful API (.NET Core & PostgreSQL)."
+      },
+      "cms": {
+        "name": "Digital Signage Content Management System (CMS)",
+        "desc": "Enterprise project: A comprehensive digital signage content management system comprising an admin portal (React, Tailwind), a RESTful API server (NestJS, PostgreSQL), and a multimedia content Player."
+      },
       "himlam": {
         "name": "Booking Tour HimLamTourist",
         "desc": "A full-stack tour booking platform with separate modules for customer, admin, and API services. Features tour search, filtering, and reservation flow with NestJS and PostgreSQL via Supabase."
@@ -376,14 +393,6 @@
       "adminDashboardReact": {
         "name": "Admin Dashboard Template - React",
         "desc": "A minimalist yet fully functional administrator portal template crafted with React and Tailwind CSS."
-      },
-      "hrm": {
-        "name": "Human Resource Management (HRM) System",
-        "desc": "A comprehensive human resource management solution integrating a mobile app for employees (React Native), a web dashboard for admins (Angular), and a back-end RESTful API (.NET)."
-      },
-      "cms": {
-        "name": "Digital Signage Content Management System (CMS)",
-        "desc": "A comprehensive digital signage content management system comprising an admin portal, a RESTful API server (NestJS), and a multimedia content Player."
       }
     }
   },

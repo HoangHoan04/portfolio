@@ -7,7 +7,7 @@ export const profile: Profile = {
   fullName: "Hoang Dinh Hoan",
   avatar: `${prefix}/images/avatar.jpg`,
   jobTitle: "Software Engineer",
-  bio: "Hello! I'm a Web Developer with a strong passion for building modern user interfaces and optimizing user experience. I'm currently a Software Engineering student at Saigon University, working as a Web Developer at APETECH Solutions. I'm actively learning and improving my skills through personal and group projects.",
+  bio: "Hello! I'm a Full-Stack Developer with 1+ years of full-time experience at APETECH Solutions. I specialize in building scalable web and mobile applications, from enterprise management systems (HRM, Digital Signage CMS) to modern e-commerce platforms.",
   github: "https://github.com/HoangHoan04",
   email: "hoanghoanpineapple04@gmail.com",
   linkedin: "https://www.linkedin.com/in/hoangdinhhoan",
