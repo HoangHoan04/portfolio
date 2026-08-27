@@ -12,9 +12,9 @@ export const profile: Profile = {
   email: "hoanghoanpineapple04@gmail.com",
   linkedin: "https://www.linkedin.com/in/hoangdinhhoan",
   instagram: "https://www.instagram.com/hoangdinhhoan",
-  project: 0,
+  project: 18,
   visitors: 0,
-  githubViewers: 0,
+  githubViewers: 649,
   experience: "2+",
 };
 

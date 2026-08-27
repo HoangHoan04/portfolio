@@ -49,7 +49,6 @@ function ProfileHeader() {
       (typeof window !== "undefined" &&
         window.location.hostname.includes("github.io"));
 
-    // 1. Fetch public repos directly from GitHub REST API
     fetch("https://api.github.com/users/HoangHoan04")
       .then((r) => r.json())
       .then((d) => {
@@ -57,7 +56,18 @@ function ProfileHeader() {
       })
       .catch(() => {});
 
-    // 2. Fetch server API routes only when running with backend
+    // Direct fetch from GitHub Views Counter (Works in modern browsers & clients)
+    fetch("https://komarev.com/ghpvc/?username=HoangHoan04")
+      .then((r) => r.text())
+      .then((svg) => {
+        const texts = [...svg.matchAll(/>(\d+)<\/text>/g)];
+        if (texts.length > 0) {
+          const parsed = Number(texts[texts.length - 1][1]);
+          if (!isNaN(parsed) && parsed > 0) setGithubViews(parsed);
+        }
+      })
+      .catch(() => {});
+
     if (!isExport) {
       fetch("/api/github-views")
         .then((r) => r.json())
@@ -73,7 +83,6 @@ function ProfileHeader() {
         })
         .catch(() => {});
     } else {
-      // Local counter on static GitHub Pages
       try {
         const localKey = "portfolio_visitor_count";
         const current = Number(localStorage.getItem(localKey) || "0") + 1;

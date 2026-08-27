@@ -123,11 +123,10 @@ export function GitHubReposSection() {
             }
           }
         } catch {
-          // Fallback to direct client API fetch
+          //! Fallback to direct client API fetch
         }
       }
 
-      // Direct client fetch from GitHub API (Works everywhere without server)
       try {
         const res = await fetch(
           "https://api.github.com/users/HoangHoan04/repos?sort=updated&per_page=100",
