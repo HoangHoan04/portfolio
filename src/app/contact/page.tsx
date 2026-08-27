@@ -139,15 +139,22 @@ export default function ContactPage() {
         }
       }
 
-      try {
-        const apiRes = await fetch("/api/contact", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        });
-        if (apiRes.ok) anySuccess = true;
-      } catch {
-        //! Ignored on static GitHub Pages
+      const isExport =
+        process.env.NEXT_PUBLIC_EXPORT === "true" ||
+        (typeof window !== "undefined" &&
+          window.location.hostname.includes("github.io"));
+
+      if (!isExport) {
+        try {
+          const apiRes = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+          });
+          if (apiRes.ok) anySuccess = true;
+        } catch {
+          //! Ignored
+        }
       }
 
       if (anySuccess || (formData.name && formData.email && formData.message)) {

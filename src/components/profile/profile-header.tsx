@@ -44,31 +44,43 @@ function ProfileHeader() {
   const [publicRepos, setPublicRepos] = useState(profile.project);
 
   useEffect(() => {
-    fetch("/api/github-views")
+    const isExport =
+      process.env.NEXT_PUBLIC_EXPORT === "true" ||
+      (typeof window !== "undefined" &&
+        window.location.hostname.includes("github.io"));
+
+    // 1. Fetch public repos directly from GitHub REST API
+    fetch("https://api.github.com/users/HoangHoan04")
       .then((r) => r.json())
       .then((d) => {
-        if (d.views) setGithubViews(d.views);
-        if (d.publicRepos) setPublicRepos(d.publicRepos);
+        if (d.public_repos !== undefined) setPublicRepos(d.public_repos);
       })
-      .catch(() => {
-        fetch("https://api.github.com/users/HoangHoan04")
-          .then((r) => r.json())
-          .then((d) => {
-            if (d.public_repos) setPublicRepos(d.public_repos);
-          })
-          .catch(() => {});
-      });
-  }, []);
+      .catch(() => {});
 
-  useEffect(() => {
-    fetch("/api/visitors")
-      .then((r) => r.json())
-      .then((d) => setVisitors(d.count))
-      .catch(() => {});
-    fetch("/api/visitors", { method: "POST" })
-      .then((r) => r.json())
-      .then((d) => setVisitors(d.count))
-      .catch(() => {});
+    // 2. Fetch server API routes only when running with backend
+    if (!isExport) {
+      fetch("/api/github-views")
+        .then((r) => r.json())
+        .then((d) => {
+          if (d.views) setGithubViews(d.views);
+        })
+        .catch(() => {});
+
+      fetch("/api/visitors", { method: "POST" })
+        .then((r) => r.json())
+        .then((d) => {
+          if (d.count) setVisitors(d.count);
+        })
+        .catch(() => {});
+    } else {
+      // Local counter on static GitHub Pages
+      try {
+        const localKey = "portfolio_visitor_count";
+        const current = Number(localStorage.getItem(localKey) || "0") + 1;
+        localStorage.setItem(localKey, String(current));
+        setVisitors(current);
+      } catch {}
+    }
   }, []);
 
   return (

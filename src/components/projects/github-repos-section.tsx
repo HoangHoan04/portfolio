@@ -105,22 +105,74 @@ export function GitHubReposSection() {
   const [displayCount, setDisplayCount] = useState<number>(12);
 
   useEffect(() => {
-    const isProd = process.env.NODE_ENV === "production";
-    const basePath = isProd ? "/portfolio" : "";
+    const isExport =
+      process.env.NEXT_PUBLIC_EXPORT === "true" ||
+      (typeof window !== "undefined" &&
+        window.location.hostname.includes("github.io"));
 
-    fetch(`${basePath}/api/github-repos`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.repos && Array.isArray(data.repos)) {
-          setRepos(data.repos);
+    async function loadRepos() {
+      if (!isExport) {
+        try {
+          const res = await fetch("/api/github-repos");
+          if (res.ok) {
+            const data = await res.json();
+            if (data.repos && Array.isArray(data.repos)) {
+              setRepos(data.repos);
+              setLoading(false);
+              return;
+            }
+          }
+        } catch {
+          // Fallback to direct client API fetch
         }
-      })
-      .catch((err) => {
-        console.error("Failed to load GitHub repos:", err);
-      })
-      .finally(() => {
+      }
+
+      // Direct client fetch from GitHub API (Works everywhere without server)
+      try {
+        const res = await fetch(
+          "https://api.github.com/users/HoangHoan04/repos?sort=updated&per_page=100",
+        );
+        if (res.ok) {
+          const data = await res.json();
+          if (Array.isArray(data)) {
+            const parsedRepos: GitHubRepo[] = data.map(
+              (r: {
+                id: number;
+                name: string;
+                description: string | null;
+                html_url: string;
+                homepage: string | null;
+                language: string | null;
+                stargazers_count?: number;
+                forks_count?: number;
+                updated_at: string;
+                topics?: string[];
+                fork?: boolean;
+              }) => ({
+                id: r.id,
+                name: r.name,
+                description: r.description,
+                html_url: r.html_url,
+                homepage: r.homepage,
+                language: r.language,
+                stars: r.stargazers_count ?? 0,
+                forks: r.forks_count ?? 0,
+                updated_at: r.updated_at,
+                topics: r.topics ?? [],
+                is_fork: r.fork ?? false,
+              }),
+            );
+            setRepos(parsedRepos);
+          }
+        }
+      } catch (err) {
+        console.warn("Direct GitHub fetch notice:", err);
+      } finally {
         setLoading(false);
-      });
+      }
+    }
+
+    loadRepos();
   }, []);
 
   const languages = useMemo(() => {
