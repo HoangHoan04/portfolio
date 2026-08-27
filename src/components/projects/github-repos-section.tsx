@@ -17,7 +17,7 @@ import Image from "next/image";
 import { icons } from "@/constants/icons";
 import { useTranslation } from "@/contexts/locale-context";
 import { cn } from "@/lib/utils";
-import type { GitHubRepo } from "@/app/api/github-repos/route";
+import type { GitHubRepo } from "@/types";
 
 const LANGUAGE_THEMES: Record<
   string,

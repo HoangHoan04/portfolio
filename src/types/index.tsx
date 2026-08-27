@@ -87,3 +87,17 @@ export interface Contact {
   message: string;
   date: string;
 }
+
+export type GitHubRepo = {
+  id: number;
+  name: string;
+  description: string | null;
+  html_url: string;
+  homepage: string | null;
+  language: string | null;
+  stars: number;
+  forks: number;
+  updated_at: string;
+  topics: string[];
+  is_fork: boolean;
+};

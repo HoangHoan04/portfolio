@@ -1,18 +1,7 @@
 import { NextResponse } from "next/server";
+import type { GitHubRepo } from "@/types";
 
-export type GitHubRepo = {
-  id: number;
-  name: string;
-  description: string | null;
-  html_url: string;
-  homepage: string | null;
-  language: string | null;
-  stars: number;
-  forks: number;
-  updated_at: string;
-  topics: string[];
-  is_fork: boolean;
-};
+export type { GitHubRepo };
 
 const GITHUB_USERNAME = "HoangHoan04";
 
