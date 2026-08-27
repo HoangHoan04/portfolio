@@ -141,7 +141,7 @@ export default function AboutPage() {
       id: "name",
       icon: Info,
       label: t("about.personalInfo.fullName"),
-      value: "Hoàng Đình Hoàn",
+      value: t("about.personalInfo.fullNameValue"),
     },
     {
       id: "age",
@@ -153,13 +153,13 @@ export default function AboutPage() {
       id: "address",
       icon: MapPin,
       label: t("about.personalInfo.address"),
-      value: "1002 Ta Quang Buu, ward 6, District 8, Ho Chi Minh City",
+      value: t("about.personalInfo.addressValue"),
     },
     {
       id: "addressNew",
       icon: MapPin,
       label: t("about.personalInfo.addressNew"),
-      value: "1002 Ta Quang Buu, ward Binh Dong, Ho Chi Minh City",
+      value: t("about.personalInfo.addressNewValue"),
     },
     {
       id: "email",
@@ -177,7 +177,7 @@ export default function AboutPage() {
       id: "languages",
       icon: Globe2,
       label: t("about.personalInfo.languages"),
-      value: "Vietnamese, English",
+      value: t("about.personalInfo.languagesValue"),
     },
   ];
 

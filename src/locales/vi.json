@@ -155,12 +155,16 @@
     "personalInfo": {
       "title": "Thông Tin Cá Nhân",
       "fullName": "Họ và Tên",
+      "fullNameValue": "Hoàng Đình Hoàn",
       "age": "Tuổi",
       "address": "Địa Chỉ Hiện Tại",
+      "addressValue": "1002 Tạ Quang Bửu, Phường 6, Quận 8, TP. Hồ Chí Minh",
       "addressNew": "Địa Chỉ Mới",
+      "addressNewValue": "1002 Tạ Quang Bửu, Phường Bình Đông, TP. Hồ Chí Minh",
       "email": "Email",
       "phone": "Điện Thoại",
-      "languages": "Ngôn Ngữ"
+      "languages": "Ngôn Ngữ",
+      "languagesValue": "Tiếng Việt, Tiếng Anh"
     },
     "hobbies": {
       "title": "Sở Thích",
@@ -473,8 +477,10 @@
       "send": "Gửi Tin Nhắn"
     },
     "success": {
-      "title": "Cảm ơn bạn!",
-      "message": "Tin nhắn đã được gửi thành công đến hoanghoanpineapple04@gmail.com. Tôi sẽ phản hồi lại bạn trong vòng 24 giờ tới."
+      "title": "Gửi Tin Nhắn Thành Công!",
+      "message": "Cảm ơn bạn đã liên hệ! Tin nhắn đã được gửi đến hoanghoanpineapple04@gmail.com. Tôi sẽ phản hồi lại bạn sớm nhất có thể.",
+      "sendAnother": "Gửi tin nhắn khác",
+      "openMail": "Mở Email gửi thêm"
     },
     "info": {
       "title": "Thông Tin Liên Hệ",

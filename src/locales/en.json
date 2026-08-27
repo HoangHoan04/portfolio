@@ -155,12 +155,16 @@
     "personalInfo": {
       "title": "Personal Information",
       "fullName": "Full Name",
+      "fullNameValue": "Hoang Dinh Hoan",
       "age": "Age",
       "address": "Current Address",
+      "addressValue": "1002 Ta Quang Buu, Ward 6, District 8, Ho Chi Minh City",
       "addressNew": "New Address",
+      "addressNewValue": "1002 Ta Quang Buu, Binh Dong Ward, Ho Chi Minh City",
       "email": "Email",
       "phone": "Phone",
-      "languages": "Languages"
+      "languages": "Languages",
+      "languagesValue": "Vietnamese, English"
     },
     "hobbies": {
       "title": "Hobbies",
@@ -473,8 +477,10 @@
       "send": "Send Message"
     },
     "success": {
-      "title": "Thank you!",
-      "message": "Message sent successfully to hoanghoanpineapple04@gmail.com. I'll get back to you within 24 hours."
+      "title": "Message Sent Successfully!",
+      "message": "Thank you for reaching out! Your message has been delivered to hoanghoanpineapple04@gmail.com. I will get back to you as soon as possible.",
+      "sendAnother": "Send another message",
+      "openMail": "Open Email client"
     },
     "info": {
       "title": "Contact Information",

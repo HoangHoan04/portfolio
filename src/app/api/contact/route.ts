@@ -95,10 +95,12 @@ export async function POST(req: NextRequest) {
       emailSent,
       data: newMessage,
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Contact API error:", error);
+    const errorMessage =
+      error instanceof Error ? error.message : "Lỗi xử lý gửi liên hệ.";
     return NextResponse.json(
-      { error: error?.message || "Lỗi xử lý gửi liên hệ." },
+      { error: errorMessage },
       { status: 500 },
     );
   }

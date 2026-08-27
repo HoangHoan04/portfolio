@@ -165,7 +165,7 @@ export default function ExperiencePage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 md:px-6">
       <HeaderPageChild text={t("experience.title")} />
-      <p className="mb-12 -mt-4 text-sm text-secondary-text max-w-2xl leading-relaxed">
+      <p className="mb-8 -mt-4 text-sm text-secondary-text leading-relaxed">
         {t("experience.subtitle")}
       </p>
 

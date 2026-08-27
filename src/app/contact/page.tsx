@@ -79,7 +79,6 @@ function InteractiveContactCard({
 
 export default function ContactPage() {
   const { t } = useTranslation();
-  const reduceMotion = useReducedMotion();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -162,7 +161,7 @@ export default function ContactPage() {
       } else {
         throw new Error("Unable to send message");
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error("Submission notice:", err);
       setError(`${t("common.error")}: ${profile.email}`);
     } finally {
@@ -213,7 +212,7 @@ export default function ContactPage() {
     <div className="mx-auto max-w-7xl px-4 py-8 md:px-6">
       <HeaderPageChild text={t("contactPage.title")} />
 
-      <p className="mb-12 -mt-4 text-sm text-secondary-text max-w-2xl leading-relaxed">
+      <p className="mb-8 -mt-4 text-sm text-secondary-text leading-relaxed">
         {t("contactPage.subtitle")}
       </p>
       <div className="h-full">
@@ -271,8 +270,9 @@ export default function ContactPage() {
                   {t("contactPage.success.message")}
                 </p>
 
-                <div className="flex flex-wrap items-center justify-center gap-3">
-                  <Button
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full max-w-md mx-auto">
+                  <button
+                    type="button"
                     onClick={() => {
                       setSubmitted(false);
                       setFormData({
@@ -283,20 +283,19 @@ export default function ContactPage() {
                         projectType: "",
                       });
                     }}
-                    className="rounded-xl border border-elevated-border bg-elevated/80 px-5 py-2.5 text-xs font-bold text-foreground hover:bg-elevated cursor-pointer"
+                    className="w-full sm:w-1/2 inline-flex items-center justify-center gap-2 h-11 px-4 rounded-xl border border-elevated-border bg-elevated/80 text-xs font-semibold text-foreground hover:border-primary-accent/40 hover:bg-elevated hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer shadow-xs"
                   >
-                    Gửi thêm tin nhắn khác
-                  </Button>
+                    <PaperPlaneTilt className="size-4 text-blue-400" />
+                    <span>{t("contactPage.success.sendAnother")}</span>
+                  </button>
 
-                  <Button
-                    asChild
-                    className="rounded-xl bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 text-white font-bold text-xs px-5 py-2.5 hover:opacity-90 shadow-md cursor-pointer border-none"
+                  <a
+                    href={mailtoUrl}
+                    className="w-full sm:w-1/2 inline-flex items-center justify-center gap-2 h-11 px-4 rounded-xl bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 text-xs font-bold text-white shadow-md hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer text-center"
                   >
-                    <a href={mailtoUrl}>
-                      <EnvelopeSimple className="size-4 mr-1.5" />
-                      Mở Gmail / Email App gửi thêm
-                    </a>
-                  </Button>
+                    <EnvelopeSimple className="size-4" weight="bold" />
+                    <span>{t("contactPage.success.openMail")}</span>
+                  </a>
                 </div>
               </motion.div>
             ) : (
