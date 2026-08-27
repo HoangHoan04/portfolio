@@ -1,12 +1,14 @@
 "use client";
 
-import { Briefcase, ChevronDown, Code2, Home, Mail } from "lucide-react";
+import { ChevronDown } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { AvatarImage } from "@/components/ui/image";
+import { icons } from "@/constants/icons";
 import { profile } from "@/constants/profile";
 import { useTranslation } from "@/contexts/locale-context";
 import { getAssetPath } from "@/lib/utils";
@@ -83,7 +85,7 @@ function ProfileHeader() {
 
         <div className="flex flex-col gap-4">
           <div className="flex flex-col items-start text-sm leading-relaxed gap-1.5">
-            <h1 className="text-base md:text-lg font-bold tracking-tight">
+            <h1 className="text-xl md:text-lg font-bold tracking-tight">
               {profile.fullName} —{" "}
               <small className="font-normal">{profile.username}</small>
             </h1>
@@ -129,28 +131,49 @@ function ProfileHeader() {
               {t("profile.bio")}
             </p>
 
-            <div className="flex items-center gap-4 mt-1">
+            <div className="flex items-center gap-3.5 mt-2">
               <Link
                 href={profile.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 text-sm text-secondary-text hover:text-foreground transition-colors"
+                className="group inline-flex items-center gap-2 rounded-xl border border-elevated-border bg-elevated/70 px-3 py-1.5 text-xs font-semibold text-foreground transition-all hover:border-primary-accent/50 hover:bg-elevated hover:shadow-xs shadow-2xs cursor-pointer"
               >
-                <Code2 className="size-4" /> GitHub
+                <Image
+                  src={icons.github}
+                  alt="GitHub"
+                  width={15}
+                  height={15}
+                  className="dark:invert transition-transform group-hover:scale-110 object-contain"
+                />
+                <span>GitHub</span>
               </Link>
               <Link
                 href={profile.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 text-sm text-secondary-text hover:text-foreground transition-colors"
+                className="group inline-flex items-center gap-2 rounded-xl border border-elevated-border bg-elevated/70 px-3 py-1.5 text-xs font-semibold text-foreground transition-all hover:border-blue-500/50 hover:bg-elevated hover:shadow-xs shadow-2xs cursor-pointer"
               >
-                <Briefcase className="size-4" /> LinkedIn
+                <Image
+                  src={icons.linkedin}
+                  alt="LinkedIn"
+                  width={15}
+                  height={15}
+                  className="transition-transform group-hover:scale-110 object-contain"
+                />
+                <span>LinkedIn</span>
               </Link>
               <Link
                 href={`mailto:${profile.email}`}
-                className="flex items-center gap-1 text-sm text-secondary-text hover:text-foreground transition-colors"
+                className="group inline-flex items-center gap-2 rounded-xl border border-elevated-border bg-elevated/70 px-3 py-1.5 text-xs font-semibold text-foreground transition-all hover:border-red-500/50 hover:bg-elevated hover:shadow-xs shadow-2xs cursor-pointer"
               >
-                <Mail className="size-4" /> Email
+                <Image
+                  src={icons.gmail}
+                  alt="Gmail"
+                  width={15}
+                  height={15}
+                  className="transition-transform group-hover:scale-110 object-contain"
+                />
+                <span>Email</span>
               </Link>
             </div>
           </div>
@@ -212,28 +235,49 @@ function ProfileHeader() {
               </span>
             ))}
 
-          <div className="flex items-center gap-3 mt-2">
+          <div className="flex items-center gap-2 mt-3">
             <Link
               href={profile.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-secondary-text hover:text-foreground"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-elevated-border bg-elevated/80 px-2.5 py-1 text-xs font-semibold text-foreground hover:border-primary-accent/40"
             >
-              <Code2 className="size-5" />
+              <Image
+                src={icons.github}
+                alt="GitHub"
+                width={14}
+                height={14}
+                className="dark:invert object-contain"
+              />
+              <span>GitHub</span>
             </Link>
             <Link
               href={profile.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-secondary-text hover:text-foreground"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-elevated-border bg-elevated/80 px-2.5 py-1 text-xs font-semibold text-foreground hover:border-blue-500/40"
             >
-              <Home className="size-5" />
+              <Image
+                src={icons.linkedin}
+                alt="LinkedIn"
+                width={14}
+                height={14}
+                className="object-contain"
+              />
+              <span>LinkedIn</span>
             </Link>
             <Link
               href={`mailto:${profile.email}`}
-              className="text-secondary-text hover:text-foreground"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-elevated-border bg-elevated/80 px-2.5 py-1 text-xs font-semibold text-foreground hover:border-red-500/40"
             >
-              <Mail className="size-5" />
+              <Image
+                src={icons.gmail}
+                alt="Gmail"
+                width={14}
+                height={14}
+                className="object-contain"
+              />
+              <span>Email</span>
             </Link>
           </div>
         </div>
@@ -272,12 +316,6 @@ function ProfileHeader() {
           className="flex-1 h-9 rounded-lg border-elevated-border text-sm font-semibold transition-colors duration-200"
         >
           <Link href="/contact">{t("common.contact")}</Link>
-        </Button>
-        <Button
-          variant="outline"
-          className="size-9 rounded-lg border-elevated-border p-0 transition-colors duration-200"
-        >
-          <ChevronDown className="size-5" />
         </Button>
       </div>
     </>

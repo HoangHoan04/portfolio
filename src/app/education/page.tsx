@@ -24,16 +24,6 @@ import { cn } from "@/lib/utils";
 
 import { portfolioProjects } from "@/constants/projects-data";
 
-const coursework = [
-  "Object-Oriented Programming",
-  "Web & Application Development",
-  "Data Structures & Algorithms",
-  "Database Management",
-  "Discrete Math",
-  "Linear Algebra",
-  "Probability & Statistics",
-];
-
 function InteractiveEducationCard({
   children,
   className,
@@ -85,8 +75,11 @@ function InteractiveEducationCard({
 }
 
 export default function EducationPage() {
-  const { t } = useTranslation();
+  const { t, tList } = useTranslation();
   const reduceMotion = useReducedMotion();
+
+  const coursesList = (tList("education.coursesList") as string[]) || [];
+  const activitiesList = (tList("education.activitiesList") as string[]) || [];
 
   const learningTimeline = [
     {
@@ -120,33 +113,42 @@ export default function EducationPage() {
       icon: Code,
       title: t("education.philosophy.build"),
       description: t("education.philosophy.buildDesc"),
+      gradient: "from-blue-500/20 via-indigo-500/10 to-transparent",
+      badge: "Hands-on",
     },
     {
       icon: Users,
       title: t("education.philosophy.others"),
       description: t("education.philosophy.othersDesc"),
+      gradient: "from-purple-500/20 via-pink-500/10 to-transparent",
+      badge: "Team",
     },
     {
       icon: BookOpen,
       title: t("education.philosophy.improve"),
       description: t("education.philosophy.improveDesc"),
+      gradient: "from-emerald-500/20 via-teal-500/10 to-transparent",
+      badge: "Growth",
     },
   ];
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 md:px-6">
+    <div className="px-4 md:px-6">
       <HeaderPageChild text={t("education.title")} />
-
-      <p className="mb-12 -mt-4 text-sm text-secondary-text max-w-2xl leading-relaxed">
-        {t("education.subtitle")}
-      </p>
 
       <section className="mb-16">
         <div className="mb-8 flex items-center gap-3">
-          <h2 className="text-xl font-bold tracking-tight text-foreground md:text-2xl">
-            {t("education.formal")}
-          </h2>
-          <div className="h-px flex-1 bg-linear-to-r from-elevated-border to-transparent" />
+          <div className="flex size-10 items-center justify-center rounded-xl border border-elevated-border bg-elevated/70 shadow-inner">
+            <GraduationCap className="size-5 text-primary-accent" />
+          </div>
+          <div>
+            <h2 className="text-xl font-bold tracking-tight text-foreground md:text-2xl">
+              {t("education.formal")}
+            </h2>
+            <p className="text-xs text-secondary-text mt-0.5">
+              {t("education.school")} • 2022 - 2026
+            </p>
+          </div>
         </div>
 
         <InteractiveEducationCard>
@@ -157,7 +159,7 @@ export default function EducationPage() {
                   {t("education.degree")}
                 </h3>
                 <Badge className="border border-blue-500/30 bg-blue-500/10 px-2.5 py-0.5 text-xs font-semibold text-blue-400">
-                  GPA: Good
+                  {t("education.gpa")}
                 </Badge>
               </div>
               <p className="text-base font-semibold text-foreground">
@@ -185,10 +187,7 @@ export default function EducationPage() {
                   {t("education.activities")}
                 </h4>
                 <ul className="space-y-2.5">
-                  {[
-                    "Competitive Programming Club Member",
-                    "Member of Faculty Student Executive Board",
-                  ].map((activity) => (
+                  {activitiesList.map((activity) => (
                     <li
                       key={activity}
                       className="flex items-start gap-2.5 text-xs text-secondary-text leading-relaxed"
@@ -210,7 +209,7 @@ export default function EducationPage() {
                 {t("education.courses")}
               </h4>
               <div className="flex flex-wrap gap-1.5">
-                {coursework.map((course) => (
+                {coursesList.map((course) => (
                   <span
                     key={course}
                     className="rounded-lg bg-elevated/40 border border-elevated-border px-3 py-2 text-xs font-medium text-secondary-text hover:border-primary-accent/30 hover:text-foreground transition-colors"

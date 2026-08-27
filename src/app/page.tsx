@@ -20,10 +20,22 @@ const basePath = isProd ? "/portfolio" : "";
 
 export default function ProfilePage() {
   const [activeTab, setActiveTab] = useState<ContentTab>(ContentTab.PRODUCTS);
-  const [started, setStarted] = useState(false);
+  const [started, setStarted] = useState(true);
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(
     null,
   );
+
+  useEffect(() => {
+    const hasSeenWelcome = sessionStorage.getItem("portfolio_has_welcomed");
+    if (!hasSeenWelcome) {
+      setStarted(false);
+    }
+  }, []);
+
+  const handleStartComplete = () => {
+    sessionStorage.setItem("portfolio_has_welcomed", "true");
+    setStarted(true);
+  };
 
   useEffect(() => {
     const handlePopState = () => {
@@ -65,11 +77,7 @@ export default function ProfilePage() {
       )}
 
       {!started && (
-        <StartScreen
-          onComplete={() => {
-            setStarted(true);
-          }}
-        />
+        <StartScreen onComplete={handleStartComplete} />
       )}
     </div>
   );

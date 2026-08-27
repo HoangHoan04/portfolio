@@ -20,39 +20,6 @@ export type GitHubContributions = {
   years: number[];
 };
 
-const CONTRIBUTIONS_QUERY = `
-  query ($username: String!) {
-    user(login: $username) {
-      contributionsCollection {
-        contributionCalendar {
-          totalContributions
-          weeks {
-            contributionDays {
-              contributionCount
-              date
-              weekday
-            }
-          }
-        }
-      }
-    }
-  }
-`;
-
-function emptyContributions(
-  source: GitHubContributions["source"],
-): GitHubContributions {
-  return {
-    totalContributions: 0,
-    weeks: [],
-    year: new Date().getFullYear(),
-    username: GITHUB_USERNAME,
-    source,
-    allDays: [],
-    years: [new Date().getFullYear()],
-  };
-}
-
 export function buildWeeksFromDays(
   days: ContributionDay[],
 ): ContributionWeek[] {
@@ -87,133 +54,32 @@ export function totalContributionsInLastYear(days: ContributionDay[]): number {
     .reduce((sum, day) => sum + day.count, 0);
 }
 
-async function fetchContributionsFallback(): Promise<GitHubContributions> {
-  try {
-    const res = await fetch(
-      `https://github-contributions-api.jogruber.de/v4/${GITHUB_USERNAME}`,
-      { next: { revalidate: 3600 } },
-    );
-
-    if (!res.ok) {
-      return emptyContributions("fallback");
-    }
-
-    const json = (await res.json()) as {
-      contributions?: Array<{ date: string; count: number }>;
-    };
-
-    const days: ContributionDay[] = (json.contributions ?? []).map((entry) => {
-      const date = new Date(`${entry.date}T00:00:00Z`);
-      return {
-        date: entry.date,
-        count: entry.count,
-        weekday: date.getUTCDay(),
-      };
-    });
-
-    days.sort((a, b) => a.date.localeCompare(b.date));
-
-    if (!days.length) {
-      return emptyContributions("fallback");
-    }
-
-    const uniqueYears = Array.from(
-      new Set(days.map((d) => parseInt(d.date.slice(0, 4)))),
-    ).sort((a, b) => b - a);
-
-    return {
-      totalContributions: totalContributionsInLastYear(days),
-      weeks: buildWeeksFromDays(days),
-      year: new Date().getFullYear(),
-      username: GITHUB_USERNAME,
-      source: "fallback",
-      allDays: days,
-      years: uniqueYears,
-    };
-  } catch (error) {
-    console.error("Failed to fetch fallback GitHub contributions:", error);
-    return emptyContributions("fallback");
-  }
+function emptyContributions(): GitHubContributions {
+  return {
+    totalContributions: 0,
+    weeks: [],
+    year: new Date().getFullYear(),
+    username: GITHUB_USERNAME,
+    source: "fallback",
+    allDays: [],
+    years: [new Date().getFullYear()],
+  };
 }
 
 export async function fetchGitHubContributions(): Promise<GitHubContributions> {
-  const token = process.env.GITHUB_TOKEN;
-
-  if (!token) {
-    return fetchContributionsFallback();
-  }
-
   try {
-    const res = await fetch("https://api.github.com/graphql", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        query: CONTRIBUTIONS_QUERY,
-        variables: { username: GITHUB_USERNAME },
-      }),
-      next: { revalidate: 3600 },
-    });
+    const isProd = process.env.NODE_ENV === "production";
+    const basePath = isProd ? "/portfolio" : "";
+    const res = await fetch(`${basePath}/api/github-contributions`);
 
     if (!res.ok) {
-      return fetchContributionsFallback();
+      return emptyContributions();
     }
 
-    const json = await res.json();
-
-    if (json.errors?.length) {
-      console.error("GitHub GraphQL errors:", json.errors);
-      return fetchContributionsFallback();
-    }
-
-    const calendar =
-      json.data?.user?.contributionsCollection?.contributionCalendar;
-
-    if (!calendar) {
-      return fetchContributionsFallback();
-    }
-
-    const weeks: ContributionWeek[] = (calendar.weeks ?? []).map(
-      (week: {
-        contributionDays: Array<{
-          contributionCount: number;
-          date: string;
-          weekday: number;
-        }>;
-      }) => ({
-        days: week.contributionDays.map((day) => ({
-          date: day.date,
-          count: day.contributionCount,
-          weekday: day.weekday,
-        })),
-      }),
-    );
-
-    const allDays: ContributionDay[] = [];
-    weeks.forEach((week) => {
-      week.days.forEach((day) => {
-        allDays.push(day);
-      });
-    });
-
-    const uniqueYears = Array.from(
-      new Set(allDays.map((d) => parseInt(d.date.slice(0, 4)))),
-    ).sort((a, b) => b - a);
-
-    return {
-      totalContributions: calendar.totalContributions ?? 0,
-      weeks,
-      year: new Date().getFullYear(),
-      username: GITHUB_USERNAME,
-      source: "github-graphql",
-      allDays,
-      years: uniqueYears.length ? uniqueYears : [new Date().getFullYear()],
-    };
+    return (await res.json()) as GitHubContributions;
   } catch (error) {
-    console.error("Failed to fetch GitHub contributions:", error);
-    return fetchContributionsFallback();
+    console.error("Failed to fetch contributions from API route:", error);
+    return emptyContributions();
   }
 }
 

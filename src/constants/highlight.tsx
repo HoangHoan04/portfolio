@@ -9,18 +9,18 @@ export const highlights: Highlight[] = [
   },
   {
     id: "2",
-    label: "Angular",
-    icon: icons.angular,
+    label: "ASP.NET Core",
+    icon: icons.asp,
   },
   {
     id: "3",
-    label: "Vue",
-    icon: icons.vue,
+    label: "NestJS",
+    icon: icons.nestjs,
   },
   {
     id: "4",
-    label: "Next.JS",
-    icon: icons.nextJs,
+    label: "TypeScript",
+    icon: icons.typescript,
   },
   {
     id: "5",
@@ -29,34 +29,37 @@ export const highlights: Highlight[] = [
   },
   {
     id: "6",
-    label: "Nest.JS",
-    icon: icons.nestjs,
+    label: "Next.js",
+    icon: icons.nextJs,
   },
   {
     id: "7",
-    label: "PHP",
-    icon: icons.php,
+    label: "Vue",
+    icon: icons.vue,
   },
   {
     id: "8",
-    label: "Node.JS",
-    icon: icons.nodejs,
+    label: "PostgreSQL",
+    icon: icons.postgresql,
   },
   {
     id: "9",
-    label: "Figma",
-    icon: icons.figma,
+    label: "Node.js",
+    icon: icons.nodejs,
   },
   {
     id: "10",
     label: "Docker",
     icon: icons.docker,
   },
-
   {
     id: "11",
-    label: "Coded.co",
-    icon: icons.coded,
+    label: "PHP",
+    icon: icons.php,
+  },
+  {
+    id: "12",
+    label: "Figma",
+    icon: icons.figma,
   },
 ];
-

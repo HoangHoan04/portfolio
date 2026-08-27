@@ -31,12 +31,16 @@
     "admin": "Admin",
     "api": "API",
     "mobile": "Mobile App",
-    "player": "Player"
+    "player": "Player",
+    "pin": "Pin",
+    "unpin": "Unpin",
+    "pinSidebar": "Pin sidebar",
+    "unpinSidebar": "Unpin sidebar"
   },
   "home": {
     "hero": {
       "title": "Hi! I'm HoangHoan",
-      "description": "Hello! I'm a Full-Stack Developer passionate about building high-performance, modern software systems with optimal user experience. I am currently working as a full-time Software Engineer at <strong>APETECH Solutions</strong> (1+ years of experience). I specialize in developing web systems, mobile apps, and enterprise backend APIs (HRM, Digital Signage CMS).",
+      "description": "Hello! I'm a Full-Stack Software Engineer passionate about building scalable, modern enterprise software systems with high performance and clean architecture. I am currently working as a full-time Software Engineer at <strong>APETECH Solutions</strong> (2+ years of experience), specializing in Enterprise ERP Systems (HRM, FnB, PMS) and actively building modern ERP solutions.",
       "resume": "Resume",
       "github": "GitHub",
       "linkedin": "LinkedIn",
@@ -55,8 +59,8 @@
       "viewAll": "View all projects",
       "list": {
         "hrm": {
-          "title": "Human Resource Management (HRM)",
-          "desc": "Enterprise project: A comprehensive human resource management solution integrating a mobile app for attendance/leave requests (React Native), an admin web portal (Angular), and a high-performance RESTful API (.NET Core & PostgreSQL)."
+          "title": "Human Resource Management (HRM ERP)",
+          "desc": "APETECH Enterprise Project: A comprehensive human resource management solution integrating a mobile app for attendance/leave requests (React Native), an admin web portal (Angular), and a high-performance RESTful API (.NET Core & PostgreSQL)."
         },
         "cms": {
           "title": "Digital Signage Content Management System (CMS)",
@@ -64,15 +68,15 @@
         },
         "wedding": {
           "title": "Wedding Invitation",
-          "desc": "A full-stack wedding invitation web app with countdown timer, event details, and RSVP functionality. Built a responsive UI with React and Tailwind CSS, optimized for both desktop and mobile devices."
+          "desc": "Personal Project: A full-stack wedding invitation web app with countdown timer, event details, and RSVP functionality. Built a responsive UI with React and Tailwind CSS, optimized for both desktop and mobile devices."
         },
         "himlam": {
           "title": "Booking Tour HimLamTourist",
-          "desc": "A full-stack tour booking platform with separate modules for customer, admin, and API services. Features tour search, filtering, and reservation flow with NestJS and PostgreSQL via Supabase."
+          "desc": "Personal Project: A full-stack tour booking platform with separate modules for customer, admin, and API services. Features tour search, filtering, and reservation flow with NestJS and PostgreSQL via Supabase."
         },
         "apple": {
           "title": "Apple Store",
-          "desc": "A full-stack e-commerce web app simulating the Apple Store with product listings, shopping cart, and order management. Built with core PHP and MVC architecture with a relational MySQL database."
+          "desc": "Personal Project: A full-stack e-commerce web app simulating the Apple Store with product listings, shopping cart, and order management. Built with core PHP and MVC architecture with a relational MySQL database."
         }
       }
     },
@@ -106,11 +110,11 @@
     "achievements": {
       "viewAll": "View experience",
       "apetech1": {
-        "title": "Enterprise HRM & CMS Projects",
-        "desc": "Developed HRM and Digital Signage CMS platforms for enterprise operations."
+        "title": "Enterprise ERP Systems (HRM, FnB, PMS)",
+        "desc": "Developed enterprise-grade ERP solutions for HR, FnB chains, and property management."
       },
       "apetech2": {
-        "title": "1+ Year Official Experience",
+        "title": "2+ Years Official Experience",
         "desc": "In charge of Web Admin, Mobile App, and RESTful API systems."
       },
       "apetech3": {
@@ -127,13 +131,13 @@
       },
       "projects": {
         "title": "9+ Projects Built",
-        "desc": "Including HRM, Digital Signage CMS, HimLamTourist, Wedding..."
+        "desc": "Including ERP ecosystems (HRM, FnB, PMS) and diverse personal projects..."
       }
     }
   },
   "profile": {
     "jobTitle": "Software Engineer (Full-Stack)",
-    "bio": "Hello! I'm a Full-Stack Developer with 1+ years of full-time experience at APETECH Solutions. I specialize in building scalable web and mobile applications, from enterprise management systems (HRM, Digital Signage CMS) to modern e-commerce platforms.",
+    "bio": "Hello! I'm a Full-Stack Software Engineer with 2+ years of full-time experience at APETECH Solutions. I specialize in building large-scale Enterprise ERP Systems (HRM, FnB, PMS) and high-performance Web/Mobile architectures, alongside independent personal projects.",
     "yearsExp": "years exp",
     "githubProjects": "projects in GitHub",
     "visitors": "visitors",
@@ -142,11 +146,11 @@
   },
   "about": {
     "title": "About Me",
-    "description": "Hello! I'm a Full-Stack Developer passionate about crafting modern user interfaces and robust backend architectures. Currently working as a full-time Software Engineer at <strong>APETECH Solutions</strong> (1+ years of experience). I continuously research and advance my skills through enterprise projects.",
+    "description": "Hello! I'm a Full-Stack Developer passionate about crafting modern user interfaces and robust backend architectures. Currently working as a full-time Software Engineer at <strong>APETECH Solutions</strong> (2+ years of experience). I continuously research and advance my skills through enterprise projects.",
     "intro": [
-      "Hi! I'm a Full-Stack Developer with over 1 year of full-time experience at APETECH Solutions in developing enterprise-grade web & mobile applications. I am passionate about learning new technologies and engineering robust solutions for complex business workflows.",
-      "My core technical stack includes React, Angular, React Native, NestJS, ASP.NET Core, TypeScript, PostgreSQL, and MySQL. I have hands-on experience building real-world enterprise products such as Human Resource Management (HRM) systems, Digital Signage CMS, and e-commerce platforms.",
-      "I prioritize clean code architecture, system performance, and intuitive user experiences while actively collaborating in an Agile/Scrum environment."
+      "Hi! I'm a Full-Stack Developer with 2+ years of full-time experience at APETECH Solutions, specializing in Enterprise ERP Systems such as HRM, FnB, and PMS. Currently, I am also actively researching and building modern ERP solutions.",
+      "My core technical stack includes React, Angular, React Native, NestJS, ASP.NET Core, TypeScript, PostgreSQL, and MySQL. Alongside enterprise ERP systems, the remaining projects are personal projects that I independently developed.",
+      "I prioritize clean code architecture, system performance, and intuitive user experiences while collaborating effectively in an Agile/Scrum environment."
     ],
     "personalInfo": {
       "title": "Personal Information",
@@ -191,7 +195,7 @@
     "achievements": "Achievements",
     "roles": {
       "webDev": "Software Engineer (Full-Stack)",
-      "fulltime": "Full-time (1+ Year Official)"
+      "fulltime": "Full-time (2+ Years Official)"
     },
     "apetech": {
       "desc": "Designing, developing, and maintaining enterprise software systems (Web Admin, Mobile App, Backend API) in a professional Agile team environment across frontend, mobile, backend, and databases.",
@@ -203,7 +207,7 @@
         "Collaborate closely with team members following Agile/Scrum workflow to deliver sprint commitments on schedule"
       ],
       "achieve": [
-        "Promoted to official Software Engineer with 1+ years of dedicated contributions to core enterprise products",
+        "Promoted to official Software Engineer with 2+ years of dedicated contributions to core enterprise products",
         "Successfully developed and deployed HRM and Digital Signage CMS platforms for production use",
         "Improved system stability, data processing throughput, and user experience across both Web and Mobile platforms"
       ]
@@ -213,55 +217,69 @@
       "studentBoard": {
         "title": "Faculty Student Executive Board",
         "role": "Committee Member",
-        "desc": "Represented students and coordinated academic and extracurricular events at faculty level."
+        "desc": "Represented student body and organized faculty-level academic and extracurricular events."
       },
       "codeClub": {
         "title": "Competitive Programming Club",
         "role": "Member",
-        "desc": "Participated in algorithm challenges and programming contests to strengthen problem-solving skills."
+        "desc": "Engaged in algorithm challenges and hackathons to strengthen problem-solving skills."
       }
     },
     "workStyle": {
       "title": "Work Style",
       "agile": {
         "title": "Agile & Collaborative",
-        "desc": "Adapt well to Agile/Scrum methodology and work efficiently in cross-functional teams."
+        "desc": "Highly adaptable to Agile/Scrum methodologies, working seamlessly in cross-functional teams."
       },
       "problemSolver": {
         "title": "Problem Solver",
-        "desc": "Approach problems methodically, debug systematically, and find efficient solutions."
+        "desc": "Approaches challenges methodically with systematic debugging and efficient solutions."
       },
       "learner": {
         "title": "Continuous Learner",
-        "desc": "Continuously learn and apply new technologies quickly in real-world projects."
+        "desc": "Constantly learning and rapidly applying cutting-edge technologies to real-world projects."
       },
       "quality": {
-        "title": "Quality Focused",
-        "desc": "Prioritize code quality, system stability, and a smooth user experience."
+        "title": "Quality-Focused",
+        "desc": "Committed to code quality, system robustness, and polished user experience."
       },
       "teamPlayer": {
         "title": "Team Player",
-        "desc": "Communicate clearly, support teammates, and contribute actively to team goals."
+        "desc": "Clear communicator, supportive teammate, and proactive contributor to sprint goals."
       },
       "results": {
-        "title": "Results Driven",
-        "desc": "Focus on delivering features on schedule and resolving issues that impact the system."
+        "title": "Results-Driven",
+        "desc": "Focused on delivering features on schedule and solving blockers efficiently."
       }
     },
     "cta": "Let's work together!",
-    "ctaDesc": "I'm always looking for new opportunities to apply my experience and skills to exciting projects."
+    "ctaDesc": "I'm always looking for new opportunities to bring my experience and passion to exciting projects."
   },
   "education": {
     "title": "Education & Projects",
-    "subtitle": "Academic background and hands-on projects built throughout my learning journey.",
+    "subtitle": "My academic background and hands-on projects completed throughout my learning journey.",
     "formal": "Formal Education",
-    "degree": "Bachelor of Software Engineering",
+    "degree": "Software Engineering",
     "school": "Saigon University",
     "location": "Ho Chi Minh City, Vietnam",
     "desc": "Studying Software Engineering with a focus on web development, database systems, and software engineering principles.",
     "courses": "Main Courses",
     "activities": "Activities",
     "projects": "Projects",
+    "gpa": "GPA: Good",
+    "coursesList": [
+      "Object-Oriented Programming (OOP)",
+      "Web & Application Development",
+      "Data Structures & Algorithms",
+      "Database Management",
+      "Discrete Mathematics",
+      "Linear Algebra",
+      "Probability & Statistics"
+    ],
+    "activitiesList": [
+      "Competitive Programming Club Member",
+      "Member of Faculty Student Executive Board"
+    ],
     "timeline": {
       "title": "Development Journey",
       "uniStart": "University Start",
@@ -270,7 +288,7 @@
       "coreCSDesc": "OOP, Data Structures & Algorithms, Web Development",
       "personal": "Personal Projects",
       "personalDesc": "React, PHP, MySQL, Git — built first real projects",
-      "professional": "Official (1+ Year)",
+      "professional": "Official (2+ Years)",
       "professionalDesc": "Full-Stack Developer at APETECH Solutions: Developing HRM (.NET, Angular, React Native) and Digital Signage CMS (NestJS, React)"
     },
     "philosophy": {
@@ -357,6 +375,15 @@
     },
     "cta": "Got a project idea?",
     "ctaDesc": "I'm always open to discussing new and exciting projects. Reach out so we can turn your idea into reality!",
+    "githubRepos": "GitHub Repositories (Auto-Synced)",
+    "githubReposSubtitle": "All public source code repositories on my GitHub, automatically synced in real time.",
+    "searchPlaceholder": "Search repositories by name or technology...",
+    "allLanguages": "All",
+    "openGithub": "View Code",
+    "liveDemo": "Live Demo",
+    "updated": "Updated",
+    "noReposFound": "No matching repositories found.",
+    "viewAllOnGithub": "View all repositories on GitHub",
     "list": {
       "hrm": {
         "name": "Human Resource Management (HRM) System",

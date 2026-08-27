@@ -21,7 +21,7 @@ function Highlights() {
               />
             </div>
           </div>
-          <span className="max-w-18 truncate text-xs text-secondary-text">
+          <span className="max-w-20 truncate text-center text-xs font-medium text-secondary-text">
             {h.label}
           </span>
         </div>

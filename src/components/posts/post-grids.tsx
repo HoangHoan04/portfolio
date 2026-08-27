@@ -11,7 +11,7 @@ interface PostGridProps {
 
 function PostGrid({ onSelectProject }: PostGridProps) {
   return (
-    <div className="grid grid-cols-3 gap-1 md:gap-1">
+    <div className="grid grid-cols-3 gap-2 sm:gap-3 py-3">
       {portfolioProjects.map((project, index) => {
         if (onSelectProject) {
           return (

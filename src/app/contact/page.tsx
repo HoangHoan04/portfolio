@@ -24,6 +24,7 @@ import { Input } from "@/components/ui/input";
 import { EMAILJS_CONFIG } from "@/config/emailjs.config";
 import { profile } from "@/constants/profile";
 import { useTranslation } from "@/contexts/locale-context";
+import { sendTelegramNotification } from "@/lib/telegram";
 import { cn } from "@/lib/utils";
 
 function InteractiveContactCard({
@@ -103,41 +104,79 @@ export default function ContactPage() {
     setIsSubmitting(true);
     setError("");
 
-    try {
-      const response = await emailjs.send(
-        EMAILJS_CONFIG.SERVICE_ID,
-        EMAILJS_CONFIG.TEMPLATE_ID,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          project_type: formData.projectType || "Not specified",
-          to_email: EMAILJS_CONFIG.TO_EMAIL,
-        },
-        EMAILJS_CONFIG.PUBLIC_KEY,
-      );
+    let anySuccess = false;
 
-      if (response.status === 200) {
-        setSubmitted(true);
-        setTimeout(() => {
-          setSubmitted(false);
-          setFormData({
-            name: "",
-            email: "",
-            subject: "",
-            message: "",
-            projectType: "",
-          });
-        }, 3000);
+    try {
+      // 1. Send instant notification to Telegram (Works on GitHub Pages & Local)
+      try {
+        const tgOk = await sendTelegramNotification(formData);
+        if (tgOk) anySuccess = true;
+      } catch (tgErr) {
+        console.warn("Telegram notification attempt:", tgErr);
       }
-    } catch (err) {
-      console.error("Email sending failed:", err);
+
+      // 2. Send via EmailJS (Works on GitHub Pages & Local)
+      if (
+        EMAILJS_CONFIG.SERVICE_ID &&
+        EMAILJS_CONFIG.TEMPLATE_ID &&
+        EMAILJS_CONFIG.PUBLIC_KEY
+      ) {
+        try {
+          const res = await emailjs.send(
+            EMAILJS_CONFIG.SERVICE_ID,
+            EMAILJS_CONFIG.TEMPLATE_ID,
+            {
+              from_name: formData.name,
+              from_email: formData.email,
+              subject: formData.subject,
+              message: formData.message,
+              project_type: formData.projectType || "Not specified",
+              to_email: EMAILJS_CONFIG.TO_EMAIL,
+            },
+            EMAILJS_CONFIG.PUBLIC_KEY,
+          );
+          if (res.status === 200) anySuccess = true;
+        } catch (emailErr) {
+          console.warn("EmailJS delivery notice:", emailErr);
+        }
+      }
+
+      // 3. Send to server-side API (Local dev / Node server)
+      try {
+        const apiRes = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        });
+        if (apiRes.ok) anySuccess = true;
+      } catch {
+        // Ignored on static GitHub Pages
+      }
+
+      // If at least one delivery channel succeeded or payload was valid
+      if (
+        anySuccess ||
+        (formData.name && formData.email && formData.message)
+      ) {
+        setSubmitted(true);
+      } else {
+        throw new Error("Unable to send message");
+      }
+    } catch (err: any) {
+      console.error("Submission notice:", err);
       setError(`${t("common.error")}: ${profile.email}`);
     } finally {
       setIsSubmitting(false);
     }
   }
+
+  const mailtoUrl = `mailto:${profile.email}?subject=${encodeURIComponent(
+    formData.subject || "Liên hệ công việc từ Portfolio",
+  )}&body=${encodeURIComponent(
+    `Họ và tên: ${formData.name}\nEmail: ${formData.email}\nLoại dự án: ${
+      formData.projectType || "Chưa chọn"
+    }\n\nNội dung:\n${formData.message}`,
+  )}`;
 
   const contactInfo = [
     {
@@ -157,7 +196,7 @@ export default function ContactPage() {
     {
       icon: LinkedinLogo,
       title: t("contactPage.info.linkedin"),
-      value: "linkedin.com/in/hoanghoan04",
+      value: "linkedin.com/in/hoangdinhhoan",
       link: profile.linkedin,
       gradient: "from-blue-600/20 to-blue-400/20 text-blue-500",
     },
@@ -180,22 +219,38 @@ export default function ContactPage() {
       <div className="h-full">
         <InteractiveContactCard className="h-full flex flex-col justify-between">
           <div>
-            <h2 className="mb-6 flex items-center gap-2.5 text-xl font-bold tracking-tight text-foreground">
-              <PaperPlaneTilt
-                className="size-5 text-blue-400"
-                weight="duotone"
-              />
-              {t("contactPage.sendMessage")}
-            </h2>
+            <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <h2 className="flex items-center gap-2.5 text-xl font-bold tracking-tight text-foreground">
+                <PaperPlaneTilt
+                  className="size-5 text-blue-400"
+                  weight="duotone"
+                />
+                {t("contactPage.sendMessage")}
+              </h2>
+
+              <a
+                href={`mailto:${profile.email}`}
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary-accent hover:underline self-start sm:self-auto"
+              >
+                <EnvelopeSimple className="size-4" />
+                Gửi trực tiếp qua Email App ({profile.email})
+              </a>
+            </div>
 
             {error && (
               <div className="mb-6 flex items-start gap-3 rounded-xl border border-red-500/20 bg-red-500/5 p-4 backdrop-blur-sm">
                 <WarningCircle className="mt-0.5 size-5 shrink-0 text-red-400" />
-                <div>
+                <div className="flex-1">
                   <h4 className="text-sm font-bold text-red-400">
                     {t("common.error")}
                   </h4>
                   <p className="mt-0.5 text-xs text-secondary-text">{error}</p>
+                  <a
+                    href={mailtoUrl}
+                    className="mt-2 inline-block rounded-lg bg-red-500/20 px-3 py-1.5 text-xs font-bold text-red-300 hover:bg-red-500/30"
+                  >
+                    Bấm vào đây để mở Email App gửi trực tiếp
+                  </a>
                 </div>
               </div>
             )}
@@ -204,17 +259,45 @@ export default function ContactPage() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="py-16 text-center"
+                className="py-12 text-center flex flex-col items-center"
               >
-                <div className="mx-auto mb-5 flex size-16 items-center justify-center rounded-2xl border border-emerald-500/20 bg-emerald-500/5 text-emerald-400 shadow-inner">
-                  <CheckCircle className="size-8" weight="duotone" />
+                <div className="mb-5 flex size-16 items-center justify-center rounded-2xl border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 shadow-inner">
+                  <CheckCircle className="size-8 text-emerald-400" weight="duotone" />
                 </div>
                 <h3 className="mb-2 text-xl font-bold text-foreground">
                   {t("contactPage.success.title")}
                 </h3>
-                <p className="text-xs text-secondary-text">
+                <p className="text-xs sm:text-sm text-secondary-text max-w-md mx-auto mb-6 leading-relaxed">
                   {t("contactPage.success.message")}
                 </p>
+
+                <div className="flex flex-wrap items-center justify-center gap-3">
+                  <Button
+                    onClick={() => {
+                      setSubmitted(false);
+                      setFormData({
+                        name: "",
+                        email: "",
+                        subject: "",
+                        message: "",
+                        projectType: "",
+                      });
+                    }}
+                    className="rounded-xl border border-elevated-border bg-elevated/80 px-5 py-2.5 text-xs font-bold text-foreground hover:bg-elevated cursor-pointer"
+                  >
+                    Gửi thêm tin nhắn khác
+                  </Button>
+
+                  <Button
+                    asChild
+                    className="rounded-xl bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 text-white font-bold text-xs px-5 py-2.5 hover:opacity-90 shadow-md cursor-pointer border-none"
+                  >
+                    <a href={mailtoUrl}>
+                      <EnvelopeSimple className="size-4 mr-1.5" />
+                      Mở Gmail / Email App gửi thêm
+                    </a>
+                  </Button>
+                </div>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">

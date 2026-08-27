@@ -1,6 +1,7 @@
 "use client";
 
 import HeaderPageChild from "@/components/pages/page-header-child";
+import { GitHubReposSection } from "@/components/projects/github-repos-section";
 import { SectionCard } from "@/components/pages/section-card";
 import { Button } from "@/components/ui/button";
 import { TechIcon } from "@/components/ui/tech-icon";
@@ -447,6 +448,8 @@ export default function ProjectsPage() {
           </AnimatePresence>
         </motion.div>
       </section>
+
+      <GitHubReposSection />
 
       <SectionCard className="relative overflow-hidden border border-elevated-border bg-elevated py-10 text-center shadow-xl">
         <div className="absolute -left-20 -top-20 h-48 w-48 rounded-full bg-primary-accent/10 blur-3xl" />

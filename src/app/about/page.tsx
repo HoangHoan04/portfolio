@@ -185,21 +185,21 @@ export default function AboutPage() {
     <div className="px-4 md:px-6">
       <HeaderPageChild text={t("about.title")} />
 
-      <div className="mb-12 grid grid-cols-1 items-stretch gap-10 lg:grid-cols-2">
+      <div className="mb-12 grid grid-cols-1 items-stretch gap-8 lg:grid-cols-2">
         <div
           ref={tilt.ref}
           onMouseMove={tilt.onMouseMove}
           onMouseLeave={tilt.onMouseLeave}
           style={tilt.style}
-          className="will-change-transform"
+          className="will-change-transform h-full"
         >
-          <SectionCard className="relative overflow-hidden p-0">
-            <div className="relative aspect-4/5 w-full bg-[#1a1a1a]">
+          <SectionCard className="relative overflow-hidden p-0 h-full rounded-2xl border border-elevated-border shadow-2xl">
+            <div className="relative size-full min-h-[380px] lg:min-h-full bg-[#1a1a1a]">
               <Image
                 src={profile.avatar}
                 alt={profile.fullName}
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
               />
@@ -210,64 +210,76 @@ export default function AboutPage() {
                   background: `radial-gradient(circle at ${tilt.glare.x}% ${tilt.glare.y}%, rgba(255,255,255,0.85), transparent 45%)`,
                 }}
               />
-              <div className="absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/30 to-transparent" />
 
-              <div className="absolute right-4 top-4 flex items-center gap-1.5 rounded-full border border-elevated-border bg-black/60 px-3 py-1.5 backdrop-blur-sm">
+              <div className="absolute right-4 top-4 flex items-center gap-2 rounded-full border border-emerald-500/30 bg-black/70 px-3 py-1.5 backdrop-blur-md shadow-sm">
                 <span className="relative flex size-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary-accent opacity-75" />
-                  <span className="relative inline-flex size-2 rounded-full bg-primary-accent" />
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
                 </span>
-                <span className="text-xs font-medium text-[#e5e5e5]">
+                <span className="text-xs font-semibold text-emerald-400">
                   Open to work
                 </span>
               </div>
 
               <div className="absolute bottom-0 left-0 right-0 p-6">
-                <p className="text-sm font-medium text-primary-accent">
+                <p className="text-sm font-semibold text-primary-accent">
                   {profile.jobTitle}
                 </p>
-                <h2 className="text-2xl font-bold">{profile.fullName}</h2>
+                <h2 className="text-2xl font-black text-white">{profile.fullName}</h2>
               </div>
             </div>
           </SectionCard>
         </div>
 
-        <div className="flex flex-col justify-center gap-6">
-          <div className="overflow-hidden rounded-xl border border-elevated-border bg-elevated shadow-2xl">
-            <div className="flex items-center gap-2 border-b border-elevated-border bg-elevated-hover px-4 py-2.5">
+        <div className="flex flex-col justify-between gap-5 h-full">
+          <div className="flex-1 flex flex-col overflow-hidden rounded-2xl border border-elevated-border bg-elevated/70 shadow-2xl backdrop-blur-xl">
+            <div className="flex items-center gap-2 border-b border-elevated-border bg-elevated-hover/80 px-4 py-3">
               <span className="size-3 rounded-full bg-[#ff5f56]" />
               <span className="size-3 rounded-full bg-[#ffbd2e]" />
               <span className="size-3 rounded-full bg-[#27c93f]" />
-              <span className="ml-2 flex items-center gap-1.5 text-xs text-secondary-text">
+              <span className="ml-2 flex items-center gap-1.5 text-xs font-mono text-secondary-text">
                 <Terminal className="size-3.5" />
                 whoami.sh
               </span>
             </div>
-            <div className="min-h-55 px-5 py-5 font-mono text-sm leading-relaxed text-secondary-text">
-              {renderedLines.map((line, i) => (
-                <p key={i} className="mb-3">
-                  <span className="mr-2 text-primary-accent">$</span>
-                  {line}
-                </p>
-              ))}
-              {!done && (
-                <p className="mb-3">
-                  <span className="mr-2 text-primary-accent">$</span>
-                  {currentText}
-                  <span className="ml-0.5 inline-block h-4 w-2 animate-pulse bg-primary-accent align-middle" />
-                </p>
-              )}
+            <div className="relative flex-1 p-6 font-mono text-sm leading-relaxed text-secondary-text">
+              <div className="invisible select-none pointer-events-none" aria-hidden="true">
+                {intro.map((line, i) => (
+                  <p key={i} className="mb-4">
+                    <span className="mr-2 text-primary-accent">$</span>
+                    {line}
+                  </p>
+                ))}
+              </div>
+
+              <div className="absolute inset-0 p-6 overflow-y-auto">
+                {renderedLines.map((line, i) => (
+                  <p key={i} className="mb-4">
+                    <span className="mr-2 text-primary-accent">$</span>
+                    {line}
+                  </p>
+                ))}
+                {!done && (
+                  <p className="mb-4">
+                    <span className="mr-2 text-primary-accent">$</span>
+                    {currentText}
+                    <span className="ml-0.5 inline-block h-4 w-2 animate-pulse bg-primary-accent align-middle" />
+                  </p>
+                )}
+              </div>
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 w-full">
             <Button
               asChild
-              className="border-0 bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 text-white hover:opacity-90 transition-opacity"
+              className="h-12 rounded-xl border-0 bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 text-white font-bold hover:opacity-95 hover:scale-[1.02] transition-all shadow-md cursor-pointer"
             >
               <a
                 href={getAssetPath("/files/CV___Hoang_Hoan.pdf")}
                 download="Hoang-Dinh-Hoan-CV.pdf"
+                className="flex items-center justify-center gap-2"
               >
                 <Download className="size-4" />
                 {t("common.downloadCv")}
@@ -276,10 +288,10 @@ export default function AboutPage() {
             <Button
               asChild
               variant="outline"
-              className="border-elevated-border"
+              className="h-12 rounded-xl border-elevated-border bg-elevated/80 text-foreground font-bold hover:bg-elevated hover:border-primary-accent/50 hover:scale-[1.02] transition-all shadow-xs cursor-pointer"
             >
-              <Link href="/contact">
-                <Mail className="size-4" />
+              <Link href="/contact" className="flex items-center justify-center gap-2">
+                <Mail className="size-4 text-primary-accent" />
                 {t("common.contact")}
               </Link>
             </Button>

@@ -17,18 +17,17 @@ import { usePathname } from "next/navigation";
 
 import { LanguageToggle } from "@/components/ui/language-toggle";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { useTranslation } from "@/contexts/locale-context";
 import { cn } from "@/lib/utils";
 
-import { SidebarTab } from "@/constants/enum";
-
 const navItems = [
-  { label: SidebarTab.HOME, icon: Home, href: "/" },
-  { label: SidebarTab.ABOUT, icon: Compass, href: "/about" },
-  { label: SidebarTab.PROJECTS, icon: Film, href: "/projects" },
-  { label: SidebarTab.SKILLS, icon: Layers, href: "/skills" },
-  { label: SidebarTab.EXPERIENCE, icon: Heart, href: "/experience" },
-  { label: SidebarTab.EDUCATION, icon: GraduationCap, href: "/education" },
-  { label: SidebarTab.CONTACT, icon: User, href: "/contact" },
+  { id: "home", labelKey: "nav.home", icon: Home, href: "/" },
+  { id: "about", labelKey: "nav.about", icon: Compass, href: "/about" },
+  { id: "projects", labelKey: "nav.projects", icon: Film, href: "/projects" },
+  { id: "skills", labelKey: "nav.skills", icon: Layers, href: "/skills" },
+  { id: "experience", labelKey: "nav.experience", icon: Heart, href: "/experience" },
+  { id: "education", labelKey: "nav.education", icon: GraduationCap, href: "/education" },
+  { id: "contact", labelKey: "nav.contact", icon: User, href: "/contact" },
 ];
 
 function Sidebar({
@@ -43,6 +42,7 @@ function Sidebar({
   onHover: (hovering: boolean) => void;
 }) {
   const pathname = usePathname();
+  const { t } = useTranslation();
 
   return (
     <aside
@@ -72,10 +72,11 @@ function Sidebar({
           const isActive =
             (item.href === "/" && pathname === "/") ||
             (item.href !== "/" && pathname.startsWith(item.href));
+          const label = t(item.labelKey);
 
           return (
             <Link
-              key={item.label}
+              key={item.id}
               href={item.href}
               className={cn(
                 "flex shrink-0 items-center rounded-lg py-3 text-base transition-colors duration-200",
@@ -84,13 +85,13 @@ function Sidebar({
                   ? "font-semibold text-sidebar-active-text"
                   : "font-normal text-sidebar-text hover:text-sidebar-hover-text hover:bg-sidebar-hover-bg",
               )}
-              title={!expanded ? item.label : undefined}
+              title={!expanded ? label : undefined}
             >
               <item.icon
                 className="size-6 shrink-0"
                 strokeWidth={isActive ? 2.5 : 1.5}
               />
-              {expanded && <span className="truncate">{item.label}</span>}
+              {expanded && <span className="truncate">{label}</span>}
             </Link>
           );
         })}
@@ -100,15 +101,17 @@ function Sidebar({
         <button
           onClick={onToggle}
           className={cn(
-            "flex w-full shrink-0 items-center rounded-lg py-3 text-base text-sidebar-text transition-colors duration-200 hover:text-sidebar-hover-text hover:bg-sidebar-hover-bg",
+            "flex w-full shrink-0 items-center rounded-lg py-3 text-base text-sidebar-text transition-colors duration-200 hover:text-sidebar-hover-text hover:bg-sidebar-hover-bg cursor-pointer",
             expanded ? "gap-4 px-3" : "justify-center px-0",
           )}
-          title={pinned ? "Unpin sidebar" : "Pin sidebar"}
+          title={pinned ? t("common.unpinSidebar") : t("common.pinSidebar")}
         >
           {expanded ? (
             <>
               <PanelLeftClose className="size-6 shrink-0" />
-              <span className="truncate">{pinned ? "Unpin" : "Pin"}</span>
+              <span className="truncate">
+                {pinned ? t("common.unpin") : t("common.pin")}
+              </span>
             </>
           ) : (
             <PanelLeft className="size-6 shrink-0" />

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "msg_1787814251993_yxlly",
+    "name": "Anh Hùng",
+    "email": "hoanghoan010404@gmail.com",
+    "subject": "LÀm dự án nào ngon",
+    "message": "TÔi có 2 con chó",
+    "projectType": "fullstack",
+    "createdAt": "2026-08-27T07:04:11.993Z",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+  },
+  {
+    "id": "msg_1787813878005_0evqy",
+    "name": "Hoang Hoan",
+    "email": "recruiter@example.com",
+    "subject": "Job Offer",
+    "message": "Hi Hoang Hoan",
+    "projectType": "ERP",
+    "createdAt": "2026-08-27T06:57:58.005Z",
+    "userAgent": "node"
+  }
+]
