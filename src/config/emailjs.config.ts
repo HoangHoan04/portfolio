@@ -2,5 +2,6 @@ export const EMAILJS_CONFIG = {
   PUBLIC_KEY: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? "",
   SERVICE_ID: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "",
   TEMPLATE_ID: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "",
-  TO_EMAIL: process.env.NEXT_PUBLIC_TO_EMAIL ?? "hoanghoanpineapple04@gmail.com",
+  TO_EMAIL:
+    process.env.NEXT_PUBLIC_TO_EMAIL ?? "hoanghoanpineapple04@gmail.com",
 };

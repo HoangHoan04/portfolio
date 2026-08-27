@@ -469,6 +469,15 @@
       "emailPlaceholder": "email@example.com",
       "projectType": "Project Type",
       "projectPlaceholder": "Select project type",
+      "projectOptions": {
+        "erp": "Enterprise ERP (HRM, FnB, PMS,...)",
+        "webApp": "Web Application (React / Next.js / Angular)",
+        "mobileApp": "Mobile Application (React Native)",
+        "backendApi": "Backend & RESTful API (NestJS / .NET)",
+        "consultation": "Consultation & System Architecture",
+        "fullstack": "Full-Stack Project",
+        "other": "Other Inquiry"
+      },
       "subject": "Subject *",
       "subjectPlaceholder": "Brief summary",
       "message": "Message *",

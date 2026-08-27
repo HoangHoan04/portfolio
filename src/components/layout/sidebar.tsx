@@ -23,8 +23,18 @@ const navItems = [
   { id: "about", labelKey: "nav.about", icon: Compass, href: "/about" },
   { id: "projects", labelKey: "nav.projects", icon: Film, href: "/projects" },
   { id: "skills", labelKey: "nav.skills", icon: Layers, href: "/skills" },
-  { id: "experience", labelKey: "nav.experience", icon: Heart, href: "/experience" },
-  { id: "education", labelKey: "nav.education", icon: GraduationCap, href: "/education" },
+  {
+    id: "experience",
+    labelKey: "nav.experience",
+    icon: Heart,
+    href: "/experience",
+  },
+  {
+    id: "education",
+    labelKey: "nav.education",
+    icon: GraduationCap,
+    href: "/education",
+  },
   { id: "contact", labelKey: "nav.contact", icon: User, href: "/contact" },
 ];
 
@@ -34,7 +44,6 @@ function Sidebar() {
 
   return (
     <aside className="fixed left-0 top-0 z-40 hidden h-screen w-18 flex-col items-center border-r border-elevated-border bg-sidebar py-5 md:flex">
-      {/* Logo */}
       <div className="relative group mb-5 flex justify-center">
         <Link
           href="/"
@@ -43,14 +52,12 @@ function Sidebar() {
         >
           <FolderCode className="size-6 text-foreground" />
         </Link>
-        {/* Tooltip Popup */}
         <div className="pointer-events-none absolute left-full top-1/2 ml-3 -translate-y-1/2 rounded-lg border border-white/10 bg-zinc-900/95 dark:bg-zinc-800/95 px-2.5 py-1 text-xs font-semibold text-white shadow-xl backdrop-blur-md opacity-0 -translate-x-1.5 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0 z-50 whitespace-nowrap">
           Hoang Hoan
           <div className="absolute -left-1 top-1/2 -translate-y-1/2 border-4 border-transparent border-r-zinc-900/95 dark:border-r-zinc-800/95" />
         </div>
       </div>
 
-      {/* Nav items */}
       <nav className="flex flex-1 flex-col items-center gap-2 w-full px-2">
         {navItems.map((item) => {
           const isActive =
@@ -59,7 +66,10 @@ function Sidebar() {
           const label = t(item.labelKey);
 
           return (
-            <div key={item.id} className="relative group w-full flex justify-center">
+            <div
+              key={item.id}
+              className="relative group w-full flex justify-center"
+            >
               <Link
                 href={item.href}
                 className={cn(
@@ -76,7 +86,6 @@ function Sidebar() {
                 />
               </Link>
 
-              {/* Tooltip Popup */}
               <div className="pointer-events-none absolute left-full top-1/2 ml-3 -translate-y-1/2 rounded-lg border border-white/10 bg-zinc-900/95 dark:bg-zinc-800/95 px-2.5 py-1 text-xs font-semibold text-white shadow-xl backdrop-blur-md opacity-0 -translate-x-1.5 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0 z-50 whitespace-nowrap">
                 {label}
                 <div className="absolute -left-1 top-1/2 -translate-y-1/2 border-4 border-transparent border-r-zinc-900/95 dark:border-r-zinc-800/95" />
@@ -86,7 +95,6 @@ function Sidebar() {
         })}
       </nav>
 
-      {/* Bottom Toggles: Theme & Language */}
       <div className="mt-auto flex flex-col items-center gap-2 w-full px-2 pt-3 border-t border-elevated-border/60">
         <ThemeToggle />
         <LanguageToggle />

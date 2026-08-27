@@ -21,9 +21,7 @@ export const metadata: Metadata = {
   title: "Hoang Hoan (@hoandh.dev)",
   description: "Software Engineer - Portfolio",
   icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-    ],
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
     shortcut: "/favicon.svg",
     apple: "/favicon.svg",
   },

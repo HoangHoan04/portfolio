@@ -20,6 +20,7 @@ import { useRef, useState } from "react";
 import HeaderPageChild from "@/components/pages/page-header-child";
 import { SectionCard } from "@/components/pages/section-card";
 import { Button } from "@/components/ui/button";
+import { Combobox } from "@/components/ui/combobox";
 import { Input } from "@/components/ui/input";
 import { EMAILJS_CONFIG } from "@/config/emailjs.config";
 import { profile } from "@/constants/profile";
@@ -106,7 +107,6 @@ export default function ContactPage() {
     let anySuccess = false;
 
     try {
-      // 1. Send instant notification to Telegram (Works on GitHub Pages & Local)
       try {
         const tgOk = await sendTelegramNotification(formData);
         if (tgOk) anySuccess = true;
@@ -114,7 +114,6 @@ export default function ContactPage() {
         console.warn("Telegram notification attempt:", tgErr);
       }
 
-      // 2. Send via EmailJS (Works on GitHub Pages & Local)
       if (
         EMAILJS_CONFIG.SERVICE_ID &&
         EMAILJS_CONFIG.TEMPLATE_ID &&
@@ -140,7 +139,6 @@ export default function ContactPage() {
         }
       }
 
-      // 3. Send to server-side API (Local dev / Node server)
       try {
         const apiRes = await fetch("/api/contact", {
           method: "POST",
@@ -149,14 +147,10 @@ export default function ContactPage() {
         });
         if (apiRes.ok) anySuccess = true;
       } catch {
-        // Ignored on static GitHub Pages
+        //! Ignored on static GitHub Pages
       }
 
-      // If at least one delivery channel succeeded or payload was valid
-      if (
-        anySuccess ||
-        (formData.name && formData.email && formData.message)
-      ) {
+      if (anySuccess || (formData.name && formData.email && formData.message)) {
         setSubmitted(true);
       } else {
         throw new Error("Unable to send message");
@@ -208,6 +202,28 @@ export default function ContactPage() {
     },
   ];
 
+  const projectTypeOptions = [
+    { value: "erp", label: t("contactPage.form.projectOptions.erp") },
+    { value: "webApp", label: t("contactPage.form.projectOptions.webApp") },
+    {
+      value: "mobileApp",
+      label: t("contactPage.form.projectOptions.mobileApp"),
+    },
+    {
+      value: "backendApi",
+      label: t("contactPage.form.projectOptions.backendApi"),
+    },
+    {
+      value: "fullstack",
+      label: t("contactPage.form.projectOptions.fullstack"),
+    },
+    {
+      value: "consultation",
+      label: t("contactPage.form.projectOptions.consultation"),
+    },
+    { value: "other", label: t("contactPage.form.projectOptions.other") },
+  ];
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 md:px-6">
       <HeaderPageChild text={t("contactPage.title")} />
@@ -226,14 +242,6 @@ export default function ContactPage() {
                 />
                 {t("contactPage.sendMessage")}
               </h2>
-
-              <a
-                href={`mailto:${profile.email}`}
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary-accent hover:underline self-start sm:self-auto"
-              >
-                <EnvelopeSimple className="size-4" />
-                Gửi trực tiếp qua Email App ({profile.email})
-              </a>
             </div>
 
             {error && (
@@ -248,29 +256,30 @@ export default function ContactPage() {
                     href={mailtoUrl}
                     className="mt-2 inline-block rounded-lg bg-red-500/20 px-3 py-1.5 text-xs font-bold text-red-300 hover:bg-red-500/30"
                   >
-                    Bấm vào đây để mở Email App gửi trực tiếp
+                    Gửi trực tiếp bằng ứng dụng Email
                   </a>
                 </div>
               </div>
             )}
 
             {submitted ? (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="py-12 text-center flex flex-col items-center"
-              >
-                <div className="mb-5 flex size-16 items-center justify-center rounded-2xl border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 shadow-inner">
-                  <CheckCircle className="size-8 text-emerald-400" weight="duotone" />
+              <div className="py-12 text-center flex flex-col items-center justify-center">
+                <div className="mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-linear-to-tr from-yellow-400 via-red-500 to-purple-600 p-0.5">
+                  <div className="flex size-full items-center justify-center rounded-full bg-background">
+                    <CheckCircle
+                      className="size-8 text-emerald-400"
+                      weight="fill"
+                    />
+                  </div>
                 </div>
-                <h3 className="mb-2 text-xl font-bold text-foreground">
+                <h3 className="text-2xl font-bold tracking-tight text-foreground">
                   {t("contactPage.success.title")}
                 </h3>
-                <p className="text-xs sm:text-sm text-secondary-text max-w-md mx-auto mb-6 leading-relaxed">
-                  {t("contactPage.success.message")}
+                <p className="mx-auto mt-2 max-w-md text-sm text-secondary-text">
+                  {t("contactPage.success.desc")}
                 </p>
 
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full max-w-md mx-auto">
+                <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full max-w-md">
                   <button
                     type="button"
                     onClick={() => {
@@ -283,21 +292,23 @@ export default function ContactPage() {
                         projectType: "",
                       });
                     }}
-                    className="w-full sm:w-1/2 inline-flex items-center justify-center gap-2 h-11 px-4 rounded-xl border border-elevated-border bg-elevated/80 text-xs font-semibold text-foreground hover:border-primary-accent/40 hover:bg-elevated hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer shadow-xs"
+                    className="w-full sm:w-1/2 h-11 inline-flex items-center justify-center gap-2 rounded-xl border border-elevated-border bg-elevated/80 px-5 text-sm font-semibold text-foreground backdrop-blur-md transition-all duration-200 hover:bg-elevated hover:border-primary-accent/40 hover:scale-[1.02] active:scale-[0.98] cursor-pointer shadow-xs"
                   >
-                    <PaperPlaneTilt className="size-4 text-blue-400" />
+                    <PaperPlaneTilt className="size-4" weight="bold" />
                     <span>{t("contactPage.success.sendAnother")}</span>
                   </button>
 
                   <a
-                    href={mailtoUrl}
-                    className="w-full sm:w-1/2 inline-flex items-center justify-center gap-2 h-11 px-4 rounded-xl bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 text-xs font-bold text-white shadow-md hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer text-center"
+                    href={`mailto:${profile.email}?subject=${encodeURIComponent(
+                      formData.subject || "Liên hệ công việc",
+                    )}`}
+                    className="w-full sm:w-1/2 h-11 inline-flex items-center justify-center gap-2 rounded-xl bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 px-5 text-sm font-bold text-white shadow-md transition-all duration-200 hover:opacity-95 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
                   >
                     <EnvelopeSimple className="size-4" weight="bold" />
-                    <span>{t("contactPage.success.openMail")}</span>
+                    <span>{t("contactPage.success.openEmail")}</span>
                   </a>
                 </div>
-              </motion.div>
+              </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
@@ -343,47 +354,18 @@ export default function ContactPage() {
                     >
                       {t("contactPage.form.projectType")}
                     </label>
-                    <select
-                      id="projectType"
-                      name="projectType"
+                    <Combobox
+                      options={projectTypeOptions}
                       value={formData.projectType}
-                      onChange={handleChange}
-                      className="flex h-10 w-full rounded-lg border border-elevated-border bg-elevated/40 px-3 text-sm text-foreground placeholder:text-secondary-text focus:outline-none focus:ring-2 focus:ring-blue-500/40"
-                    >
-                      <option value="" className="bg-elevated text-foreground">
-                        {t("contactPage.form.projectPlaceholder")}
-                      </option>
-                      <option
-                        value="web-app"
-                        className="bg-elevated text-foreground"
-                      >
-                        Web Application
-                      </option>
-                      <option
-                        value="api"
-                        className="bg-elevated text-foreground"
-                      >
-                        API Development
-                      </option>
-                      <option
-                        value="fullstack"
-                        className="bg-elevated text-foreground"
-                      >
-                        Full-Stack Project
-                      </option>
-                      <option
-                        value="consultation"
-                        className="bg-elevated text-foreground"
-                      >
-                        Consultation
-                      </option>
-                      <option
-                        value="other"
-                        className="bg-elevated text-foreground"
-                      >
-                        Other
-                      </option>
-                    </select>
+                      onChange={(val) =>
+                        setFormData((prev) => ({ ...prev, projectType: val }))
+                      }
+                      placeholder={
+                        t("contactPage.form.projectPlaceholder") as string
+                      }
+                      searchPlaceholder="Tìm kiếm loại dự án..."
+                      emptyText="Không tìm thấy kết quả"
+                    />
                   </div>
 
                   <div className="space-y-2">

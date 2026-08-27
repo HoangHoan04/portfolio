@@ -469,6 +469,15 @@
       "emailPlaceholder": "email@example.com",
       "projectType": "Loại Dự Án",
       "projectPlaceholder": "Chọn loại dự án",
+      "projectOptions": {
+        "erp": "Hệ Thống ERP (HRM, FnB, PMS,...)",
+        "webApp": "Ứng Dụng Web (React / Next.js / Angular)",
+        "mobileApp": "Ứng Dụng Di Động (React Native / Mobile)",
+        "backendApi": "Hệ Thống Backend API (NestJS / .NET / Node)",
+        "consultation": "Tư Vấn Giải Pháp & Kiến Trúc",
+        "fullstack": "Dự Án Full-Stack Trọn Gói",
+        "other": "Khác / Trao đổi chung"
+      },
       "subject": "Tiêu Đề *",
       "subjectPlaceholder": "Tóm tắt ngắn gọn",
       "message": "Nội Dung *",

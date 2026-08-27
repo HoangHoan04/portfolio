@@ -76,9 +76,7 @@ export default function ProfilePage() {
         <PostModal id={selectedProjectId} onClose={handleCloseModal} />
       )}
 
-      {!started && (
-        <StartScreen onComplete={handleStartComplete} />
-      )}
+      {!started && <StartScreen onComplete={handleStartComplete} />}
     </div>
   );
 }

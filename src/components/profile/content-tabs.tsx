@@ -28,7 +28,9 @@ function ContentTabs({
           onClick={() => onTabChange(tab.label)}
           className={cn(
             "relative flex flex-1 items-center justify-center gap-1.5 py-3 sm:py-4 text-[10px] sm:text-xs font-semibold uppercase tracking-wider transition-colors duration-200 cursor-pointer",
-            activeTab === tab.label ? "text-foreground" : "text-secondary-text hover:text-foreground/80",
+            activeTab === tab.label
+              ? "text-foreground"
+              : "text-secondary-text hover:text-foreground/80",
           )}
         >
           <tab.icon className="size-3.5 sm:size-4 shrink-0" />

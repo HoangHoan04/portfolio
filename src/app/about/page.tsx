@@ -226,7 +226,9 @@ export default function AboutPage() {
                 <p className="text-sm font-semibold text-primary-accent">
                   {profile.jobTitle}
                 </p>
-                <h2 className="text-2xl font-black text-white">{profile.fullName}</h2>
+                <h2 className="text-2xl font-black text-white">
+                  {profile.fullName}
+                </h2>
               </div>
             </div>
           </SectionCard>
@@ -244,7 +246,10 @@ export default function AboutPage() {
               </span>
             </div>
             <div className="relative flex-1 p-6 font-mono text-sm leading-relaxed text-secondary-text">
-              <div className="invisible select-none pointer-events-none" aria-hidden="true">
+              <div
+                className="invisible select-none pointer-events-none"
+                aria-hidden="true"
+              >
                 {intro.map((line, i) => (
                   <p key={i} className="mb-4">
                     <span className="mr-2 text-primary-accent">$</span>
@@ -290,7 +295,10 @@ export default function AboutPage() {
               variant="outline"
               className="h-12 rounded-xl border-elevated-border bg-elevated/80 text-foreground font-bold hover:bg-elevated hover:border-primary-accent/50 hover:scale-[1.02] transition-all shadow-xs cursor-pointer"
             >
-              <Link href="/contact" className="flex items-center justify-center gap-2">
+              <Link
+                href="/contact"
+                className="flex items-center justify-center gap-2"
+              >
                 <Mail className="size-4 text-primary-accent" />
                 {t("common.contact")}
               </Link>

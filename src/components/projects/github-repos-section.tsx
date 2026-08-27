@@ -283,7 +283,8 @@ export function GitHubReposSection() {
                   )}
                 >
                   <span className={cn("size-2.5 rounded-full", theme.dot)} />
-                  {lang} <span className="opacity-60 text-[11px]">({count})</span>
+                  {lang}{" "}
+                  <span className="opacity-60 text-[11px]">({count})</span>
                 </button>
               );
             })}
@@ -426,11 +427,18 @@ export function GitHubReposSection() {
                             theme.badge,
                           )}
                         >
-                          <span className={cn("size-1.5 rounded-full shrink-0", theme.dot)} />
+                          <span
+                            className={cn(
+                              "size-1.5 rounded-full shrink-0",
+                              theme.dot,
+                            )}
+                          />
                           {repo.language}
                         </span>
                       ) : (
-                        <span className="text-[11px] text-secondary-text">Source Code</span>
+                        <span className="text-[11px] text-secondary-text">
+                          Source Code
+                        </span>
                       )}
 
                       <span className="inline-flex items-center gap-1 text-[11px] text-secondary-text/80">

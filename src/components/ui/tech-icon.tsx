@@ -16,7 +16,8 @@ function TechIcon({ name, iconKey, size = 16, className, alt }: TechIconProps) {
 
   if (!src) return null;
 
-  const isDarkIcon = src.toLowerCase().includes("next") || src.toLowerCase().includes("github");
+  const isDarkIcon =
+    src.toLowerCase().includes("next") || src.toLowerCase().includes("github");
 
   return (
     <Image
@@ -27,7 +28,7 @@ function TechIcon({ name, iconKey, size = 16, className, alt }: TechIconProps) {
       className={cn(
         "shrink-0 object-contain",
         isDarkIcon && "dark:invert",
-        className
+        className,
       )}
     />
   );

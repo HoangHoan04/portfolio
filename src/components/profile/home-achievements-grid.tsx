@@ -31,7 +31,10 @@ function HomeAchievementsGrid() {
             <div className="relative z-10 flex size-full flex-col justify-between p-2.5 sm:p-3.5">
               <div className="flex items-center justify-between gap-1">
                 <div className="flex size-8 sm:size-9 items-center justify-center rounded-lg border border-white/15 bg-black/40 backdrop-blur-md transition-transform duration-300 group-hover:scale-110">
-                  <Trophy className="size-4 sm:size-5 text-amber-300" weight="duotone" />
+                  <Trophy
+                    className="size-4 sm:size-5 text-amber-300"
+                    weight="duotone"
+                  />
                 </div>
                 <span className="rounded-full border border-white/15 bg-white/10 px-2 py-0.5 text-[8px] sm:text-[9px] font-medium text-white/90 backdrop-blur-md">
                   {item.year}

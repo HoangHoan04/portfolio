@@ -124,7 +124,8 @@ export default function ExperiencePage() {
     { year: "2024", skills: "React, PHP, MySQL, Git", level: "Intermediate" },
     {
       year: "2025 - Now",
-      skills: "Angular, React Native, NestJS, ASP.NET Core, TypeScript, PostgreSQL",
+      skills:
+        "Angular, React Native, NestJS, ASP.NET Core, TypeScript, PostgreSQL",
       level: "Full-Stack Developer (2+ Năm Chính Thức)",
     },
   ];

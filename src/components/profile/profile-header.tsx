@@ -286,7 +286,10 @@ function ProfileHeader() {
             asChild
             className="flex-1 rounded-lg bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 text-sm font-semibold text-white hover:opacity-90 transition-opacity duration-200"
           >
-            <a href={getAssetPath("/files/CV___Hoang_Hoan.pdf")} download="Hoang-Hoan-CV.pdf">
+            <a
+              href={getAssetPath("/files/CV___Hoang_Hoan.pdf")}
+              download="Hoang-Hoan-CV.pdf"
+            >
               {t("common.downloadCv")}
             </a>
           </Button>
@@ -305,7 +308,10 @@ function ProfileHeader() {
           asChild
           className="flex-1 h-9 rounded-lg text-white bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 text-sm font-semibold hover:opacity-90 transition-opacity duration-200"
         >
-          <a href={getAssetPath("/files/CV___Hoang_Hoan.pdf")} download="Hoang-Hoan-CV.pdf">
+          <a
+            href={getAssetPath("/files/CV___Hoang_Hoan.pdf")}
+            download="Hoang-Hoan-CV.pdf"
+          >
             {t("common.resume")}
           </a>
         </Button>

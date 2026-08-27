@@ -43,7 +43,11 @@ export const technicalGroups: SkillGroup[] = [
     skills: [
       { name: "React", icon: "react", tags: ["Hooks", "Redux", "Context"] },
       { name: "Angular", icon: "angular", tags: ["RxJS", "NgModule"] },
-      { name: "React Native", icon: "react", tags: ["Cross-Platform", "Mobile App"] },
+      {
+        name: "React Native",
+        icon: "react",
+        tags: ["Cross-Platform", "Mobile App"],
+      },
       {
         name: "TypeScript",
         icon: "typescript",
@@ -125,8 +129,16 @@ export const toolsGroups: SkillGroup[] = [
       },
       { name: "Visual Studio", icon: "vs", tags: [".NET", "Debugging"] },
       { name: "Cursor", icon: "cursor", tags: ["AI Coding", "Composer"] },
-      { name: "Antigravity", icon: "antigravity", tags: ["AI Assistant", "Agentic Coding"] },
-      { name: "Android Studio", icon: "androidStudio", tags: ["Android", "SDK", "Emulator"] },
+      {
+        name: "Antigravity",
+        icon: "antigravity",
+        tags: ["AI Assistant", "Agentic Coding"],
+      },
+      {
+        name: "Android Studio",
+        icon: "androidStudio",
+        tags: ["Android", "SDK", "Emulator"],
+      },
     ],
   },
   {
@@ -194,6 +206,11 @@ export const softSkills: SoftSkill[] = [
 export const skillStats = [
   { labelKey: "skills.stats.tech", value: 12, suffix: "+", icon: "code" },
   { labelKey: "skills.stats.projects", value: 9, suffix: "+", icon: "box" },
-  { labelKey: "skills.stats.experience", value: 12, suffix: "+", icon: "calendar" },
+  {
+    labelKey: "skills.stats.experience",
+    value: 12,
+    suffix: "+",
+    icon: "calendar",
+  },
   { labelKey: "skills.stats.commits", value: 100, suffix: "+", icon: "github" },
 ];

@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  Compass,
-  Film,
-  Heart,
-  Home,
-  Mail,
-} from "lucide-react";
+import { Compass, Film, Heart, Home, Mail } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -18,7 +12,12 @@ const navItems = [
   { id: "home", labelKey: "nav.home", icon: Home, href: "/" },
   { id: "about", labelKey: "nav.about", icon: Compass, href: "/about" },
   { id: "projects", labelKey: "nav.projects", icon: Film, href: "/projects" },
-  { id: "experience", labelKey: "nav.experience", icon: Heart, href: "/experience" },
+  {
+    id: "experience",
+    labelKey: "nav.experience",
+    icon: Heart,
+    href: "/experience",
+  },
   { id: "contact", labelKey: "nav.contact", icon: Mail, href: "/contact" },
 ];
 

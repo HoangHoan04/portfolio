@@ -6,7 +6,9 @@ export interface TelegramMessageParams {
   projectType?: string;
 }
 
-export async function sendTelegramNotification(params: TelegramMessageParams): Promise<boolean> {
+export async function sendTelegramNotification(
+  params: TelegramMessageParams,
+): Promise<boolean> {
   const botToken = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN;
   const chatId = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID;
 
@@ -29,15 +31,18 @@ export async function sendTelegramNotification(params: TelegramMessageParams): P
       `⏰ *Thời gian:* ${new Date().toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" })}`,
     ].join("\n");
 
-    const res = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        chat_id: chatId,
-        text,
-        parse_mode: "Markdown",
-      }),
-    });
+    const res = await fetch(
+      `https://api.telegram.org/bot${botToken}/sendMessage`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text,
+          parse_mode: "Markdown",
+        }),
+      },
+    );
 
     return res.ok;
   } catch (error) {

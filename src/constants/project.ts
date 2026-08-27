@@ -26,7 +26,8 @@ export const projects: Project[] = [
   {
     id: "3",
     title: "Apple Store",
-    description: "E-commerce web app simulating Apple Store with PHP and MySQL.",
+    description:
+      "E-commerce web app simulating Apple Store with PHP and MySQL.",
     type: "Full-Stack",
     thumbnail: "https://picsum.photos/seed/apple-store/600/600",
     link_github: ["https://github.com/HoangHoan04/AppleStore"],

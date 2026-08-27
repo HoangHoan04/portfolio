@@ -28,20 +28,35 @@ function PostDetailContent({ id }: { id: string }) {
   const project = portfolioProjects.find((p) => p.id === id);
 
   if (!project) {
-    return <div className="py-20 text-center text-secondary-text">Project not found</div>;
+    return (
+      <div className="py-20 text-center text-secondary-text">
+        Project not found
+      </div>
+    );
   }
 
-  const gradient = project.gradient || gradients[Number(project.id) % gradients.length];
+  const gradient =
+    project.gradient || gradients[Number(project.id) % gradients.length];
   const iconSrc = getProjectIcon(project.technologies);
   const title = t(project.titleKey);
   const description = t(project.descKey);
-  const categoryLabel = project.category === "fullstack" ? "Full-Stack" : project.category === "frontend" ? "Frontend" : "Backend";
+  const categoryLabel =
+    project.category === "fullstack"
+      ? "Full-Stack"
+      : project.category === "frontend"
+        ? "Frontend"
+        : "Backend";
 
   return (
     <div className="overflow-hidden rounded-2xl border border-elevated-border bg-elevated">
       <div className="flex flex-col md:flex-row">
         <div className="relative aspect-square w-full shrink-0 bg-elevated-hover md:w-[50%] flex items-center justify-center">
-          <div className={cn("relative flex size-full items-center justify-center overflow-hidden bg-linear-to-br min-h-[280px]", gradient)}>
+          <div
+            className={cn(
+              "relative flex size-full items-center justify-center overflow-hidden bg-linear-to-br min-h-[280px]",
+              gradient,
+            )}
+          >
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-size-[20px_20px]" />
             <div className="relative z-10 flex size-24 items-center justify-center rounded-2xl border border-white/10 bg-black/20 backdrop-blur-sm shadow-xl">
               <NextImage
@@ -59,7 +74,9 @@ function PostDetailContent({ id }: { id: string }) {
             {categoryLabel}
           </p>
           <h1 className="mb-4 text-2xl font-bold">{title}</h1>
-          <p className="mb-6 leading-relaxed text-secondary-text">{description}</p>
+          <p className="mb-6 leading-relaxed text-secondary-text">
+            {description}
+          </p>
           <div className="mb-8 flex flex-wrap gap-2">
             {project.technologies.map((tech) => (
               <span
@@ -130,7 +147,9 @@ function PostModal({ id, onClose }: { id: string; onClose?: () => void }) {
           <X className="size-5" />
         </button>
         {!project ? (
-          <div className="p-8 text-center text-secondary-text">Project not found</div>
+          <div className="p-8 text-center text-secondary-text">
+            Project not found
+          </div>
         ) : (
           <PostDetailContent id={id} />
         )}

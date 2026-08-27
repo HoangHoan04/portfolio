@@ -9,12 +9,7 @@ import {
 } from "@/constants/skills-data";
 
 export type SearchResultType =
-  | "page"
-  | "project"
-  | "skill"
-  | "reel"
-  | "certificate"
-  | "achievement";
+  "page" | "project" | "skill" | "reel" | "certificate" | "achievement";
 
 export type SearchItem = {
   id: string;
@@ -27,7 +22,12 @@ export type SearchItem = {
 
 const pages: SearchItem[] = [
   { id: "page-about", type: "page", titleKey: "nav.about", href: "/about" },
-  { id: "page-projects", type: "page", titleKey: "nav.projects", href: "/projects" },
+  {
+    id: "page-projects",
+    type: "page",
+    titleKey: "nav.projects",
+    href: "/projects",
+  },
   { id: "page-skills", type: "page", titleKey: "nav.skills", href: "/skills" },
   {
     id: "page-experience",
@@ -41,7 +41,12 @@ const pages: SearchItem[] = [
     titleKey: "nav.education",
     href: "/education",
   },
-  { id: "page-contact", type: "page", titleKey: "nav.contact", href: "/contact" },
+  {
+    id: "page-contact",
+    type: "page",
+    titleKey: "nav.contact",
+    href: "/contact",
+  },
   { id: "page-reels", type: "page", titleKey: "reels.title", href: "/reels" },
 ];
 
@@ -129,13 +134,17 @@ export function filterSearchCatalog(
   if (!q) return [];
 
   return catalog.filter((item) => {
-    const title = item.titleKey.includes(".") ? t(item.titleKey) : item.titleKey;
+    const title = item.titleKey.includes(".")
+      ? t(item.titleKey)
+      : item.titleKey;
     const desc = item.descKey
       ? item.descKey.includes(".")
         ? t(item.descKey)
         : item.descKey
       : "";
-    const haystack = [title, desc, ...(item.tags ?? [])].join(" ").toLowerCase();
+    const haystack = [title, desc, ...(item.tags ?? [])]
+      .join(" ")
+      .toLowerCase();
     return haystack.includes(q);
   });
 }

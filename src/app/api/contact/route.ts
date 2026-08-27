@@ -3,7 +3,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { join } from "path";
 
 const MESSAGES_FILE = join(process.cwd(), "data", "messages.json");
-const TO_EMAIL = process.env.NEXT_PUBLIC_TO_EMAIL || "hoanghoanpineapple04@gmail.com";
+const TO_EMAIL =
+  process.env.NEXT_PUBLIC_TO_EMAIL || "hoanghoanpineapple04@gmail.com";
 
 export interface ContactMessage {
   id: string;
@@ -62,13 +63,13 @@ export async function POST(req: NextRequest) {
       userAgent: req.headers.get("user-agent") || undefined,
     };
 
-    // 1. Always persist message locally
     await saveMessage(newMessage);
 
     let emailSent = false;
 
-    // 2. If Web3Forms Access Key is provided in env
-    const web3Key = process.env.WEB3FORMS_ACCESS_KEY || process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+    const web3Key =
+      process.env.WEB3FORMS_ACCESS_KEY ||
+      process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
     if (web3Key) {
       try {
         const w3Res = await fetch("https://api.web3forms.com/submit", {
@@ -99,10 +100,7 @@ export async function POST(req: NextRequest) {
     console.error("Contact API error:", error);
     const errorMessage =
       error instanceof Error ? error.message : "Lỗi xử lý gửi liên hệ.";
-    return NextResponse.json(
-      { error: errorMessage },
-      { status: 500 },
-    );
+    return NextResponse.json({ error: errorMessage }, { status: 500 });
   }
 }
 
