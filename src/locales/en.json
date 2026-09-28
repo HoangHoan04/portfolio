@@ -40,7 +40,7 @@
   "home": {
     "hero": {
       "title": "Hi! I'm HoangHoan",
-      "description": "Hello! I'm a Full-Stack Software Engineer passionate about building scalable, modern enterprise software systems with high performance and clean architecture. I am currently working as a full-time Software Engineer at <strong>APETECH Solutions</strong> (2+ years of experience), specializing in Enterprise ERP Systems (HRM, FnB, PMS) and actively building modern ERP solutions.",
+      "description": "Full-Stack Developer with 1.5 years of production experience building enterprise web and SaaS systems for F&amp;B retail and sports management, using React, Angular, NestJS, and PostgreSQL. Delivered core workflows for a 36-branch F&amp;B chain and a large multi-cluster pickleball platform at <strong>APETECH Solutions</strong>. Also building ASP.NET Core systems (HRM, multi-tenant SaaS) as self-directed projects.",
       "resume": "Resume",
       "github": "GitHub",
       "linkedin": "LinkedIn",
@@ -48,35 +48,35 @@
       "contact": "Contact Me"
     },
     "roles": [
-      "Software Engineer (Full-Stack)",
-      "Frontend Developer",
-      "Backend & API Developer",
-      "Mobile App Developer"
+      "Full-Stack Developer",
+      "React · Angular · Next.js",
+      "NestJS · ASP.NET Core",
+      "React Native"
     ],
     "projects": {
       "title": "Featured Projects",
-      "subtitle": "Notable enterprise and personal projects I've built",
+      "subtitle": "Production work at APETECH and self-directed projects",
       "viewAll": "View all projects",
       "list": {
-        "hrm": {
-          "title": "Human Resource Management (HRM ERP)",
-          "desc": "APETECH Enterprise Project: A comprehensive human resource management solution integrating a mobile app for attendance/leave requests (React Native), an admin web portal (Angular), and a high-performance RESTful API (.NET Core & PostgreSQL)."
+        "americano": {
+          "title": "Americano — F&B Retail",
+          "desc": "APETECH production work for a chain of about 36 branches: purchase order, stock liquidation, item-locking, and audit logging workflows in React and NestJS."
         },
-        "cms": {
-          "title": "Digital Signage Content Management System (CMS)",
-          "desc": "Enterprise project: A real-time digital signage content distribution and management platform featuring a central control dashboard (React, Tailwind), backend API for schedules & devices (NestJS, PostgreSQL), and a media Player."
+        "djoy": {
+          "title": "D-Joy Pickleball",
+          "desc": "Court booking and tournament brackets for 3 large court clusters in Saigon, with reservation logic that prevents double-booking under concurrent peak-hour traffic."
+        },
+        "pms": {
+          "title": "PMS SaaS",
+          "desc": "Multi-tenant data schemas, reusable component libraries, and PostgreSQL index tuning for dashboard queries, delivered across Agile sprints."
+        },
+        "hrm": {
+          "title": "SmartHRM — HR Platform",
+          "desc": "Self-directed 3-tier HR system with ASP.NET Core, Angular 19, and React Native: RBAC, dynamic approval chains, payroll, and GPS check-in with geofencing."
         },
         "wedding": {
-          "title": "Wedding Invitation",
-          "desc": "Personal Project: A full-stack wedding invitation web app with countdown timer, event details, and RSVP functionality. Built a responsive UI with React and Tailwind CSS, optimized for both desktop and mobile devices."
-        },
-        "himlam": {
-          "title": "Booking Tour HimLamTourist",
-          "desc": "Personal Project: A full-stack tour booking platform with separate modules for customer, admin, and API services. Features tour search, filtering, and reservation flow with NestJS and PostgreSQL via Supabase."
-        },
-        "apple": {
-          "title": "Apple Store",
-          "desc": "Personal Project: A full-stack e-commerce web app simulating the Apple Store with product listings, shopping cart, and order management. Built with core PHP and MVC architecture with a relational MySQL database."
+          "title": "WIO — Wedding Invitation SaaS",
+          "desc": "Digital invitations with template customization, guest wishbooks, VietQR gifts, live RSVP over NestJS WebSockets, and Next.js SSR Open Graph previews."
         }
       }
     },
@@ -91,53 +91,53 @@
     "certificates": {
       "viewAll": "View education",
       "degree": {
-        "title": "Software Engineering",
+        "title": "Engineer's Degree in Software Engineering",
         "issuer": "Saigon University"
       },
       "webDev": {
-        "title": "Full-Stack & Enterprise Development",
-        "issuer": "Real projects & APETECH"
+        "title": "Academic Excellence Scholarships",
+        "issuer": "2 semesters"
       },
       "database": {
         "title": "Database Management",
-        "issuer": "PostgreSQL & MySQL"
+        "issuer": "Coursework"
       },
       "agile": {
-        "title": "Agile / Scrum Workflow",
+        "title": "Agile / Scrum",
         "issuer": "APETECH Solutions"
       }
     },
     "achievements": {
       "viewAll": "View experience",
       "apetech1": {
-        "title": "Enterprise ERP Systems (HRM, FnB, PMS)",
-        "desc": "Developed enterprise-grade ERP solutions for HR, FnB chains, and property management."
+        "title": "Americano F&B — ~36 Branches",
+        "desc": "Purchase order, stock liquidation, item-locking, and audit logging in React and NestJS."
       },
       "apetech2": {
-        "title": "2+ Years Official Experience",
-        "desc": "In charge of Web Admin, Mobile App, and RESTful API systems."
+        "title": "D-Joy Pickleball",
+        "desc": "Court booking and tournament brackets for 3 large court clusters in Saigon."
       },
       "apetech3": {
-        "title": "Hands-on Agile / Scrum",
-        "desc": "Professional teamwork experience, optimizing production systems."
+        "title": "PMS SaaS",
+        "desc": "Multi-tenant schemas, reusable components, and PostgreSQL indexes for dashboard queries."
       },
       "club": {
-        "title": "Competitive Programming Club",
-        "desc": "Sharpened algorithms and problem solving."
+        "title": "Academic Excellence Scholarships",
+        "desc": "Awarded for 2 semesters at Saigon University. GPA 7.5/10."
       },
       "board": {
-        "title": "Faculty Student Board",
-        "desc": "Coordinated academic events at faculty level."
+        "title": "Faculty Student Executive Board",
+        "desc": "Committee member. Coordinated competitions and orientation for more than 500 students."
       },
       "projects": {
-        "title": "9+ Projects Built",
-        "desc": "Including ERP ecosystems (HRM, FnB, PMS) and diverse personal projects..."
+        "title": "SmartHRM & WIO",
+        "desc": "Self-directed ASP.NET Core HR platform and a Next.js / NestJS wedding invitation SaaS."
       }
     }
   },
   "profile": {
-    "jobTitle": "Software Engineer (Full-Stack)",
-    "bio": "Hello! I'm a Full-Stack Software Engineer with 2+ years of full-time experience at APETECH Solutions. I specialize in building large-scale Enterprise ERP Systems (HRM, FnB, PMS) and high-performance Web/Mobile architectures, alongside independent personal projects.",
+    "jobTitle": "Full-Stack Developer",
+    "bio": "Full-Stack Developer with 1.5 years of production experience at APETECH Solutions, building enterprise web and SaaS systems for F&B retail and sports management with React, Angular, NestJS, and PostgreSQL. Also building ASP.NET Core systems as self-directed projects.",
     "yearsExp": "years exp",
     "githubProjects": "projects in GitHub",
     "visitors": "visitors",
@@ -146,21 +146,21 @@
   },
   "about": {
     "title": "About Me",
-    "description": "Hello! I'm a Full-Stack Developer passionate about crafting modern user interfaces and robust backend architectures. Currently working as a full-time Software Engineer at <strong>APETECH Solutions</strong> (2+ years of experience). I continuously research and advance my skills through enterprise projects.",
+    "description": "Full-Stack Developer with 1.5 years of production experience at <strong>APETECH Solutions</strong>, building enterprise web and SaaS systems for F&amp;B retail and sports management with React, Angular, NestJS, and PostgreSQL.",
     "intro": [
-      "Hi! I'm a Full-Stack Developer with 2+ years of full-time experience at APETECH Solutions, specializing in Enterprise ERP Systems such as HRM, FnB, and PMS. Currently, I am also actively researching and building modern ERP solutions.",
-      "My core technical stack includes React, Angular, React Native, NestJS, ASP.NET Core, TypeScript, PostgreSQL, and MySQL. Alongside enterprise ERP systems, the remaining projects are personal projects that I independently developed.",
-      "I prioritize clean code architecture, system performance, and intuitive user experiences while collaborating effectively in an Agile/Scrum environment."
+      "Full-Stack Developer with 1.5 years of production experience building enterprise web and SaaS systems for F&B retail and sports management, using React, Angular, NestJS, and PostgreSQL.",
+      "At APETECH Solutions (May 2025 – Oct. 2026) I delivered core workflows for Americano, a ~36-branch F&B chain, court booking and tournament brackets for D-Joy Pickleball (3 large court clusters in Saigon), and a multi-tenant PMS SaaS.",
+      "I am also building ASP.NET Core systems (HRM, multi-tenant SaaS) as self-directed projects, including SmartHRM and WIO. Comfortable working in Agile teams."
     ],
     "personalInfo": {
       "title": "Personal Information",
       "fullName": "Full Name",
       "fullNameValue": "Hoang Dinh Hoan",
       "age": "Age",
-      "address": "Current Address",
-      "addressValue": "1002 Ta Quang Buu, Ward 6, District 8, Ho Chi Minh City",
-      "addressNew": "New Address",
-      "addressNewValue": "1002 Ta Quang Buu, Binh Dong Ward, Ho Chi Minh City",
+      "address": "Location",
+      "addressValue": "Ha Noi, Vietnam",
+      "addressNew": "Location",
+      "addressNewValue": "Ha Noi, Vietnam",
       "email": "Email",
       "phone": "Phone",
       "languages": "Languages",
@@ -169,64 +169,71 @@
     "hobbies": {
       "title": "Hobbies",
       "list": {
-        "coding": "Coding",
-        "music": "Listening to Music",
-        "travel": "Traveling",
-        "photography": "Photography",
+        "digital": "Digital transformation",
+        "opensource": "Open-source tools",
         "football": "Football",
-        "badminton": "Badminton"
+        "badminton": "Badminton",
+        "music": "Music"
       }
     },
     "journey": {
       "title": "My Development Journey",
       "official": {
-        "title": "Software Engineer (Full-Stack Developer)",
+        "title": "Full-Stack Web Developer",
         "company": "APETECH Solutions",
-        "desc": "Full-time: Developing enterprise systems (HRM, Digital Signage CMS), building Web Admin portals, Mobile Apps, and RESTful APIs."
+        "desc": "May 2025 – Oct. 2026. Production systems for F&B retail (Americano), sports management (D-Joy Pickleball), and PMS SaaS."
       },
       "university": {
-        "title": "Studied at Saigon University",
-        "company": "Faculty of Information Technology",
-        "desc": "Major in Software Engineering."
+        "title": "Engineer's Degree in Software Engineering",
+        "company": "Saigon University",
+        "desc": "Sep. 2022 – Oct. 2026. GPA 7.5/10. Academic Excellence Scholarships for 2 semesters."
       }
     }
   },
   "experience": {
     "title": "Work Experience",
-    "subtitle": "My career journey through enterprise roles, production projects, and professional activities.",
+    "subtitle": "Production work at APETECH Solutions and faculty student activities.",
     "responsibilities": "Main Responsibilities",
     "technologies": "Technologies",
     "achievements": "Achievements",
     "roles": {
-      "webDev": "Software Engineer (Full-Stack)",
-      "fulltime": "Full-time (2+ Years Official)"
+      "webDev": "Full-Stack Web Developer",
+      "fulltime": "Full-time · 1.5 years"
     },
     "apetech": {
-      "desc": "Designing, developing, and maintaining enterprise software systems (Web Admin, Mobile App, Backend API) in a professional Agile team environment across frontend, mobile, backend, and databases.",
+      "desc": "Built enterprise web and SaaS systems for F&B retail and sports management with React, Angular, NestJS, and PostgreSQL, working in Agile teams.",
       "resp": [
-        "Develop HRM System: Built mobile application for attendance and leave requests (React Native), web admin dashboard (Angular), and backend RESTful API (.NET Core & PostgreSQL)",
-        "Develop Digital Signage CMS: Built central management dashboard (React, TypeScript, Tailwind CSS), backend API for schedules & devices (NestJS), and media Player application",
-        "Design relational database schemas, implement secure RESTful APIs with RBAC authentication",
-        "Diagnose, debug, and optimize application performance ensuring high stability for production environments",
-        "Collaborate closely with team members following Agile/Scrum workflow to deliver sprint commitments on schedule"
+        "F&B Retail (Americano, ~36 branches): Built purchase order, stock liquidation, item-locking, and audit logging workflows in React and NestJS, reducing inventory discrepancy risk and manual approval effort across branches.",
+        "Sports Management (D-Joy Pickleball, 3 large court clusters in Saigon): Built court booking and tournament bracket features for one of the largest pickleball venues in Southeast Asia; designed reservation logic to prevent double-booking under concurrent peak-hour traffic.",
+        "PMS SaaS: Designed multi-tenant data schemas, built reusable component libraries, and tuned PostgreSQL indexes for dashboard queries; delivered APIs across Agile sprints."
       ],
       "achieve": [
-        "Promoted to official Software Engineer with 2+ years of dedicated contributions to core enterprise products",
-        "Successfully developed and deployed HRM and Digital Signage CMS platforms for production use",
-        "Improved system stability, data processing throughput, and user experience across both Web and Mobile platforms"
+        "Delivered core inventory workflows for a 36-branch F&B chain.",
+        "Shipped court booking and tournament brackets that hold up under concurrent peak-hour traffic.",
+        "Designed multi-tenant schemas and tuned PostgreSQL indexes for PMS dashboard queries."
       ]
     },
+    "growth": {
+      "y2022Level": "Started university",
+      "y2022Skills": "Engineer's Degree in Software Engineering, Saigon University",
+      "y2023Level": "Core coursework",
+      "y2023Skills": "Data Structures & Algorithms, Database Management, Software Architecture",
+      "y2024Level": "Faculty Student Executive Board",
+      "y2024Skills": "Committee member — academic competitions and orientation for more than 500 students",
+      "y2025Level": "Full-Stack Web Developer",
+      "y2025Skills": "APETECH Solutions: Americano F&B, D-Joy Pickleball, and PMS SaaS with React, Angular, NestJS, and PostgreSQL"
+    },
     "activities": {
-      "title": "Activities & Clubs",
+      "title": "Activities",
       "studentBoard": {
         "title": "Faculty Student Executive Board",
         "role": "Committee Member",
-        "desc": "Represented student body and organized faculty-level academic and extracurricular events."
+        "desc": "Coordinated academic competitions and orientation events supporting more than 500 students."
       },
       "codeClub": {
-        "title": "Competitive Programming Club",
-        "role": "Member",
-        "desc": "Engaged in algorithm challenges and hackathons to strengthen problem-solving skills."
+        "title": "Faculty Student Executive Board",
+        "role": "Committee Member",
+        "desc": "Coordinated academic competitions and orientation events supporting more than 500 students."
       }
     },
     "workStyle": {
@@ -263,37 +270,33 @@
     "title": "Education & Projects",
     "subtitle": "My academic background and hands-on projects completed throughout my learning journey.",
     "formal": "Formal Education",
-    "degree": "Software Engineering",
+    "degree": "Engineer's Degree in Software Engineering",
     "school": "Saigon University",
     "location": "Ho Chi Minh City, Vietnam",
-    "desc": "Studying Software Engineering with a focus on web development, database systems, and software engineering principles.",
+    "desc": "Sep. 2022 – Oct. 2026. Coursework in Data Structures & Algorithms, Database Management, and Software Architecture. Academic Excellence Scholarships for 2 semesters.",
     "courses": "Main Courses",
     "activities": "Activities",
     "projects": "Projects",
-    "gpa": "GPA: Good",
+    "gpa": "GPA: 7.5/10",
     "coursesList": [
-      "Object-Oriented Programming (OOP)",
-      "Web & Application Development",
       "Data Structures & Algorithms",
       "Database Management",
-      "Discrete Mathematics",
-      "Linear Algebra",
-      "Probability & Statistics"
+      "Software Architecture"
     ],
     "activitiesList": [
-      "Competitive Programming Club Member",
-      "Member of Faculty Student Executive Board"
+      "Academic Excellence Scholarships (2 semesters)",
+      "Faculty Student Executive Board — Committee Member (Sept. 2023 – Sept. 2026), supporting more than 500 students"
     ],
     "timeline": {
       "title": "Development Journey",
       "uniStart": "University Start",
-      "uniStartDesc": "HTML, CSS, JavaScript — programming fundamentals",
-      "coreCS": "Core CS",
-      "coreCSDesc": "OOP, Data Structures & Algorithms, Web Development",
-      "personal": "Personal Projects",
-      "personalDesc": "React, PHP, MySQL, Git — built first real projects",
-      "professional": "Official (2+ Years)",
-      "professionalDesc": "Full-Stack Developer at APETECH Solutions: Developing HRM (.NET, Angular, React Native) and Digital Signage CMS (NestJS, React)"
+      "uniStartDesc": "Began an Engineer's Degree in Software Engineering at Saigon University",
+      "coreCS": "Core Coursework",
+      "coreCSDesc": "Data Structures & Algorithms, Database Management, Software Architecture",
+      "personal": "Faculty Activities",
+      "personalDesc": "Committee member of the Faculty Student Executive Board",
+      "professional": "Production (1.5 Years)",
+      "professionalDesc": "Full-Stack Web Developer at APETECH Solutions: Americano F&B (~36 branches), D-Joy Pickleball, and PMS SaaS with React, Angular, NestJS, and PostgreSQL"
     },
     "philosophy": {
       "title": "Learning Philosophy",
@@ -335,13 +338,16 @@
     "groups": {
       "frontend": "Frontend",
       "backend": "Backend",
-      "database": "Database",
-      "devTools": "Development Tools",
-      "workflow": "Workflow"
+      "languages": "Languages",
+      "frameworks": "Frameworks & Libraries",
+      "database": "Databases & ORM",
+      "devTools": "DevOps & APIs",
+      "workflow": "Agile & AI-Assisted Development"
     },
     "tools": {
       "teamCollab": "Team Collaboration",
-      "bugFixing": "Bug Fixing"
+      "bugFixing": "Bug Fixing",
+      "claude": "Claude"
     },
     "soft": {
       "teamwork": "Teamwork",
@@ -365,7 +371,7 @@
   },
   "projectsPage": {
     "title": "Projects",
-    "subtitle": "Explore enterprise and personal projects I have developed, from enterprise HRM and Digital Signage CMS systems to e-commerce platforms and modern web applications.",
+    "subtitle": "Production systems at APETECH Solutions and self-directed projects: SmartHRM and WIO.",
     "featured": "Featured Projects",
     "allProjects": "Explore all projects",
     "statsProjects": "Projects",
@@ -389,41 +395,25 @@
     "noReposFound": "No matching repositories found.",
     "viewAllOnGithub": "View all repositories on GitHub",
     "list": {
+      "americano": {
+        "name": "Americano — F&B Retail",
+        "desc": "APETECH, May 2025 – Oct. 2026. Built purchase order, stock liquidation, item-locking, and audit logging workflows in React and NestJS for a chain of about 36 branches, reducing inventory discrepancy risk and manual approval effort."
+      },
+      "djoy": {
+        "name": "D-Joy Pickleball — Sports Management",
+        "desc": "APETECH, May 2025 – Oct. 2026. Built court booking and tournament bracket features for 3 large court clusters in Saigon, one of the largest pickleball venues in Southeast Asia. Reservation logic prevents double-booking under concurrent peak-hour traffic."
+      },
+      "pms": {
+        "name": "PMS SaaS",
+        "desc": "APETECH, May 2025 – Oct. 2026. Designed multi-tenant data schemas, built reusable component libraries, and tuned PostgreSQL indexes for dashboard queries. Delivered APIs across Agile sprints."
+      },
       "hrm": {
-        "name": "Human Resource Management (HRM) System",
-        "desc": "Enterprise project: A comprehensive human resource management solution integrating a mobile app for employees (React Native), a web dashboard for admins (Angular), and a back-end RESTful API (.NET Core & PostgreSQL)."
-      },
-      "cms": {
-        "name": "Digital Signage Content Management System (CMS)",
-        "desc": "Enterprise project: A comprehensive digital signage content management system comprising an admin portal (React, Tailwind), a RESTful API server (NestJS, PostgreSQL), and a multimedia content Player."
-      },
-      "himlam": {
-        "name": "Booking Tour HimLamTourist",
-        "desc": "A full-stack tour booking platform with separate modules for customer, admin, and API services. Features tour search, filtering, and reservation flow with NestJS and PostgreSQL via Supabase."
+        "name": "SmartHRM — HR Platform",
+        "desc": "Self-directed, Jan. 2026 – Present. 3-tier HR system with ASP.NET Core Web API, Angular 19, and React Native (.NET 9, PostgreSQL) for learning clean architecture. Fine-grained RBAC, dynamic approval chains, payroll from shift and tax rules, and GPS mobile check-in with geofencing."
       },
       "wedding": {
-        "name": "Wedding Invitation",
-        "desc": "A full-stack wedding invitation web app with countdown timer, event details, and RSVP functionality. Built with React and Tailwind CSS."
-      },
-      "apple": {
-        "name": "Apple Store",
-        "desc": "A full-stack e-commerce web app simulating the Apple Store with product listings, shopping cart, and order management. Built with PHP and MVC architecture."
-      },
-      "adminDashboardAngular": {
-        "name": "Admin Dashboard Template - Angular",
-        "desc": "A modern and intuitive admin dashboard interface template built using Angular, RxJS, and Tailwind CSS."
-      },
-      "adminDashboardVue": {
-        "name": "Admin Dashboard Template - Vue",
-        "desc": "A high-performance template for administrator dashboards, developed with Vue 3, Pinia, and Tailwind CSS."
-      },
-      "adminDashboardNext": {
-        "name": "Admin Dashboard Template - Next.js",
-        "desc": "A versatile and SEO-friendly admin dashboard template built on Next.js, React, and Tailwind CSS."
-      },
-      "adminDashboardReact": {
-        "name": "Admin Dashboard Template - React",
-        "desc": "A minimalist yet fully functional administrator portal template crafted with React and Tailwind CSS."
+        "name": "WIO — Wedding Invitation SaaS",
+        "desc": "Self-directed, Mar. 2026 – Present. Next.js 14, NestJS, PostgreSQL, and WebSockets. Template customization, guest wishbooks, and VietQR gifts, preparing for production. NestJS WebSocket gateways for live RSVP and gift notifications. Next.js SSR and dynamic Open Graph for fast mobile loading and rich link previews."
       }
     }
   },
@@ -470,7 +460,7 @@
       "projectType": "Project Type",
       "projectPlaceholder": "Select project type",
       "projectOptions": {
-        "erp": "Enterprise ERP (HRM, FnB, PMS,...)",
+        "erp": "Enterprise web & SaaS (F&B, sports, PMS)",
         "webApp": "Web Application (React / Next.js / Angular)",
         "mobileApp": "Mobile Application (React Native)",
         "backendApi": "Backend & RESTful API (NestJS / .NET)",
@@ -487,7 +477,7 @@
     },
     "success": {
       "title": "Message Sent Successfully!",
-      "message": "Thank you for reaching out! Your message has been delivered to hoanghoanpineapple04@gmail.com. I will get back to you as soon as possible.",
+      "message": "Thank you for reaching out! Your message has been delivered to hoanghoan14204@gmail.com. I will get back to you as soon as possible.",
       "sendAnother": "Send another message",
       "openMail": "Open Email client"
     },
@@ -513,12 +503,14 @@
     },
     "locationSection": {
       "title": "Location",
-      "desc": "Currently based in Ho Chi Minh City, Vietnam. Open to remote work for suitable projects."
+      "desc": "Based in Ha Noi, Vietnam. Open to remote work for suitable projects.",
+      "city": "Ha Noi",
+      "country": "Vietnam"
     }
   },
   "footer": {
     "rights": "All rights reserved.",
-    "copy": "Copyright © 2025 Hoanghoan."
+    "copy": "Copyright © 2026 Hoang Dinh Hoan."
   },
   "search": {
     "title": "Search",

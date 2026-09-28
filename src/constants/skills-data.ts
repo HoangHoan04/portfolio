@@ -21,6 +21,8 @@ export const SKILL_ICON_MAP: Record<string, string> = {
   antigravity: icons.antigravity,
   androidStudio: icons.androidStudio,
   html: icons.html,
+  docker: icons.docker,
+  nextjs: icons.nextJs,
 };
 
 export type SkillItem = {
@@ -38,58 +40,50 @@ export type SkillGroup = {
 
 export const technicalGroups: SkillGroup[] = [
   {
-    labelKey: "skills.groups.frontend",
-    icon: "desktop",
+    labelKey: "skills.groups.languages",
+    icon: "code",
     skills: [
-      { name: "React", icon: "react", tags: ["Hooks", "Redux", "Context"] },
-      { name: "Angular", icon: "angular", tags: ["RxJS", "NgModule"] },
-      {
-        name: "React Native",
-        icon: "react",
-        tags: ["Cross-Platform", "Mobile App"],
-      },
       {
         name: "TypeScript",
         icon: "typescript",
-        tags: ["Generics", "Decorators"],
+        tags: ["Generics", "Types"],
       },
       {
         name: "JavaScript",
         icon: "javascript",
         tags: ["ES2024", "Async/Await"],
       },
+      { name: "C#", icon: "vs", tags: ["ASP.NET Core", "OOP"] },
+      { name: "SQL", icon: "postgres", tags: ["Queries", "Indexing"] },
       {
-        name: "Tailwind CSS",
-        icon: "tailwind",
-        tags: ["Responsive", "Theme"],
-      },
-      {
-        name: "HTML/CSS",
+        name: "HTML5/CSS3",
         icon: "html",
-        tags: ["Flexbox", "Grid", "Animation"],
+        tags: ["Semantic", "Responsive"],
       },
     ],
   },
   {
-    labelKey: "skills.groups.backend",
-    icon: "server",
+    labelKey: "skills.groups.frameworks",
+    icon: "desktop",
     skills: [
+      { name: "NestJS", icon: "nestjs", tags: ["Guards", "WebSockets"] },
+      { name: "React", icon: "react", tags: ["Hooks", "Components"] },
+      { name: "Next.js", icon: "nextjs", tags: ["SSR", "App Router"] },
+      { name: "Angular", icon: "angular", tags: ["Angular 19", "RxJS"] },
+      {
+        name: "React Native",
+        icon: "react",
+        tags: ["Mobile", "Geofencing"],
+      },
       {
         name: "ASP.NET Core",
         icon: "vs",
-        tags: ["C#", "REST API", "EF Core"],
+        tags: [".NET 9", "Web API", "EF Core"],
       },
       {
-        name: "NestJS",
-        icon: "nestjs",
-        tags: ["Guards", "Interceptors", "DI"],
-      },
-      { name: "TypeScript", icon: "typescript", tags: ["OOP", "Decorators"] },
-      { name: "PHP", icon: "php", tags: ["MVC", "OOP"] },
-      {
-        name: "RESTful API",
-        icon: "networking",
-        tags: ["CRUD", "Auth", "JWT"],
+        name: "Tailwind CSS",
+        icon: "tailwind",
+        tags: ["Responsive", "Theme"],
       },
     ],
   },
@@ -100,12 +94,23 @@ export const technicalGroups: SkillGroup[] = [
       {
         name: "PostgreSQL",
         icon: "postgres",
-        tags: ["Supabase", "Relations", "Indexing"],
+        tags: ["Indexes", "Multi-tenant"],
       },
       {
         name: "MySQL",
         icon: "mysql",
-        tags: ["Query Optimization", "Schema Design"],
+        tags: ["Schema Design", "Queries"],
+      },
+      {
+        name: "Supabase",
+        icon: "postgres",
+        tags: ["Postgres", "Auth"],
+      },
+      { name: "TypeORM", icon: "nestjs", tags: ["Entities", "Migrations"] },
+      {
+        name: "Entity Framework Core",
+        icon: "vs",
+        tags: ["LINQ", "Migrations"],
       },
     ],
   },
@@ -117,27 +122,21 @@ export const toolsGroups: SkillGroup[] = [
     icon: "wrench",
     skills: [
       {
-        name: "Git / GitHub",
+        name: "Git",
         icon: "github",
-        tags: ["PRs", "GitFlow", "Branching"],
+        tags: ["Branching", "Pull Requests"],
       },
-      { name: "VS Code", icon: "vsCode", tags: ["Extensions", "Debugging"] },
+      { name: "Docker", icon: "docker", tags: ["Containers", "Compose"] },
+      { name: "Postman", icon: "networking", tags: ["API Testing", "Collections"] },
       {
-        name: "IntelliJ IDEA",
-        icon: "intellij",
-        tags: ["Refactoring", "Plugins"],
-      },
-      { name: "Visual Studio", icon: "vs", tags: [".NET", "Debugging"] },
-      { name: "Cursor", icon: "cursor", tags: ["AI Coding", "Composer"] },
-      {
-        name: "Antigravity",
-        icon: "antigravity",
-        tags: ["AI Assistant", "Agentic Coding"],
+        name: "RESTful APIs",
+        icon: "networking",
+        tags: ["CRUD", "Auth"],
       },
       {
-        name: "Android Studio",
-        icon: "androidStudio",
-        tags: ["Android", "SDK", "Emulator"],
+        name: "WebSockets",
+        icon: "networking",
+        tags: ["Gateways", "Live Updates"],
       },
     ],
   },
@@ -151,14 +150,14 @@ export const toolsGroups: SkillGroup[] = [
         tags: ["Sprint", "Stand-up", "Retro"],
       },
       {
-        nameKey: "skills.tools.teamCollab",
-        icon: "networking",
-        tags: ["Git", "Code Review"],
+        name: "Cursor",
+        icon: "cursor",
+        tags: ["Code Review", "Refactoring", "Debugging"],
       },
       {
-        nameKey: "skills.tools.bugFixing",
-        icon: "code",
-        tags: ["Debugging", "Root Cause Analysis"],
+        nameKey: "skills.tools.claude",
+        icon: "cursor",
+        tags: ["Code Review", "Refactoring", "Debugging"],
       },
     ],
   },
@@ -204,12 +203,12 @@ export const softSkills: SoftSkill[] = [
 ];
 
 export const skillStats = [
-  { labelKey: "skills.stats.tech", value: 12, suffix: "+", icon: "code" },
-  { labelKey: "skills.stats.projects", value: 9, suffix: "+", icon: "box" },
+  { labelKey: "skills.stats.tech", value: 25, suffix: "", icon: "code" },
+  { labelKey: "skills.stats.projects", value: 5, suffix: "", icon: "box" },
   {
     labelKey: "skills.stats.experience",
-    value: 12,
-    suffix: "+",
+    value: 18,
+    suffix: "",
     icon: "calendar",
   },
   { labelKey: "skills.stats.commits", value: 100, suffix: "+", icon: "github" },

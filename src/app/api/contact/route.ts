@@ -4,7 +4,7 @@ import { join } from "path";
 
 const MESSAGES_FILE = join(process.cwd(), "data", "messages.json");
 const TO_EMAIL =
-  process.env.NEXT_PUBLIC_TO_EMAIL || "hoanghoanpineapple04@gmail.com";
+  process.env.NEXT_PUBLIC_TO_EMAIL || "hoanghoan14204@gmail.com";
 
 export interface ContactMessage {
   id: string;

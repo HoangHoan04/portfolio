@@ -40,7 +40,7 @@
   "home": {
     "hero": {
       "title": "Xin chào! Mình là Hoàng Hoàn",
-      "description": "Chào bạn! Mình là một Full-Stack Developer với niềm đam mê xây dựng các hệ thống phần mềm hiện đại, tối ưu hóa trải nghiệm người dùng và hiệu năng cao. Hiện tại mình là Kỹ sư phần mềm đang làm việc chính thức tại <strong>APETECH Solutions</strong> (2+ năm kinh nghiệm). Mình chuyên sâu về phát triển hệ thống ERP doanh nghiệp (HRM, FnB, PMS) và đang nghiên cứu, xây dựng các giải pháp ERP thế hệ mới.",
+      "description": "Full-Stack Developer với 1,5 năm kinh nghiệm production, xây dựng hệ thống web doanh nghiệp và SaaS cho bán lẻ F&amp;B và quản lý thể thao bằng React, Angular, NestJS và PostgreSQL. Đã triển khai các luồng nghiệp vụ cốt lõi cho chuỗi F&amp;B khoảng 36 chi nhánh và một nền tảng pickleball nhiều cụm sân tại <strong>APETECH Solutions</strong>. Đồng thời tự xây dựng các hệ thống ASP.NET Core (HRM, SaaS đa tenant).",
       "resume": "Tải CV",
       "github": "GitHub",
       "linkedin": "LinkedIn",
@@ -48,35 +48,35 @@
       "contact": "Liên Hệ Ngay"
     },
     "roles": [
-      "Kỹ Sư Phần Mềm (Full-Stack)",
-      "Nhà Phát Triển Frontend",
-      "Nhà Phát Triển Backend & API",
-      "Nhà Phát Triển Mobile App"
+      "Full-Stack Developer",
+      "React · Angular · Next.js",
+      "NestJS · ASP.NET Core",
+      "React Native"
     ],
     "projects": {
       "title": "Dự Án Nổi Bật",
-      "subtitle": "Một số dự án doanh nghiệp và cá nhân tiêu biểu tôi đã thực hiện",
+      "subtitle": "Hệ thống production tại APETECH và các dự án tự thực hiện",
       "viewAll": "Xem tất cả dự án",
       "list": {
-        "hrm": {
-          "title": "Hệ Thống Quản Trị Nhân Sự (HRM)",
-          "desc": "Dự án doanh nghiệp: Hệ thống quản lý nhân sự toàn diện tích hợp ứng dụng di động cho nhân viên chấm công, nghỉ phép (React Native), trang quản lý cho admin (Angular) và hệ thống RESTful API (.NET Core & PostgreSQL)."
+        "americano": {
+          "title": "Americano — Bán lẻ F&B",
+          "desc": "Dự án production tại APETECH cho chuỗi khoảng 36 chi nhánh: đơn mua hàng, thanh lý tồn kho, khóa mặt hàng và ghi log kiểm toán bằng React và NestJS."
         },
-        "cms": {
-          "title": "Hệ Thống Trình Chiếu Kỹ Thuật Số (Digital Signage CMS)",
-          "desc": "Dự án doanh nghiệp: Nền tảng quản lý và phân phối nội dung đa phương tiện lên hệ thống màn hình quảng cáo theo thời gian thực gồm Web Admin điều khiển (React, Tailwind), Backend API (NestJS, PostgreSQL) và trình phát Player."
+        "djoy": {
+          "title": "D-Joy Pickleball",
+          "desc": "Đặt sân và nhánh đấu giải cho 3 cụm sân lớn tại Sài Gòn, với logic đặt chỗ tránh đặt trùng khi lượng truy cập cao vào giờ cao điểm."
+        },
+        "pms": {
+          "title": "PMS SaaS",
+          "desc": "Schema dữ liệu đa tenant, thư viện component dùng lại và tinh chỉnh index PostgreSQL cho truy vấn dashboard, bàn giao theo sprint Agile."
+        },
+        "hrm": {
+          "title": "SmartHRM — Nền tảng nhân sự",
+          "desc": "Dự án tự thực hiện: hệ thống nhân sự 3 tầng với ASP.NET Core, Angular 19 và React Native — RBAC, chuỗi phê duyệt động, tính lương và chấm công GPS có geofence."
         },
         "wedding": {
-          "title": "Thiệp Cưới Điện Tử",
-          "desc": "Dự án cá nhân: Ứng dụng web mời cưới full-stack với bộ đếm ngược, thông tin sự kiện và tính năng RSVP. Xây dựng giao diện responsive với React và Tailwind CSS, tối ưu hóa cho cả thiết bị di động và máy tính."
-        },
-        "himlam": {
-          "title": "Đặt Tour HimLamTourist",
-          "desc": "Dự án cá nhân: Nền tảng đặt tour full-stack với các phân hệ riêng biệt cho khách hàng, quản trị và dịch vụ API. Tính năng tìm kiếm tour, lọc và quy trình đặt chỗ với NestJS và PostgreSQL qua Supabase."
-        },
-        "apple": {
-          "title": "Cửa Hàng Apple",
-          "desc": "Dự án cá nhân: Ứng dụng thương mại điện tử mô phỏng Apple Store với danh sách sản phẩm, giỏ hàng và quản lý đơn hàng. Xây dựng bằng PHP thuần với kiến trúc MVC và cơ sở dữ liệu MySQL."
+          "title": "WIO — SaaS thiệp cưới",
+          "desc": "Thiệp điện tử với tùy biến mẫu, sổ lời chúc, quà VietQR, RSVP trực tiếp qua NestJS WebSocket và xem trước Open Graph bằng Next.js SSR."
         }
       }
     },
@@ -91,53 +91,53 @@
     "certificates": {
       "viewAll": "Xem học vấn",
       "degree": {
-        "title": "Kỹ Sư Kỹ Thuật Phần Mềm",
-        "issuer": "Đại Học Sài Gòn"
+        "title": "Bằng Kỹ sư Kỹ thuật phần mềm",
+        "issuer": "Đại học Sài Gòn"
       },
       "webDev": {
-        "title": "Phát Triển Full-Stack & Enterprise",
-        "issuer": "Dự án thực tế & APETECH"
+        "title": "Học bổng Khuyến khích học tập",
+        "issuer": "2 học kỳ"
       },
       "database": {
-        "title": "Quản Trị Cơ Sở Dữ Liệu",
-        "issuer": "PostgreSQL & MySQL"
+        "title": "Quản trị cơ sở dữ liệu",
+        "issuer": "Môn học"
       },
       "agile": {
-        "title": "Agile / Scrum Workflow",
+        "title": "Agile / Scrum",
         "issuer": "APETECH Solutions"
       }
     },
     "achievements": {
       "viewAll": "Xem kinh nghiệm",
       "apetech1": {
-        "title": "Hệ Thống ERP Doanh Nghiệp (HRM, FnB, PMS)",
-        "desc": "Phát triển các giải pháp ERP chuyên sâu quản lý nhân sự, F&B và vận hành dự án cho doanh nghiệp."
+        "title": "Americano F&B — khoảng 36 chi nhánh",
+        "desc": "Đơn mua hàng, thanh lý tồn kho, khóa mặt hàng và ghi log kiểm toán bằng React và NestJS."
       },
       "apetech2": {
-        "title": "2+ Năm Kinh Nghiệm Chính Thức",
-        "desc": "Phụ trách phát triển Web Admin, Mobile App và hệ thống RESTful API."
+        "title": "D-Joy Pickleball",
+        "desc": "Đặt sân và nhánh đấu giải cho 3 cụm sân lớn tại Sài Gòn."
       },
       "apetech3": {
-        "title": "Agile / Scrum Thực Chiến",
-        "desc": "Kinh nghiệm làm việc chuyên nghiệp, tối ưu hóa hệ thống production."
+        "title": "PMS SaaS",
+        "desc": "Schema đa tenant, component dùng lại và index PostgreSQL cho truy vấn dashboard."
       },
       "club": {
-        "title": "CLB Lập Trình Thi Đấu",
-        "desc": "Rèn luyện thuật toán và giải quyết vấn đề."
+        "title": "Học bổng Khuyến khích học tập",
+        "desc": "2 học kỳ tại Đại học Sài Gòn. GPA 7,5/10."
       },
       "board": {
-        "title": "Ban Chấp Hành Đoàn",
-        "desc": "Điều phối sự kiện học thuật cấp khoa."
+        "title": "Ban Chấp hành Đoàn Khoa",
+        "desc": "Ủy viên. Điều phối cuộc thi học thuật và định hướng cho hơn 500 sinh viên."
       },
       "projects": {
-        "title": "9+ Dự án Đã Xây Dựng",
-        "desc": "Bao gồm các hệ thống ERP (HRM, FnB, PMS) và các dự án cá nhân thực tế..."
+        "title": "SmartHRM & WIO",
+        "desc": "Nền tảng nhân sự ASP.NET Core tự thực hiện và SaaS thiệp cưới Next.js / NestJS."
       }
     }
   },
   "profile": {
-    "jobTitle": "Kỹ Sư Phần Mềm (Full-Stack)",
-    "bio": "Xin chào! Mình là một Full-Stack Developer với 2+ năm kinh nghiệm làm việc chính thức tại APETECH Solutions. Mình chuyên sâu phát triển các hệ thống ERP quy mô doanh nghiệp (HRM, FnB, PMS) và đang chủ động xây dựng các hệ sinh thái ERP thế hệ mới, bên cạnh các dự án cá nhân thực tế.",
+    "jobTitle": "Full-Stack Developer",
+    "bio": "Full-Stack Developer với 1,5 năm kinh nghiệm production tại APETECH Solutions, xây dựng hệ thống web doanh nghiệp và SaaS cho bán lẻ F&B và quản lý thể thao bằng React, Angular, NestJS và PostgreSQL. Đồng thời tự xây dựng các hệ thống ASP.NET Core.",
     "yearsExp": "năm kinh nghiệm",
     "githubProjects": "dự án trên GitHub",
     "visitors": "lượt ghé thăm",
@@ -146,21 +146,21 @@
   },
   "about": {
     "title": "Giới Thiệu",
-    "description": "Chào bạn! Mình là một Full-Stack Developer với niềm đam mê xây dựng các giao diện người dùng hiện đại và hệ thống backend tối ưu. Hiện tại mình là Kỹ sư phần mềm đang làm việc chính thức tại <strong>APETECH Solutions</strong> (2+ năm kinh nghiệm). Mình luôn tích cực học tập, nghiên cứu và nâng cao năng lực qua các dự án doanh nghiệp thực tế.",
+    "description": "Full-Stack Developer với 1,5 năm kinh nghiệm production tại <strong>APETECH Solutions</strong>, xây dựng hệ thống web doanh nghiệp và SaaS cho bán lẻ F&amp;B và quản lý thể thao bằng React, Angular, NestJS và PostgreSQL.",
     "intro": [
-      "Chào bạn! Tôi là một Full-Stack Developer với 2+ năm kinh nghiệm làm việc chính thức tại APETECH Solutions, chuyên sâu phát triển các hệ thống ERP doanh nghiệp như HRM, FnB và PMS. Hiện tại tôi cũng đang chủ động nghiên cứu và xây dựng các hệ thống ERP thế hệ mới.",
-      "Kỹ năng thực chiến của tôi bao gồm React, Angular, React Native, NestJS, ASP.NET Core, TypeScript, PostgreSQL và MySQL. Ngoài các hệ thống ERP cốt lõi tại doanh nghiệp, các dự án còn lại là các project cá nhân đa dạng do tôi tự phát triển.",
-      "Tôi luôn chú trọng vào chất lượng mã nguồn, kiến trúc phần mềm sạch (Clean Architecture & Modular Monolith) và trải nghiệm người dùng mượt mà trong môi trường Agile/Scrum."
+      "Full-Stack Developer với 1,5 năm kinh nghiệm production, xây dựng hệ thống web doanh nghiệp và SaaS cho bán lẻ F&B và quản lý thể thao, dùng React, Angular, NestJS và PostgreSQL.",
+      "Tại APETECH Solutions (05/2025 – 10/2026) tôi đã triển khai luồng nghiệp vụ cho Americano — chuỗi F&B khoảng 36 chi nhánh, đặt sân và nhánh đấu giải cho D-Joy Pickleball (3 cụm sân lớn tại Sài Gòn), và PMS SaaS đa tenant.",
+      "Tôi cũng đang tự xây dựng các hệ thống ASP.NET Core (HRM, SaaS đa tenant), gồm SmartHRM và WIO. Làm việc thoải mái trong nhóm Agile."
     ],
     "personalInfo": {
       "title": "Thông Tin Cá Nhân",
       "fullName": "Họ và Tên",
       "fullNameValue": "Hoàng Đình Hoàn",
       "age": "Tuổi",
-      "address": "Địa Chỉ Hiện Tại",
-      "addressValue": "1002 Tạ Quang Bửu, Phường 6, Quận 8, TP. Hồ Chí Minh",
-      "addressNew": "Địa Chỉ Mới",
-      "addressNewValue": "1002 Tạ Quang Bửu, Phường Bình Đông, TP. Hồ Chí Minh",
+      "address": "Địa điểm",
+      "addressValue": "Hà Nội, Việt Nam",
+      "addressNew": "Địa điểm",
+      "addressNewValue": "Hà Nội, Việt Nam",
       "email": "Email",
       "phone": "Điện Thoại",
       "languages": "Ngôn Ngữ",
@@ -169,64 +169,71 @@
     "hobbies": {
       "title": "Sở Thích",
       "list": {
-        "coding": "Lập Trình",
-        "music": "Nghe Nhạc",
-        "travel": "Du Lịch",
-        "photography": "Nhiếp Ảnh",
-        "football": "Bóng Đá",
-        "badminton": "Cầu Lông"
+        "digital": "Chuyển đổi số",
+        "opensource": "Công cụ mã nguồn mở",
+        "football": "Bóng đá",
+        "badminton": "Cầu lông",
+        "music": "Âm nhạc"
       }
     },
     "journey": {
       "title": "Hành Trình Phát Triển",
       "official": {
-        "title": "Kỹ Sư Phần Mềm (Full-Stack Developer)",
-        "company": "Giải Pháp APETECH Solutions",
-        "desc": "Làm việc chính thức: Phát triển các hệ thống ERP doanh nghiệp (HRM, FnB, PMS), xây dựng Web Admin, Mobile App và RESTful APIs."
+        "title": "Full-Stack Web Developer",
+        "company": "APETECH Solutions",
+        "desc": "05/2025 – 10/2026. Hệ thống production cho bán lẻ F&B (Americano), quản lý thể thao (D-Joy Pickleball) và PMS SaaS."
       },
       "university": {
-        "title": "Học Tập tại Đại học Sài Gòn",
-        "company": "Khoa Công Nghệ Thông Tin",
-        "desc": "Chuyên ngành Kỹ Thuật Phần Mềm."
+        "title": "Bằng Kỹ sư Kỹ thuật phần mềm",
+        "company": "Đại học Sài Gòn",
+        "desc": "09/2022 – 10/2026. GPA 7,5/10. Học bổng Khuyến khích học tập trong 2 học kỳ."
       }
     }
   },
   "experience": {
     "title": "Kinh Nghiệm Làm Việc",
-    "subtitle": "Hành trình sự nghiệp qua các vai trò, dự án doanh nghiệp và hoạt động chuyên môn của tôi.",
+    "subtitle": "Công việc production tại APETECH Solutions và hoạt động Đoàn khoa.",
     "responsibilities": "Trách Nhiệm Chính",
     "technologies": "Công Nghệ",
     "achievements": "Thành Tựu",
     "roles": {
-      "webDev": "Kỹ Sư Phần Mềm (Full-Stack)",
-      "fulltime": "Toàn Thời Gian (Chính Thức 2+ Năm)"
+      "webDev": "Full-Stack Web Developer",
+      "fulltime": "Toàn thời gian · 1,5 năm"
     },
     "apetech": {
-      "desc": "Thiết kế, phát triển và tối ưu hóa các hệ thống phần mềm ERP doanh nghiệp (HRM, FnB, PMS) trong môi trường Agile chuyên nghiệp, phụ trách xuyên suốt từ Frontend, Mobile App đến Backend & Cơ sở dữ liệu.",
+      "desc": "Xây dựng hệ thống web doanh nghiệp và SaaS cho bán lẻ F&B và quản lý thể thao bằng React, Angular, NestJS và PostgreSQL, làm việc trong nhóm Agile.",
       "resp": [
-        "Phát triển hệ thống Quản trị Nhân sự HRM ERP: Xây dựng ứng dụng di động cho nhân viên chấm công & nghỉ phép (React Native), Web Admin cho quản lý (Angular) và hệ thống RESTful API (.NET Core & PostgreSQL)",
-        "Phát triển các phân hệ Quản trị FnB & PMS ERP: Xây dựng cổng quản trị điều hành tập trung (React/Angular, TypeScript, Tailwind CSS), Backend API xử lý nghiệp vụ đơn hàng, thực đơn, tài sản & dữ liệu lớn (NestJS/ASP.NET Core, PostgreSQL)",
-        "Thiết kế cơ sở dữ liệu quan hệ tối ưu, xây dựng RESTful APIs bảo mật cao và tích hợp kiểm soát truy cập phân quyền RBAC",
-        "Chẩn đoán, khắc phục lỗi và tối ưu hóa hiệu năng ứng dụng, đảm bảo tính ổn định cao của hệ thống production",
-        "Hợp tác chặt chẽ với các thành viên trong nhóm theo quy trình Agile/Scrum để hoàn thành tính năng đúng tiến độ"
+        "Bán lẻ F&B (Americano, khoảng 36 chi nhánh): Xây dựng luồng đơn mua hàng, thanh lý tồn kho, khóa mặt hàng và ghi log kiểm toán bằng React và NestJS, giảm rủi ro lệch tồn và công sức duyệt thủ công giữa các chi nhánh.",
+        "Quản lý thể thao (D-Joy Pickleball, 3 cụm sân lớn tại Sài Gòn): Xây dựng đặt sân và nhánh đấu giải cho một trong những sân pickleball lớn nhất Đông Nam Á; thiết kế logic đặt chỗ để tránh đặt trùng khi lượng truy cập cao vào giờ cao điểm.",
+        "PMS SaaS: Thiết kế schema dữ liệu đa tenant, xây thư viện component dùng lại và tinh chỉnh index PostgreSQL cho truy vấn dashboard; bàn giao API theo các sprint Agile."
       ],
       "achieve": [
-        "Trở thành nhân viên chính thức với 2+ năm kinh nghiệm phụ trách các phân hệ nòng cốt của các dự án ERP doanh nghiệp",
-        "Phát triển và triển khai thành công hệ thống HRM, FnB và PMS ERP phục vụ vận hành thực tế tại doanh nghiệp",
-        "Cải thiện độ ổn định, hiệu suất xử lý dữ liệu và nâng cao trải nghiệm người dùng trên cả nền tảng Web và Mobile"
+        "Triển khai luồng tồn kho cốt lõi cho chuỗi F&B khoảng 36 chi nhánh.",
+        "Đưa tính năng đặt sân và nhánh đấu giải chịu được lưu lượng đồng thời giờ cao điểm.",
+        "Thiết kế schema đa tenant và tinh chỉnh index PostgreSQL cho truy vấn dashboard PMS."
       ]
     },
+    "growth": {
+      "y2022Level": "Bắt đầu đại học",
+      "y2022Skills": "Bằng Kỹ sư Kỹ thuật phần mềm, Đại học Sài Gòn",
+      "y2023Level": "Môn học cốt lõi",
+      "y2023Skills": "Cấu trúc dữ liệu & Giải thuật, Quản trị cơ sở dữ liệu, Kiến trúc phần mềm",
+      "y2024Level": "Ban Chấp hành Đoàn Khoa",
+      "y2024Skills": "Ủy viên — điều phối cuộc thi học thuật và định hướng cho hơn 500 sinh viên",
+      "y2025Level": "Full-Stack Web Developer",
+      "y2025Skills": "APETECH Solutions: Americano F&B, D-Joy Pickleball và PMS SaaS với React, Angular, NestJS và PostgreSQL"
+    },
     "activities": {
-      "title": "Hoạt động & Câu lạc bộ",
+      "title": "Hoạt động",
       "studentBoard": {
-        "title": "Ban Chấp Hành Đoàn Khoa",
-        "role": "Thành viên",
-        "desc": "Đại diện tiếng nói sinh viên và điều phối các sự kiện học thuật, ngoại khóa cấp khoa."
+        "title": "Ban Chấp hành Đoàn Khoa",
+        "role": "Ủy viên",
+        "desc": "Điều phối các cuộc thi học thuật và sự kiện định hướng, hỗ trợ hơn 500 sinh viên."
       },
       "codeClub": {
-        "title": "Câu Lạc Bộ Lập Trình Thi Đấu",
-        "role": "Thành viên",
-        "desc": "Tham gia các thử thách thuật toán và các cuộc thi lập trình để củng cố kỹ năng giải quyết vấn đề."
+        "title": "Ban Chấp hành Đoàn Khoa",
+        "role": "Ủy viên",
+        "desc": "Điều phối các cuộc thi học thuật và sự kiện định hướng, hỗ trợ hơn 500 sinh viên."
       }
     },
     "workStyle": {
@@ -263,37 +270,33 @@
     "title": "Học Vấn & Dự Án",
     "subtitle": "Nền tảng học vấn và các dự án thực tế đã thực hiện trong suốt hành trình học tập.",
     "formal": "Giáo Dục Chính Quy",
-    "degree": "Kỹ Sư Kỹ Thuật Phần Mềm",
-    "school": "Đại Học Sài Gòn",
+    "degree": "Bằng Kỹ sư Kỹ thuật phần mềm",
+    "school": "Đại học Sài Gòn",
     "location": "Thành phố Hồ Chí Minh, Việt Nam",
-    "desc": "Học chuyên ngành Kỹ Thuật Phần Mềm, tập trung vào phát triển web, hệ thống cơ sở dữ liệu và các nguyên lý công nghệ phần mềm.",
+    "desc": "09/2022 – 10/2026. Các môn Cấu trúc dữ liệu & Giải thuật, Quản trị cơ sở dữ liệu và Kiến trúc phần mềm. Học bổng Khuyến khích học tập trong 2 học kỳ.",
     "courses": "Các Môn Học Chính",
     "activities": "Hoạt Động",
     "projects": "Dự Án",
-    "gpa": "GPA: Khá",
+    "gpa": "GPA: 7,5/10",
     "coursesList": [
-      "Lập Trình Hướng Đối Tượng (OOP)",
-      "Phát Triển Web & Ứng Dụng",
-      "Cấu Trúc Dữ Liệu & Giải Thuật",
-      "Quản Trị Cơ Sở Dữ Liệu",
-      "Toán Rời Rạc",
-      "Đại Số Tuyến Tính",
-      "Xác Suất & Thống Kê"
+      "Cấu trúc dữ liệu & Giải thuật",
+      "Quản trị cơ sở dữ liệu",
+      "Kiến trúc phần mềm"
     ],
     "activitiesList": [
-      "Thành viên CLB Lập Trình Thi Đấu",
-      "Thành viên Ban Chấp Hành Đoàn Khoa CNTT"
+      "Học bổng Khuyến khích học tập (2 học kỳ)",
+      "Ban Chấp hành Đoàn Khoa — Ủy viên (09/2023 – 09/2026), hỗ trợ hơn 500 sinh viên"
     ],
     "timeline": {
       "title": "Hành Trình Phát Triển",
-      "uniStart": "Bắt Đầu Đại Học",
-      "uniStartDesc": "HTML, CSS, JavaScript — nắm vững nền tảng lập trình cơ bản",
-      "coreCS": "Nền Tảng CS",
-      "coreCSDesc": "Lập trình hướng đối tượng (OOP), Cấu trúc dữ liệu & Giải thuật, Phát triển Web",
-      "personal": "Dự Án Cá Nhân",
-      "personalDesc": "React, PHP, MySQL, Git — xây dựng những dự án thực tế đầu tiên",
-      "professional": "Chính Thức (2+ Năm)",
-      "professionalDesc": "Full-Stack Developer tại Giải Pháp APETECH: Phát triển các hệ thống ERP doanh nghiệp (HRM, FnB, PMS) với .NET, Angular, React Native và NestJS"
+      "uniStart": "Bắt đầu đại học",
+      "uniStartDesc": "Bắt đầu chương trình Kỹ sư Kỹ thuật phần mềm tại Đại học Sài Gòn",
+      "coreCS": "Môn học cốt lõi",
+      "coreCSDesc": "Cấu trúc dữ liệu & Giải thuật, Quản trị cơ sở dữ liệu, Kiến trúc phần mềm",
+      "personal": "Hoạt động Đoàn khoa",
+      "personalDesc": "Ủy viên Ban Chấp hành Đoàn Khoa",
+      "professional": "Production (1,5 năm)",
+      "professionalDesc": "Full-Stack Web Developer tại APETECH Solutions: Americano F&B (khoảng 36 chi nhánh), D-Joy Pickleball và PMS SaaS với React, Angular, NestJS và PostgreSQL"
     },
     "philosophy": {
       "title": "Triết Lý Học Tập",
@@ -335,13 +338,16 @@
     "groups": {
       "frontend": "Frontend",
       "backend": "Backend",
-      "database": "Cơ Sở Dữ Liệu",
-      "devTools": "Công Cụ Phát Triển",
-      "workflow": "Quy Trình"
+      "languages": "Ngôn ngữ",
+      "frameworks": "Framework & thư viện",
+      "database": "Cơ sở dữ liệu & ORM",
+      "devTools": "DevOps & API",
+      "workflow": "Agile & phát triển có AI"
     },
     "tools": {
       "teamCollab": "Hợp Tác Nhóm",
-      "bugFixing": "Sửa Lỗi"
+      "bugFixing": "Sửa Lỗi",
+      "claude": "Claude"
     },
     "soft": {
       "teamwork": "Làm Việc Nhóm",
@@ -365,7 +371,7 @@
   },
   "projectsPage": {
     "title": "Dự Án Đã Thực Hiện",
-    "subtitle": "Khám phá các dự án ERP thực tế tại doanh nghiệp (HRM, FnB, PMS) và các dự án cá nhân tôi đã phát triển độc lập.",
+    "subtitle": "Hệ thống production tại APETECH Solutions và các dự án tự thực hiện: SmartHRM và WIO.",
     "featured": "Dự Án Nổi Bật",
     "allProjects": "Khám phá kho dự án",
     "statsProjects": "Dự án",
@@ -389,41 +395,25 @@
     "noReposFound": "Không tìm thấy kho mã nguồn nào phù hợp.",
     "viewAllOnGithub": "Xem toàn bộ kho mã nguồn trên GitHub",
     "list": {
+      "americano": {
+        "name": "Americano — Bán lẻ F&B",
+        "desc": "APETECH, 05/2025 – 10/2026. Xây dựng luồng đơn mua hàng, thanh lý tồn kho, khóa mặt hàng và ghi log kiểm toán bằng React và NestJS cho chuỗi khoảng 36 chi nhánh, giảm rủi ro lệch tồn và công sức duyệt thủ công."
+      },
+      "djoy": {
+        "name": "D-Joy Pickleball — Quản lý thể thao",
+        "desc": "APETECH, 05/2025 – 10/2026. Xây dựng đặt sân và nhánh đấu giải cho 3 cụm sân lớn tại Sài Gòn, một trong những sân pickleball lớn nhất Đông Nam Á. Logic đặt chỗ tránh đặt trùng khi lượng truy cập cao vào giờ cao điểm."
+      },
+      "pms": {
+        "name": "PMS SaaS",
+        "desc": "APETECH, 05/2025 – 10/2026. Thiết kế schema dữ liệu đa tenant, xây thư viện component dùng lại và tinh chỉnh index PostgreSQL cho truy vấn dashboard. Bàn giao API theo các sprint Agile."
+      },
       "hrm": {
-        "name": "Hệ Thống Quản Trị Nhân Sự (HRM)",
-        "desc": "Dự án doanh nghiệp: Hệ thống quản lý nhân sự toàn diện tích hợp ứng dụng di động cho nhân viên chấm công, nghỉ phép (React Native), trang quản lý cho admin (Angular) và hệ thống RESTful API (.NET Core & PostgreSQL)."
-      },
-      "cms": {
-        "name": "Hệ Thống Trình Chiếu Kỹ Thuật Số (Digital Signage CMS)",
-        "desc": "Dự án doanh nghiệp: Nền tảng quản lý và phân phối nội dung đa phương tiện lên hệ thống màn hình quảng cáo theo thời gian thực gồm Web Admin điều khiển (React, Tailwind), Backend API (NestJS, PostgreSQL) và trình phát Player."
-      },
-      "himlam": {
-        "name": "Đặt Tour HimLamTourist",
-        "desc": "Nền tảng đặt tour full-stack với các phân hệ riêng biệt cho khách hàng, quản trị và dịch vụ API. Tính năng tìm kiếm tour, lọc và quy trình đặt chỗ với NestJS và PostgreSQL qua Supabase."
+        "name": "SmartHRM — Nền tảng nhân sự",
+        "desc": "Dự án tự thực hiện, 01/2026 – nay. Hệ thống nhân sự 3 tầng với ASP.NET Core Web API, Angular 19 và React Native (.NET 9, PostgreSQL) để học clean architecture. RBAC chi tiết, chuỗi phê duyệt động, tính lương theo ca và quy tắc thuế, cùng chấm công GPS có kiểm tra geofence."
       },
       "wedding": {
-        "name": "Thiệp Cưới Điện Tử",
-        "desc": "Ứng dụng web mời cưới full-stack với bộ đếm ngược, thông tin sự kiện và tính năng RSVP. Xây dựng giao diện responsive với React và Tailwind CSS."
-      },
-      "apple": {
-        "name": "Cửa Hàng Apple",
-        "desc": "Ứng dụng thương mại điện tử mô phỏng Apple Store với danh sách sản phẩm, giỏ hàng và quản lý đơn hàng. Xây dựng bằng PHP thuần với kiến trúc MVC."
-      },
-      "adminDashboardAngular": {
-        "name": "Mẫu Admin Dashboard - Angular",
-        "desc": "Bản mẫu giao diện quản trị Admin hiện đại và trực quan sử dụng Angular, RxJS và Tailwind CSS."
-      },
-      "adminDashboardVue": {
-        "name": "Mẫu Admin Dashboard - Vue",
-        "desc": "Giao diện quản trị Admin mẫu hiệu năng cao được phát triển với Vue 3, Pinia và Tailwind CSS."
-      },
-      "adminDashboardNext": {
-        "name": "Mẫu Admin Dashboard - Next.js",
-        "desc": "Mẫu giao diện dashboard quản trị linh hoạt và chuẩn SEO sử dụng Next.js, React và Tailwind CSS."
-      },
-      "adminDashboardReact": {
-        "name": "Mẫu Admin Dashboard - React",
-        "desc": "Bản mẫu trang quản trị Admin tối giản nhưng đầy đủ chức năng xây dựng bằng React và Tailwind CSS."
+        "name": "WIO — SaaS thiệp cưới",
+        "desc": "Dự án tự thực hiện, 03/2026 – nay. Next.js 14, NestJS, PostgreSQL và WebSockets. Tùy biến mẫu thiệp, sổ lời chúc và quà VietQR, đang chuẩn bị triển khai production. NestJS WebSocket gateway cho RSVP và thông báo quà theo thời gian thực. Next.js SSR và Open Graph động để tải nhanh trên mobile và xem trước link khi chia sẻ."
       }
     }
   },
@@ -470,7 +460,7 @@
       "projectType": "Loại Dự Án",
       "projectPlaceholder": "Chọn loại dự án",
       "projectOptions": {
-        "erp": "Hệ Thống ERP (HRM, FnB, PMS,...)",
+        "erp": "Web doanh nghiệp & SaaS (F&B, thể thao, PMS)",
         "webApp": "Ứng Dụng Web (React / Next.js / Angular)",
         "mobileApp": "Ứng Dụng Di Động (React Native / Mobile)",
         "backendApi": "Hệ Thống Backend API (NestJS / .NET / Node)",
@@ -487,7 +477,7 @@
     },
     "success": {
       "title": "Gửi Tin Nhắn Thành Công!",
-      "message": "Cảm ơn bạn đã liên hệ! Tin nhắn đã được gửi đến hoanghoanpineapple04@gmail.com. Tôi sẽ phản hồi lại bạn sớm nhất có thể.",
+      "message": "Cảm ơn bạn đã liên hệ! Tin nhắn đã được gửi đến hoanghoan14204@gmail.com. Tôi sẽ phản hồi lại bạn sớm nhất có thể.",
       "sendAnother": "Gửi tin nhắn khác",
       "openMail": "Mở Email gửi thêm"
     },
@@ -513,12 +503,14 @@
     },
     "locationSection": {
       "title": "Địa Điểm",
-      "desc": "Hiện đang sinh sống tại TP. Hồ Chí Minh, Việt Nam. Sẵn sàng làm việc từ xa cho các dự án phù hợp."
+      "desc": "Đang ở Hà Nội, Việt Nam. Sẵn sàng làm việc từ xa với các dự án phù hợp.",
+      "city": "Hà Nội",
+      "country": "Việt Nam"
     }
   },
   "footer": {
     "rights": "Tất cả các quyền được bảo lưu.",
-    "copy": "Bản quyền © 2025 Hoanghoan."
+    "copy": "Bản quyền © 2026 Hoàng Đình Hoàn."
   },
   "search": {
     "title": "Tìm kiếm",

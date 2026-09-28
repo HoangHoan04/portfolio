@@ -196,14 +196,14 @@ export default function ContactPage() {
     {
       icon: LinkedinLogo,
       title: t("contactPage.info.linkedin"),
-      value: "linkedin.com/in/hoangdinhhoan",
+      value: "linkedin.com/in/hoanghoan04",
       link: profile.linkedin,
       gradient: "from-blue-600/20 to-blue-400/20 text-blue-500",
     },
     {
       icon: MapPin,
       title: t("contactPage.info.location"),
-      value: "Ho Chi Minh City, Vietnam",
+      value: `${t("contactPage.locationSection.city")}, ${t("contactPage.locationSection.country")}`,
       link: "#",
       gradient: "from-rose-500/20 to-pink-500/20 text-rose-400",
     },
@@ -522,10 +522,10 @@ export default function ContactPage() {
               <MapPin className="size-5" weight="duotone" />
             </div>
             <p className="text-sm font-bold text-foreground">
-              Ho Chi Minh City
+              {t("contactPage.locationSection.city")}
             </p>
             <p className="text-xs font-semibold text-secondary-text mt-0.5">
-              Vietnam
+              {t("contactPage.locationSection.country")}
             </p>
           </div>
           <div className="group">

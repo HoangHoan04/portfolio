@@ -10,7 +10,6 @@ import { useTranslation } from "@/contexts/locale-context";
 import { calculateAge } from "@/lib/calculate-age";
 import { getAssetPath } from "@/lib/utils";
 import {
-  Camera,
   CircleDot,
   Code,
   Download,
@@ -22,14 +21,13 @@ import {
   MapPin,
   Music,
   Phone,
-  PlaneTakeoff,
   Terminal,
   Volleyball,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const hobbyIcons = [Code, Music, PlaneTakeoff, Camera, Volleyball, Heart];
+const hobbyIcons = [Code, GitCommit, CircleDot, Volleyball, Music];
 
 function useTypewriter(lines: string[], speed = 14, lineDelay = 260) {
   const [renderedLines, setRenderedLines] = useState<string[]>([]);
@@ -113,23 +111,22 @@ export default function AboutPage() {
   const tilt = useTilt(8);
 
   const hobbies = [
-    t("about.hobbies.list.coding"),
-    t("about.hobbies.list.music"),
-    t("about.hobbies.list.travel"),
-    t("about.hobbies.list.photography"),
+    t("about.hobbies.list.digital"),
+    t("about.hobbies.list.opensource"),
     t("about.hobbies.list.football"),
     t("about.hobbies.list.badminton"),
+    t("about.hobbies.list.music"),
   ] as string[];
 
   const journey = [
     {
-      year: "2025 - Nay",
+      year: "May 2025 – Oct. 2026",
       title: t("about.journey.official.title"),
       company: t("about.journey.official.company"),
       description: t("about.journey.official.desc"),
     },
     {
-      year: "2022 - 2026",
+      year: "Sep. 2022 – Oct. 2026",
       title: t("about.journey.university.title"),
       company: t("about.journey.university.company"),
       description: t("about.journey.university.desc"),
@@ -154,12 +151,6 @@ export default function AboutPage() {
       icon: MapPin,
       label: t("about.personalInfo.address"),
       value: t("about.personalInfo.addressValue"),
-    },
-    {
-      id: "addressNew",
-      icon: MapPin,
-      label: t("about.personalInfo.addressNew"),
-      value: t("about.personalInfo.addressNewValue"),
     },
     {
       id: "email",
@@ -341,7 +332,7 @@ export default function AboutPage() {
             <Heart className="size-5 text-primary-accent" />
             {t("about.hobbies.title")}
           </h3>
-          <div className="grid grid-cols-3 gap-4 sm:grid-cols-6">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-5">
             {hobbies.map((hobby, index) => {
               const Icon = hobbyIcons[index] ?? Code;
               const reverse = index % 2 === 1;

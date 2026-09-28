@@ -83,7 +83,7 @@ export default function EducationPage() {
 
   const learningTimeline = [
     {
-      year: "2022",
+      year: "Sep. 2022",
       title: t("education.timeline.uniStart"),
       description: t("education.timeline.uniStartDesc"),
       icon: GraduationCap,
@@ -101,7 +101,7 @@ export default function EducationPage() {
       icon: BookOpen,
     },
     {
-      year: "2025 - Now",
+      year: "May 2025 – Oct. 2026",
       title: t("education.timeline.professional"),
       description: t("education.timeline.professionalDesc"),
       icon: Users,
@@ -146,7 +146,7 @@ export default function EducationPage() {
               {t("education.formal")}
             </h2>
             <p className="text-xs text-secondary-text mt-0.5">
-              {t("education.school")} • 2022 - 2026
+              {t("education.school")} • Sep. 2022 – Oct. 2026
             </p>
           </div>
         </div>
@@ -173,7 +173,7 @@ export default function EducationPage() {
                 </span>
                 <span className="flex items-center gap-1.5 tabular-nums">
                   <CalendarBlank className="size-4" />
-                  2022 - 2026
+                  Sep. 2022 – Oct. 2026
                 </span>
               </div>
 

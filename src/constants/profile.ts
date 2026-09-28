@@ -6,16 +6,16 @@ export const profile: Profile = {
   username: "HoangHoan",
   fullName: "Hoang Dinh Hoan",
   avatar: `${prefix}/images/avatar.jpg`,
-  jobTitle: "Software Engineer",
-  bio: "Hello! I'm a Full-Stack Software Engineer with 2+ years of full-time experience at APETECH Solutions. I specialize in developing Enterprise ERP Systems (HRM, FnB, PMS) and actively building modern ERP solutions with scalable Web & Mobile architectures.",
+  jobTitle: "Full-Stack Developer",
+  bio: "Full-Stack Developer with 1.5 years of production experience building enterprise web and SaaS systems for F&B retail and sports management, using React, Angular, NestJS, and PostgreSQL. Delivered core workflows for a 36-branch F&B chain and a large multi-cluster pickleball platform. Also building ASP.NET Core systems (HRM, multi-tenant SaaS) as self-directed projects. Comfortable working in Agile teams.",
   github: "https://github.com/HoangHoan04",
-  email: "hoanghoanpineapple04@gmail.com",
-  linkedin: "https://www.linkedin.com/in/hoangdinhhoan",
+  email: "hoanghoan14204@gmail.com",
+  linkedin: "https://www.linkedin.com/in/hoanghoan04/",
   instagram: "https://www.instagram.com/hoangdinhhoan",
-  project: 18,
+  project: 0,
   visitors: 0,
-  githubViewers: 649,
-  experience: "2+",
+  githubViewers: 0,
+  experience: "1.5",
 };
 
 export const Z_INDEX = {

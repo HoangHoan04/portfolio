@@ -81,20 +81,17 @@ export default function ExperiencePage() {
   const experience = {
     title: t("experience.roles.webDev"),
     company: "APETECH Solutions",
-    location: "Ho Chi Minh City, Vietnam",
-    period: "Mar. 2025 - Present",
+    location: "Ha Noi, Vietnam",
+    period: "May 2025 – Oct. 2026",
     type: t("experience.roles.fulltime"),
     description: t("experience.apetech.desc"),
     responsibilities: tList("experience.apetech.resp"),
     technologies: [
       "React",
       "Angular",
-      "React Native",
       "NestJS",
       "TypeScript",
       "PostgreSQL",
-      "MySQL",
-      "Tailwind CSS",
     ],
     achievements: tList("experience.apetech.achieve"),
   };
@@ -103,30 +100,31 @@ export default function ExperiencePage() {
     {
       title: t("experience.activities.studentBoard.title"),
       role: t("experience.activities.studentBoard.role"),
-      period: "Sept. 2023 - Present",
+      period: "Sept. 2023 – Sept. 2026",
       description: t("experience.activities.studentBoard.desc"),
-    },
-    {
-      title: t("experience.activities.codeClub.title"),
-      role: t("experience.activities.codeClub.role"),
-      period: "Sept. 2023 - Present",
-      description: t("experience.activities.codeClub.desc"),
     },
   ];
 
   const skillGrowth = [
-    { year: "2022", skills: "HTML, CSS, JavaScript", level: "Beginner" },
+    {
+      year: "Sep. 2022",
+      skills: t("experience.growth.y2022Skills"),
+      level: t("experience.growth.y2022Level"),
+    },
     {
       year: "2023",
-      skills: "OOP, Data Structures & Algorithms, Web Development",
-      level: "Learning",
+      skills: t("experience.growth.y2023Skills"),
+      level: t("experience.growth.y2023Level"),
     },
-    { year: "2024", skills: "React, PHP, MySQL, Git", level: "Intermediate" },
     {
-      year: "2025 - Now",
-      skills:
-        "Angular, React Native, NestJS, ASP.NET Core, TypeScript, PostgreSQL",
-      level: "Full-Stack Developer (2+ Năm Chính Thức)",
+      year: "Sept. 2023 – Sept. 2026",
+      skills: t("experience.growth.y2024Skills"),
+      level: t("experience.growth.y2024Level"),
+    },
+    {
+      year: "May 2025 – Oct. 2026",
+      skills: t("experience.growth.y2025Skills"),
+      level: t("experience.growth.y2025Level"),
     },
   ];
 
@@ -310,7 +308,7 @@ export default function ExperiencePage() {
 
           <div className="relative mx-auto max-w-4xl border-l border-elevated-border pl-6 space-y-8">
             {skillGrowth.map((growth, idx) => {
-              const isCurrent = growth.year.includes("Now");
+              const isCurrent = idx === skillGrowth.length - 1;
 
               return (
                 <motion.div

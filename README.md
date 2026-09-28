@@ -13,8 +13,8 @@
     <a href="https://github.com/HoangHoan04/portfolio">
       <img src="https://img.shields.io/badge/⭐_GitHub-HoangHoan04-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repo" />
     </a>
-    <a href="mailto:hoanghoanpineapple04@gmail.com">
-      <img src="https://img.shields.io/badge/✉️_Email-hoanghoanpineapple04-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+    <a href="mailto:hoanghoan14204@gmail.com">
+      <img src="https://img.shields.io/badge/✉️_Email-hoanghoan14204-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
     </a>
   </p>
 
@@ -33,7 +33,7 @@
 
 ## 🌟 Giới Thiệu (Overview)
 
-Trang Portfolio cá nhân của **Hoàng Đình Hoàn** — Kỹ sư phần mềm (**Full-Stack Developer** với 2+ năm kinh nghiệm làm việc chính thức tại **APETECH Solutions**). 
+Trang Portfolio cá nhân của **Hoàng Đình Hoàn** — **Full-Stack Developer** với 1,5 năm kinh nghiệm production tại **APETECH Solutions** (bán lẻ F&B, quản lý thể thao, PMS SaaS). 
 
 Website được thiết kế mang phong cách kết hợp giữa **Instagram Feed, macOS Dock & Cyberpunk Terminal**, tập trung vào trải nghiệm mượt mà, hiệu ứng chuyển động tinh tế và tối ưu hóa hiển thị trên mọi thiết bị (Responsive Mobile & Desktop).
 
@@ -148,7 +148,7 @@ GITHUB_TOKEN=your_github_personal_access_token
 NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
 NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
 NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
-NEXT_PUBLIC_TO_EMAIL=hoanghoanpineapple04@gmail.com
+NEXT_PUBLIC_TO_EMAIL=hoanghoan14204@gmail.com
 
 # Telegram Notification (Tùy chọn - nhận tin nhắn tức thì về Telegram)
 NEXT_PUBLIC_TELEGRAM_BOT_TOKEN=your_bot_token
@@ -171,9 +171,11 @@ npm run build
 ## 📬 Liên Hệ & Kết Nối (Contact Me)
 
 - **Họ và Tên:** Hoàng Đình Hoàn
-- **Vị Trí:** Software Engineer / Full-Stack Developer
-- **Email:** [hoanghoanpineapple04@gmail.com](mailto:hoanghoanpineapple04@gmail.com)
-- **LinkedIn:** [linkedin.com/in/hoangdinhhoan](https://www.linkedin.com/in/hoangdinhhoan)
+- **Vị Trí:** Full-Stack Developer
+- **Địa điểm:** Hà Nội, Việt Nam
+- **Email:** [hoanghoan14204@gmail.com](mailto:hoanghoan14204@gmail.com)
+- **Điện thoại:** +84 377 984 957
+- **LinkedIn:** [linkedin.com/in/hoanghoan04](https://www.linkedin.com/in/hoanghoan04/)
 - **GitHub:** [github.com/HoangHoan04](https://github.com/HoangHoan04)
 - **Portfolio Live:** [https://hoanghoan04.github.io/portfolio/](https://hoanghoan04.github.io/portfolio/)
 

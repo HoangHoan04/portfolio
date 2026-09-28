@@ -18,8 +18,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hoang Hoan (@hoandh.dev)",
-  description: "Software Engineer - Portfolio",
+  title: "Hoang Dinh Hoan — Full-Stack Developer",
+  description:
+    "Full-Stack Developer with 1.5 years of production experience at APETECH Solutions. React, Angular, NestJS, PostgreSQL, and ASP.NET Core.",
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
     shortcut: "/favicon.svg",

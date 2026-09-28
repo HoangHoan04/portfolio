@@ -10,7 +10,7 @@ export const highlights: Highlight[] = [
   {
     id: "2",
     label: "ASP.NET Core",
-    icon: icons.asp,
+    icon: icons.visualstudio,
   },
   {
     id: "3",
@@ -34,32 +34,32 @@ export const highlights: Highlight[] = [
   },
   {
     id: "7",
-    label: "Vue",
-    icon: icons.vue,
-  },
-  {
-    id: "8",
     label: "PostgreSQL",
     icon: icons.postgresql,
   },
   {
-    id: "9",
-    label: "Node.js",
-    icon: icons.nodejs,
+    id: "8",
+    label: "React Native",
+    icon: icons.react,
   },
   {
-    id: "10",
+    id: "9",
     label: "Docker",
     icon: icons.docker,
   },
   {
+    id: "10",
+    label: "Tailwind CSS",
+    icon: icons.tailwind,
+  },
+  {
     id: "11",
-    label: "PHP",
-    icon: icons.php,
+    label: "MySQL",
+    icon: icons.mysql,
   },
   {
     id: "12",
-    label: "Figma",
-    icon: icons.figma,
+    label: "Git",
+    icon: icons.github,
   },
 ];

@@ -32,7 +32,7 @@ export const achievements: Achievement[] = [
     id: "4",
     titleKey: "home.achievements.club.title",
     descKey: "home.achievements.club.desc",
-    year: "2023",
+    year: "2022",
     gradient: "from-rose-500 to-pink-600",
   },
   {
@@ -46,7 +46,7 @@ export const achievements: Achievement[] = [
     id: "6",
     titleKey: "home.achievements.projects.title",
     descKey: "home.achievements.projects.desc",
-    year: "2024",
+    year: "2026",
     gradient: "from-amber-500 to-orange-600",
   },
 ];
